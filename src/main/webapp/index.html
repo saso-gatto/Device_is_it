@@ -55,7 +55,7 @@
    			 </div>    			 	 		       		
    			
             <div class="navbar-nav">                                                                 
-            	<i id="loginIcon" class="fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login -->    
+            	<i onclick="checklogin()" id="loginIcon" class="fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login -->    
             </div>
         </div>
     </nav>
@@ -116,6 +116,7 @@
 			      <div class="myform form ">
                         <div class="logo mb-3">
                            <div class="col-md-12 text-center">
+                              <button type="button" class="close" data-dismiss="modal">×</button>
                               <h1 class="titolo-loginForm">Signup</h1>
                            </div>
                         </div>
