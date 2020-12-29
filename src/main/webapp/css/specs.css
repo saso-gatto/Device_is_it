@@ -1,23 +1,47 @@
-
-
-
-
 .container{
-	margin-top:1%;
-	margin-bottom: 2%;
+	margin-bottom:25px;
 }
 
-.card{
-	margin-top:50px; 
+#titolo{
+	margin-top: 30px;
+	font-size: 45px;
+	font-family: Droid Serif;
+	font-style: italic;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.inner{
-	overflow: hidden;
+
+.card {
+	box-shadow: 0 8px 15px 0 rgba(0,0,0,0.2); /*ombra fissa*/
+	transition: 0.3s;
+	border-radius: 30px;
+	height: 400px;   
+	max-width: 250px;
+	min-width: 200px;
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+.card:hover {
+	box-shadow: 0 8px 30px 0 rgba(0,0,0,0.2); /*effetto sull'ombra*/
+ }
+
+img {
 	
+	max-height: 200px;
+	margin-top:50px;
+	margin-left: 20%;
+ }
+ 
+.img-hover-zoom {
+	overflow: hidden; /*!-- nascondi l'mmagine che fuoriesce dal bordo */
+	border-radius: 30px 30px 0px 0px;
 }
-.inner img{
-	trasformation: all 1.5s ease;
-	border-top:105px;
+
+.img-hover-zoom--basic img { 
+	transition: transform .5s ease; /*tipo di transizione*/      
 }
-.inner:hover img{
-	trasform: scale(1.5);
+
+.img-hover-zoom--basic:hover img { /* applica l'evento del mouse */
+	transform: scale(1.3);  /*effetto : ingrandisci*/
 }
+
