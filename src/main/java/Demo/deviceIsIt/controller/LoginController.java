@@ -1,4 +1,4 @@
-package Demo.controller;
+package Demo.deviceIsIt.controller;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
