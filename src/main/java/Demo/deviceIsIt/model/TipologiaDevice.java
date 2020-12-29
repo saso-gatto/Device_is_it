@@ -1,7 +1,7 @@
 package Demo.deviceIsIt.model;
 
-public class TipologiaContenuto {
-		
+public class TipologiaDevice {
+	
 	private int idTipologia;
 	private String descrizione;
 	

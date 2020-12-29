@@ -7,7 +7,7 @@ public class Contenuto {
 	private int device;
 	private String testo;
 	private String titolo;
-	private TipologiaContenuto tipo;
+	private int tipo;
 	
 	
 	public int getIdContenuto() {
@@ -40,10 +40,10 @@ public class Contenuto {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public TipologiaContenuto getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
-	public void setTipo(TipologiaContenuto tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 	
