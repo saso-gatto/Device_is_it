@@ -6,6 +6,8 @@ public class Utente {
 	private String nome;
 	private String cognome;
 	private String password;
+	
+	
 	public String getEmail() {
 		return email;
 	}
