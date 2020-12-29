@@ -1,3 +1,4 @@
+ alert("Sono nel file javascript!!");
 window.addEventListener("load", function(){ //"load"-->al caricamento della pagina inizializziamo il form per effettuare login e sign up
 	checklogin();
 });
