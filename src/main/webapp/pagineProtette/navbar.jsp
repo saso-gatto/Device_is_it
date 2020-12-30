@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +59,18 @@
    			 	</div>	   			 
    			 </div>    			 	 		       		
    			
-            <div class="navbar-nav">                                                                 
-            	<i id="loginIcon" class="fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login -->    
+            
+   			<div class="navbar-nav">   			
+	   			<c:if test="${usernameLogged == null}">  <!--  se non c'è un username loggato mostrami il login -->
+	    			<i id="loginIcon" class="fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
+	    		</c:if>
+	    		<c:if test="${usernameLogged != null}"> <!-- se c'è un username loggato -->
+	    			Utente loggato: ${usernameLogged}
+	    			<a href="doLogout"> Logout </a>
+	    		</c:if>   			   			                                                                                         
             </div>
+            
+            
         </div>
     </nav>
     
@@ -73,7 +86,7 @@
 					<div class="myform form ">
 						 <div class="logo mb-3">
 							 <div class="col-md-12 text-center">
-								<button type="button" class="close" data-dismiss="modal">Ã—</button>
+								<button type="button" class="close" data-dismiss="modal">×</button>
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
@@ -116,11 +129,11 @@
 			      <div class="myform form ">
                      <div class="logo mb-3">
                         <div class="col-md-12 text-center">
-                           <button type="button" class="close" data-dismiss="modal">Ã—</button>
+                           <button type="button" class="close" data-dismiss="modal">×</button>
                            <h1 class="titolo-loginForm">Signup</h1>
                         </div>
                      </div>                        
-                     <form method="post" action="registration" >
+                     <form method="post" action="home/Iscrizione" >
                         <div class="form-group">
                            <label for="exampleInputEmail1">First Name</label>
                            <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter Firstname" required>

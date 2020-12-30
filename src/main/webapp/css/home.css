@@ -61,6 +61,7 @@ body {
 
 #loginIcon{
 	color: #ffffff;
+	cursor: pointer;
 }
 #loginForm{
 	padding-top:4.2rem;

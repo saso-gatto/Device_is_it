@@ -17,9 +17,10 @@
   	<link rel="stylesheet" href="css/home.css" type="text/css"/>
 
 	<script src="https://code.jquery.com/jquery-3.5.0.js"></script> 	<!-- Codice per includere la navbar -->
+    
     <script> 
     $(function(){
-      $("#Navbar").load("navbar.html #daCaricare");
+      $("#Navbar").load("pagineProtette/navbar.jsp #daCaricare");
       $.getScript("/js/login.js");
     });
     </script> 	
