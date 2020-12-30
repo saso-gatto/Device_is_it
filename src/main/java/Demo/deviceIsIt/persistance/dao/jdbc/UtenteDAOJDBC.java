@@ -2,8 +2,12 @@ package Demo.deviceIsIt.persistance.dao.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+
 import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBSource;
 import Demo.deviceIsIt.persistance.dao.UtenteDAO;
@@ -45,9 +49,35 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public ArrayList<Utente> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Utente> findAll() {
+		List<Utente> utenti = new ArrayList<Utente>();
+			
+			try {
+				Connection conn = dbSource.getConnection();
+				String query = "select * from utente";
+				Statement st = conn.createStatement();
+				ResultSet rs = st.executeQuery(query);
+				while (rs.next()) {
+					String email = rs.getString("Email");
+					String nome = rs.getString("nome");
+					String cognome = rs.getString("cognome");
+					String password = rs.getString("password");
+					
+					System.out.println(email + nome + cognome + password);
+					Utente utente = new Utente();
+					
+					utente.setEmail(email);
+					utente.setNome(nome);
+					utente.setCognome(cognome);
+					utente.setPassword(password);
+					
+					utenti.add(utente);
+					System.out.println("creato");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return utenti;
 	}
 
 	@Override
@@ -61,6 +91,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 	
 

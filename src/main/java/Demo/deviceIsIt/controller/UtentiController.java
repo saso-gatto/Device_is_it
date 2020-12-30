@@ -3,7 +3,6 @@ package Demo.deviceIsIt.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
