@@ -177,11 +177,14 @@
 		   <div class="col-md-4 col-lg-3">
 				    <div class="card">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
-				          <img src="${device.img}" alt="Mia Immagine"> 
+				          <img src="${device.img}"> 
 				       </div>
 				       <div class="card-body text-center">
 				          <h5 class="card-title">${device.modello}</h5> 
-				          <a href="#" class="btn btn-info">Vai alla scheda tecnica</a>
+				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
+				          	<input type="hidden" id="idDevice" name="idDevice" value=${device.modello}>			          	
+	                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Vai alla scheda tecnica</button>
+	                       </form>			      	
 				      </div>      
 				    </div>
 				  </div>	
