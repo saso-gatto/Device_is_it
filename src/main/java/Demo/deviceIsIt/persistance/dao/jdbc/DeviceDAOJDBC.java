@@ -106,8 +106,6 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println(devices.size());
 		return devices;
 	}
 
