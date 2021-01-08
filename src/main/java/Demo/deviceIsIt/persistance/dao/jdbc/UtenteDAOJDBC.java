@@ -27,12 +27,15 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		try {
 			conn = dbSource.getConnection();
 
-			String query = "insert into utente values(?,?,?,?);"; // prendiamo la query
+			String query = "insert into utente values(?,?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
 			st.setString(1, utente.getEmail());
 			st.setString(2, utente.getNome());
 			st.setString(3, utente.getCognome());
 			st.setString(4, utente.getPassword());
+			st.setString(5, utente.getUsername());
+			st.setBoolean(6, utente.isNewsletter());
+			st.setBoolean(7, utente.isBloccato());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -51,21 +54,26 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				st.setString(1, email);
 				ResultSet rs = st.executeQuery();
 				if (rs.next()) {
-					String uemail = rs.getString("Email");
+					String uemail = rs.getString("email");
 					String nome = rs.getString("nome");
 					String cognome = rs.getString("cognome");
 					String password = rs.getString("password");
+					String username = rs.getString("username");
+					boolean newsletter = rs.getBoolean("newsletter");
+					boolean bloccato = rs.getBoolean("bloccato");
 					
 					utente.setEmail(uemail);
 					utente.setNome(nome);
 					utente.setCognome(cognome);
 					utente.setPassword(password);
+					utente.setUsername(username);
+					utente.setNewsletter(newsletter);
+					utente.setBloccato(bloccato);
 				}
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
-		
+			}	
 		return utente;
 	}
 
@@ -79,10 +87,13 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(query);
 				while (rs.next()) {
-					String email = rs.getString("Email");
+					String email = rs.getString("email");
 					String nome = rs.getString("nome");
 					String cognome = rs.getString("cognome");
 					String password = rs.getString("password");
+					String username = rs.getString("username");
+					boolean newsletter = rs.getBoolean("newsletter");
+					boolean bloccato = rs.getBoolean("bloccato");
 					
 					System.out.println(email + nome + cognome + password);
 					Utente utente = new Utente();
@@ -91,6 +102,9 @@ public class UtenteDAOJDBC implements UtenteDAO {
 					utente.setNome(nome);
 					utente.setCognome(cognome);
 					utente.setPassword(password);
+					utente.setUsername(username);
+					utente.setNewsletter(newsletter);
+					utente.setBloccato(bloccato);
 					
 					utenti.add(utente);
 					System.out.println("creato");
@@ -108,7 +122,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update studente SET nome = ?, cognome = ?, password = ? WHERE email=?";
+			String update = "update utente SET nome = ?, cognome = ?, password = ?, username = ? WHERE email=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			if(!newu.getNome().equals("")) // !!!!!!! nb: ricorda di controllare utentiController
 				statement.setString(1, newu.getNome());
@@ -116,6 +130,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				statement.setString(2, newu.getCognome());
 			if(!newu.getPassword().equals(""))
 				statement.setString(3, newu.getPassword());
+			if(!newu.getUsername().equals(""))
+				statement.setString(3, newu.getUsername());
 			
 			statement.setString(4, old.getEmail());
 			statement.executeUpdate();
@@ -129,7 +145,6 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
-
 	}
 
 	@Override
