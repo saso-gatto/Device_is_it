@@ -132,3 +132,6 @@ body {
 #second{
 	display:none;
 }
+.newsletter{
+	border-right: 10px;
+}

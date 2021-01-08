@@ -44,7 +44,7 @@
                         <a href="#" class="dropdown-item">Computer</a>                      
                     </div>
                 </div> 
-                <a href="specs.html" class="nav-item nav-link">Schede Tecniche</a>
+                <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche</a>
                 <a href="news.html" class="nav-item nav-link">News</a>                             
             </div>
             
@@ -143,6 +143,10 @@
                            <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter Lastname" required>
                         </div>
                         <div class="form-group">
+                           <label for="exampleInputEmail1">Username</label>
+                           <input type="text"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username" required>
+                        </div>
+                        <div class="form-group">
                            <label for="exampleInputEmail1">Email address</label>
                            <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                         </div>
@@ -150,9 +154,13 @@
                            <label for="exampleInputEmail1">Password</label>
                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                         </div>
+                        <div class="form-check-inline"> 
+                        	<p class="newsletter"> Iscriviti alla newsletter </p>     						           
+        				    <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>
+   						 </div>
                         <div class="col-md-12 text-center mb-3">
                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
-                        </div>
+                        </div>                        
                         <div class="col-md-12 ">
                            <div class="form-group">
                               <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
