@@ -6,6 +6,9 @@ public class Utente {
 	private String nome;
 	private String cognome;
 	private String password;
+	private String username;
+	private boolean newsletter;
+	private boolean bloccato;
 	
 	
 	public String getEmail() {
@@ -31,6 +34,24 @@ public class Utente {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public boolean isNewsletter() {
+		return newsletter;
+	}
+	public void setNewsletter(boolean newsletter) {
+		this.newsletter = newsletter;
+	}
+	public boolean isBloccato() {
+		return bloccato;
+	}
+	public void setBloccato(boolean bloccato) {
+		this.bloccato = bloccato;
 	}
 	
 	
