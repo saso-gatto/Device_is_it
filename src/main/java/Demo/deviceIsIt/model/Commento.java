@@ -4,7 +4,7 @@ public class Commento {
 	
 	private int idCommento;
 	private String contenuto;
-	private String utente;
+	private String utente; //Equivale all'username/email
 	private String data;
 	private String testo;
 	
