@@ -2,26 +2,26 @@ package Demo.deviceIsIt.model;
 
 public class Device {
 	
-	private int idDevice;
+	private int id_Device;
 	private String modello;
 	private String marca;
 	private int tipoDevice;
-	private String cpu;
+	private String memoria;
 	private String ram;
 	private String display;
 	private String batteria;
 	private String fotocamera;
-	private String memoria;
+	private String cpu;
 	private String peso;
 	private String os;
 	private String img;
 	
 	
 	public int getIdDevice() {
-		return idDevice;
+		return id_Device;
 	}
 	public void setIdDevice(int idDevice) {
-		this.idDevice = idDevice;
+		this.id_Device = idDevice;
 	}
 	public String getModello() {
 		return modello;
@@ -41,10 +41,10 @@ public class Device {
 	public void setTipoDevice(int tipoDevice) {
 		this.tipoDevice = tipoDevice;
 	}
-	public String getCpu() {
+	public String getCPU() {
 		return cpu;
 	}
-	public void setCpu(String cpu) {
+	public void setCPU(String cpu) {
 		this.cpu = cpu;
 	}
 	public String getRam() {
