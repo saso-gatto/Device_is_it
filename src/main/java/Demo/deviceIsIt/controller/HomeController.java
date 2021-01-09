@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.persistance.DBManager;
 
@@ -30,6 +31,19 @@ public class HomeController {
 		System.out.println("lista device size: "+listadevice.size());
 		
 		return "specs";
+		
+	}
+	
+	@GetMapping("/news")	//Metodo che intercetta un href su index e carica la pagina
+	public String dammiNews(HttpSession session, Model model) {
+		
+		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
+		contenuti=DBManager.getInstance().ContenutoDAO().findAll();			
+		model.addAttribute("listaContenuto",contenuti);	
+				
+		System.out.println("lista device size: "+contenuti.size());
+		
+		return "news";
 		
 	}
 	

@@ -45,7 +45,7 @@
                     </div>
                 </div> 
                 <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche</a>
-                <a href="pagineProtette/news.jsp" class="nav-item nav-link">News</a>                             
+                <a href="news" class="nav-item nav-link">News</a>                             
             </div>
             
              <div class="mx-auto order-0">	             			 
