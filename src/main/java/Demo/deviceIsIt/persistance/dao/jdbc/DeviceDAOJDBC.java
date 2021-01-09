@@ -85,7 +85,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 			String query = "select * from device";
 			PreparedStatement st = con.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				Device device = new Device();
 				device.setIdDevice(rs.getInt("id_Device"));				
 				device.setModello(rs.getString("modello"));
@@ -101,7 +101,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setOs(rs.getString("os"));
 				device.setImg(rs.getString("img"));
 				devices.add(device);
-						
+					
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

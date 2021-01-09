@@ -31,7 +31,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #ffe084, #fff5d7);
+  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
 }
 
 #funfa{
