@@ -11,6 +11,5 @@ public interface ContenutoDAO {
 	public List<Contenuto> findAll();     //  select*
 	public void update(Contenuto c); //Update
 	public void delete(Contenuto c); //Delete	
-
 	
 }
