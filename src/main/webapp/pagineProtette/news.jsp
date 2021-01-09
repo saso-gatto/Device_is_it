@@ -36,17 +36,19 @@
    <p id="titolo" style="text-align:center"> Schede Tecniche</p>
 	
 	<section id="schede"> 	
-	 	<div class="jumbatron">
+	 	<div class="container">
 	 	<div class="row justify-content-center">   		
 		
-		   <div class="col-lg-4 col-md-6">
+		   <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+			   
+			   <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
                         <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
                                     <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
+                                    ${contenuto.data}
                                 </div>
                                 <div class="tag-item">
                                     <i class="fa fa-comment-o"></i>
@@ -54,12 +56,16 @@
                                 </div>
                             </div>
                             <a href="#">
-                                <h4> Huawei perde google! Cosa succede?</h4>
+                                <h4>${contenuto.titolo}</h4>
                             </a>
-                            <p> In casa Huawei qualcosa non va, addio servizi Google </p>
+                            <p>${contenuto.testo} </p>
                         </div>
                     </div>
                 </div>
+			   
+			   
+			   		   
+		   </c:forEach>
 		
 		</div>
 	  </div>
