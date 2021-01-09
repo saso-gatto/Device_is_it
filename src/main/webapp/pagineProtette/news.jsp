@@ -33,7 +33,7 @@
 	<div id="Navbar"></div>
     
    
-   <p id="titolo" style="text-align:center"> Schede Tecniche</p>
+   <p id="titolo" style="text-align:center"> News </p>
 	
 	<section id="schede"> 	
 	 	
@@ -42,8 +42,9 @@
 		
 		   <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   
-			   <div class="card">
-			   <div class="col-lg-4 col-md-6">
+			  
+			   <div class="col-lg-4 col-md-4">
+			    <div class="card">
                     <div class="single-latest-blog">
                         <img src="${contenuto.img}">
                         <div class="latest-text">

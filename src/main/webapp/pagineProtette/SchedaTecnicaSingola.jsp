@@ -6,38 +6,41 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+  	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
+  	
 <title>Scheda Tecnica</title>
 </head>
 <body>
 
-<%--  <c:forEach var="device" items="${device}">  --%>
+  
 	<div class="container">
 	
-	  <table class="table">
-	    <thead class="thead-light">
-	      <tr> Scheda Tecnica </tr>
-	    </thead>
-	    
-	    <tbody>
+	<div class="table-users">
+   <div class="header">Scheda Tecnica</div>
+   
+   <table cellspacing="0">
+   
+
 	    
 	      <tr>
 	      	<th>Modello</th>
-	      	<th>m</th>
+	      	<th>${device.modello}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Marca</th>
-	      	<th>m</th>
+	      	<th>marcaaaa</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Memoria</th>
-	      	<th>m</th>
+	      	<th>memoriaaa</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Ram</th>
-	      	<th>m</th>
+	      	<th>rammm</th>
 	      </tr>
 	      
 	      <tr>
@@ -73,7 +76,7 @@
 	    </tbody>
 	  </table>
 	</div>
-<%-- </c:forEach> --%>
+
 
 
 </body>
