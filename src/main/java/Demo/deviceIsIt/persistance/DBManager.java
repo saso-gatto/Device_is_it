@@ -2,8 +2,10 @@ package Demo.deviceIsIt.persistance;
 
 import Demo.deviceIsIt.persistance.dao.DeviceDAO;
 import Demo.deviceIsIt.persistance.dao.UtenteDAO;
+import Demo.deviceIsIt.persistance.dao.jdbc.ContenutoDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.DeviceDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.UtenteDAOJDBC;
+import Demo.deviceIsIt.persistance.dao.ContenutoDAO;
 
 public class DBManager {
 	
@@ -42,6 +44,9 @@ public class DBManager {
 	public DeviceDAO deviceDAO() {
 		return new DeviceDAOJDBC(dataSource);
 	}
-
+	
+	public ContenutoDAO ContenutoDAO() {
+		return new ContenutoDAOJDBC(dataSource);
+	}
 
 }

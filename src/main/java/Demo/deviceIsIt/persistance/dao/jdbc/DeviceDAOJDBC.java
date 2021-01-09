@@ -12,6 +12,7 @@ import Demo.deviceIsIt.persistance.DBSource;
 import Demo.deviceIsIt.persistance.dao.DeviceDAO;
 
 public class DeviceDAOJDBC implements DeviceDAO {
+	
 	DBSource dbSource;
 	
 	public DeviceDAOJDBC(DBSource dbSource) {
@@ -46,16 +47,16 @@ public class DeviceDAOJDBC implements DeviceDAO {
 	}
 
 	@Override
-	public Device findByPrimaryKey(int idDevice) {
-		Device device = null;
+	public Device findByPrimaryKey(Integer idDevice) {
+		Device device = new Device();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select * from device where id_Device=?";
+			String query = "select * from device where 'id_Device'=?;";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setInt(1, idDevice);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
-				device = new Device();
+				
 				device.setIdDevice(rs.getInt("id_Device"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
@@ -69,7 +70,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setPeso(rs.getString("peso"));
 				device.setOs(rs.getString("os"));
 				device.setImg(rs.getString("img"));
-
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

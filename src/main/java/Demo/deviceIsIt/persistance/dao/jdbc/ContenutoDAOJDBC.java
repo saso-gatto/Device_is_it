@@ -1,40 +1,48 @@
 package Demo.deviceIsIt.persistance.dao.jdbc;
 
 import java.util.List;
+import Demo.deviceIsIt.model.Contenuto;
+import Demo.deviceIsIt.persistance.DBSource;
+import Demo.deviceIsIt.persistance.dao.ContenutoDAO;
 
-import Demo.deviceIsIt.model.Commento;
-import Demo.deviceIsIt.persistance.dao.CommentoDAO;
+public class ContenutoDAOJDBC implements ContenutoDAO {
 
-public class ContenutoDAOJDBC implements CommentoDAO {
+	DBSource dbSource;
+	
+	public ContenutoDAOJDBC(DBSource dbSource) {
+		this.dbSource= dbSource;
+	}
 
 	@Override
-	public void save(Commento c) {
+	public void save(Contenuto c) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Commento findByPrimaryKey(int idCommento) {
+	public Contenuto findByPrimaryKey(int idContenuto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Commento> findAll() {
+	public List<Contenuto> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(Commento c) {
+	public void update(Contenuto c) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(Commento c) {
+	public void delete(Contenuto c) {
 		// TODO Auto-generated method stub
 		
 	}
+	
+
 
 }
