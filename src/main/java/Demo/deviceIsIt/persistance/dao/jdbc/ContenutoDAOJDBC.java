@@ -91,7 +91,8 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("cpu"));
-				contenuto.setTitolo(rs.getString("cpu"));																								
+				contenuto.setTitolo(rs.getString("cpu"));	
+				contenuto.setImg(rs.getString("img"));
 				contenuti.add(contenuto);
 			}
 		} catch (SQLException e) {
