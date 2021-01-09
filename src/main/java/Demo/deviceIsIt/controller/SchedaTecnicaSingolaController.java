@@ -19,6 +19,8 @@ public class SchedaTecnicaSingolaController {
 		
 		Device device=DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);		
 		
+		System.out.println("apertura cheda tecnica di: "+device.getModello());
+		
 		return "SchedaTecnicaSingola";
 		
 	}

@@ -36,7 +36,7 @@
    <p id="titolo" style="text-align:center"> Schede Tecniche</p>
 	
 	<section id="schede"> 	
-	 	<div class="container">
+	 	<div class="jumbatron">
 	 	<div class="row justify-content-center">   		
 		
 		   <div class="col-lg-4 col-md-6">

@@ -51,13 +51,13 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Device device = new Device();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select * from device where 'id_Device'=?;";
+			String query = "select * from device where 'idDevice'=?;";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setInt(1, idDevice);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
 				
-				device.setIdDevice(rs.getInt("id_Device"));				
+				device.setIdDevice(rs.getInt("idDevice"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
 				device.setTipoDevice(rs.getInt("tipoDevice"));
@@ -88,7 +88,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Device device = new Device();
-				device.setIdDevice(rs.getInt("id_Device"));				
+				device.setIdDevice(rs.getInt("idDevice"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
 				device.setTipoDevice(rs.getInt("tipoDevice"));
