@@ -9,7 +9,9 @@
 
   	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
   	
-<title>Scheda Tecnica</title>
+	<title>Scheda Tecnica</title>
+	<jsp:include page="./navbar.jsp" /> 
+	
 </head>
 <body>
 
