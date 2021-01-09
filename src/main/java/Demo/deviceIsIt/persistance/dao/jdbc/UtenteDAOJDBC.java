@@ -131,9 +131,9 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			if(!newu.getPassword().equals(""))
 				statement.setString(3, newu.getPassword());
 			if(!newu.getUsername().equals(""))
-				statement.setString(3, newu.getUsername());
+				statement.setString(4, newu.getUsername());
 			
-			statement.setString(4, old.getEmail());
+			statement.setString(5, old.getEmail());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {

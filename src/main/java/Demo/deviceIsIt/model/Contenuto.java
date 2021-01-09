@@ -8,6 +8,7 @@ public class Contenuto {
 	private String testo;
 	private String titolo;
 	private int tipo;
+	private String img;
 	
 	
 	public int getIdContenuto() {
@@ -45,6 +46,12 @@ public class Contenuto {
 	}
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	
