@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="#####" alt="">
+                        <img src="https://dday.imgix.net/system/uploads/news/main_image/38109/e9fdd6_gsmain.jpg?ar=702%3A360&fit=crop&auto=format%2Ccompress&w=1404&s=eb47faebea9974c90b935d70efba7bdc" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
@@ -78,17 +78,17 @@
                                     5
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="">
                                 <h4> Samsung S21, 3 modelli in uscita a fine gennaio</h4>
                             </a>
-                            <p> Galaxy S21, ci siamo. Il 14 gennaio Samsung presenterà finalmente la nuova gamma di smartphone top di gamma </p>
+                            <p> Galaxy S21, ci siamo. Il 14 gennaio Samsung presentera' finalmente la nuova gamma di smartphone top di gamma </p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="img/latest-2.jpg" alt="">
+                        <img src="https://www.saggiamente.com/wp-content/uploads/2020/04/macbookpro16-hero.jpg" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="img/latest-3.jpg" alt="">
+                        <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
@@ -197,51 +197,52 @@ function topFunction() {
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        <div align="center" class="footer-logo">
+                            <a href=""><img src="images/logo_deviceIsIt.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
+                            <li>Un team fantastico!</li>
+                            <li>Ci puoi trovare nelle sedi: </li>
+                            <li> - Reggio </li>
+                            <li> - Locri </li>
+                            <li> - Cosenza </li>
+                            <li> - Cittanova </li>
+                            
                         </ul>
-                        <div class="footer-social">
+                        <div align="center" class="footer-social">
+                        
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                           
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
+                    <div align="center" class="footer-widget">
+                        <h5>Informazioni</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
+                            <li><a href="#">Chi siamo</a></li>
+                            
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
+                    <div align="center" class="footer-widget">
+                        <h5>Account</h5>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Il mio Account </a></li>
+                           
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <h5>Iscriviti alla nostra Newsletter</h5>
+                        <p> Ricevi notifiche vie E-mail riguardo le ultime news e recensioni del mondo TECH </p>
                         <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
+                            <input type="text" placeholder="Inserisci la tua e-mail">
+                            <button type="button">Iscriviti</button>
                         </form>
                     </div>
                 </div>
