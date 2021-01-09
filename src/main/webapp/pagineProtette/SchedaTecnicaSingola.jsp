@@ -32,47 +32,47 @@
 	      
 	      <tr>
 	      	<th>Marca</th>
-	      	<th>marcaaaa</th>
+	      	<th>${device.marca}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Memoria</th>
-	      	<th>memoriaaa</th>
+	      	<th>${device.memoria}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Ram</th>
-	      	<th>rammm</th>
+	      	<th>${device.ram}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Display</th>
-	      	<th>m</th>
+	      	<th>${device.display}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Batteria</th>
-	      	<th>m</th>
+	      	<th>${device.batteria}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Fotocamera</th>
-	      	<th>m</th>
+	      	<th>${device.fotocamera}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>cpu</th>
-	      	<th>m</th>
+	      	<th>cpu</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>Peso</th>
-	      	<th>m</th>
+	      	<th>${device.peso}</th>
 	      </tr>
 	      
 	      <tr>
 	      	<th>OS</th>
-	      	<th>m</th>
+	      	<th>${device.os}</th>
 	      </tr>
 	      
 	    </tbody>

@@ -18,7 +18,7 @@ public class SchedaTecnicaSingolaController {
 	public String dammiDeviceByPrimaryKey(HttpSession session, Model model, @RequestParam Integer idDevice ) {		
 		
 		Device device=DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);		
-		
+		model.addAttribute(device);
 		System.out.println("apertura cheda tecnica di: "+device.getModello());
 		
 		return "SchedaTecnicaSingola";
