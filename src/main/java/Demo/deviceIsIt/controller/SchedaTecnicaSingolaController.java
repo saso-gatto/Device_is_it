@@ -15,14 +15,14 @@ public class SchedaTecnicaSingolaController {
 
 	
 	@PostMapping("/schedaTecnica")	//Metodo che intercetta una href su index e carica la pagina
-	public String dammiDeviceByPrimaryKey(HttpSession session, Model model, @RequestParam String idDevice ) {		
+	public String dammiDeviceByPrimaryKey(HttpSession session, Model model, @RequestParam Integer idDevice ) {		
 		
 //		Device device=DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);	
 		
 		System.out.println("idDevice: "+idDevice);
 		System.out.println("funfaaaaaaaaaa");
 		
-		return "schedaTecnicaSingola";
+		return "SchedaTecnicaSingola";
 		
 	}
 }

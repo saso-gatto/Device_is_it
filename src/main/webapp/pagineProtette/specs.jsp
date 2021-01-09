@@ -182,7 +182,7 @@
 				       <div class="card-body text-center">
 				          <h5 class="card-title">${device.modello}</h5> 
 				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
-				          	<input type="hidden" id="idDevice" name="idDevice" value=${device.modello}>			          	
+				          	<input type="hidden" id="idDevice" name="idDevice" value=${device.idDevice}>			          	
 	                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Vai alla scheda tecnica</button>
 	                       </form>			      	
 				      </div>      

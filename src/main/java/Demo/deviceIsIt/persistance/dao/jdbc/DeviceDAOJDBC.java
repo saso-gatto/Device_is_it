@@ -101,7 +101,6 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setOs(rs.getString("os"));
 				device.setImg(rs.getString("img"));
 				devices.add(device);
-					
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
