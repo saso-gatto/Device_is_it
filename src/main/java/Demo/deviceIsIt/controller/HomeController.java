@@ -15,21 +15,18 @@ import Demo.deviceIsIt.persistance.DBManager;
 @Controller
 public class HomeController {
 	
-	@GetMapping("/index")	//Metodo che intercetta una href su index e carica la pagina
+	@GetMapping("/index")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHome() {
 		return "index";
 	}
 	
-	@GetMapping("/schedeTecniche")	//Metodo che intercetta una href su index e carica la pagina
+	@GetMapping("/schedeTecniche")	//Metodo che intercetta un href su index e carica la pagina
 	public String dammiDevice(HttpSession session, Model model) {
 		
-		List<Device> listadevice= new ArrayList<Device>();
-		
-		listadevice=DBManager.getInstance().deviceDAO().findAll();
-		
+		List<Device> listadevice= new ArrayList<Device>();		
+		listadevice=DBManager.getInstance().deviceDAO().findAll();		
 		model.addAttribute("listaDevice",listadevice);	
-		
-		
+				
 		System.out.println("lista device size: "+listadevice.size());
 		
 		return "specs";
