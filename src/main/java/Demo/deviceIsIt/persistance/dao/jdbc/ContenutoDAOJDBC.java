@@ -43,31 +43,22 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 
 	@Override
 	public Contenuto findByPrimaryKey(int idContenuto) {
-		Contenuto contenuto = null;
+		Contenuto contenuto = new Contenuto();
 		
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where idContenuto=?";
+			String query = "select * from contenuto where id=?";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setInt(1, idContenuto);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
-				int idCont = rs.getInt("idContenuto");
-				String data = rs.getString("data");
-				int tipo = rs.getInt("tipologia");
-				int device = rs.getInt("device");
-				String testo = rs.getString("testo");
-				String titolo = rs.getString("titolo");
-				String img = rs.getString("img");
-				
-				contenuto.setIdContenuto(idCont);
-				contenuto.setData(data);
-				contenuto.setTipo(tipo);
-				contenuto.setDevice(device);
-				contenuto.setTesto(testo);
-				contenuto.setTitolo(titolo);
-				contenuto.setImg(img);
-				
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));				
 			}
 			
 		} catch (SQLException e) {
@@ -86,7 +77,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();						
-				contenuto.setIdContenuto(rs.getInt("idContenuto"));		
+				contenuto.setIdContenuto(rs.getInt("id"));		
 				contenuto.setData(rs.getString("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
@@ -136,7 +127,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM contenuto WHERE idContenuto=? ";
+			String delete = "delete FROM contenuto WHERE id=? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setInt(1, c.getIdContenuto());
 			statement.executeUpdate();
@@ -150,6 +141,84 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
+	}
+
+	@Override
+	public List<Contenuto> findByTipology(Integer tipologia) {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from contenuto where id=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setInt(1, tipologia);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
+	@Override
+	public List<Contenuto> findRecensioniPc() {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select contenuto.* from contenuto, device where contenuto.tipologia=1 and contenuto.device=device.id and device.tipodevice=2;";
+			PreparedStatement st = conn.prepareStatement(query);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));	
+				contenuti.add(contenuto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
+	@Override
+	public List<Contenuto> findRecensioniSmartphone() {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query ="select contenuto.* from contenuto, device where contenuto.tipologia=1 and contenuto.device=device.id and device.tipodevice=1;";
+			PreparedStatement st = conn.prepareStatement(query);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));	
+				contenuti.add(contenuto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
 	}
 	
 

@@ -63,7 +63,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setIdDevice(rs.getInt("id"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
-				device.setTipoDevice(rs.getInt("tipoDevice"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
 				device.setMemoria(rs.getString("memoria"));
 				device.setRam(rs.getString("ram"));
 				device.setDisplay(rs.getString("display"));
@@ -94,7 +94,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setIdDevice(rs.getInt("id"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
-				device.setTipoDevice(rs.getInt("tipoDevice"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
 				device.setMemoria(rs.getString("memoria"));
 				device.setRam(rs.getString("ram"));
 				device.setDisplay(rs.getString("display"));
@@ -163,5 +163,37 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
+	}
+
+	@Override
+	public List<Device> findByTipology(Integer tipologia) {
+		List<Device> devices = new ArrayList <Device>();
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select * from device where tipodevice=?;";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setInt(1, tipologia);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				Device device = new Device();
+				device.setIdDevice(rs.getInt("id"));				
+				device.setModello(rs.getString("modello"));
+				device.setMarca(rs.getString("marca"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
+				device.setMemoria(rs.getString("memoria"));
+				device.setRam(rs.getString("ram"));
+				device.setDisplay(rs.getString("display"));
+				device.setBatteria(rs.getString("batteria"));
+				device.setFotocamera(rs.getString("fotocamera"));
+				device.setCPU(rs.getString("cpu"));
+				device.setPeso(rs.getString("peso"));
+				device.setOs(rs.getString("os"));
+				device.setImg(rs.getString("img"));
+				devices.add(device);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return devices;
 	}
 }

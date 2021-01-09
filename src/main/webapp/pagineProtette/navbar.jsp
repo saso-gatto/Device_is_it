@@ -40,8 +40,8 @@
                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Recensioni</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Smartphone</a>
-                        <a href="#" class="dropdown-item">Computer</a>                      
+                        <a href="recensioniSmartphone" class="dropdown-item">Smartphone</a>
+                        <a href="recensioniPc" class="dropdown-item">Computer</a>                      
                     </div>
                 </div> 
                 <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche</a>

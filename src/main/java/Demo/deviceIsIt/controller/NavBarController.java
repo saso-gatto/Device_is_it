@@ -14,7 +14,7 @@ import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @Controller
-public class HomeController {
+public class NavBarController {
 	
 	@GetMapping("/index")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHome() {
@@ -45,6 +45,29 @@ public class HomeController {
 		
 		return "news";
 		
+	}
+	
+	@GetMapping("/recensioniPc")	//Metodo che intercetta un href su index e carica la pagina
+	public String dammiRecensioniPc(HttpSession session, Model model) {
+		
+		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
+		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniPc();
+		model.addAttribute("listaContenuto",contenuti);	
+		
+		System.out.println("numero recensioni computer: "+contenuti.size());
+		return "RecensioniComputer";
+	}
+	
+
+	@GetMapping("/recensioniSmartphone")	//Metodo che intercetta un href su index e carica la pagina
+	public String dammiRecensioniSmartphone(HttpSession session, Model model) {
+		
+		List<Contenuto> contenuti= new ArrayList<Contenuto>();
+		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniSmartphone();
+		model.addAttribute("listaContenuto",contenuti);	
+		
+		System.out.println("numero recensioni smartphone: "+contenuti.size());
+		return "RecensioniSmartphone";
 	}
 	
 
