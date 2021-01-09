@@ -140,6 +140,83 @@
 
 
 
+<!-- Team Section Begin -->
+
+
+
+    <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title team__title">
+                        <span>Chi siamo</span>
+                        <h2>Il nostro Team</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item">
+                    <img src="images/davide.jpg" alt="team img">
+                        <div class="team__item__text">
+                            <h4>Davide Ragona</h4>
+                            <p></p>
+                            <div class="team__item__social" align="center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item">
+                    <img src="images/salvatore.jpg" alt="team img">
+                        <div class="team__item__text">
+                            <h4>Salvatore Gatto</h4>
+                            <p></p>
+                            <div class="team__item__social" align="center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                   <div class="team__item">
+                   <img src="images/debora.jpg" alt="team img">
+                        <div class="team__item__text">
+                            <h4>Debora Ippolito</h4>
+                            <p></p>
+                            <div class="team__item__social" align="center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item">
+                    <img src="images/caterina.jpg" alt="team img">
+                        <div class="team__item__text">
+                            <h4>Caterina Gerace</h4>
+                            <p></p>
+                            <div class="team__item__social" align="center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
 
 
 

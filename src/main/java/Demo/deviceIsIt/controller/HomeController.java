@@ -29,8 +29,8 @@ public class HomeController {
 		
 		model.addAttribute("listaDevice",listadevice);	
 		
-		for( int i=0; i<listadevice.size(); i++)
-			System.out.println(i);
+		
+		System.out.println("lista device size: "+listadevice.size());
 		
 		return "specs";
 		

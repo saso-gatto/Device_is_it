@@ -173,7 +173,7 @@
 			
 		
 	   <c:forEach var="device" items="${listaDevice}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
-	  
+
 		   <div class="col-md-4 col-lg-3">
 				    <div class="card">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
