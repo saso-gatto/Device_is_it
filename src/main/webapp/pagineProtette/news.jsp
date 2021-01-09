@@ -36,14 +36,16 @@
    <p id="titolo" style="text-align:center"> Schede Tecniche</p>
 	
 	<section id="schede"> 	
-	 	<div class="container">
+	 	
+	 	
 	 	<div class="row justify-content-center">   		
 		
 		   <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   
+			   <div class="card">
 			   <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt="">
+                        <img src="${contenuto.img}">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
@@ -62,12 +64,12 @@
                         </div>
                     </div>
                 </div>
-			   
+			   </div>
 			   
 			   		   
 		   </c:forEach>
 		
-		</div>
+		
 	  </div>
     </section>
     
