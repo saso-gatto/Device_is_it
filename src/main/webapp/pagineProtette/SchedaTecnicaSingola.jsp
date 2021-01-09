@@ -19,8 +19,9 @@
 	<div class="container">
 	
 	<div class="table-users">
-   <div class="header">Scheda Tecnica</div>
-   
+   <div class="header">Scheda Tecnica
+   <img src="images/iphone11.png"></div>
+<%--    <img src="${device.img}"></div> --%>
    <table cellspacing="0">
    
 
@@ -77,8 +78,9 @@
 	      
 	    </tbody>
 	  </table>
+	  
+	  
 	</div>
-
 
 
 </body>
