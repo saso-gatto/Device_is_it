@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item">
+                    <div class="team__item team__item--second set-bg">
                     <img src="images/salvatore.jpg" alt="team img">
                         <div class="team__item__text">
                             <h4>Salvatore Gatto</h4>
@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                   <div class="team__item">
+                   <div class="team__item team__item--third set-bg">
                    <img src="images/debora.jpg" alt="team img">
                         <div class="team__item__text">
                             <h4>Debora Ippolito</h4>
@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item">
+                    <div class="team__item team__item--four set-bg">
                     <img src="images/caterina.jpg" alt="team img">
                         <div class="team__item__text">
                             <h4>Caterina Gerace</h4>
