@@ -2,7 +2,7 @@ package Demo.deviceIsIt.model;
 
 public class Contenuto {
 	
-	private int idContenuto;
+	private int id;
 	private String data;
 	private int device;
 	private String testo;
@@ -11,11 +11,11 @@ public class Contenuto {
 	private String img;
 	
 	
-	public int getIdContenuto() {
-		return idContenuto;
+	public int getid() {
+		return id;
 	}
-	public void setIdContenuto(int idContenuto) {
-		this.idContenuto = idContenuto;
+	public void setIdContenuto(int id) {
+		this.id = id;
 	}
 	public String getData() {
 		return data;

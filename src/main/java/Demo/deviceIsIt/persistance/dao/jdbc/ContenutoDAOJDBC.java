@@ -27,7 +27,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 
 			String query = "insert into contenuto values(?,?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, contenuto.getIdContenuto());
+			st.setInt(1, contenuto.getid());
 			st.setString(2, contenuto.getData());
 			st.setInt(3, contenuto.getTipo());
 			st.setInt(4, contenuto.getDevice());
@@ -107,7 +107,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			statement.setString(5, c.getTitolo());
 			statement.setString(6, c.getImg());
 			
-			statement.setInt(7, c.getIdContenuto());
+			statement.setInt(7, c.getid());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -129,7 +129,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			connection = this.dbSource.getConnection();
 			String delete = "delete FROM contenuto WHERE id=? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, c.getIdContenuto());
+			statement.setInt(1, c.getid());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
