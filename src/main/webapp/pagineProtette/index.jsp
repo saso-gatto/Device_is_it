@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            
+            <!--  
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
@@ -112,8 +112,38 @@
                     </div>
                 </div>
             </div>
-            
-                                       
+            -->
+         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+			   
+			  
+			   <div class="col-lg-4 col-md-4">
+			    <div class="card">
+                    <div class="single-latest-blog">
+                        <img src="${contenuto.img}">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    ${contenuto.data}
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            	<h4>${contenuto.titolo}</h4>
+                            		<form id="formArticolo" method="post" action="Contenuto">
+                            		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
+                            		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Clicca qui</button>
+                            		</form>
+                            <p>${contenuto.anteprima} </p>
+                        </div>
+                    </div>
+                </div>
+			   </div>
+			   
+			   		   
+		   </c:forEach>                            
 
         </div>
     </section>

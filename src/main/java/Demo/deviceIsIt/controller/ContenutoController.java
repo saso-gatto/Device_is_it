@@ -17,7 +17,7 @@ public class ContenutoController {
 	public String getContenuto(HttpSession session, Model model, @RequestParam Integer id) {
 		
 		Contenuto cont = DBManager.getInstance().ContenutoDAO().findByPrimaryKey(id);
-		System.out.println("sono nel getContenuto");
+
 		model.addAttribute(cont);
 		return "ContenutoRichiesto";
 	}

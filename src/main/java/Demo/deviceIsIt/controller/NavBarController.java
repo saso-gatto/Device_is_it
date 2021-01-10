@@ -17,7 +17,13 @@ import Demo.deviceIsIt.persistance.DBManager;
 public class NavBarController {
 	
 	@GetMapping("/index")	//Metodo che intercetta un href su index e carica la pagina
-	public String getHome() {
+	public String getHome(HttpSession session, Model model) {
+		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
+		contenuti=DBManager.getInstance().ContenutoDAO().findLastThree();			
+		model.addAttribute("ultimeTre",contenuti);	
+				
+		System.out.println("lista device size: "+contenuti.size());
+				
 		return "index";
 	}
 	
@@ -28,8 +34,7 @@ public class NavBarController {
 		listadevice=DBManager.getInstance().deviceDAO().findAll();		
 		model.addAttribute("listaDevice",listadevice);	
 				
-		System.out.println("lista device size: "+listadevice.size());
-		
+	
 		return "specs";
 		
 	}
@@ -41,7 +46,6 @@ public class NavBarController {
 		contenuti=DBManager.getInstance().ContenutoDAO().findAll();			
 		model.addAttribute("listaContenuto",contenuti);	
 				
-		System.out.println("lista device size: "+contenuti.size());
 		
 		return "news";
 		
