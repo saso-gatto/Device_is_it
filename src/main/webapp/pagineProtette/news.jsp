@@ -9,8 +9,8 @@
 	
 	<title>Device is it</title>
 
-  	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
-  	<link rel="stylesheet" href="css/news.css" type="text/css"/>
+
+  	<link rel="stylesheet" href="css/news2.css" type="text/css"/>
   	<jsp:include page="./navbar.jsp" /> 
 
 </head>
@@ -20,41 +20,29 @@
 	
 	<section id="schede"> 	
 	 		 	
-	 	<div class="row justify-content-center">   		
+	 	<div class="container">
+    		<div class="card-columns">  		
 		
 		   <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
-			   			  
-			   <div class="col-lg-4 col-md-4">
-			    <div class="card">
-                    <div class="single-latest-blog">
-                        <img src="${contenuto.img}">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    ${contenuto.data}
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>                            	
-                        		<form id="formArticolo" method="post" action="Contenuto">
-	                         		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
-	                         		<button type="submit">${contenuto.titolo}</button>
-                        		</form>
-                            <p>${contenuto.anteprima} </p>
-                        </div>
-                    </div>
-                </div>
-			   </div>
-			   
-			   		   
+			  
+						<div class="card">
+					        <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
+					        <div class="card-body">
+					          <h5 class="card-title">${contenuto.titolo}</h5>
+					          <p class="card-text">
+					            ${contenuto.anteprima}
+					           </p>
+					          <p class="card-text"><i class="fas fa-calendar-alt"></i>${contenuto.data}</p>
+					      </div>
+					</div>	
+					    
+	   
 		   </c:forEach>
-		
-		
-	  </div>
-    </section>
+		 
+		  	</div>
+		  </div>
+	 </section>
     
+ 
 </body>
 </html>
