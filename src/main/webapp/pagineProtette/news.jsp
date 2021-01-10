@@ -8,25 +8,22 @@
 <meta charset="ISO-8859-1">
 	
 	<title>Device is it</title>
-  	
+
+  	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/news.css" type="text/css"/>
   	<jsp:include page="./navbar.jsp" /> 
 
 </head>
 <body>
 	
-	<div id="Navbar"></div>
-    
-   
    <p id="titolo" style="text-align:center"> News </p>
 	
 	<section id="schede"> 	
-	 	
-	 	
+	 		 	
 	 	<div class="row justify-content-center">   		
 		
 		   <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
-			   
-			  
+			   			  
 			   <div class="col-lg-4 col-md-4">
 			    <div class="card">
                     <div class="single-latest-blog">
@@ -41,12 +38,11 @@
                                     <i class="fa fa-comment-o"></i>
                                     5
                                 </div>
-                            </div>
-                            	<h4>${contenuto.titolo}</h4>
-                            		<form id="formArticolo" method="post" action="Contenuto">
-                            		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
-                            		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Clicca qui</button>
-                            		</form>
+                            </div>                            	
+                        		<form id="formArticolo" method="post" action="Contenuto">
+	                         		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
+	                         		<button type="submit">${contenuto.titolo}</button>
+                        		</form>
                             <p>${contenuto.anteprima} </p>
                         </div>
                     </div>
