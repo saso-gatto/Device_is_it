@@ -10,7 +10,7 @@
   <title>Device is it</title>
 
 
-    <link rel="stylesheet" href="css/news2.css" type="text/css"/>
+    <link rel="stylesheet" href="css/news.css" type="text/css"/>
     <jsp:include page="./navbar.jsp" /> 
 
 </head>

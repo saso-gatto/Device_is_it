@@ -86,11 +86,15 @@
 .comment span,
 .darker p,
 .darker span {
-    color: black; /* colore testo commneto*/
+    color: rgb(0, 0, 0); /* colore testo commneto*/
+}
+
+h4 {
+	color: rgb(0, 0, 0);
+	font-weight: bold
 }
 
 h1,
-h4,
 h3 {
     color: orange;
     font-weight: bold

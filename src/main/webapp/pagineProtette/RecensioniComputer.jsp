@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
    
-    <link rel="stylesheet" href="css/home.css" type="text/css"/>
+    <link rel="stylesheet" href="css/specs.css" type="text/css"/>
     
     <title>Device Is It</title> 
 	<jsp:include page="./navbar.jsp" /> 	
