@@ -25,7 +25,7 @@
 </head>
 <body>
 <!-- NAVBAR -->
-	<div id="daCaricare">
+	
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">   
         <!-- logo -->
        <a href="index" id="logo">Device Is It</a> 
@@ -173,6 +173,6 @@
          </div>
       </div>
     </div>
-    </div> 
+
 </body>
 </html>

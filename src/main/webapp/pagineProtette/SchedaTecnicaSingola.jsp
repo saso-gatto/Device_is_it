@@ -16,16 +16,15 @@
 <body>
 
   
-	<div class="container">
+  <div class="container">
 	
 	<div class="table-users">
-   <div class="header">Scheda Tecnica
-   <img src="images/iphone11.png"></div>
-<%--    <img src="${device.img}"></div> --%>
-   <table cellspacing="0">
-   
-
-	    
+	  <div class="header">
+	     Scheda Tecnica
+	     <img src="${device.img}">
+	  </div>
+	  <table>
+  
 	      <tr>
 	      	<th>Modello</th>
 	      	<th>${device.modello}</th>
@@ -62,8 +61,8 @@
 	      </tr>
 	      
 	      <tr>
-	      	<th>cpu</th>
-	      	<th>cpu</th>
+	      	<th>CPU</th>
+	      	<th>${device.CPU}</th>
 	      </tr>
 	      
 	      <tr>
@@ -78,9 +77,8 @@
 	      
 	    </tbody>
 	  </table>
-	  
-	  
 	</div>
+ </div>
 
 
 </body>
