@@ -5,13 +5,13 @@ window.addEventListener("load", function(){ //"load"-->al caricamento della pagi
 
 function  checklogin(){
 	 
-	$("#signup").click(function() {	
+	$("#registrati").click(function() {	
 		$("#first").fadeOut("fast", function() {
 			$("#second").fadeIn("fast");
 		});
 	});
 	
-	$("#signin").click(function() {
+	$("#accedi").click(function() {
 		$("#second").fadeOut("fast", function() {
 			$("#first").fadeIn("fast");
 		});

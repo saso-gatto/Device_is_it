@@ -169,4 +169,24 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		}
 	}
 
+	@Override
+	public String findPassword(String email) {
+		String password=null;
+		
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select utente.password from utente where email=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, email);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				password = rs.getString("password");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return password;
+	}
+
 }

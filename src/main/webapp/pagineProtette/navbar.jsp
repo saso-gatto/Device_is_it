@@ -11,6 +11,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
   	
   	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icone bootstrap -->
   	<link rel="stylesheet" href="css/news.css" type="text/css"/>
   	<link rel="stylesheet" href="css/home.css" type="text/css"/>
+  	
   	
   	<script src="/js/login.js"></script>  	
 
@@ -62,11 +64,26 @@
             
    			<div class="navbar-nav">   			
 	   			<c:if test="${usernameLogged == null}">  <!--  se non c'è un username loggato mostrami il login -->
-	    			<i id="loginIcon" class="fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
+	    			<i class="loginIcon fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
 	    		</c:if>
 	    		<c:if test="${usernameLogged != null}"> <!-- se c'è un username loggato -->
-	    			Utente loggato: ${usernameLogged}
-	    			<a href="doLogout"> Logout </a>
+
+
+<%-- 	    			Utente loggato: ${usernameLogged} --%>
+
+	    			<div class="navbar-nav">             
+               			<div class="nav-item dropdown">
+		    			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+							<i class='loginIcon fas fa-house-user' style='font-size:30px'></i>
+						</a>
+	                    <div class="dropdown-menu">
+	                        <a href="profilo" class="dropdown-item">Profilo</a>
+	                        <a href="doLogout" class="dropdown-item"> Logout </a>	        
+	                    </div>		
+	                  </div>
+	               </div>
+	               
+	               
 	    		</c:if>   			   			                                                                                         
             </div>
             
@@ -133,7 +150,7 @@
                            <h1 class="titolo-loginForm">Registrati</h1>
                         </div>
                      </div>                        
-                     <form method="post" action="home/Iscrizione" >
+                     <form method="post" action="Iscrizione" >
                         <div class="form-group">
                            <label for="exampleInputEmail1">Nome</label>
                            <input type="text"  name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Inserisci Nome" required>
@@ -156,7 +173,7 @@
                         </div>
                         <div class="form-check-inline"> 
                         	<p class="newsletter"> Iscriviti alla newsletter </p>     						           
-        				    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter" value="something" checked>
+        				    <input type="checkbox" class="form-check-input" id="newsletter" value="false" checked="true" name="newsletter">
    						 </div>
                         <div class="col-md-12 text-center mb-3">
                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>

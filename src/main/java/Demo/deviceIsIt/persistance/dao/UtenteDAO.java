@@ -11,4 +11,5 @@ public interface UtenteDAO {
 	public List<Utente> findAll();     //  select*
 	public void update(Utente old, Utente newu); //Update
 	public void delete(Utente utente); //Delete	
+	public String findPassword(String email);
 }
