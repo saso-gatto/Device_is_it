@@ -19,7 +19,7 @@ public class SchedaTecnicaSingolaController {
 		
 		Device device=DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);		
 		model.addAttribute(device);
-		System.out.println("apertura cheda tecnica di: "+device.getModello());
+		System.out.println("apertura scheda tecnica di: "+device.getModello()+", CPU: "+device.getCPU());
 		
 		return "SchedaTecnicaSingola";
 		

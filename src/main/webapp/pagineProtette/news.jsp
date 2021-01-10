@@ -42,10 +42,12 @@
                                     5
                                 </div>
                             </div>
-                            <a href="#">
-                                <h4>${contenuto.titolo}</h4>
-                            </a>
-                            <p>${contenuto.testo} </p>
+                            	<h4>${contenuto.titolo}</h4>
+                            		<form id="formArticolo" method="post" action="Contenuto">
+                            		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
+                            		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Clicca qui</button>
+                            		</form>
+                            <p>${contenuto.anteprima} </p>
                         </div>
                     </div>
                 </div>

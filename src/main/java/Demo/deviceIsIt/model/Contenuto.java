@@ -2,20 +2,21 @@ package Demo.deviceIsIt.model;
 
 public class Contenuto {
 	
-	private int idContenuto;
+	private int id;
 	private String data;
 	private int device;
 	private String testo;
 	private String titolo;
 	private int tipo;
 	private String img;
+	private String anteprima;
 	
 	
-	public int getIdContenuto() {
-		return idContenuto;
+	public int getid() {
+		return id;
 	}
-	public void setIdContenuto(int idContenuto) {
-		this.idContenuto = idContenuto;
+	public void setIdContenuto(int id) {
+		this.id = id;
 	}
 	public String getData() {
 		return data;
@@ -54,6 +55,13 @@ public class Contenuto {
 		this.img = img;
 	}
 	
+	public void setAnteprima (String anteprima) {
+		this.anteprima= anteprima;
+	}
+	
+	public String getAnteprima() {
+		return anteprima;
+	}
 	
 
 }
