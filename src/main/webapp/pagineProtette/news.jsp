@@ -47,7 +47,7 @@
                             		<input type="hidden" id="id" name="id" value=${contenuto.id}>			          	
                             		<button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Clicca qui</button>
                             		</form>
-                            <p>${contenuto.testo} </p>
+                            <p>${contenuto.anteprima} </p>
                         </div>
                     </div>
                 </div>

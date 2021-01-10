@@ -6,18 +6,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
   	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
-  	
 	<title>Scheda Tecnica</title>
 	<jsp:include page="./navbar.jsp" /> 
-	
 </head>
 <body>
 
   
   <div class="container">
-	
 	<div class="table-users">
 	  <div class="header">
 	     Scheda Tecnica

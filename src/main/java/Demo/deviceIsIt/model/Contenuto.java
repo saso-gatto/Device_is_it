@@ -9,6 +9,7 @@ public class Contenuto {
 	private String titolo;
 	private int tipo;
 	private String img;
+	private String anteprima;
 	
 	
 	public int getid() {
@@ -54,6 +55,13 @@ public class Contenuto {
 		this.img = img;
 	}
 	
+	public void setAnteprima (String anteprima) {
+		this.anteprima= anteprima;
+	}
+	
+	public String getAnteprima() {
+		return anteprima;
+	}
 	
 
 }
