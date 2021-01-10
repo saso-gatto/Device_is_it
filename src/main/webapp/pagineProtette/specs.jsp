@@ -8,14 +8,11 @@
 <meta charset="ISO-8859-1">
 	<title>Device is it</title>
 
-  	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/news.css" type="text/css"/>
   	<jsp:include page="./navbar.jsp" /> 
   	
 </head>
 <body>
-	
-	<div id="Navbar"></div>
-    
    
    <p id="titolo" style="text-align:center"> Schede Tecniche</p>
 	
