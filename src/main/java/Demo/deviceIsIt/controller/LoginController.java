@@ -34,4 +34,20 @@ public class LoginController {
 			return "index";
 	}
 	
+	
+//	@PostMapping("home/Iscrizione")	
+//	public String Registrazione(HttpSession session, @RequestParam String email, @RequestParam String password) {
+//			
+//		System.out.println(email+" "+password);
+//					
+////			if(loginOk(email, password)) {
+//				session.setAttribute("usernameLogged", email);
+////			}	
+//			return "index";			
+//	}
+	
+	
+	
+	
+	
 }

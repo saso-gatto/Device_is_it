@@ -93,15 +93,15 @@
 						</div>
 	                   <form method="post" action="login">            
 	                           <div class="form-group ">
-	                              <label for="exampleInputEmail1">Email address</label>
-	                              <input type="email" name="email"  class="form-control"  id="email" aria-describedby="emailHelp" placeholder="Enter email"  required>
+	                              <label for="exampleInputEmail1">Email</label>
+	                              <input type="email" name="email"  class="form-control"  id="email" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
 	                           </div>
 	                           <div class="form-group">
 	                              <label for="exampleInputEmail1">Password</label>
-	                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password" required>
+	                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
 	                           </div>
 	                           <div class="form-group">
-	                              <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+	                              <p class="text-center">Registrandoti accetti i nostri <a href="#">Termini d'uso</a></p>
 	                           </div>
 	                           <div class="col-md-12 text-center ">
 	                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
@@ -115,12 +115,12 @@
 	                           <div class="col-md-12 mb-3">
 	                              <p class="text-center">
 	                                 <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-	                                 </i> Signup using Google
+	                                 </i> Registrati usando Google
 	                                 </a>
 	                              </p>
 	                           </div>
 	                           <div class="form-group">
-	                              <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
 	                           </div>
 	                        </form>	                 
 					</div>
@@ -131,40 +131,40 @@
                      <div class="logo mb-3">
                         <div class="col-md-12 text-center">
                            <button type="button" class="close" data-dismiss="modal">×</button>
-                           <h1 class="titolo-loginForm">Signup</h1>
+                           <h1 class="titolo-loginForm">Registrati</h1>
                         </div>
                      </div>                        
                      <form method="post" action="home/Iscrizione" >
                         <div class="form-group">
-                           <label for="exampleInputEmail1">First Name</label>
-                           <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter Firstname" required>
+                           <label for="exampleInputEmail1">Nome</label>
+                           <input type="text"  name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Inserisci Nome" required>
                         </div>
                         <div class="form-group">
-                           <label for="exampleInputEmail1">Last Name</label>
-                           <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter Lastname" required>
+                           <label for="exampleInputEmail1">Cognome</label>
+                           <input type="text"  name="cognome" class="form-control" id="cognome" aria-describedby="emailHelp" placeholder="Inserisci Cognome" required>
                         </div>
                         <div class="form-group">
                            <label for="exampleInputEmail1">Username</label>
-                           <input type="text"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username" required>
+                           <input type="text"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Inserisci username" required>
                         </div>
                         <div class="form-group">
-                           <label for="exampleInputEmail1">Email address</label>
-                           <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                           <label for="exampleInputEmail1">Email</label>
+                           <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Inserisci email" required>
                         </div>
                         <div class="form-group">
                            <label for="exampleInputEmail1">Password</label>
-                           <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                           <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password">
                         </div>
                         <div class="form-check-inline"> 
                         	<p class="newsletter"> Iscriviti alla newsletter </p>     						           
-        				    <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>
+        				    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter" value="something" checked>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
-                           <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+                           <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>
                         </div>                        
                         <div class="col-md-12 ">
                            <div class="form-group">
-                              <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                              <p class="text-center"><a href="#" id="accedi">Hai gia' un account?</a></p>
                            </div>
                         </div>
                       </form>
