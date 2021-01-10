@@ -10,25 +10,19 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<<<<<<< HEAD
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-=======
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   	
-  	<script src="Scripts/umd/popper.min.js"></script>
->>>>>>> branch 'master' of https://github.com/Caterina5/Device_is_it.git
-  	
+
   	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">  <!-- font-family: 'Kaushan Script', cursive; -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icone bootstrap -->
+  	
   	<link rel="stylesheet" href="css/news.css" type="text/css"/>
   	<link rel="stylesheet" href="css/home.css" type="text/css"/>
   	
-  	
   	<script src="/js/login.js"></script>  	
 
-  	
 </head>
 <body>
 <!-- NAVBAR -->
