@@ -119,7 +119,7 @@
 	                              </p>
 	                           </div>
 	                           <div class="form-group">
-	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Sign up here</a></p>
+	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
 	                           </div>
 	                        </form>	                 
 					</div>
