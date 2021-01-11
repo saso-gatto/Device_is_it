@@ -39,9 +39,20 @@
 		                              <button type="submit">Continua a leggere</button>
 		                </form>
           </div>  
-              
-     
-       </c:forEach>
+          </c:forEach>
+          
+          <!-- MIA PARTE DA FINIRE (listaContenuti...tutti al plurale)-->
+          
+          <c:forEach var="articolo" items="${listaArticoli}"> 
+	          <div class="card">
+				  <h5 class="card-header">${articolo.titolo}</h5>
+				  <div class="card-body">
+				    <p class="card-text"><i class="fas fa-calendar-alt"></i>${articolo.anteprima}</p>
+				    <a href="#" class="btn btn-primary">Continua a leggere</a>
+				  </div>
+			  </div>  
+     	</c:forEach>
+       
      
         </div>
       </div>
