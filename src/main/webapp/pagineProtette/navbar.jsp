@@ -49,16 +49,18 @@
                 <a href="news" class="nav-item nav-link">News</a>                             
             </div>
             
+            <form method="post" action="cerca">
              <div class="mx-auto order-0">	             			 
 	   			 <div class="form-inline my-lg-0">
   					<div class="input-group "> 
-  						<input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+  						<input class="form-control mr-sm-1" id="daCercare" name="daCercare" type="search" placeholder="Cerca" aria-label="Cerca" required>
       					<div class="input-group-append"> 
-      						<button type="button" class="btn btn-outline-warning">cerca</button>	
+      						<button type="submit" class="btn btn-outline-warning">cerca</button>	
       					</div>
     				</div>
    			 	</div>	   			 
-   			 </div>    			 	 		       		
+   			 </div>    		
+   			 </form>	 	 		       		
    			
             
    			<div class="navbar-nav">   			

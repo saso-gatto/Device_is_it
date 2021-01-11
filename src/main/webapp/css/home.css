@@ -11,25 +11,15 @@
 
 #text_head,h1{
 	font-size: 55px;
-	padding-top:50px;
-	padding-right:50px;	
-	text-shadow: -1px 0 #443713, 0 1px #fec503, 1px 0 #463914, 0 -1px #563708;
-}
-
-#text_head,h2{
-	font-size: 45px;
+	padding-top:50px;	
 	font-family: Droid Serif;
 	color:white;
 	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
 
 body {
-  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
+  background: linear-gradient(127deg,  #fff5d7, rgb(249, 198, 85));
 }
-
-
-
-
 
 
 /*------------------------------------------------------------------

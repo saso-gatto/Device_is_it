@@ -15,9 +15,7 @@
 </head>
 <body>
 
-
 	<p id="titolo" style="text-align:center"> Recensioni Smartphone</p>
-
 
  <div>
  

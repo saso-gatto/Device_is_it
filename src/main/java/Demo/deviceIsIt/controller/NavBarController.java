@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
@@ -79,6 +81,13 @@ public class NavBarController {
 		
 		System.out.println("numero recensioni smartphone: "+contenuti.size());
 		return "RecensioniSmartphone";
+	}
+	
+	@PostMapping("cerca")	
+	public String risultatiRicerca(HttpSession session, @RequestParam String daCercare) {
+						
+		System.out.println("se sei quuì sei vivo: "+daCercare);
+		return "risultatiRicerca";			
 	}
 	
 
