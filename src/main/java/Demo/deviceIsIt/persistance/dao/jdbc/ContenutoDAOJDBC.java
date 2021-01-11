@@ -250,6 +250,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				contenuto.setImg(rs.getString("img"));
 				contenuto.setAnteprima(rs.getString("anteprima"));
 
+				contenuti.add(contenuto);
 			}
 			
 		} catch (SQLException e) {

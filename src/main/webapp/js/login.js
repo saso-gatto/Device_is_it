@@ -3,6 +3,7 @@ window.addEventListener("load", function(){ //"load"-->al caricamento della pagi
 	checklogin();
 });
 
+
 function  checklogin(){
 	 
 	$("#registrati").click(function() {	

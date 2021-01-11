@@ -45,77 +45,77 @@
                     </div>
                 </div>
             </div>
-            <!--  
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="https://dday.imgix.net/system/uploads/news/main_image/38109/e9fdd6_gsmain.jpg?ar=702%3A360&fit=crop&auto=format%2Ccompress&w=1404&s=eb47faebea9974c90b935d70efba7bdc" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Gen 8,2021
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href="">
-                                <h4> Samsung S21, 3 modelli in uscita a fine gennaio</h4>
-                            </a>
-                            <p> Galaxy S21, ci siamo. Il 14 gennaio Samsung presentera' finalmente la nuova gamma di smartphone top di gamma </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="https://www.saggiamente.com/wp-content/uploads/2020/04/macbookpro16-hero.jpg" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> Nuova uscita Macbook Pro 16 con chip M1X</h4>
-                            </a>
-                            <p> Apple Silicon in fase di test: possibile debutto sul MacBook Pro 16 </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> Huawei perde google! Cosa succede?</h4>
-                            </a>
-                            <p> In casa Huawei qualcosa non va, addio servizi Google </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
             
-         <div class="card-columns">     
-         
+<!--             <div class="row"> -->
+<!--                 <div class="col-lg-4 col-md-6"> -->
+<!--                     <div class="single-latest-blog"> -->
+<!--                         <img src="https://dday.imgix.net/system/uploads/news/main_image/38109/e9fdd6_gsmain.jpg?ar=702%3A360&fit=crop&auto=format%2Ccompress&w=1404&s=eb47faebea9974c90b935d70efba7bdc" alt=""> -->
+<!--                         <div class="latest-text"> -->
+<!--                             <div class="tag-list"> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-calendar-o"></i> -->
+<!--                                     Gen 8,2021 -->
+<!--                                 </div> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-comment-o"></i> -->
+<!--                                     5 -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                             <a href=""> -->
+<!--                                 <h4> Samsung S21, 3 modelli in uscita a fine gennaio</h4> -->
+<!--                             </a> -->
+<!--                             <p> Galaxy S21, ci siamo. Il 14 gennaio Samsung presentera' finalmente la nuova gamma di smartphone top di gamma </p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+                
+<!--                 <div class="col-lg-4 col-md-6"> -->
+<!--                     <div class="single-latest-blog"> -->
+<!--                         <img src="https://www.saggiamente.com/wp-content/uploads/2020/04/macbookpro16-hero.jpg" alt=""> -->
+<!--                         <div class="latest-text"> -->
+<!--                             <div class="tag-list"> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-calendar-o"></i> -->
+<!--                                     May 4,2019 -->
+<!--                                 </div> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-comment-o"></i> -->
+<!--                                     5 -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                             <a href="#"> -->
+<!--                                 <h4> Nuova uscita Macbook Pro 16 con chip M1X</h4> -->
+<!--                             </a> -->
+<!--                             <p> Apple Silicon in fase di test: possibile debutto sul MacBook Pro 16 </p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="col-lg-4 col-md-6"> -->
+<!--                     <div class="single-latest-blog"> -->
+<!--                         <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt=""> -->
+<!--                         <div class="latest-text"> -->
+<!--                             <div class="tag-list"> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-calendar-o"></i> -->
+<!--                                     May 4,2019 -->
+<!--                                 </div> -->
+<!--                                 <div class="tag-item"> -->
+<!--                                     <i class="fa fa-comment-o"></i> -->
+<!--                                     5 -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                             <a href="#"> -->
+<!--                                 <h4> Huawei perde google! Cosa succede?</h4> -->
+<!--                             </a> -->
+<!--                             <p> In casa Huawei qualcosa non va, addio servizi Google </p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+           
+            
+<!--          <div class="card-columns">      -->
+         <div class="row">
          <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   
 			  
