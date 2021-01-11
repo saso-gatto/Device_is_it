@@ -12,5 +12,7 @@ public interface DeviceDAO {
 	public void update(Device device); //Update
 	public void delete(Device device); //Delete	
 	public List<Device> findByTipology(Integer tipologia);
-
+	public List<Device> researchResultSmartphone(String string);
+	public List<Device> researchResultComputer(String string);
+	
 }

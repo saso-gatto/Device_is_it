@@ -14,5 +14,7 @@ public interface ContenutoDAO {
 	public List<Contenuto> findByTipology(Integer tipologia);
 	public List<Contenuto> findRecensioniPc();
 	public List<Contenuto> findRecensioniSmartphone();
+	public List<Contenuto> researchResultArticoli(String string);
+	public List<Contenuto> researchResultRecensioni(String string);
 	
 }
