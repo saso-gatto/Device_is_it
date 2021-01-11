@@ -18,10 +18,10 @@
    	<div class="body_header col-lg-12 col-md-12" >
     <div>
       <h1 class="text_head" align=left  > Cerca i migliori Device </h1>
-      <br>
-      <br>
-      <h2 class="text_head"> Recensioni </h2> 
-      <a href="#" class="btn btn-warning">Clicca qui</a> 
+<!--       <br> -->
+<!--       <br> -->
+<!--       <h2 class="text_head"> Recensioni </h2>  -->
+<!--       <a href="#" class="btn btn-warning">Clicca qui</a>  -->
     </div>
   </div>
 	
