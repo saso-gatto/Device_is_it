@@ -20,9 +20,13 @@ public class ContenutoController {
 	public String getContenuto(HttpSession session, Model model, @RequestParam Integer id) {
 		
 		Contenuto cont = DBManager.getInstance().ContenutoDAO().findByPrimaryKey(id);
-		
-		List <Commento> commenti = DBManager.getInstance().CommentoDAO().findByContenuto(id);
 		model.addAttribute(cont);
+
+		List <Commento> commenti = DBManager.getInstance().CommentoDAO().findByContenuto(id);
+		for (int i = 0; i<commenti.size(); i++) {
+			System.out.println(commenti.get(i).getTesto());
+		}
+		model.addAttribute("listaCommenti",commenti);
 		return "ContenutoRichiesto";
 	}
 }

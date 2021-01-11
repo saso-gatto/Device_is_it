@@ -156,10 +156,10 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		List<Commento> commenti = new ArrayList<Commento>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "Select commenti.* from commenti,contenuto where commenti.contenuto=contenuto.id and contenuto.id=?";
+			String query = "Select commento.* from commento,contenuto where commento.contenuto=contenuto.id and contenuto.id=?";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setInt(1, idcontenuto);
-			ResultSet rs = st.executeQuery(query);
+			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				int idcommento = rs.getInt("idcommento");
 				int contenuto = rs.getInt("contenuto");

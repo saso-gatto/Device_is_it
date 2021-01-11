@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,21 +32,22 @@
 <section>
     <div class="container" id="commenti">
         <div class="row">
-            <div class="col-sm-5 col-md-6 col-12 pb-4">
-                
-                <h3>Commenti</h3>
-                
-                <div class="comment mt-4 text-justify float-left"> 
-                    <h4>Jhon Doe</h4> <span>- 20 October, 2018</span> <br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                </div>
-                
-                <div class="text-justify darker mt-4 float-right"> 
-                    <h4>Rob Simpson</h4> <span>- 20 October, 2018</span> <br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                </div>
-          
-            </div>
+        	<div class="col-sm-5 col-md-6 col-12 pb-4">
+		    	<h3>Commenti</h3>
+					<c:forEach var="commento" items="${listaCommenti}">
+			                <div class="comment mt-4 text-justify float-left"> 
+			                    <h4>${commento.utente}</h4> <span>-${commento.data}</span> <br>
+			                    <p>${commento.testo}</p>
+			                </div>
+			  		</c:forEach>              
+<!-- 			                <div class="text-justify darker mt-4 float-right">  -->
+<!-- 			                    <h4>Rob Simpson</h4> <span>- 20 October, 2018</span> <br> -->
+<!-- 			                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> -->
+<!-- 			                </div> -->
+			                
+			     
+	         </div>
+            
             
             <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
                 <form id="algin-form">
