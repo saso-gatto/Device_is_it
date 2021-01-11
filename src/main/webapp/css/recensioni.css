@@ -13,7 +13,7 @@ html, body {
 }
 
 .card {
-  width: 750px;
+  width: 700px;
   height: 250px;
   background-color: #fff;
   background: linear-gradient(#f8f8f8, #fff);
@@ -75,7 +75,7 @@ html, body {
 }
 
 .card .additional .more-info {
-  width: 300px;
+  width: 550px;
   float: left;
   position: absolute;
   left: 150px;
@@ -87,9 +87,6 @@ html, body {
   margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
-  color: #224C36;
-}
 
 .card .additional .coords {
   margin: 0 1rem;
@@ -104,7 +101,7 @@ html, body {
 
 
 .card .general {
-  width: 300px;
+  width: 500px;
   height: 100%;
   position: absolute;
   top: 0;

@@ -14,11 +14,11 @@
 	
 </head>
 <body>
-  <div id="Navbar"></div>
+
   <p id="titolo" style="text-align:center"> Recensioni Smartphone</p>
 
 
-	<div class="center">
+	<div class="center" id="schede">
 
   <div class="card">
     <div class="additional">
