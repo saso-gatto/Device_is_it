@@ -113,6 +113,9 @@
                 </div>
             </div>
             -->
+            
+         <div class="card-columns">     
+         
          <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   
 			  
@@ -143,7 +146,8 @@
 			   </div>
 			   
 			   		   
-		   </c:forEach>                            
+		   </c:forEach>
+		   </div>                            
 
         </div>
     </section>
