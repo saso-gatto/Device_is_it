@@ -2,23 +2,23 @@ package Demo.deviceIsIt.model;
 
 public class Commento {
 	
-	private int idCommento;
-	private String contenuto;
+	private int idcommento;
+	private int contenuto;
 	private String utente; //Equivale all'username/email
 	private String data;
 	private String testo;
 	
 	
-	public int getIdCommento() {
-		return idCommento;
+	public int getidcommento() {
+		return idcommento;
 	}
-	public void setIdCommento(int idCommento) {
-		this.idCommento = idCommento;
+	public void setidcommento(int idcommento) {
+		this.idcommento = idcommento;
 	}
-	public String getContenuto() {
+	public int getcontenuto() {
 		return contenuto;
 	}
-	public void setContenuto(String contenuto) {
+	public void setcontenuto(int contenuto) {
 		this.contenuto = contenuto;
 	}
 	public String getUtente() {

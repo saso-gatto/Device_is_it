@@ -27,8 +27,8 @@ public class CommentoDAOJDBC implements CommentoDAO {
 			conn = dbSource.getConnection();
 			String query = "insert into commento values(?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, commento.getIdCommento());
-			st.setString(2, commento.getContenuto());
+			st.setInt(1, commento.getidcommento());
+			st.setInt(2, commento.getcontenuto());
 			st.setString(3, commento.getUtente());
 			st.setString(4, commento.getData());
 			st.setString(5, commento.getTesto());
@@ -41,23 +41,23 @@ public class CommentoDAOJDBC implements CommentoDAO {
 
 
 	@Override
-	public Commento findByPrimaryKey(int idCommento) {
+	public Commento findByPrimaryKey(int idcommento) {
 		Commento commento=null;		
 		try {
 			Connection conn = dbSource.getConnection();
 			String query = "select * from commento where idcommento=?";
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setInt(1, idCommento);
+			st.setInt(1, idcommento);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
-				int idcommento = rs.getInt("idCommento");
-				String contenuto = rs.getString("contenuto");
+				int id = rs.getInt("idcommento");
+				int contenuto = rs.getInt("contenuto");
 				String utente = rs.getString("utente");
 				String data = rs.getString("data");
 				String testo = rs.getString("testo");
 				commento = new Commento();
-				commento.setIdCommento(idcommento);
-				commento.setContenuto(contenuto);
+				commento.setidcommento(id);
+				commento.setcontenuto(contenuto);
 				commento.setUtente(utente);
 				commento.setData(data);
 				commento.setTesto(testo);
@@ -82,16 +82,16 @@ public class CommentoDAOJDBC implements CommentoDAO {
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(query);
 				while (rs.next()) {
-					int idcommento = rs.getInt("idCommento");
-					String contenuto = rs.getString("contenuto");
+					int idcommento = rs.getInt("idcommento");
+					int contenuto = rs.getInt("contenuto");
 					String utente = rs.getString("utente");
 					String data = rs.getString("data");
 					String testo = rs.getString("testo");
 					
 					System.out.println(idcommento + contenuto + utente + data+testo);
 					Commento commento = new Commento();
-					commento.setIdCommento(idcommento);
-					commento.setContenuto(contenuto);
+					commento.setidcommento(idcommento);
+					commento.setcontenuto(contenuto);
 					commento.setUtente(utente);
 					commento.setData(data);
 					commento.setTesto(testo);
@@ -112,8 +112,8 @@ public class CommentoDAOJDBC implements CommentoDAO {
 			connection = this.dbSource.getConnection();
 			String update = "update commento SET contenuto = ?, utente = ?, data = ?, testo = ? WHERE idCommento=?";
 			PreparedStatement st = connection.prepareStatement(update);
-			st.setInt(1, commento.getIdCommento());
-			st.setString(2, commento.getContenuto());
+			st.setInt(1, commento.getidcommento());
+			st.setInt(2, commento.getcontenuto());
 			st.setString(3, commento.getUtente());
 			st.setString(4, commento.getData());
 			st.setString(5, commento.getTesto());
@@ -136,7 +136,7 @@ public class CommentoDAOJDBC implements CommentoDAO {
 			connection = this.dbSource.getConnection();
 			String delete = "delete FROM commento WHERE email = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, commento.getIdCommento());
+			statement.setInt(1, commento.getidcommento());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
