@@ -150,4 +150,36 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		}
 	}
 
+
+	@Override
+	public List<Commento> findByContenuto(int idcontenuto) {
+		List<Commento> commenti = new ArrayList<Commento>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "Select commenti.* from commenti,contenuto where commenti.contenuto=contenuto.id and contenuto.id=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setInt(1, idcontenuto);
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+				int idcommento = rs.getInt("idcommento");
+				int contenuto = rs.getInt("contenuto");
+				String utente = rs.getString("utente");
+				String data = rs.getString("data");
+				String testo = rs.getString("testo");
+				
+				Commento commento = new Commento();
+				commento.setidcommento(idcommento);
+				commento.setcontenuto(contenuto);
+				commento.setUtente(utente);
+				commento.setData(data);
+				commento.setTesto(testo);
+				
+				commenti.add(commento);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	return commenti;
+	}
+
 }
