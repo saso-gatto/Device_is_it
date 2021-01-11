@@ -18,8 +18,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">  <!-- font-family: 'Kaushan Script', cursive; -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icone bootstrap -->
   	
-  	<link rel="stylesheet" href="css/news.css" type="text/css"/>
-  	<link rel="stylesheet" href="css/home.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/navbar.css" type="text/css"/>
+
   	
   	<script src="/js/login.js"></script>  	
 
