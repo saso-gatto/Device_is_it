@@ -196,4 +196,95 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		}
 		return devices;
 	}
+
+	@Override
+	public List<Device> researchResultSmartphone(String string) {
+		List<Device> devices = new ArrayList <Device>();
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select *  rom device where  tipodevice=1 and  modello ILIKE '%?%' or marca ILIKE '%?%' or memoria ILIKE '%?%' or "
+								   + "ram ILIKE '%?%' or display ILIKE '%?%' or batteria ILIKE '%?%' or fotocamera ILIKE '%?%' or cpu ILIKE '%?%' or "
+								   + "peso ILIKE '%?%' or os ILIKE '%?%' group by(id);"; 
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
+			st.setString(3, string);
+			st.setString(4, string);
+			st.setString(5, string);
+			st.setString(6, string);
+			st.setString(7, string);
+			st.setString(8, string);
+			st.setString(9, string);
+			st.setString(10, string);
+			
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				Device device = new Device();
+				device.setIdDevice(rs.getInt("id"));				
+				device.setModello(rs.getString("modello"));
+				device.setMarca(rs.getString("marca"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
+				device.setMemoria(rs.getString("memoria"));
+				device.setRam(rs.getString("ram"));
+				device.setDisplay(rs.getString("display"));
+				device.setBatteria(rs.getString("batteria"));
+				device.setFotocamera(rs.getString("fotocamera"));
+				device.setCPU(rs.getString("cpu"));
+				device.setPeso(rs.getString("peso"));
+				device.setOs(rs.getString("os"));
+				device.setImg(rs.getString("img"));
+				devices.add(device);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return devices;
+	}
+
+	@Override
+	public List<Device> researchResultComputer(String string) {
+		List<Device> devices = new ArrayList <Device>();
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select *  rom device where  tipodevice=2 and  modello ILIKE '%?%' or marca ILIKE '%?%' or memoria ILIKE '%?%' or "
+								   + "ram ILIKE '%?%' or display ILIKE '%?%' or batteria ILIKE '%?%' or fotocamera ILIKE '%?%' or cpu ILIKE '%?%' or "
+								   + "peso ILIKE '%?%' or os ILIKE '%?%' group by(id);"; 
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
+			st.setString(3, string);
+			st.setString(4, string);
+			st.setString(5, string);
+			st.setString(6, string);
+			st.setString(7, string);
+			st.setString(8, string);
+			st.setString(9, string);
+			st.setString(10, string);
+			
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				Device device = new Device();
+				device.setIdDevice(rs.getInt("id"));				
+				device.setModello(rs.getString("modello"));
+				device.setMarca(rs.getString("marca"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
+				device.setMemoria(rs.getString("memoria"));
+				device.setRam(rs.getString("ram"));
+				device.setDisplay(rs.getString("display"));
+				device.setBatteria(rs.getString("batteria"));
+				device.setFotocamera(rs.getString("fotocamera"));
+				device.setCPU(rs.getString("cpu"));
+				device.setPeso(rs.getString("peso"));
+				device.setOs(rs.getString("os"));
+				device.setImg(rs.getString("img"));
+				devices.add(device);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return devices;
+	}
+	
+	
+	
 }

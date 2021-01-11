@@ -1,35 +1,37 @@
 
 .body_header{
-  background-image: url("/images/sfondoHome.jpg");
+  background-image: url("/images/sfondoHome5.jpg");
   background-size: cover;
   color:#fec503;
   font-style: italic;
   font-family: 'Montserrat', sans-serif;
   border-left: 6px solid #fec503;
-  height: 350px;
+  height: 400px;
 }
 
 #text_head,h1{
 	font-size: 55px;
-	padding-top:50px;
-	padding-right:50px;	
-	text-shadow: -1px 0 #443713, 0 1px #fec503, 1px 0 #463914, 0 -1px #563708;
-}
-
-#text_head,h2{
-	font-size: 45px;
+	padding-top:80px;
+	padding-right:60px;	
 	font-family: Droid Serif;
 	color:white;
 	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
 
 body {
-  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
+  background: linear-gradient(127deg,  #fff5d7, rgb(249, 198, 85));
 }
 
-
-
-
+#titolo{
+	margin-top: 30px;
+	font-size: 45px;
+	font-family: Droid Serif;
+	font-style: italic;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	margin-bottom: 30px;
+	padding-top:20px;
+	text-align: center;
+}
 
 
 /*------------------------------------------------------------------
@@ -39,10 +41,6 @@ DA controllare e da canellare tutto il superfluo
 
 -----------------------*/
 
-.section-title {
-	margin-bottom: 40px;
-	text-align: center;
-}
 
 
 .section-title h2 {

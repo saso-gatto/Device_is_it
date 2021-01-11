@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
@@ -79,6 +81,27 @@ public class NavBarController {
 		
 		System.out.println("numero recensioni smartphone: "+contenuti.size());
 		return "RecensioniSmartphone";
+	}
+	
+	@PostMapping("cerca")	
+	public String risultatiRicerca(HttpSession session, Model model, @RequestParam String daCercare) {
+		
+		List<Contenuto> Articoli= new ArrayList<Contenuto>();
+		List<Contenuto> Recensioni= new ArrayList<Contenuto>();
+		List<Device> Smartphone= new ArrayList<Device>();
+		List<Device> Computer= new ArrayList<Device>();
+		
+		Articoli=DBManager.getInstance().ContenutoDAO().researchResultArticoli(daCercare);
+		Recensioni=DBManager.getInstance().ContenutoDAO().researchResultRecensioni(daCercare);
+		Smartphone=DBManager.getInstance().deviceDAO().researchResultSmartphone(daCercare);
+		Computer=DBManager.getInstance().deviceDAO().researchResultComputer(daCercare);
+	
+		model.addAttribute("listaArticoli",Articoli);	
+		model.addAttribute("listarecensioni",Recensioni);	
+		model.addAttribute("listaSmartphone",Smartphone);	
+		model.addAttribute("listaComputer",Computer);	
+
+		return "risultatiRicerca";			
 	}
 	
 

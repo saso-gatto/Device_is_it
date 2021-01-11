@@ -230,7 +230,6 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		return contenuti;
 	}
 
-	//Non funfa 
 	@Override
 	public List<Contenuto> findLastThree() {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
@@ -258,6 +257,63 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		}	
 		return contenuti;
 	}
+
+	@Override
+	public List<Contenuto> researchResultArticoli(String string) {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from contenuto where tipologia=1 and titolo ILIKE '%?%' or testo ILIKE '%?%' group by(id);";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));
+				contenuto.setAnteprima(rs.getString("anteprima"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
+	@Override
+	public List<Contenuto> researchResultRecensioni(String string) {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from contenuto where tipologia=2 and titolo ILIKE '%?%' or testo ILIKE '%?%' group by(id);";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));
+				contenuto.setAnteprima(rs.getString("anteprima"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
 	
 
 
