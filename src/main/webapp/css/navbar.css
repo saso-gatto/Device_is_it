@@ -6,34 +6,6 @@
 	text-decoration: none;	
 }
 
-.body_header{
-  background-image: url("/images/sfondoHome.jpg");
-  background-size: cover;
-  color:#fec503;
-  font-style: italic;
-  font-family: 'Montserrat', sans-serif;
-  border-left: 6px solid #fec503;
-  height: 350px;
-}
-
-#text_head,h1{
-	font-size: 55px;
-	padding-top:50px;
-	padding-right:50px;	
-	text-shadow: -1px 0 #fec503, 0 1px #fec503, 1px 0 #fec503, 0 -1px #fec503;
-}
-
-#text_head,h2{
-	font-size: 45px;
-	font-family: Droid Serif;
-	color:white;
-	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
-}
-
-body {
-  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
-}
-
 #funfa{
 	height: 900px;
 	color: white;

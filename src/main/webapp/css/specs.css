@@ -51,8 +51,9 @@ img {
 /* --------- scheda tecnica singola (tabella) ------- */
 
 body {
-	 background-color: #d2bc2a;
+  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
 }
+
  body * {
 	 box-sizing: border-box;
 }

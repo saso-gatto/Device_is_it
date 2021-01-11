@@ -1,3 +1,9 @@
+body {
+  background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
+}
+
+
+
 @media(min-width:568px) {
     .end {
         margin-left: auto

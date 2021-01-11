@@ -47,8 +47,8 @@
     
 
     <div class="general">
-      <h1>Jane Doe</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
+      <h1>Pixel 5</h1>
+      <p>Google ha rinnovato la sua lineup di smartphone anche nel 2020 e fra questi c’è anche la sua punta di diamante, ovvero Google Pixel 5. È un prodotto atipico, con vari passi indietro, soprattutto in termini di posizionamento e che è ancora più atipico per noi italiani visto che non viene venduto nel nostro paese. Scopriamo cosa ha di speciale questo nuovo smartphone di Google.</p>
       <span class="more">Mouse over the card for more info</span>
     </div>
   </div>
