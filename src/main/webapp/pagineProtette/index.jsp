@@ -16,23 +16,11 @@
 <body>
     
    	<div class="body_header col-lg-12 col-md-12" >
-    <div>
-      <h1 class="text_head" align=left  > Cerca i migliori Device </h1>
-<!--       <br> -->
-<!--       <br> -->
-<!--       <h2 class="text_head"> Recensioni </h2>  -->
-<!--       <a href="#" class="btn btn-warning">Clicca qui</a>  -->
-    </div>
+<!--     <div> -->
+<!--       <h1 class="text_head" align=left  > Cerca i migliori Device </h1> -->
+<!--     </div> -->
   </div>
 	
-	
-	
-
-
-
-
-
-
 
 
 <!-- Ultime News -->
@@ -45,7 +33,9 @@
                     </div>
                 </div>
             </div>
+        </div>
             
+<<<<<<< HEAD
 <!--             <div class="row"> -->
 <!--                 <div class="col-lg-4 col-md-6"> -->
 <!--                     <div class="single-latest-blog"> -->
@@ -142,22 +132,32 @@
 		   </c:forEach>
 		    </div>
       </div>
+=======
+	     <div class="container">
+	        <div class="card-columns">   
+		         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card">
+			           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
+			              <div class="card-body">
+				              <h5 class="card-title">${contenuto.titolo}</h5>
+				              <p class="card-text"> ${contenuto.anteprima} </p>
+				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <form id="formArticolo" method="post" action="Contenuto">
+				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+				                 <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+				              </form>			               
+			          	  </div>		               
+			          </div>                        
+				   </c:forEach>
+		  	</div>
+	     </div>
+>>>>>>> branch 'master' of https://github.com/Caterina5/Device_is_it
     </section>
-    <!-- fine "Ultime news  -->
-
-
-
-
-
-
-
+ <!-- fine "Ultime news  -->   
 
 
 
 <!-- Team Section Begin -->
-
-
-
     <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
         <div class="container">
             <div class="row">
@@ -231,29 +231,6 @@
     </section>
     <!-- Team Section End -->
 
-
-
-
-
-<!--  
-	 <div class="jumbotron">
-	  <div class="row">
-	    <div class="col-sm-4">
-	      <h3>Column 1</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	    <div class="col-sm-4">
-	      <h3>Column 2</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	    <div class="col-sm-4">
-	      <h3>Column 3</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	  </div>
-	</div>
-
--->
 
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
