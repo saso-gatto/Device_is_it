@@ -16,13 +16,20 @@ import Demo.deviceIsIt.persistance.DBManager;
 @Controller
 public class NavBarController {
 	
-	@GetMapping("")	//Metodo che intercetta un href su index e carica la pagina
+	@GetMapping("/index")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHome(HttpSession session, Model model) {
 		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
 		contenuti=DBManager.getInstance().ContenutoDAO().findLastThree();			
 		model.addAttribute("ultimeTre",contenuti);	
 				
-		System.out.println("lista device size: "+contenuti.size());
+		return "index";
+	}
+	
+	@GetMapping("")	//Metodo che intercetta un href su index e carica la pagina
+	public String getHomeLoad(HttpSession session, Model model) {
+		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
+		contenuti=DBManager.getInstance().ContenutoDAO().findLastThree();			
+		model.addAttribute("ultimeTre",contenuti);	
 				
 		return "index";
 	}

@@ -256,7 +256,6 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-		System.out.println("Contenuti ha come size: "+contenuti.size());
 		return contenuti;
 	}
 	
