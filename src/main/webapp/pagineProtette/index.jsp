@@ -15,149 +15,45 @@
 
 <body>
     
-   	<div class="body_header col-lg-12 col-md-12" >
-    <div>
-      <h1 class="text_head" align=left  > Cerca i migliori Device </h1>
-<!--       <br> -->
-<!--       <br> -->
-<!--       <h2 class="text_head"> Recensioni </h2>  -->
-<!--       <a href="#" class="btn btn-warning">Clicca qui</a>  -->
-    </div>
+   <div class="body_header col-lg-12 col-md-12" >
+	    <div>
+	      <h1 class="text_head" align=right  > Cerca i migliori Device </h1>
+	    </div>
   </div>
 	
-	
-	
-
-
-
-
-
-
 
 
 <!-- Ultime News -->
-    <section class="latest-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Ultime News </h2>
-                    </div>
-                </div>
-            </div>
+
+   <p id="titolo" style="text-align:center"> Ultime News </p>                    
             
-<!--             <div class="row"> -->
-<!--                 <div class="col-lg-4 col-md-6"> -->
-<!--                     <div class="single-latest-blog"> -->
-<!--                         <img src="https://dday.imgix.net/system/uploads/news/main_image/38109/e9fdd6_gsmain.jpg?ar=702%3A360&fit=crop&auto=format%2Ccompress&w=1404&s=eb47faebea9974c90b935d70efba7bdc" alt=""> -->
-<!--                         <div class="latest-text"> -->
-<!--                             <div class="tag-list"> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-calendar-o"></i> -->
-<!--                                     Gen 8,2021 -->
-<!--                                 </div> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-comment-o"></i> -->
-<!--                                     5 -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                             <a href=""> -->
-<!--                                 <h4> Samsung S21, 3 modelli in uscita a fine gennaio</h4> -->
-<!--                             </a> -->
-<!--                             <p> Galaxy S21, ci siamo. Il 14 gennaio Samsung presentera' finalmente la nuova gamma di smartphone top di gamma </p> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                 </div> -->
-                
-<!--                 <div class="col-lg-4 col-md-6"> -->
-<!--                     <div class="single-latest-blog"> -->
-<!--                         <img src="https://www.saggiamente.com/wp-content/uploads/2020/04/macbookpro16-hero.jpg" alt=""> -->
-<!--                         <div class="latest-text"> -->
-<!--                             <div class="tag-list"> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-calendar-o"></i> -->
-<!--                                     May 4,2019 -->
-<!--                                 </div> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-comment-o"></i> -->
-<!--                                     5 -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                             <a href="#"> -->
-<!--                                 <h4> Nuova uscita Macbook Pro 16 con chip M1X</h4> -->
-<!--                             </a> -->
-<!--                             <p> Apple Silicon in fase di test: possibile debutto sul MacBook Pro 16 </p> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--                 <div class="col-lg-4 col-md-6"> -->
-<!--                     <div class="single-latest-blog"> -->
-<!--                         <img src="https://dday.imgix.net/system/uploads/news/main_image/35113/huaweimain.jpg?w=702&h=360&fit=crop&auto=format%2Ccompress&s=8ac19f7e0053edca6fdf7976cbb6eee3" alt=""> -->
-<!--                         <div class="latest-text"> -->
-<!--                             <div class="tag-list"> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-calendar-o"></i> -->
-<!--                                     May 4,2019 -->
-<!--                                 </div> -->
-<!--                                 <div class="tag-item"> -->
-<!--                                     <i class="fa fa-comment-o"></i> -->
-<!--                                     5 -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                             <a href="#"> -->
-<!--                                 <h4> Huawei perde google! Cosa succede?</h4> -->
-<!--                             </a> -->
-<!--                             <p> In casa Huawei qualcosa non va, addio servizi Google </p> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--             </div> -->
-           
-            
+                   
+     <section class="latest-blog">           
 <!--          <div class="card-columns">      -->
-         <div class="container">
-        <div class="card-columns">   
-         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
-			   
-		
-
-				 <div class="card">
-                  <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">${contenuto.titolo}</h5>
-                    <p class="card-text">
-                      ${contenuto.anteprima}
-                     </p>
-                    <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
-                		<form id="formArticolo" method="post" action="Contenuto" align="right">
-		                              <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
-		                              <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
-		                </form>
-		                
-		            </div>
-		                
-          </div>    
-          
-          
-		   </c:forEach>
-		    </div>
-      </div>
+	     <div class="container">
+	        <div class="card-columns">   
+		         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card">
+			           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
+			              <div class="card-body">
+				              <h5 class="card-title">${contenuto.titolo}</h5>
+				              <p class="card-text"> ${contenuto.anteprima} </p>
+				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <form id="formArticolo" method="post" action="Contenuto">
+				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+				                 <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+				              </form>			               
+			          	  </div>		               
+			          </div>                        
+				   </c:forEach>
+		  	</div>
+	     </div>
     </section>
-    <!-- fine "Ultime news  -->
-
-
-
-
-
-
-
+ <!-- fine "Ultime news  -->   
 
 
 
 <!-- Team Section Begin -->
-
-
-
     <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
         <div class="container">
             <div class="row">
@@ -233,37 +129,12 @@
 
 
 
-
-
-<!--  
-	 <div class="jumbotron">
-	  <div class="row">
-	    <div class="col-sm-4">
-	      <h3>Column 1</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	    <div class="col-sm-4">
-	      <h3>Column 2</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	    <div class="col-sm-4">
-	      <h3>Column 3</h3>
-	      <p>Lorem ipsum dolor..</p>
-	    </div>
-	  </div>
-	</div>
-
--->
-
-
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script >
 //Get the button
 var mybutton = document.getElementById("myBtn");
-
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -271,7 +142,6 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
