@@ -84,9 +84,23 @@ public class NavBarController {
 	}
 	
 	@PostMapping("cerca")	
-	public String risultatiRicerca(HttpSession session, @RequestParam String daCercare) {
-						
-		System.out.println("se sei quuì sei vivo: "+daCercare);
+	public String risultatiRicerca(HttpSession session, Model model, @RequestParam String daCercare) {
+		
+		List<Contenuto> Articoli= new ArrayList<Contenuto>();
+		List<Contenuto> Recensioni= new ArrayList<Contenuto>();
+		List<Device> Smartphone= new ArrayList<Device>();
+		List<Device> Computer= new ArrayList<Device>();
+		
+		Articoli=DBManager.getInstance().ContenutoDAO().researchResultArticoli(daCercare);
+		Recensioni=DBManager.getInstance().ContenutoDAO().researchResultRecensioni(daCercare);
+		Smartphone=DBManager.getInstance().deviceDAO().researchResultSmartphone(daCercare);
+		Computer=DBManager.getInstance().deviceDAO().researchResultComputer(daCercare);
+	
+		model.addAttribute("listaArticoli",Articoli);	
+		model.addAttribute("listarecensioni",Recensioni);	
+		model.addAttribute("listaSmartphone",Smartphone);	
+		model.addAttribute("listaComputer",Computer);	
+
 		return "risultatiRicerca";			
 	}
 	
