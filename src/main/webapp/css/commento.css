@@ -10,6 +10,12 @@
     }
 }
 
+#commenti{
+	margin-top: 12%;
+	margin-bottom: 8%;
+    
+}
+
 #clicked {
     padding-top: 1px;
     padding-bottom: 1px;
@@ -35,7 +41,7 @@
     text-align: center;
     background-color: #ecb21f;
     border-color: #a88734 #9c7e31 #846a29;
-    color: green; /* boh */
+    color: #eee2c4; /* boh */
     border-width: 1px;
     border-style: solid;
     border-radius: 13px;
@@ -46,8 +52,8 @@
 
 #profile {
     text-decoration: none;
-    color: rgb(224, 219, 219);
-    background-color: pink;
+    color: #f4b074;
+    background-color: #f4b074;
 }
 
 .comments {
@@ -56,7 +62,7 @@
 }
 
 .darker {
-    border: 1px solid orange; /* bordo secondo commento*/
+    border: 1px solid rgb(204, 164, 79); /* bordo secondo commento*/
     background-color: rgb(247,243,232); /* colore secondo commento*/
     float: right;
     border-radius: 5px;
@@ -86,11 +92,11 @@
 .comment span,
 .darker p,
 .darker span {
-    color: rgb(0, 0, 0); /* colore testo commneto*/
+    color: rgb(173, 141, 85); /* colore testo commneto*/
 }
 
 h4 {
-	color: rgb(0, 0, 0);
+	color: #8d641e;
 	font-weight: bold
 }
 
@@ -120,14 +126,14 @@ label {
 
 .form-group input,
 .form-group textarea {
-    background-color: white; /* area testo nome e commento */
+    background-color: rgb(255, 249, 221); /* area testo nome e commento */
     border: 1px solid #ecb21f;  /* bordo area testo commento*/
     border-radius: 12px
 }
 
 form {
     border: 2px solid #eab425; /* bordo form commento*/
-    background-color: #ffc557;
+    background-color: rgb(242, 169, 58);
     border-radius: 5px;
     padding: 20px
 }
