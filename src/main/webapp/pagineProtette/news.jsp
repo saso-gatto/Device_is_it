@@ -32,14 +32,12 @@
                     <p class="card-text">
                       ${contenuto.anteprima}
                      </p>
-                    <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
-                		<form id="formArticolo" method="post" action="Contenuto" align="right">
+                    <p class="card-text"><i class="fas fa-calendar-alt"></i>${contenuto.data}</p>
+                </div>
+		                <form id="formArticolo" method="post" action="Contenuto">
 		                              <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
-		                              <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+		                              <button type="submit">Continua a leggere</button>
 		                </form>
-		                
-		            </div>
-		                
           </div>  
               
      

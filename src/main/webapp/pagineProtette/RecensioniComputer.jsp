@@ -6,14 +6,13 @@
 <head>
 <meta charset="utf-8">
    
-    <link rel="stylesheet" href="css/specs.css" type="text/css"/>
+    <link rel="stylesheet" href="css/recensioni.css" type="text/css"/>
     
     <title>Device Is It</title> 
 	<jsp:include page="./navbar.jsp" /> 	
 	
 </head>
 <body>
-  <div id="Navbar"></div>
   <p id="titolo" style="text-align:center"> Recensioni Computer</p>
 
 </body>
