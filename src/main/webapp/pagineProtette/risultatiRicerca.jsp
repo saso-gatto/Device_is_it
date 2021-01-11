@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,39 +16,50 @@
    <section id="schede">   
         
     <div class="container">
-        <div class="card-columns">      
-    
-       <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
-        
-            <div class="card">
-                  <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">${contenuto.titolo}</h5>
-                    <p class="card-text">
-                      ${contenuto.anteprima}
-                     </p>
-                    <p class="card-text"><i class="fas fa-calendar-alt"></i>${contenuto.data}</p>
-                </div>
-		                <form id="formArticolo" method="post" action="Contenuto">
-		                              <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
-		                              <button type="submit">Continua a leggere</button>
-		                </form>
-          </div> 
           
-          <div class="card">
-  <h5 class="card-header">Featured</h5>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> 
-              
+       <c:forEach var="articolo" items="${listaArticoli}">  
+			  <div class="row">
+				  	<div class="card bg-dark text-white">
+						  <img class="card-img" src="${articolo.img}" alt="Card image">
+						  <div class="card-img-overlay">
+						    <h5 class="card-title">${articolo.titolo}</h5>
+						    <p class="card-text">${articolo.anteprima}...</p>
+						    <a href="#" class="card-link">Continua a leggere</a>
+						  </div>
+						</div>
+				</div>
+     	</c:forEach>      
      
-       </c:forEach>
-     
-        </div>
       </div>
    </section>
+   
+   <!-- fino a qui funziona 
+   
+   
+   
+   <section id="schede">   
+        
+    <div class="container">
+          
+       <c:forEach var="recensione" items="${listarecensioni}">  
+			  <div class="row">
+				  	<div class="card bg-dark text-white">
+						  <img class="card-img" src="${recensione.img}" alt="Card image">
+						  <div class="card-img-overlay">
+						    <h5 class="card-title">${recensione.titolo}</h5>
+						    <p class="card-text">${recensione.anteprima}...</p>
+						    <a href="#" class="card-link">Continua a leggere</a>
+						  </div>
+						</div>
+				</div>
+     	</c:forEach>      
+     
+      </div>
+   </section> -->
+   
+   
+   
+   
+   
 </body>
 </html>

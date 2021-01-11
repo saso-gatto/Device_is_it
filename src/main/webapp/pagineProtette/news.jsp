@@ -23,40 +23,24 @@
     <div class="container">
         <div class="card-columns">      
     
-       <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+          <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
         
             <div class="card">
                   <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">${contenuto.titolo}</h5>
-                    <p class="card-text">
-                      ${contenuto.anteprima}
-                     </p>
+                    <p class="card-text">${contenuto.anteprima}</p>
                     <p class="card-text"><i class="fas fa-calendar-alt"></i>${contenuto.data}</p>
-                		<form id="formArticolo" method="post" action="Contenuto" align="right">
-							<input type="hidden" id="id" name="id" value=${contenuto.id}>
-					<button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
-                </div>
-          </div>  
+                  </div>
+		                <form id="formArticolo" method="post" action="Contenuto">
+		                              <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
+		                              <button type="submit">Continua a leggere</button>
+		                </form>
+            </div>  
           </c:forEach>
-          
-          <!-- MIA PARTE DA FINIRE (listaContenuti...tutti al plurale)-->
-          
-          <c:forEach var="articolo" items="${listaArticoli}"> 
-	          <div class="card">
-				  <h5 class="card-header">${articolo.titolo}</h5>
-				  <div class="card-body">
-				    <p class="card-text"><i class="fas fa-calendar-alt"></i>${articolo.anteprima}</p>
-				    <a href="#" class="btn btn-primary">Continua a leggere</a>
-				  </div>
-			  </div>  
-     	</c:forEach>
        
-     
-        </div>
+       </div>
       </div>
    </section>
-    
- 
 </body>
 </html>
