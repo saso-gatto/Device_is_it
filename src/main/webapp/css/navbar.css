@@ -6,11 +6,6 @@
 	text-decoration: none;	
 }
 
-#funfa{
-	height: 900px;
-	color: white;
-}
-
 #myBtn {
   display: none;
   position: fixed;
@@ -98,9 +93,9 @@
 	outline:none;
 	border: 1px solid lightgrey;
 }
- form .error {
-	color: #ff0000;
-}
+/*  form .error { */
+/* 	color: #ff0000; */
+/* } */
 #second{
 	display:none;
 }
