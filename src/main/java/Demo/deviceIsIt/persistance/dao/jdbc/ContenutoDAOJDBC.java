@@ -263,10 +263,8 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=1 and titolo ILIKE '%?%' or testo ILIKE '%?%' group by(id);";
+			String query = "select * from contenuto where tipologia=1 and titolo ILIKE '%"+string+"%' or testo ILIKE '%"+string+"%' group by(id);";
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, string);
-			st.setString(2, string);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
@@ -278,6 +276,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				contenuto.setTitolo(rs.getString("titolo"));
 				contenuto.setImg(rs.getString("img"));
 				contenuto.setAnteprima(rs.getString("anteprima"));
+				contenuti.add(contenuto);
 			}
 			
 		} catch (SQLException e) {
@@ -291,10 +290,8 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=2 and titolo ILIKE '%?%' or testo ILIKE '%?%' group by(id);";
+			String query = "select * from contenuto where tipologia=2 and titolo ILIKE '%"+string+"%' or testo ILIKE '%"+string+"%' group by(id);";
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, string);
-			st.setString(2, string);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
@@ -306,11 +303,13 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				contenuto.setTitolo(rs.getString("titolo"));
 				contenuto.setImg(rs.getString("img"));
 				contenuto.setAnteprima(rs.getString("anteprima"));
+				contenuti.add(contenuto);
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}	
+		}
+		System.out.println("non ne ho trovate");
 		return contenuti;
 	}
 
