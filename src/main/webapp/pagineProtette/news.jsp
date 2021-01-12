@@ -30,12 +30,21 @@
                   <div class="card-body">
                     <h5 class="card-title">${contenuto.titolo}</h5>
                     <p class="card-text">${contenuto.anteprima}</p>
+
                     <p class="card-text"><i class="fas fa-calendar-alt"></i> ${contenuto.data}</p>
                   		<form id="formArticolo" method="post" action="Contenuto" align="right">
 		                              <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
 		                              <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
 				        </form>
 		        </div>
+
+                    <p class="card-text"><i class="fas fa-calendar-alt"></i> ${contenuto.data}</p>
+                    <form id="formArticolo" method="post" action="Contenuto" align="right">
+                       <input type="hidden" id="id" name="id" value=${contenuto.id}>                 
+                       <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+		            </form>
+                  </div>
+
 		                
             </div>  
           </c:forEach>

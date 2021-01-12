@@ -137,7 +137,7 @@ label {
     border-radius: 12px
 }
 
-form {
+#algin-form {
     border: 2px solid #eab425; /* bordo form commento*/
     background-color: rgb(242, 169, 58);
     border-radius: 5px;
