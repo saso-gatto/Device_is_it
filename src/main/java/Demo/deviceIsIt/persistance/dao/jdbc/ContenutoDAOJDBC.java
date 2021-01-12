@@ -263,7 +263,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where titolo ILIKE ? and testo ILIKE ? group by(id) having tipologia=1;";
+			String query = "select * from contenuto where titolo ILIKE ? or testo ILIKE ? group by(id) having tipologia=1;";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, string);
 			st.setString(2, string);
