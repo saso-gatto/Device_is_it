@@ -8,13 +8,15 @@
 	<meta charset="UTF-8">
     <title>Device Is It</title>	
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/contenutoRichiesto.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
 	<script src="/js/commento.js"></script>  	
+	  
 	
   		
 </head>
 <body>
-<div class="container">
+<div id="contenuto" class="container">
 	  <h1>${contenuto.titolo}</h1>
 	  <p>${contenuto.testo}</p>
 	  <p id="idcontenuto" hidden>${contenuto.id}</p>
