@@ -11,7 +11,7 @@
   		
 </head>
 <body>
-   <p id="titolo" style="text-align:left"> Risultati di Ricerca: </p>
+   <p id="titolo" style="text-align:left; padding-left:20px"> Risultati di Ricerca: </p>
    
    <section id="schede">   
         

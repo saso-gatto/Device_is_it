@@ -13,7 +13,6 @@
 .card {
 	box-shadow: 0 8px 15px 0 rgba(0,0,0,0.2); /*ombra fissa*/
 	transition: 0.3s;
-/* 	border-radius: 30px; */
 	height: 400px;   
 	max-width: 250px;
 	min-width: 200px;
@@ -46,17 +45,16 @@ img {
 }
 
 
-
-
 /* --------- scheda tecnica singola (tabella) ------- */
 
 body {
   background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
 }
 
- body * {
-	 box-sizing: border-box;
-}
+/*  body * { */
+/* 	 box-sizing: border-box; */
+/* } */
+
  .header {
 	 background-color: #eab425;
 	 color: white;

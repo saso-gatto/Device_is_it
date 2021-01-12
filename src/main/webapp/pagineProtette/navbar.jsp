@@ -62,15 +62,19 @@
    			 </div>    		
    			 </form>	 	 		       		
    			
-            
-   			<div class="navbar-nav">   			
+            <div id="modeAdmin" style="align:center; color:white">
+	            <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			 Modalità Amministratore 
+		    	</c:if>
+            </div>	
+   			
+   			<div class="navbar-nav">   	
+	
 	   			<c:if test="${usernameLogged == null}">  <!--  se non c'è un username loggato mostrami il login -->
 	    			<i class="loginIcon fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
 	    		</c:if>
+	    		
 	    		<c:if test="${usernameLogged != null}"> <!-- se c'è un username loggato -->
-
-
-<%-- 	    			Utente loggato: ${usernameLogged} --%>
 
 	    			<div class="navbar-nav">             
                			<div class="nav-item dropdown">
