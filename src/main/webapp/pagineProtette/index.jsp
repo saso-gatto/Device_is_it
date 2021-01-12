@@ -8,6 +8,8 @@
     <meta charset="utf-8">
     <title>Device Is It</title>
   	
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
+  	
   	<link rel="stylesheet" href="css/home.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
   		
@@ -25,15 +27,29 @@
 
 <!-- Ultime News -->
 
-   <p id="titolo" style="text-align:center"> Ultime News </p>                    
+   <p id="titolo" style="text-align:center"> Ultime News </p>   
+   
+    <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+	   	<div class="container">
+ 		 	<button type="button" class="btn btn-primary btn-sm btn-block"> Aggiungi un nuovo contenuto</button>
+		</div>    	
+	</c:if>                 
             
-                   
+                              
      <section class="latest-blog">           
 <!--          <div class="card-columns">      -->
 	     <div class="container">
 	        <div class="card-columns">   
 		         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
-					 <div class="card">
+					 <div class="card" style="border-radius:0px 0px 0px 0px;">
+			           
+			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			  <div id="icons" style="padding: 10px 10px 10px">				          
+			                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
+						     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
+			              </div>			        
+		    		   </c:if>
+			           
 			           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
 			              <div class="card-body">
 				              <h5 class="card-title">${contenuto.titolo}</h5>
