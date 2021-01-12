@@ -10,13 +10,9 @@
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
   	<link rel="stylesheet" href="css/contenutoRichiesto.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
-<<<<<<< HEAD
-=======
+
 	<script src="/js/commento.js"></script>  	
 	  
-	
->>>>>>> branch 'master' of https://github.com/Caterina5/Device_is_it
-  		
 </head>
 <body>
 <div id="contenuto" class="container">
