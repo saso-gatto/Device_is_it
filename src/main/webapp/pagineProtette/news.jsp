@@ -7,9 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
   
-  <title>Device is it</title>
-
-
+  	<title>Device is it</title>
     <link rel="stylesheet" href="css/news.css" type="text/css"/>
     <jsp:include page="./navbar.jsp" /> 
 

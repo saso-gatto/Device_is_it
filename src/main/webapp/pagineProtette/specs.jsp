@@ -13,9 +13,10 @@
   	
 </head>
 <body>
-   
-   <p id="titolo" style="text-align:center"> Schede Tecniche</p>
-	
+  
+
+   	<p id="titolo" style="text-align:center"> Schede Tecniche</p>
+   		
 	<section id="schede"> 	
 	 <div class="container">
 	 	<div class="row justify-content-center">   

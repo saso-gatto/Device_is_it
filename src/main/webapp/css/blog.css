@@ -2,6 +2,10 @@
  * Globals
  */
 
+#contenuto{
+	padding-top: 100px;
+}
+
 @media (min-width: 48em) {
   html {
     font-size: 18px;
@@ -30,7 +34,6 @@ h6, .h6 {
  */
 
 .container {
-	margin-top:8%;
   max-width: 60rem;
 }
 

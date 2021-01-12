@@ -8,25 +8,19 @@
 	<meta charset="UTF-8">
     <title>Device Is It</title>	
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
-  	<link rel="stylesheet" href="css/contenutoRichiesto.css" type="text/css"/>
+<!-- 	<link rel="stylesheet" href="css/blog.css" type="text/css"/> -->
+	
 	<jsp:include page="./navbar.jsp" />
-
 	<script src="/js/commento.js"></script>  	
 	  
-	  
-	<!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="css/blog.css" type="text/css"/>
+    
 	  
 </head>
 <body>
 
 
-
-
-    <div class="container">
+<div id="contenuto" class="container">
+    
 
       <div class="row">
 
@@ -35,15 +29,10 @@
           <div class="blog-post">
             <h2 class="blog-post-title"> ${contenuto.titolo} </h2>
             <p class="blog-post-meta"> ${contenuto.data} </p>
-
             <p> ${contenuto.testo} </p>
-            
             </div><!-- /.blog-post -->
-
-          
-
-
         </div><!-- /.blog-main -->
+        
 
         <div class="col-sm-3 offset-sm-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
@@ -67,34 +56,18 @@
               <li><a href="#">April 2013</a></li>
             </ol>
           </div>
-       
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-
-
-
-
-
-<div id="contenuto" class="container">
-	  <h1>${contenuto.titolo}</h1>
-	  <p>${contenuto.testo}</p>
-
-
-    <div class="end">
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav">
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Work</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Capabilities</a> </li>
-                <li class="nav-item "> <a class="nav-link" href="#" data-abc="true">Articles</a> </li>
-                <li class="nav-item active"> <a class="nav-link mt-2" href="#" data-abc="true" id="clicked">Contact<span class="sr-only">(current)</span></a> </li>
-            </ul>
         </div>
-    </div>
+      </div>
 
+   
+
+
+
+
+
+
+
+	  
 <!-- Main Body -->
 <section>
     <div class="container" id="commenti">
@@ -106,13 +79,7 @@
 			                    <h4>${commento.utente}</h4> <span>-${commento.data}</span> <br>
 			                    <p>${commento.testo}</p>
 			                </div>
-			  		</c:forEach>              
-<!-- 			                <div class="text-justify darker mt-4 float-right">  -->
-<!-- 			                    <h4>Rob Simpson</h4> <span>- 20 October, 2018</span> <br> -->
-<!-- 			                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> -->
-<!-- 			                </div> -->
-			                
-			     
+			  		</c:forEach>			     
 	         </div>
             
             

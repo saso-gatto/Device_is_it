@@ -84,20 +84,22 @@ public class NavBarController {
 	@PostMapping("cerca")	
 	public String risultatiRicerca(HttpSession session, Model model, @RequestParam String daCercare) {
 		
+		String cerca="%"+daCercare+"%";
+		
 		List<Contenuto> Articoli= new ArrayList<Contenuto>();
 		List<Contenuto> Recensioni= new ArrayList<Contenuto>();
-//		List<Device> Smartphone= new ArrayList<Device>();
-//		List<Device> Computer= new ArrayList<Device>();
+		List<Device> Smartphone= new ArrayList<Device>();
+		List<Device> Computer= new ArrayList<Device>();
 		
-		Articoli=DBManager.getInstance().ContenutoDAO().researchResultArticoli(daCercare);
-		Recensioni=DBManager.getInstance().ContenutoDAO().researchResultRecensioni(daCercare);
-//		Smartphone=DBManager.getInstance().deviceDAO().researchResultSmartphone(daCercare);
-//		Computer=DBManager.getInstance().deviceDAO().researchResultComputer(daCercare);
+		Articoli=DBManager.getInstance().ContenutoDAO().researchResultArticoli(cerca);
+		Recensioni=DBManager.getInstance().ContenutoDAO().researchResultRecensioni(cerca);
+		Smartphone=DBManager.getInstance().deviceDAO().researchResultSmartphone(cerca);
+		Computer=DBManager.getInstance().deviceDAO().researchResultComputer(cerca);
 	
 		model.addAttribute("listaArticoli",Articoli);	
-		model.addAttribute("listarecensioni",Recensioni);	
-//		model.addAttribute("listaSmartphone",Smartphone);	
-//		model.addAttribute("listaComputer",Computer);	
+		model.addAttribute("listaRecensioni",Recensioni);	
+		model.addAttribute("listaSmartphone",Smartphone);	
+		model.addAttribute("listaComputer",Computer);	
 
 		return "risultatiRicerca";			
 	}

@@ -11,55 +11,164 @@
   		
 </head>
 <body>
+
+
    <p id="titolo" style="text-align:left; padding-left:20px"> Risultati di Ricerca: </p>
    
-   <section id="schede">   
-        
-    <div class="container">
-          
-       <c:forEach var="articolo" items="${listaArticoli}">  
-			  <div class="row">
-				  	<div class="card bg-dark text-white">
-						  <img class="card-img" src="${articolo.img}" alt="Card image">
-						  <div class="card-img-overlay">
-						    <h5 class="card-title">${articolo.titolo}</h5>
-						    <p class="card-text">${articolo.anteprima}...</p>
-						    <a href="#" class="card-link">Continua a leggere</a>
-						  </div>
-						</div>
-				</div>
-     	</c:forEach>      
-     
-      </div>
-   </section>
    
-   <!-- fino a qui funziona 
+     <!--  SMARTHPONE -->
+   
+   <c:if test="${listaSmartphone.size() > 0}"> 
+   		<p id="titolo" style="text-align:center"> Smartphone</p>
+	</c:if>
+	
+	<section id="schede"> 	
+	 <div class="container">
+	 	<div class="row justify-content-center">   
+			 	
+		   <c:forEach var="device" items="${listaSmartphone}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+			   <div class="col-md-4 col-lg-3">
+				    <div class="cardDevice" style="border-radius:30px">    
+				       <div class="img-hover-zoom img-hover-zoom--basic">
+				          <img class="imgDevice" src="${device.img}"> 
+				       </div>
+				       <div class="card-body text-center">
+				          <h5 class="card-title">${device.modello}</h5> 
+				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
+				          	<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+							<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
+	                       </form>			      	
+				      </div>      
+				    </div>
+			   </div>	
+	      </c:forEach>		
+	      
+		</div>
+	  </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    <!--  Computer -->
+   
+   <c:if test="${listaComputer.size() > 0}"> 
+   		<p id="titolo" style="text-align:center"> Computer</p>
+	</c:if>
+			
+	<section id="schede"> 	
+	 <div class="container">
+	 	<div class="row justify-content-center">   
+			 	
+		   <c:forEach var="device" items="${listaComputer}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+			   <div class="col-md-4 col-lg-3">
+				    <div class="cardDevice" style="border-radius:30px">    
+				       <div class="img-hover-zoom img-hover-zoom--basic">
+				          <img class="imgDevice" src="${device.img}"> 
+				       </div>
+				       <div class="card-body text-center">
+				          <h5 class="card-title">${device.modello}</h5> 
+				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
+				          	<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+							<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
+	                       </form>			      	
+				      </div>      
+				    </div>
+			   </div>	
+	      </c:forEach>		
+	      
+		</div>
+	  </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    <!-- Aricoli -->
+   
+   <c:if test="${listaArticoli.size() > 0}"> 
+   		<p id="titolo" style="text-align:center"> Articoli</p>
+	</c:if>
+   
+        <section class="latest-blog">           
+	     <div class="container">
+	        <div class="card-columns">   
+		         <c:forEach var="contenuto" items="${listaArticoli}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card" style="border-radius:0px 0px 0px 0px;">
+			           
+			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			  <div id="icons" style="padding: 10px 10px 10px">				          
+			                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
+						     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
+			              </div>			        
+		    		   </c:if>
+			           
+			           <img class="card-img-top" src="${contenuto.img}" >
+			              <div class="card-body">				              
+				              <h5 class="card-title">${contenuto.titolo}</h5>
+				              <p class="card-text"> ${contenuto.anteprima} </p>
+				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <form id="formArticolo" method="post" action="Contenuto" align="right">
+				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+				                 <button  class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+				              </form>			               
+			          	  </div>		               
+			          </div>                        
+				   </c:forEach>
+		  	</div>
+	     </div>
+    </section>
    
    
    
-   <section id="schede">   
-        
-    <div class="container">
-          
-       <c:forEach var="recensione" items="${listarecensioni}">  
-			  <div class="row">
-				  	<div class="card bg-dark text-white">
-						  <img class="card-img" src="${recensione.img}" alt="Card image">
-						  <div class="card-img-overlay">
-						    <h5 class="card-title">${recensione.titolo}</h5>
-						    <p class="card-text">${recensione.anteprima}...</p>
-						    <a href="#" class="card-link">Continua a leggere</a>
-						  </div>
-						</div>
-				</div>
-     	</c:forEach>      
-     
-      </div>
-   </section> -->
+   
+
+   
+   <!-- RECENSIONI -->
+   <c:if test="${listaRecensioni.size() > 0}"> 
+   		<p id="titolo" style="text-align:center"> Recensioni</p>
+	</c:if>	
+	
+      <section class="latest-blog">           
+	     <div class="container">
+	        <div class="card-columns">   
+		         <c:forEach var="contenuto" items="${listaRecensioni}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card" style="border-radius:0px 0px 0px 0px;">
+			           
+			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			  <div id="icons" style="padding: 10px 10px 10px">				          
+			                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
+						     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
+			              </div>			        
+		    		   </c:if>
+			           
+			           <img class="card-img-top" src="${contenuto.img}" >
+			              <div class="card-body">				              
+				              <h5 class="card-title">${contenuto.titolo}</h5>
+				              <p class="card-text"> ${contenuto.anteprima} </p>
+				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <form id="formArticolo" method="post" action="Contenuto" align="right">
+				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+				                 <button  class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+				              </form>			               
+			          	  </div>		               
+			          </div>                        
+				   </c:forEach>
+		  	</div>
+	     </div>
+    </section>
    
    
    
    
+   
+   
+   
+
    
 </body>
 </html>

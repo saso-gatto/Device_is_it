@@ -2,42 +2,11 @@ body {
   background: linear-gradient(to right, rgb(249, 198, 85), #fff5d7);
 }
 
-
-
-@media(min-width:568px) {
-    .end {
-        margin-left: auto
-    }
-}
-
-@media(max-width:768px) {
-    #post {
-        width: 100%
-    }
-}
-
 #commenti{
 	margin-top: 12%;
-	margin-bottom: 8%;
-    
+	margin-bottom: 8%;  
 }
 
-#clicked {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    text-align: center;
-    width: 100%;
-    background-color: #ecb21f;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: green;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 13px
-}
-
-#profile {
-    background-color: unset
-}
 
 #post { /* bottone invio commento submit*/
     margin: 10px;
@@ -54,28 +23,6 @@ body {
     width: 50%
 }
 
-#nav-items li a,
-
-#profile {
-    text-decoration: none;
-    color: #f4b074;
-    background-color: #f4b074;
-}
-
-.comments {
-    margin-top: 5%;
-    margin-left: 20px
-}
-
-.darker {
-    border: 1px solid rgb(204, 164, 79); /* bordo secondo commento*/
-    background-color: rgb(247,243,232); /* colore secondo commento*/
-    float: right;
-    border-radius: 5px;
-    padding-left: 40px;
-    padding-right: 30px;
-    padding-top: 10px
-}
 
 .comment {
     border: 1px solid orange; /* bordo primo commento*/
@@ -122,12 +69,6 @@ label {
 
 .form-group p a {
     color: white
-}
-
-
-#darker img {
-    margin-right: 15px;
-    position: static
 }
 
 .form-group input,

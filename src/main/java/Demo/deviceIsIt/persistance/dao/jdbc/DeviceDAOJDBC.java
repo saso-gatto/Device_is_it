@@ -202,9 +202,9 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		List<Device> devices = new ArrayList <Device>();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select *  rom device where  tipodevice=1 and  modello ILIKE '%?%' or marca ILIKE '%?%' or memoria ILIKE '%?%' or "
-								   + "ram ILIKE '%?%' or display ILIKE '%?%' or batteria ILIKE '%?%' or fotocamera ILIKE '%?%' or cpu ILIKE '%?%' or "
-								   + "peso ILIKE '%?%' or os ILIKE '%?%' group by(id);"; 
+			String query = "select *  from device where modello ILIKE ? or marca ILIKE ? or memoria ILIKE ? or "
+								   + "ram ILIKE ? or display ILIKE ? or batteria ILIKE ? or fotocamera ILIKE ? or cpu ILIKE ? or "
+								   + "peso ILIKE ? or os ILIKE ? group by(id) having tipodevice=1;"; 
 			PreparedStatement st = con.prepareStatement(query);
 			st.setString(1, string);
 			st.setString(2, string);
@@ -246,9 +246,9 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		List<Device> devices = new ArrayList <Device>();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select *  rom device where  tipodevice=2 and  modello ILIKE '%?%' or marca ILIKE '%?%' or memoria ILIKE '%?%' or "
-								   + "ram ILIKE '%?%' or display ILIKE '%?%' or batteria ILIKE '%?%' or fotocamera ILIKE '%?%' or cpu ILIKE '%?%' or "
-								   + "peso ILIKE '%?%' or os ILIKE '%?%' group by(id);"; 
+			String query = "select *  from device where marca ILIKE ? or modello ILIKE ? or memoria ILIKE ? or "
+								   + "ram ILIKE ? or display ILIKE ? or batteria ILIKE ? or fotocamera ILIKE ? or cpu ILIKE ? or "
+								   + "peso ILIKE ? or os ILIKE ? group by(id) having tipodevice=2;"; 
 			PreparedStatement st = con.prepareStatement(query);
 			st.setString(1, string);
 			st.setString(2, string);

@@ -37,7 +37,6 @@
             
                               
      <section class="latest-blog">           
-<!--          <div class="card-columns">      -->
 	     <div class="container">
 	        <div class="card-columns">   
 		         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  

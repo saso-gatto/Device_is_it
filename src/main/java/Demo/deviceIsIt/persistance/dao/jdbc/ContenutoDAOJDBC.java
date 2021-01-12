@@ -263,8 +263,10 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=1 and titolo ILIKE '%"+string+"%' or testo ILIKE '%"+string+"%' group by(id);";
+			String query = "select * from contenuto where titolo ILIKE ? and testo ILIKE ? group by(id) having tipologia=1;";
 			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
@@ -290,8 +292,10 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=2 and titolo ILIKE '%"+string+"%' or testo ILIKE '%"+string+"%' group by(id);";
+			String query = "select * from contenuto where titolo ILIKE ? or testo ILIKE ? group by(id) having tipologia=2;";
 			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
@@ -309,7 +313,6 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("non ne ho trovate");
 		return contenuti;
 	}
 
