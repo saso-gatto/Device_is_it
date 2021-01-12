@@ -1,7 +1,6 @@
 /**
  * 
  */
-alert("sono qui");
 /*
 window.addEventListener("load", function(){
 	//inizializzaDati();
