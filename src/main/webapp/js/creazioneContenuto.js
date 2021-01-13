@@ -24,26 +24,34 @@ window.onclick = function(event) {
   }
 }
 
+var  recSmartphone= document.getElementById("btnRecSmartphone");
+var  recComputer= document.getElementById("btnRecComputer");
+var  schedaTec= document.getElementById("btnSchedaTec");
+var  news= document.getElementById("btnNews");
 
-//function inserisciContenuto(){
-//	
-//	$.ajax({
-//		url: "creaContenuto",   // == cosa vuoi chiamare?  (un cotroller)
-//		method: "POST",  
-//		data:{matr:matricola, cognome:cognome, nome:nome, date:date, scuola:scuola }, // coppia etichetta:variabile
-//		success: function(response){
+recSmartphone.onclick = function() {
+  inserisciContenuto();
+}
+
+function inserisciContenuto(){
+	
+	$.ajax({
+		url: "creaContenuto",   // == cosa vuoi chiamare?  (un cotroller)
+		method: "GET",  
+		success: function(response){
+			alert(response);
+//			$('#load').html(response);
+//			window.location=response
+			 windows.href.location = response+".jsp";
+//			window.location=response;
+						
 //			if (response === "SUCCESS"){
-//				var studente = new Studente(matricola, cognome, nome, date, scuola);
-//				aggiungiStudente(studente);
+//				alert("woo woo");
 //			}
-//			alert(response);
-//		},
-//		fail: function( jqXHR, textStatus ) {
-//  			alert( "Request failed: " + textStatus );
-//		}
-//	});			
-//	
-//	//var studente = new Studente(matricola, cognome, nome, email);
-//	
-//	//aggiungiStudente(studente);
-//}
+
+		},
+		fail: function( jqXHR, textStatus ) {
+  			alert( "Request failed: " + textStatus );
+		}
+	});			
+}
