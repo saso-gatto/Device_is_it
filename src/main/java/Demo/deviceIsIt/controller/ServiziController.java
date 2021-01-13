@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Demo.deviceIsIt.model.Contenuto;
@@ -18,8 +19,9 @@ public class ServiziController {
 	
 	//testoCommento: testo, idContenuto=idcontenuto, data=data, username=username
 	@PostMapping("AggiungiCommento")
-	public String aggiungiCommento(String testoCommento, int idcontenuto, String data, String username) {
-		System.out.println(testoCommento);
+	public String aggiungiCommento(@RequestParam int idcontenuto, @RequestParam String testoCommento,  
+			@RequestParam String data,@RequestParam String username) {
+		System.out.println("testoCommento");
 		System.out.println(idcontenuto);
 		System.out.println(data);
 		
