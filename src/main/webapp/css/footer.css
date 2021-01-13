@@ -19,7 +19,7 @@
 }
 
 .footer-left .footer-logo {
-	margin-bottom: 24px;
+	margin-bottom: 10px;
 }
 
 .footer-left .footer-logo a {
@@ -84,9 +84,13 @@
 
 .footer-widget ul li {
 	list-style: none;
+	line-height: 36px;
+	font-size: 16px;
+	color: #b2b2b2;
+	text-align:left;
 }
 
-.footer-widget ul li a {
+.footer-widget a {
 	line-height: 36px;
 	font-size: 16px;
 	color: #b2b2b2;

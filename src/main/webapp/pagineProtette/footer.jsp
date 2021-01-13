@@ -19,25 +19,29 @@
                         <div align="center" class="footer-logo">
                             <a href=""><img src="images/logo_deviceIsIt.png" alt=""></a>
                         </div>
-                        <ul>
-                            <li>Un team fantastico!</li>
-                            <li>Ci puoi trovare nelle sedi: </li>
-                            <li> - Reggio </li>
-                            <li> - Locri </li>
-                            <li> - Cosenza </li>
-                            <li> - Cittanova </li>
-                            
-                        </ul>
                         <div align="center" class="footer-social">
-                        
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                           
-                        </div>
+	                        
+	                            <a href="#"><i class="fa fa-facebook"></i></a>
+	                            <a href="#"><i class="fa fa-instagram"></i></a>
+	                            <a href="#"><i class="fa fa-twitter"></i></a>
+	                           
+	                   </div>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1">
+                <div class="col-lg-3">
+                	<div align="left" class="footer-widget">
+	                	<ul>
+	                            <h5>Un team fantastico!</h5>
+	                            <li>Ci puoi trovare nelle sedi: </li>
+	                            <li><a href="#"> - Reggio </a></li>
+	                            <li><a href="#"> - Locri </a></li>
+	                            <li><a href="#"> - Cosenza </a></li>
+	                            <li><a href="#"> - Cittanova </a></li>
+	                            
+	                        </ul>
+	                 </div>
+                </div>
+                <div class="col-lg-2">
                     <div align="center" class="footer-widget">
                         <h5>Informazioni</h5>
                         <ul>
@@ -55,6 +59,8 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Per la possibilità di iscriversi alla newsletter -->
+                <!--  
                 <div class="col-lg-4">
                     <div class="newslatter-item">
                         <h5>Iscriviti alla nostra Newsletter</h5>
@@ -64,7 +70,8 @@
                             <button type="button">Iscriviti</button>
                         </form>
                     </div>
-                </div>
+                </div>-->
+                
             </div>
         </div>
         
