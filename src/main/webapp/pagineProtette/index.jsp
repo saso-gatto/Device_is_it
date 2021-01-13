@@ -203,7 +203,6 @@
 	
 	
   <!-- Trigger/Open The Modal -->
-  <div class="col-md-6 text-center">
 	<div id="scegliContenuto" class="modal">
   <!-- Modal content -->
   <div class="modal-content" >
@@ -211,19 +210,19 @@
     <div class="logo mb-3">
 		<div class="col-md-12 text-center">
           <button type="button" class="close" data-dismiss="modal">×</button>
-          <h3 class="titolo-loginForm">Quale contenuto vuoi aggiungere?</h3>
+          <h3 id="titolo-form">Quale contenuto vuoi aggiungere?</h3>
+          <br>
 	   </div>
      </div>
 
-    <button type="button" class="btn btn-outline-primary">Recensione Smartphone</button>
-    <br>
-	<button type="button" class="btn btn-outline-secondary"> Recensione Computer </button>
-     <br>
-	<button type="button" class="btn btn-outline-success">Scheda Tecnica</button>
-     <br>
-	<button type="button" class="btn btn-outline-info">News</button>
+    <button type="button" id="btnRecSmartphone"class="btn btn-outline-primary">Recensione Smartphone</button>
+      <br>
+	<button type="button" id="btnRecComputer"class="btn btn-outline-primary">Recensione Computer</button>
+      <br>
+	<button type="button" id="btnSchedaTec" class="btn btn-outline-success">Scheda Tecnica</button>
+      <br>
+	<button type="button" id="btnNews" class="btn btn-outline-info">News</button>
     
-  </div>
   </div>
 
 </div>
