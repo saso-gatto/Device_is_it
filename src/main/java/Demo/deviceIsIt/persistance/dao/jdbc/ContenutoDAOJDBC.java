@@ -179,7 +179,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select contenuto.* from contenuto, device where contenuto.tipologia=1 and contenuto.device=device.id and device.tipodevice=2;";
+			String query = "select contenuto.* from contenuto, device where contenuto.tipologia=2 and contenuto.device=device.id and device.tipodevice=2;";
 			PreparedStatement st = conn.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
@@ -207,7 +207,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query ="select contenuto.* from contenuto, device where contenuto.tipologia=1 and contenuto.device=device.id and device.tipodevice=1;";
+			String query ="select contenuto.* from contenuto, device where contenuto.tipologia=2 and contenuto.device=device.id and device.tipodevice=1;";
 			PreparedStatement st = conn.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				

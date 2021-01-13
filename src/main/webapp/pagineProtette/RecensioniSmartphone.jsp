@@ -17,82 +17,42 @@
 
 	<p id="titolo" style="text-align:center"> Recensioni Smartphone</p>
 
- <div>
- 
- 
-  <div class="card">
-    <div class="additional">
-      
-      <div class="user-card">
-        <div class="level center">
-          13 commenti
-        </div>
-        <div class="points center">
-          Data: 1/1/2020
-        </div>
-      </div>
-
-      <div class="more-info">
-        <h1>Jane Doe</h1>
-          <div class="coords">
-            <span>Group Name</span>
-            <span>Joined January 2019</span>
-          </div>
-          <div class="coords">
-            <span>Position/Role</span>
-            <span>City, Country</span>
-          </div>
-      </div>
-      
-    </div>
+          <c:forEach var="contenuto" items="${listaSmartphone}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+ 			
+			<div class="row justify-content-center">
+			  <div class="card">
+			    <div class="additional">
+			      
+			      <div class="user-card">
+			        <div class="level center">
+			          13 commenti
+			        </div>
+			        
+			        <img width="160" height="110" src="${contenuto.img}" class="center">
+			        
+			        <div class="points center">
+			          Data: ${contenuto.data}
+			        </div>
+			      </div>
+			
+			      <div class="more-info">
+			        <h1>${contenuto.titolo}</h1>
+			      </div>
+			      
+			    </div>
     
-    <div class="general">
-      <h1>Pixel 5</h1>
-      <p>Google ha rinnovato la sua lineup di smartphone anche nel 2020 e fra questi c’è anche la sua punta di diamante, ovvero Google Pixel 5. È un prodotto atipico, con vari passi indietro, soprattutto in termini di posizionamento e che è ancora più atipico per noi italiani visto che non viene venduto nel nostro paese. Scopriamo cosa ha di speciale questo nuovo smartphone di Google.</p>
-      <span class="more">Mouse over the card for more info</span>
-    </div>
-    
-  </div>
+			    <div class="general">
+			      <h1>${contenuto.titolo}</h1>
+			      <p> ${contenuto.anteprima} </p>
+			      <span class="more">Scorri per leggere la recensione</span>
+			    </div>
+			    
+			  </div>
+			</div>
+  		 </c:forEach>
+	
 
-
-
-
-	  <div class="card">
-    <div class="additional">
-      <div class="user-card">
-        <div class="level center">
-          13 commenti
-        </div>
-        <div class="points center">
-          Data: 1/1/2020
-        </div>
-      </div>
-
-      <div class="more-info">
-        <h1>Jane Doe</h1>
-          <div class="coords">
-            <span>Group Name</span>
-            <span>Joined January 2019</span>
-          </div>
-          <div class="coords">
-            <span>Position/Role</span>
-            <span>City, Country</span>
-          </div>
-        
-      </div>
-    </div>
-    
-
-    <div class="general">
-      <h1>Jane Doe</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
-      <span class="more">Mouse over the card for more info</span>
-    </div>
-  </div>
-  
-
-	</div>
-
+	
 
  
   

@@ -38,7 +38,7 @@ html, body {
   position: absolute;
   width: 150px;
   height: 100%;
-  background: linear-gradient(#dE685E, #EE786E);
+  background: linear-gradient(#004D81, #74FBEA); /* colori mix scheda (arancione e verde) */
   transition: width 0.4s;
   overflow: hidden;
   z-index: 2;

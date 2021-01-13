@@ -73,7 +73,7 @@ public class NavBarController {
 		
 		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
 		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniPc();
-		model.addAttribute("listaContenuto",contenuti);	
+		model.addAttribute("listaComputer",contenuti);	
 		
 		System.out.println("numero recensioni computer: "+contenuti.size());
 		return "RecensioniComputer";
@@ -85,7 +85,7 @@ public class NavBarController {
 		
 		List<Contenuto> contenuti= new ArrayList<Contenuto>();
 		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniSmartphone();
-		model.addAttribute("listaContenuto",contenuti);	
+		model.addAttribute("listaSmartphone",contenuti);	
 		
 		System.out.println("numero recensioni smartphone: "+contenuti.size());
 		return "RecensioniSmartphone";
