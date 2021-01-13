@@ -10,7 +10,6 @@
 	  	
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
 	  	<link rel="stylesheet" href="css/home.css" type="text/css"/>
-	  	<script src="/js/creazioneContenuto.js"></script>
 		<jsp:include page="./navbar.jsp" />
 	  		
 	</head>
@@ -29,7 +28,7 @@
 	   
 	    <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
 		   	<div class="container" style="padding-top:50px">
-		   		 <button type="button" class="btn btn-primary btn-sm btn-block" id="addContenuto">Aggiungi un nuovo Contenuto</button>		   	
+		   		 <button type="button" class="btn btn-primary btn-sm" id="addContenuto"  data-toggle="modal" data-target="#scegliContenuto">Aggiungi un nuovo Contenuto</button>		   	
 			</div>    	
 		</c:if>                 
 	            
@@ -203,6 +202,35 @@
 	</script>
 	
 	
+  <!-- Trigger/Open The Modal -->
+  <div class="col-md-6 text-center">
+	<div id="scegliContenuto" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content" >
+    
+    <div class="logo mb-3">
+		<div class="col-md-12 text-center">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3 class="titolo-loginForm">Quale contenuto vuoi aggiungere?</h3>
+	   </div>
+     </div>
+
+    <button type="button" class="btn btn-outline-primary">Recensione Smartphone</button>
+    <br>
+	<button type="button" class="btn btn-outline-secondary"> Recensione Computer </button>
+     <br>
+	<button type="button" class="btn btn-outline-success">Scheda Tecnica</button>
+     <br>
+	<button type="button" class="btn btn-outline-info">News</button>
+    
+  </div>
+  </div>
+
+</div>
+	
+	
+	
 </body>
+	<script src="./js/creazioneContenuto.js"></script>
 	<jsp:include page="./footer.jsp" /> 
 </html>

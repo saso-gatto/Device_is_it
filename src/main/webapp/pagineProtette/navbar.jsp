@@ -21,7 +21,6 @@
   	
   	<link rel="stylesheet" href="css/navbar.css" type="text/css"/>
 
-  	
   	<script src="/js/login.js"></script>  	
 
 </head>
