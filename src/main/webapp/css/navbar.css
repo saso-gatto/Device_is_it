@@ -93,9 +93,9 @@
 	outline:none;
 	border: 1px solid lightgrey;
 }
-/*  form .error { */
-/* 	color: #ff0000; */
-/* } */
+ form .error {
+	color: #ff0000;
+}
 #second{
 	display:none;
 }
