@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
     <title>Device Is It</title>	
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
   	<link rel="stylesheet" href="css/ricerca.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
   		
@@ -28,6 +29,15 @@
 			 	
 		   <c:forEach var="device" items="${listaSmartphone}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   <div class="col-md-4 col-lg-3">
+			   
+			   		<c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
+					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
+	                    <div class="dropdown-menu">
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-trash"></i> Cancella</a>                      
+	                    </div>
+                    </c:if>
+                    
 				    <div class="cardDevice" style="border-radius:30px">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
 				          <img class="imgDevice" src="${device.img}"> 
@@ -64,6 +74,15 @@
 			 	
 		   <c:forEach var="device" items="${listaComputer}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   <div class="col-md-4 col-lg-3" >
+			   
+			 	  <c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
+					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
+	                    <div class="dropdown-menu">
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-trash"></i> Cancella</a>                      
+	                    </div>
+                    </c:if>
+			   
 				    <div id="schedaTecnica" class="cardDevice" style="border-radius:30px">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
 				          <img class="imgDevice" src="${device.img}"> 

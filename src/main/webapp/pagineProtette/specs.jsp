@@ -8,6 +8,7 @@
 <meta charset="ISO-8859-1">
 	<title>Device is it</title>
 
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
   	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
   	<jsp:include page="./navbar.jsp" /> 
   	
@@ -23,7 +24,16 @@
 			 	
 		   <c:forEach var="device" items="${listaDevice}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 			   <div class="col-md-4 col-lg-3">
-				    <div class="card" style="border-radius:30px">    
+				    
+				    <c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
+					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
+	                    <div class="dropdown-menu">
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
+	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-trash"></i> Cancella</a>                      
+	                    </div>
+                    </c:if>
+	                    
+	                    <div class="card" style="border-radius:30px">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
 				          <img src="${device.img}"> 
 				       </div>
