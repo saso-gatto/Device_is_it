@@ -35,7 +35,11 @@
                               
      <section class="latest-blog">           
 	     <div class="container">
-	     <p id="titolo" > Ultime Recensioni </p>
+	         
+	         <c:if test="${ultimeTreRecensioni.size() > 0}"> 
+	   			<p id="titolo" > Ultime Recensioni </p>
+			 </c:if>
+	     
 	        <div class="card-columns">   
 		         <c:forEach var="contenuto" items="${ultimeTreRecensioni}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
 					 <div class="card">
@@ -65,7 +69,11 @@
     
     <section class="latest-blog">           
 	     <div class="container">
-	     <p id="titolo" > Ultimi Articoli </p>
+		     
+		     <c:if test="${ultimiTreArticoli.size() > 0}"> 
+	   			<p id="titolo" > Ultimi Articoli </p>
+			 </c:if>
+	     	    
 	        <div class="card-columns">   
 		         <c:forEach var="contenuto" items="${ultimiTreArticoli}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
 					 <div class="card">
