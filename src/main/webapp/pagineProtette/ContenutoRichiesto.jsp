@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
     <title>Device Is It</title>	
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
-<!-- 	<link rel="stylesheet" href="css/blog.css" type="text/css"/> -->
+	<link rel="stylesheet" href="css/blog.css" type="text/css"/>
 	
 	<jsp:include page="./navbar.jsp" />
 	<script src="/js/commento.js"></script>  	
