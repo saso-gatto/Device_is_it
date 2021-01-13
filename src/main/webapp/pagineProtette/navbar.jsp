@@ -176,9 +176,11 @@
                            <label for="exampleInputEmail1">Password</label>
                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password">
                         </div>
-                        <div class="form-check-inline"> 
-                        	<p class="newsletter"> Iscriviti alla newsletter </p>     						           
-        				    <input type="checkbox" class="form-check-input" id="newsletter" value="false" checked="true" name="newsletter">
+						  <div class="row">
+	                        <div class="form-check form-check-inline"> 
+	                        	<label class="form-check-label" for="newsletter">Iscriviti alla newsletter</label>   						           
+	        				    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+	   						 </div>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>
