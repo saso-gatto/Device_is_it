@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
   	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
-	<title>Scheda Tecnica</title>
+	<title>Device is it</title>
 	<jsp:include page="./navbar.jsp" /> 
 </head>
 <body>

@@ -9,7 +9,7 @@
 
   	<link rel="stylesheet" href="css/recensioni.css" type="text/css"/>
   	
-	<title>Scheda Tecnica</title>
+	<title>Device is it</title>
 	<jsp:include page="./navbar.jsp" /> 
 	
 </head>
@@ -36,7 +36,11 @@
 			      </div>
 			
 			      <div class="more-info">
-			        <h1>${contenuto.titolo}</h1>
+			       <h1>${contenuto.titolo}</h1> <br><br>
+			      	<form id="formArticolo" method="post" action="Contenuto" align="center">
+		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">               
+		                    <button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Continua a leggere</button>
+				    </form>
 			      </div>
 			      
 			    </div>
