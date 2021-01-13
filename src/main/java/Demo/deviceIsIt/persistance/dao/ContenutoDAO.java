@@ -8,6 +8,8 @@ public interface ContenutoDAO {
 	public void save(Contenuto c);  // Create  == insert/store
 	public Contenuto findByPrimaryKey(int idContenuto);     // Retrieve  == select stud
 	public List<Contenuto> findAll();     //  select*
+	public List<Contenuto> findArticoli();
+	public List<Contenuto> findRecensioni();
 	public List<Contenuto> findLastThreeArticoli();
 	public List<Contenuto> findLastThreeRecensioni();
 	public void update(Contenuto c); //Update

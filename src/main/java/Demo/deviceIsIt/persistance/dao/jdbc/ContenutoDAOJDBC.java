@@ -230,12 +230,70 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		return contenuti;
 	}
 
+	
+	
+	@Override
+	public List<Contenuto> findArticoli() {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from contenuto where tipologia=1 order by data desc;";
+			PreparedStatement st = conn.prepareStatement(query);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));
+				contenuto.setAnteprima(rs.getString("anteprima"));
+
+				contenuti.add(contenuto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
+	@Override
+	public List<Contenuto> findRecensioni() {
+		List<Contenuto> contenuti = new ArrayList <Contenuto>();
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from contenuto where tipologia=2 order by data desc;";
+			PreparedStatement st = conn.prepareStatement(query);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				Contenuto contenuto= new Contenuto();	
+				contenuto.setIdContenuto(rs.getInt("id"));
+				contenuto.setData(rs.getString("data"));
+				contenuto.setTipo(rs.getInt("tipologia"));
+				contenuto.setDevice(rs.getInt("device"));
+				contenuto.setTesto(rs.getString("testo"));
+				contenuto.setTitolo(rs.getString("titolo"));
+				contenuto.setImg(rs.getString("img"));
+				contenuto.setAnteprima(rs.getString("anteprima"));
+
+				contenuti.add(contenuto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return contenuti;
+	}
+
 	@Override
 	public List<Contenuto> findLastThreeArticoli() {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=1 order by data limit 3";
+			String query = "select * from contenuto where tipologia=1 order by data desc limit 3";
 			PreparedStatement st = conn.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				
@@ -265,7 +323,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		List<Contenuto> contenuti = new ArrayList <Contenuto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select * from contenuto where tipologia=2 order by data limit 3";
+			String query = "select * from contenuto where tipologia=2 order by data desc limit 3";
 			PreparedStatement st = conn.prepareStatement(query);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {				

@@ -61,7 +61,7 @@ public class NavBarController {
 	public String dammiNews(HttpSession session, Model model) {
 		
 		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
-		contenuti=DBManager.getInstance().ContenutoDAO().findAll();			
+		contenuti=DBManager.getInstance().ContenutoDAO().findArticoli();		
 		model.addAttribute("listaContenuto",contenuti);	
 				
 		return "news";
