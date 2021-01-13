@@ -167,13 +167,10 @@
 	     </div>
     </section>
    
-   
-   
-<p id="titolo" style="text-align:center"></p>
-   
+      
    
   <!-- Footer inizio -->
-    <footer class="footer-section">
+    <footer class="footer-section"  style="margin-top: 50px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
