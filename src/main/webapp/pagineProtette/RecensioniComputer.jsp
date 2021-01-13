@@ -15,5 +15,8 @@
 <body>
   <p id="titolo" style="text-align:center"> Recensioni Computer</p>
 
+
+  
 </body>
+	<jsp:include page="./footer.jsp" />
 </html>

@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<jsp:include page="./navbar.jsp" /> 
 </head>
 <body>
-my account
+	my account
 </body>
+ <jsp:include page="./footer.jsp" />
 </html>
