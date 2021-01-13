@@ -25,11 +25,9 @@
 
 
 <!-- Ultime News -->
-
-   <p id="titolo" style="text-align:center"> Ultime News </p>   
    
     <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-	   	<div class="container">
+	   	<div class="container" style="padding-top:50px">
  		 	<button type="button" class="btn btn-primary btn-sm btn-block"> Aggiungi un nuovo contenuto</button>
 		</div>    	
 	</c:if>                 
@@ -37,9 +35,10 @@
                               
      <section class="latest-blog">           
 	     <div class="container">
+	     <p id="titolo" > Ultime Recensioni </p>
 	        <div class="card-columns">   
-		         <c:forEach var="contenuto" items="${ultimeTre}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
-					 <div class="card" style="border-radius:0px 0px 0px 0px;">
+		         <c:forEach var="contenuto" items="${ultimeTreRecensioni}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card">
 			           
 			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
 		    			  <div id="icons" style="padding: 10px 10px 10px">				          
@@ -63,7 +62,38 @@
 		  	</div>
 	     </div>
     </section>
- <!-- fine "Ultime news  -->   
+    
+    <section class="latest-blog">           
+	     <div class="container">
+	     <p id="titolo" > Ultimi Articoli </p>
+	        <div class="card-columns">   
+		         <c:forEach var="contenuto" items="${ultimiTreArticoli}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
+					 <div class="card">
+			           
+			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			  <div id="icons" style="padding: 10px 10px 10px">				          
+			                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
+						     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
+			              </div>			        
+		    		   </c:if>
+			           
+			           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
+			              <div class="card-body">
+				              <h5 class="card-title">${contenuto.titolo}</h5>
+				              <p class="card-text"> ${contenuto.anteprima} </p>
+				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <form id="formArticolo" method="post" action="Contenuto" align="right">
+				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+				                 <button  class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+				              </form>			               
+			          	  </div>		               
+			          </div>                        
+				   </c:forEach>
+		  	</div>
+	     </div>
+    </section>
+    
+ <!-- fine "Ultime news  --> 
 
 
 

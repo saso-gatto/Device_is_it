@@ -20,18 +20,28 @@ public class NavBarController {
 	
 	@GetMapping("/index")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHome(HttpSession session, Model model) {
-		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
-		contenuti=DBManager.getInstance().ContenutoDAO().findLastThree();			
-		model.addAttribute("ultimeTre",contenuti);	
-				
+		
+		List<Contenuto> recensioni= new ArrayList<Contenuto>();		
+		recensioni=DBManager.getInstance().ContenutoDAO().findLastThreeRecensioni();			
+		model.addAttribute("ultimeTreRecensioni",recensioni);	
+		
+		List<Contenuto> articoli= new ArrayList<Contenuto>();		
+		articoli=DBManager.getInstance().ContenutoDAO().findLastThreeArticoli();			
+		model.addAttribute("ultimiTreArticoli",articoli);	
+		
 		return "index";
 	}
 	
 	@GetMapping("")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHomeLoad(HttpSession session, Model model) {
-		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
-		contenuti=DBManager.getInstance().ContenutoDAO().findLastThree();			
-		model.addAttribute("ultimeTre",contenuti);	
+		
+		List<Contenuto> recensioni= new ArrayList<Contenuto>();		
+		recensioni=DBManager.getInstance().ContenutoDAO().findLastThreeRecensioni();			
+		model.addAttribute("ultimeTreRecensioni",recensioni);	
+		
+		List<Contenuto> articoli= new ArrayList<Contenuto>();		
+		articoli=DBManager.getInstance().ContenutoDAO().findLastThreeArticoli();			
+		model.addAttribute("ultimiTreArticoli",articoli);	
 				
 		return "index";
 	}
