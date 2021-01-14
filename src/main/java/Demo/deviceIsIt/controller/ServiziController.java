@@ -19,7 +19,7 @@ public class ServiziController {
 	
 	//testoCommento: testo, idContenuto=idcontenuto, data=data, username=username
 	@PostMapping("AggiungiCommento")
-	public String aggiungiCommento() {//int idcontenuto, String testoCommento, String data, String username) {
+	public String aggiungiCommento(int idcontenuto, String testo, String data, String utente) {
 		
 		System.out.println("testoCommento");
 	//	System.out.println(idcontenuto);

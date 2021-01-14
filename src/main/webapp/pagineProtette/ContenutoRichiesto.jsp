@@ -96,11 +96,12 @@
 						<div class="form-group">
 							<label for="username" id="username">Username: ${username}</label>
 						</div>
-						<p id="idContenuto"> ${contenuto.id} </p>
+						<p id="idContenuto"> ${contenuto.id}</p>
 						
 						<div class="form-group">
 							<label for="commento">Commento</label> 
-							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30"> 	</textarea>
+							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30">Scrivi qui il tuo commento...</textarea>
+							
 							<button type="button" id="submitCommento" href="AggiungiCommento">Invia commento </button>
 						</div>
 						
