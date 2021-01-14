@@ -8,22 +8,25 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @RestController
 public class ServiziController {
 	
-	//testoCommento: testo, idContenuto=idcontenuto, data=data, username=username
+
 	@PostMapping("AggiungiCommento")
-	public String aggiungiCommento(int idcontenuto, String testo, String data, String utente) {
+	public String aggiungiCommento(@RequestBody Commento commento  ) {
 		
-		System.out.println("testoCommento");
-	//	System.out.println(idcontenuto);
-	//	System.out.println(data);
+		System.out.println(commento.getTesto());
+		System.out.println(commento.getidcommento());
+		System.out.println(commento.getData());
+		System.out.println(commento.getUtente());
 		
 		return "SUCCESS";
 	}

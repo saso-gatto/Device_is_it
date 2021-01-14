@@ -97,6 +97,7 @@
 							<label for="username" id="username">Username: ${username}</label>
 						</div>
 						<p id="idContenuto"> ${contenuto.id}</p>
+						<p id="emailUtente"> ${usernameLogged}</p>
 						
 						<div class="form-group">
 							<label for="commento">Commento</label> 

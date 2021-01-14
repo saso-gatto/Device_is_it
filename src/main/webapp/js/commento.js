@@ -1,31 +1,30 @@
-
-/**
- * 
- */
-
+function Commento(idcommento, testo, data, emailUtente){
+	this.idcommento=idcommento;
+	this.testo=testo;
+	this.data=data;
+	this.emailUtente=emailUtente;
+	
+}		
 $(document ).ready(function() {
     console.log( "ready!" );
 	
-	//var testo = document.getElementById("testoCommento").value;
 
 	var btnCommento = document.getElementById ("submitCommento").addEventListener ("click", function(){
-		// var bottone = document.querySelector("#btnIscrivi");
-	//	var matr = document.querySelector("#matricola").value;	
-		var data = "2021-01-13";
-		var ut="prova";
+		var emailUtente = document.getElementById("emailUtente").innerText;
+		alert(emailUtente);
+		var data="2021-01-14";
 		var id = document.getElementById("idContenuto").innerText;
-		
 		var testo = $("#testoCommento").val();
-		
-		console.log("id: "+id);
-		console.log("testo: "+testo);
+		var commento = Commento(id,testo,data,emailUtente);
 	
 		$.ajax({
 			  url: "AggiungiCommento",  
 	          method: "POST",
 	          // specifico la URL della risorsa da contattare
-	          data: {idcontenuto:id, testo:testo, data:data, utente:ut}, // se tolgo i commenti ho errori mannaggia
+	          data: JSON.stringify(commento),
 	          // imposto l'azione in caso di successo
+	          contentType: "application/json",
+	          
 	          success: function(risposta){
 	          //visualizzo il contenuto del file nel div htmlm
 	            alert("funziona");
