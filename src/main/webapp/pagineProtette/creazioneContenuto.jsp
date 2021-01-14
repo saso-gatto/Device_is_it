@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	    <meta charset="utf-8">
+	<meta charset="utf-8">
     <title>Device Is It</title>
   	
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
-  	<link rel="stylesheet" href="css/home.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/creazioneContenuto.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
   		
 </head>

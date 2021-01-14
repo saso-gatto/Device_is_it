@@ -30,25 +30,22 @@ var  schedaTec= document.getElementById("btnSchedaTec");
 var  news= document.getElementById("btnNews");
 
 recSmartphone.onclick = function() {
-  inserisciContenuto();
+  window.location.href = "Contenuto";
+//inserisciContenuto();
 }
 
 function inserisciContenuto(){
+	
+	
+	
+	
 	
 	$.ajax({
 		url: "creaContenuto",   // == cosa vuoi chiamare?  (un cotroller)
 		method: "GET",  
 		success: function(response){
 			alert(response);
-//			$('#load').html(response);
-//			window.location=response
-			 windows.href.location = response+".jsp";
-//			window.location=response;
-						
-//			if (response === "SUCCESS"){
-//				alert("woo woo");
-//			}
-
+			 
 		},
 		fail: function( jqXHR, textStatus ) {
   			alert( "Request failed: " + textStatus );

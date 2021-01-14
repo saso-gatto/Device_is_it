@@ -24,7 +24,7 @@ public class LoginController {
 				session.setAttribute("username",username);
 				System.out.println("password corretta");
 			}			
-			return "index";			
+			return "redirect:/";			
 	}
 	
 	

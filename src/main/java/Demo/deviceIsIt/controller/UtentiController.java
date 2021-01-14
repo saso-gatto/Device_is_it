@@ -3,6 +3,8 @@ package Demo.deviceIsIt.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import Demo.deviceIsIt.model.Utente;
@@ -14,7 +16,7 @@ public class UtentiController {
 
 	@PostMapping("Iscrizione")	
 	public String Registrazione(HttpSession session, @RequestParam String nome, @RequestParam String cognome, @RequestParam String username,
-			                        @RequestParam String email, @RequestParam String password, @RequestParam boolean newsletter) {
+			                        @RequestParam String email, @RequestParam String password, @RequestParam (required=false) boolean newsletter) {
 			
 		Utente u= new Utente();
 		u.setNome(nome);
@@ -54,7 +56,9 @@ public class UtentiController {
 	}
 	
 	
-	
-
+	@GetMapping("Contenuto")
+	public String Contenuto(HttpSession session, Model model) {
+		return "creazioneContenuto";
+	}
 	
 }

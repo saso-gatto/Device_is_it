@@ -35,15 +35,8 @@ public class NavBarController {
 	@GetMapping("")	//Metodo che intercetta un href su index e carica la pagina
 	public String getHomeLoad(HttpSession session, Model model) {
 		
-		List<Contenuto> recensioni= new ArrayList<Contenuto>();		
-		recensioni=DBManager.getInstance().ContenutoDAO().findLastThreeRecensioni();			
-		model.addAttribute("ultimeTreRecensioni",recensioni);	
-		
-		List<Contenuto> articoli= new ArrayList<Contenuto>();		
-		articoli=DBManager.getInstance().ContenutoDAO().findLastThreeArticoli();			
-		model.addAttribute("ultimiTreArticoli",articoli);	
-				
-		return "index";
+		return getHome(session,model);
+
 	}
 	
 	@GetMapping("/schedeTecniche")	//Metodo che intercetta un href su index e carica la pagina

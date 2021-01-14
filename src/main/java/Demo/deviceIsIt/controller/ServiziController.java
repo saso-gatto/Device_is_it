@@ -35,24 +35,6 @@ public class ServiziController {
 		System.out.println(testo+" "+titolo+" "+data+" "+tipologia+" "+device+" "+urlImage);
 		
 		return "S"; //<-- cambiare in SUCCESS 
-	}
-	
-	
-	
-	@GetMapping("creaContenuto")
-	public String creaContenuto(HttpSession session, Model model) {
-		Contenuto(session, model);
-		return "SUCCESS";
-	}
-	
-	@GetMapping("Contenuto")
-	private String Contenuto(HttpSession session, Model model) {
-		return "creazioneContenuto";
-	}
-	
-	
-	
-	
-	
+	}	
 	
 }
