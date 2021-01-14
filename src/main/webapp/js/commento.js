@@ -11,10 +11,10 @@ $(document ).ready(function() {
 	
 
 	var btnCommento = document.getElementById ("submitCommento").addEventListener ("click", function(){
-		var email = document.getElementById("emailUtente").innerText;
+		var email = document.getElementById("emailUtente").value;
 		alert(email);
 		var data= new Date();
-		var idcontenuto = document.getElementById("idContenuto").innerText;
+		var idcontenuto = document.getElementById("idContenuto").value;
 		var testo = $("#testoCommento").val();
 		var commento = new Commento(null,idcontenuto,testo,data,email);
 		$.ajax({
@@ -26,7 +26,8 @@ $(document ).ready(function() {
 	          contentType: "application/json",
 	          
 	          success: function(risposta){
-	          //visualizzo il contenuto del file nel div htmlm
+	          console.log(JSON.stringify(risposta));
+			  //visualizzo il contenuto del file nel div htmlm
 	          alert("funziona");
 	          },
 	          //imposto l'azione in caso di insuccesso
