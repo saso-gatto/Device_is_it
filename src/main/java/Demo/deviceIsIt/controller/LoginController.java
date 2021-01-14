@@ -17,7 +17,7 @@ public class LoginController {
 		String checkPassword= DBManager.getInstance().utenteDAO().findPassword(email);
 		String username = DBManager.getInstance().utenteDAO().getUsername(email);
 		
-		System.out.println("password db:"+checkPassword+"  password: "+password);
+		//System.out.println("password db:"+checkPassword+"  password: "+password);
 			
 		if(password.equals(checkPassword)) {
 				session.setAttribute("usernameLogged", email);
