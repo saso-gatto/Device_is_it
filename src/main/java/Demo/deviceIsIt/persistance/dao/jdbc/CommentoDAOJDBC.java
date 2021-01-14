@@ -26,13 +26,12 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		Connection conn;
 		try {
 			conn = dbSource.getConnection();
-			String query = "insert into commento values(?,?,?,?,?);"; // prendiamo la query
+			String query = "insert into commento values(DEFAULT,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, 100);
-			st.setInt(2, commento.getcontenuto());
-			st.setString(3, commento.getutente());
-			st.setDate(4, commento.getData());
-			st.setString(5, commento.getTesto());
+			st.setInt(1, commento.getcontenuto());
+			st.setString(2, commento.getutente());
+			st.setDate(3, commento.getData());
+			st.setString(4, commento.getTesto());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
