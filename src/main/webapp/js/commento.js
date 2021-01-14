@@ -17,7 +17,6 @@ $(document ).ready(function() {
 		var idcontenuto = document.getElementById("idContenuto").innerText;
 		var testo = $("#testoCommento").val();
 		var commento = new Commento(null,idcontenuto,testo,data,email);
-		console.log(commento);
 		$.ajax({
 			  url: "AggiungiCommento",  
 	          method: "POST",
