@@ -101,7 +101,7 @@
 						
 						<div class="form-group">
 							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30">Scrivi qui il tuo commento...</textarea>										
-							<button type="submit" id="submitCommento" href="AggiungiCommento" class="btn btn-outline-warning">Invia commento</button>
+							<button type="button" id="submitCommento" class="btn btn btn-outline-warning">Invia commento</button>
 						</div>
 						
 <!-- 						<div class="form-group"> -->
