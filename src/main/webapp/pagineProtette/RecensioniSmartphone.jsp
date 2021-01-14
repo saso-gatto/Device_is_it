@@ -28,7 +28,7 @@
 			          13 commenti
 			        </div>
 			        
-			        <img width="160" height="110" src="${contenuto.img}" class="center">
+			        <img width="100" height="130" src="${contenuto.img}" class="center">
 			        
 			        <div class="points center">
 			          Data: ${contenuto.data}
