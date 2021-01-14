@@ -1,6 +1,7 @@
 package Demo.deviceIsIt.persistance.dao.jdbc;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,10 +28,10 @@ public class CommentoDAOJDBC implements CommentoDAO {
 			conn = dbSource.getConnection();
 			String query = "insert into commento values(?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, commento.getidcommento());
+			st.setInt(1, 100);
 			st.setInt(2, commento.getcontenuto());
-			st.setString(3, commento.getUtente());
-			st.setString(4, commento.getData());
+			st.setString(3, commento.getutente());
+			st.setDate(4, commento.getData());
 			st.setString(5, commento.getTesto());
 			st.executeUpdate();
 			
@@ -53,12 +54,12 @@ public class CommentoDAOJDBC implements CommentoDAO {
 				int id = rs.getInt("idcommento");
 				int contenuto = rs.getInt("contenuto");
 				String utente = rs.getString("utente");
-				String data = rs.getString("data");
+				Date data = rs.getDate("data");
 				String testo = rs.getString("testo");
 				commento = new Commento();
 				commento.setidcommento(id);
 				commento.setcontenuto(contenuto);
-				commento.setUtente(utente);
+				commento.setutente(utente);
 				commento.setData(data);
 				commento.setTesto(testo);
 				
@@ -85,14 +86,14 @@ public class CommentoDAOJDBC implements CommentoDAO {
 					int idcommento = rs.getInt("idcommento");
 					int contenuto = rs.getInt("contenuto");
 					String utente = rs.getString("utente");
-					String data = rs.getString("data");
+					Date data = rs.getDate("data");
 					String testo = rs.getString("testo");
 					
 					System.out.println(idcommento + contenuto + utente + data+testo);
 					Commento commento = new Commento();
 					commento.setidcommento(idcommento);
 					commento.setcontenuto(contenuto);
-					commento.setUtente(utente);
+					commento.setutente(utente);
 					commento.setData(data);
 					commento.setTesto(testo);
 					
@@ -114,8 +115,8 @@ public class CommentoDAOJDBC implements CommentoDAO {
 			PreparedStatement st = connection.prepareStatement(update);
 			st.setInt(1, commento.getidcommento());
 			st.setInt(2, commento.getcontenuto());
-			st.setString(3, commento.getUtente());
-			st.setString(4, commento.getData());
+			st.setString(3, commento.getutente());
+			st.setDate(4, commento.getData());
 			st.setString(5, commento.getTesto());
 			st.executeUpdate();
 		} catch (SQLException e) {
@@ -164,13 +165,13 @@ public class CommentoDAOJDBC implements CommentoDAO {
 				int idcommento = rs.getInt("idcommento");
 				int contenuto = rs.getInt("contenuto");
 				String utente = rs.getString("utente");
-				String data = rs.getString("data");
+				Date data = rs.getDate("data");
 				String testo = rs.getString("testo");
 				
 				Commento commento = new Commento();
 				commento.setidcommento(idcommento);
 				commento.setcontenuto(contenuto);
-				commento.setUtente(utente);
+				commento.setutente(utente);
 				commento.setData(data);
 				commento.setTesto(testo);
 				

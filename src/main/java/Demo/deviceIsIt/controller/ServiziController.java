@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Demo.deviceIsIt.model.Commento;
-import Demo.deviceIsIt.model.Contenuto;
+
 import Demo.deviceIsIt.persistance.DBManager;
 
 @RestController
@@ -21,14 +21,14 @@ public class ServiziController {
 	
 
 	@PostMapping("AggiungiCommento")
-	public String aggiungiCommento(@RequestBody Commento commento  ) {
-		
+	public Commento aggiungiCommento(@RequestBody Commento commento  ) {
+		DBManager.getInstance().CommentoDAO().save(commento);				
 		System.out.println(commento.getTesto());
 		System.out.println(commento.getidcommento());
 		System.out.println(commento.getData());
-		System.out.println(commento.getUtente());
+		System.out.println(commento.getutente());
 		
-		return "SUCCESS";
+		return commento;
 	}
 	
 	

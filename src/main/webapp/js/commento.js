@@ -1,8 +1,9 @@
-function Commento(idcommento, testo, data, emailUtente){
+function Commento(idcommento,contenuto, testo, data, utente){
 	this.idcommento=idcommento;
+	this.contenuto= contenuto;
 	this.testo=testo;
 	this.data=data;
-	this.emailUtente=emailUtente;
+	this.utente=utente;
 	
 }		
 $(document ).ready(function() {
@@ -10,13 +11,13 @@ $(document ).ready(function() {
 	
 
 	var btnCommento = document.getElementById ("submitCommento").addEventListener ("click", function(){
-		var emailUtente = document.getElementById("emailUtente").innerText;
-		alert(emailUtente);
-		var data="2021-01-14";
-		var id = document.getElementById("idContenuto").innerText;
+		var email = document.getElementById("emailUtente").innerText;
+		alert(email);
+		var data= new Date();
+		var idcontenuto = document.getElementById("idContenuto").innerText;
 		var testo = $("#testoCommento").val();
-		var commento = Commento(id,testo,data,emailUtente);
-	
+		var commento = new Commento(null,idcontenuto,testo,data,email);
+		console.log(commento);
 		$.ajax({
 			  url: "AggiungiCommento",  
 	          method: "POST",
@@ -27,7 +28,7 @@ $(document ).ready(function() {
 	          
 	          success: function(risposta){
 	          //visualizzo il contenuto del file nel div htmlm
-	            alert("funziona");
+	          alert("funziona");
 	          },
 	          //imposto l'azione in caso di insuccesso
 	          fail: function( jqXHR, textStatus ) {

@@ -1,11 +1,13 @@
 package Demo.deviceIsIt.model;
 
+import java.sql.Date;
+
 public class Commento {
 	
 	private int idcommento;
 	private int contenuto;
 	private String utente; //Equivale all'username/email
-	private String data;
+	private Date data;
 	private String testo;
 	
 	
@@ -21,16 +23,17 @@ public class Commento {
 	public void setcontenuto(int contenuto) {
 		this.contenuto = contenuto;
 	}
-	public String getUtente() {
+	public String getutente() {
+		System.out.println("Utente in commento: "+utente);
 		return utente;
 	}
-	public void setUtente(String utente) {
+	public void setutente(String utente) {
 		this.utente = utente;
 	}
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	public String getTesto() {
