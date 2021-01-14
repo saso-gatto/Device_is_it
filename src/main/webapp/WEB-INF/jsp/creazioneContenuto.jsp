@@ -13,7 +13,7 @@
   		
 </head>
 <body>
-<h1> Crea Contenuto</h1>
+<p id="titolo" style="align:center"> ${contenuto} </p>
 </body>
 	 <jsp:include page="./footer.jsp" />
 </html>

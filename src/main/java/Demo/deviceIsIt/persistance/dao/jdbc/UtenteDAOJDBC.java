@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBSource;
 import Demo.deviceIsIt.persistance.dao.UtenteDAO;
@@ -54,21 +59,13 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				st.setString(1, email);
 				ResultSet rs = st.executeQuery();
 				if (rs.next()) {
-					String uemail = rs.getString("email");
-					String nome = rs.getString("nome");
-					String cognome = rs.getString("cognome");
-					String password = rs.getString("password");
-					String username = rs.getString("username");
-					boolean newsletter = rs.getBoolean("newsletter");
-					boolean bloccato = rs.getBoolean("bloccato");
-					
-					utente.setEmail(uemail);
-					utente.setNome(nome);
-					utente.setCognome(cognome);
-					utente.setPassword(password);
-					utente.setUsername(username);
-					utente.setNewsletter(newsletter);
-					utente.setBloccato(bloccato);
+					utente.setEmail(rs.getString("email"));
+					utente.setNome(rs.getString("nome"));
+					utente.setCognome(rs.getString("cognome"));
+					utente.setPassword(rs.getString("password"));
+					utente.setUsername(rs.getString("username"));
+					utente.setNewsletter(rs.getBoolean("newsletter"));
+					utente.setBloccato(rs.getBoolean("bloccato"));
 				}
 				
 			} catch (SQLException e) {
@@ -76,6 +73,27 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			}	
 		return utente;
 	}
+	
+
+	@Override
+	public String findUsername(String email) {
+		String username = null;
+		
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select username from utente where email=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, email);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				username = rs.getString("username");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return username;
+	}
+	
 
 	@Override
 	public List<Utente> findAll() {
@@ -206,6 +224,12 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			e.printStackTrace();
 		}	
 		return username;
+	}
+	
+	@GetMapping("Contenuto")
+	public String creaContenuto(HttpSession session, Model model, int tipologiaContenuto) {
+		
+		return "redirect:";
 	}
 
 }

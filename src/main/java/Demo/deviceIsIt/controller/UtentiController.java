@@ -1,10 +1,7 @@
 package Demo.deviceIsIt.controller;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import Demo.deviceIsIt.model.Utente;
@@ -56,9 +53,6 @@ public class UtentiController {
 	}
 	
 	
-	@GetMapping("Contenuto")
-	public String Contenuto(HttpSession session, Model model) {
-		return "creazioneContenuto";
-	}
+
 	
 }

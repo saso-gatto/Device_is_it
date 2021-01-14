@@ -26,29 +26,55 @@ window.onclick = function(event) {
 
 var  recSmartphone= document.getElementById("btnRecSmartphone");
 var  recComputer= document.getElementById("btnRecComputer");
-var  schedaTec= document.getElementById("btnSchedaTec");
+var  schedaTecSmartphone= document.getElementById("btnSchedaTecSmatphone");
+var  schedaTecComputer= document.getElementById("btnSchedaTecComputer");
 var  news= document.getElementById("btnNews");
 
 recSmartphone.onclick = function() {
-  window.location.href = "Contenuto";
-//inserisciContenuto();
+  window.location.href = "newRecensioneSmartphone";
+
 }
 
-function inserisciContenuto(){
-	
-	
-	
-	
-	
-	$.ajax({
-		url: "creaContenuto",   // == cosa vuoi chiamare?  (un cotroller)
-		method: "GET",  
-		success: function(response){
-			alert(response);
-			 
-		},
-		fail: function( jqXHR, textStatus ) {
-  			alert( "Request failed: " + textStatus );
-		}
-	});			
+recComputer.onclick = function() {
+  window.location.href = "newRecensioneComputer";
+
 }
+
+schedaTecSmartphone.onclick = function() {
+  window.location.href = "newSchedaTecnicaSmartphone";
+
+}
+schedaTecComputer.onclick = function() {
+  window.location.href = "newSchedaTecnicaComputer";
+
+}
+
+news.onclick = function() {
+  window.location.href = "newArticolo";
+
+}
+
+
+
+
+
+
+
+
+//function inserisciContenuto(){
+//
+//	var tipoContenuto= 1;
+//
+//	$.ajax({
+//		url: "creaContenuto",   // == cosa vuoi chiamare?  (un cotroller)
+//		method: "GET",  
+//		data:{tipologiaContenuto:tipoContenuto},
+//		success: function(response){
+//			alert(response);
+//			window.location.href = "Contenuto";
+//		},
+//		fail: function( jqXHR, textStatus ) {
+//  			alert( "Request failed: " + textStatus );
+//		}
+//	});			
+//}

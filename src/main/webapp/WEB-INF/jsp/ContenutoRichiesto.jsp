@@ -73,8 +73,8 @@
         	<div class="col-sm-5 col-md-6 col-12 pb-4">
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
-			                <div class="comment mt-4 text-justify float-left"> 
-			                    <h4>${commento.utente}</h4> <span>-${commento.data}</span> <br>
+			                <div class="comment col-12 mt-4 text-justify float-left"> 
+			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> <br>
 			                    <p>${commento.testo}</p>
 			                </div>
 			  		</c:forEach>			     
@@ -94,16 +94,14 @@
 	             <c:if test="${usernameLogged != null}">
 	             	<form id="formCommento">
 						<div class="form-group">
-							<label for="username" id="username">Username: ${username}</label>
+							<label for="username" id="username">${username}</label>
 						</div>
-						<p id="idContenuto"> ${contenuto.id}</p>
-						<p id="emailUtente"> ${usernameLogged}</p>
+						<input type="hidden" id="idContenuto" value="${contenuto.id}">	
+						<input type="hidden" id="emailUtente" value="${usernameLogged}">	
 						
 						<div class="form-group">
-							<label for="commento">Commento</label> 
-							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30">Scrivi qui il tuo commento...</textarea>
-							
-							<button type="button" id="submitCommento" href="AggiungiCommento">Invia commento </button>
+							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30">Scrivi qui il tuo commento...</textarea>										
+							<button type="submit" id="submitCommento" href="AggiungiCommento" class="btn btn-outline-warning">Invia commento</button>
 						</div>
 						
 <!-- 						<div class="form-group"> -->

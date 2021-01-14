@@ -24,7 +24,6 @@ public class Commento {
 		this.contenuto = contenuto;
 	}
 	public String getutente() {
-		System.out.println("Utente in commento: "+utente);
 		return utente;
 	}
 	public void setutente(String utente) {

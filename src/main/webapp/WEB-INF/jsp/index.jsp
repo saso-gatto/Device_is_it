@@ -27,8 +27,8 @@
 	<!-- Ultime News -->
 	   
 	    <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-		   	<div class="container" style="padding-top:50px">
-		   		 <button type="button" class="btn btn-primary btn-sm" id="addContenuto"  data-toggle="modal" data-target="#scegliContenuto">Aggiungi un nuovo Contenuto</button>		   	
+		   	<div class="container text-center" style="padding-top:50px;">
+		   		 <button type="button" class="btn btn-primary " id="addContenuto"  data-toggle="modal" data-target="#scegliContenuto">Aggiungi un nuovo Contenuto</button>		   	
 			</div>    	
 		</c:if>                 
 	            
@@ -219,7 +219,9 @@
       <br>
 	<button type="button" id="btnRecComputer"class="btn btn-outline-primary">Recensione Computer</button>
       <br>
-	<button type="button" id="btnSchedaTec" class="btn btn-outline-success">Scheda Tecnica</button>
+	<button type="button" id="btnSchedaTecSmatphone" class="btn btn-outline-success">Scheda Tecnica Smartphone</button>
+      <br>
+    <button type="button" id="btnSchedaTecComputer" class="btn btn-outline-success">Scheda Tecnica Computer</button>
       <br>
 	<button type="button" id="btnNews" class="btn btn-outline-info">News</button>
     

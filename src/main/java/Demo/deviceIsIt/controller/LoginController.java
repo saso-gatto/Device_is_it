@@ -32,7 +32,7 @@ public class LoginController {
 	public String logout(HttpSession session) {
 			session.invalidate();
 //			return "logoutSuccess";
-			return "index";
+			return "redirect:/";
 	}
 	
 	
