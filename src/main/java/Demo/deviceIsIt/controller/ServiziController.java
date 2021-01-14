@@ -19,11 +19,11 @@ public class ServiziController {
 	
 	//testoCommento: testo, idContenuto=idcontenuto, data=data, username=username
 	@PostMapping("AggiungiCommento")
-	public String aggiungiCommento(@RequestParam int idcontenuto, @RequestParam String testoCommento,  
-			@RequestParam String data,@RequestParam String username) {
+	public String aggiungiCommento() {//int idcontenuto, String testoCommento, String data, String username) {
+		
 		System.out.println("testoCommento");
-		System.out.println(idcontenuto);
-		System.out.println(data);
+	//	System.out.println(idcontenuto);
+	//	System.out.println(data);
 		
 		return "SUCCESS";
 	}

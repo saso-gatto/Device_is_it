@@ -13,7 +13,7 @@
 	<jsp:include page="./navbar.jsp" />
   
     
-	  
+	
 </head>
 <body>
 
@@ -123,10 +123,12 @@
     </div>
 </section>
 
+		
 
 
 
 </div> 
 </body>
-<script src="/js/commento.js"></script>  	
+
+<script src="/js/commento.js"></script>  
 </html>

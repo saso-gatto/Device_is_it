@@ -3,26 +3,25 @@
  * 
  */
 
-var btnCommento = document.getElementById("submitCommento");
+$(document ).ready(function() {
+    console.log( "ready!" );
+});
 
-btnCommento.onclick = function(){
-	alert("ho cliccato il bottone");
-	//aggiungiCommento();
-}
-  
- function aggiungiCommento(){
+var id = document.getElementById("idContenuto");
+var testo = document.getElementById("testoCommento");
+
+var btnCommento = document.getElementById ("submitCommento").addEventListener ("click", function(){
 	// var bottone = document.querySelector("#btnIscrivi");
 //	var matr = document.querySelector("#matricola").value;	
-	var idcontenuto = document.getElementById("idContenuto");
-	var testo = document.getElementById("testoCommento");
 	var data = "2021-01-13";
-	var utente="prova";
-	
+	var ut="prova";
+
+
 	$.ajax({
 		  url: "AggiungiCommento",  
           method: "POST",
           // specifico la URL della risorsa da contattare
-          data: {idcontenuto:idcontenuto, testo:testo, data:data, utente, utente:utente},
+          //data: {idcontenuto:id, testo:testo, data:data, utente:ut},  se tolgo i commenti ho errori mannaggia
           // imposto l'azione in caso di successo
           success: function(risposta){
           //visualizzo il contenuto del file nel div htmlm
@@ -33,5 +32,4 @@ btnCommento.onclick = function(){
   			alert( "Request failed: " + textStatus );
           }        
     });	
-}
-	
+});
