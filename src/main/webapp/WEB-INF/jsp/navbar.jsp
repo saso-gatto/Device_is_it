@@ -177,17 +177,18 @@
                            <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Inserisci email" required>
                         </div>
                         <div class="form-group">
-                           <label for="exampleInputEmail1">Password</label>
-                           <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password">
+                           <label for="exampleInputEmail1">Password</label>                         
+                        	<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                        	<p id="parametriPSW">Minimo otto caratteri, almeno una lettera e un numero</p> 
                         </div>
-						  <div class="row">
+						  <div class="form-group">
 	                        <div class="form-check form-check-inline"> 
 	                        	<label class="form-check-label" for="newsletter">Iscriviti alla newsletter</label>   						           
 	        				    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
 	   						 </div>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
-                           <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>
+                           <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
                         </div>                        
                         <div class="col-md-12 ">
                            <div class="form-group">
