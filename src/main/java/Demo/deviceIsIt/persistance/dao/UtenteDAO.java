@@ -12,6 +12,7 @@ public interface UtenteDAO {
 	public void update(Utente old, Utente newu); //Update
 	public void delete(Utente utente); //Delete	
 	public String findUsername(String email);
-	public String findPassword(String email);
+	public boolean checkPassword(String email, String password);
 	public String getUsername(String email);
+	
 }

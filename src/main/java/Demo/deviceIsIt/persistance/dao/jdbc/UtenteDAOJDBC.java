@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -37,7 +38,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			st.setString(1, utente.getEmail());
 			st.setString(2, utente.getNome());
 			st.setString(3, utente.getCognome());
-			st.setString(4, utente.getPassword());
+			st.setString(4, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
 			st.setString(5, utente.getUsername());
 			st.setBoolean(6, utente.isNewsletter());
 			st.setBoolean(7, utente.isBloccato());
@@ -188,24 +189,26 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public String findPassword(String email) {
-		String password=null;
+	public boolean checkPassword(String email, String password) {
+		String password_hash=null;
 		
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select utente.password from utente where email=?";
+			String query = "select password from utente where email=?";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, email);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
-				password = rs.getString("password");
+				password_hash = rs.getString("password");
 			}
+			st.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-		return password;
+		return BCrypt.checkpw(password, password_hash);
 	}
+	
 
 	@Override
 	public String getUsername(String email) {

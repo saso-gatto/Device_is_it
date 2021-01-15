@@ -14,15 +14,11 @@ public class LoginController {
 	@PostMapping("login")	
 	public String login(HttpSession session, @RequestParam String email, @RequestParam String password) {
 			
-		String checkPassword= DBManager.getInstance().utenteDAO().findPassword(email);
-		String username = DBManager.getInstance().utenteDAO().getUsername(email);
-		
-		//System.out.println("password db:"+checkPassword+"  password: "+password);
+		if(DBManager.getInstance().utenteDAO().checkPassword(email,password)) {
 			
-		if(password.equals(checkPassword)) {
-				session.setAttribute("usernameLogged", email);
+			String username = DBManager.getInstance().utenteDAO().getUsername(email);
+			session.setAttribute("usernameLogged", email);
 				session.setAttribute("username",username);
-				System.out.println("password corretta");
 			}			
 			return "redirect:/";			
 	}
