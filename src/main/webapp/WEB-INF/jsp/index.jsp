@@ -218,16 +218,16 @@
 							 <br>
 						 </div>
 					</div>
-                         
-                    <button type="button" id="btnRecSmartphone"class="btn btn-outline-primary">Recensione Smartphone</button>
+                    
+                    <a class="btn" href="newRecensioneSmartphone"> <button type="button" class="btn btn-outline-primary btn-block">Recensione Smartphone</button> </a>                      
 				      <br>
-					<button type="button" id="btnRecComputer"class="btn btn-outline-primary">Recensione Computer</button>
+					<a class="btn" href="newRecensioneComputer"> <button type="button" class="btn btn-outline-primary btn-block">Recensione Computer</button> </a>  					
 				      <br>
-					<button type="button" id="btnSchedaTecSmatphone" class="btn btn-outline-success">Scheda Tecnica Smartphone</button>
+					<a class="btn" href="newSchedaTecnicaSmartphone"> <button type="button" class="btn btn-outline-success btn-block">Scheda Tecnica Smartphone</button> </a>  					
 				      <br>
-				    <button type="button" id="btnSchedaTecComputer" class="btn btn-outline-success">Scheda Tecnica Computer</button>
+				    <a class="btn" href="newSchedaTecnicaComputer"> <button type="button" class="btn btn-outline-success btn-block">Scheda Tecnica Computer</button> </a>  				
 				      <br>
-					<button type="button" id="btnNews" class="btn btn-outline-info">News</button>  
+					<a class="btn" href="newArticolo"> <button type="button" class="btn btn-outline-info btn-block">News</button> </a>  					 
 					 <br>
 	                                    
 				</div>
@@ -239,6 +239,5 @@
 	
 	
 </body>
-	<script src="./js/creazioneContenuto.js"></script>
 	<jsp:include page="./footer.jsp" /> 
 </html>

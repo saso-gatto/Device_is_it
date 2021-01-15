@@ -44,7 +44,7 @@ public class ContenutoController {
 		model.addAttribute("tipoContenuto", tipoContenuto);
 		model.addAttribute("tipoDevice", tipoDevice);
 		
-		return "creazioneContenuto";
+		return "creaContenuto";
 	}
 	
 	
@@ -59,7 +59,7 @@ public class ContenutoController {
 		model.addAttribute("tipoContenuto", tipoContenuto);
 		model.addAttribute("tipoDevice", tipoDevice);
 		
-		return "creazioneContenuto";
+		return "creaContenuto";
 	}
 	
 	@GetMapping("newSchedaTecnicaSmartphone")
@@ -72,7 +72,7 @@ public class ContenutoController {
 		model.addAttribute("tipoDevice", tipoDevice);
 
 		
-		return "creazioneContenuto";
+		return "creaContenuto";
 	}
 	
 	@GetMapping("newSchedaTecnicaComputer")
@@ -84,7 +84,7 @@ public class ContenutoController {
 		model.addAttribute("contenuto", contenuto );
 		model.addAttribute("tipoDevice", tipoDevice);
 		
-		return "creazioneContenuto";
+		return "creaContenuto";
 	}
 	
 	
@@ -94,6 +94,6 @@ public class ContenutoController {
 		String contenuto= "Nuovo Articolo";
 		model.addAttribute("contenuto", contenuto );
 	
-		return "creazioneContenuto";
+		return "creaContenuto";
 	}
 }
