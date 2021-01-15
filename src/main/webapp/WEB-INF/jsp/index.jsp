@@ -205,35 +205,42 @@
 	  document.documentElement.scrollTop = 0;
 	}
 	</script>
+  
+  
+   <div class="modal fade" id="scegliContenuto">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+              
+	        <!-- Modal body -->
+	        <div class="modal-body">
 	
-	
-  <!-- Trigger/Open The Modal -->
-	<div id="scegliContenuto" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content" >
-    
-    <div class="logo mb-3">
-		<div class="col-md-12 text-center">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h3 id="titolo-form">Quale contenuto vuoi aggiungere?</h3>
-          <br>
-	   </div>
-     </div>
-
-    <button type="button" id="btnRecSmartphone"class="btn btn-outline-primary">Recensione Smartphone</button>
-      <br>
-	<button type="button" id="btnRecComputer"class="btn btn-outline-primary">Recensione Computer</button>
-      <br>
-	<button type="button" id="btnSchedaTecSmatphone" class="btn btn-outline-success">Scheda Tecnica Smartphone</button>
-      <br>
-    <button type="button" id="btnSchedaTecComputer" class="btn btn-outline-success">Scheda Tecnica Computer</button>
-      <br>
-	<button type="button" id="btnNews" class="btn btn-outline-info">News</button>
-    
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Schegli il contenuto da aggiungere</h3>
+							 <br>
+						 </div>
+					</div>
+                         
+                    <button type="button" id="btnRecSmartphone"class="btn btn-outline-primary">Recensione Smartphone</button>
+				      <br>
+					<button type="button" id="btnRecComputer"class="btn btn-outline-primary">Recensione Computer</button>
+				      <br>
+					<button type="button" id="btnSchedaTecSmatphone" class="btn btn-outline-success">Scheda Tecnica Smartphone</button>
+				      <br>
+				    <button type="button" id="btnSchedaTecComputer" class="btn btn-outline-success">Scheda Tecnica Computer</button>
+				      <br>
+					<button type="button" id="btnNews" class="btn btn-outline-info">News</button>  
+					 <br>
+	                                    
+				</div>
+			</div>
+ 		 </div>
+      </div>
   </div>
 
-</div>
-	
 	
 	
 </body>
