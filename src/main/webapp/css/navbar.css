@@ -38,6 +38,7 @@
 .titolo-loginForm{
 	font-family: 'Kaushan Script', cursive; 
 	color:#fec503;
+	padding: 0px 0px 0px 0px;
 }
 .myform{
 	position: relative;
@@ -103,6 +104,10 @@
 	border-right: 10px;
 }
 
+#parametriPSW{
+	font-size: 12px;
+	color: grey;
+}
 
 
 

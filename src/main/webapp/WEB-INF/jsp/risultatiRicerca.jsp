@@ -13,8 +13,15 @@
 </head>
 <body>
 
-
-   <p id="titolo" style="text-align:left; padding-left:20px"> Risultati di Ricerca: </p>
+    <c:if test="${listaSmartphone.size()!=0 || listaComputer.size() !=0 || listaArticoli.size()!= 0 || listaRecensioni.size()!=0}"> 
+   		<p id="titolo" style="text-align:left; padding-left:20px"> Risultati di Ricerca: </p>
+	</c:if>
+   
+   
+   <c:if test="${listaSmartphone.size()==0 && listaComputer.size() ==0 && listaArticoli.size()== 0 && listaRecensioni.size()==0}"> 
+   		<h1 style="text-align:center; padding:100px 0px 0px 50px">  Oh no! Non è stato trovato nessun contenuto :( </h1>
+   		<p style="text-align:center; padding:0px 0px 200px 0px">prova ad effettuare una nuova ricerca </p>
+	</c:if>
    
    
      <!--  SMARTHPONE -->
