@@ -25,16 +25,15 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		try {
 			conn = dbSource.getConnection();
 
-			String query = "insert into contenuto values(?,?,?,?,?,?,?,?);"; // prendiamo la query
+			String query = "insert into contenuto values(DEFAULT,?,?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, contenuto.getid());
-			st.setString(2, contenuto.getData());
-			st.setInt(3, contenuto.getTipo());
-			st.setInt(4, contenuto.getDevice());
-			st.setString(5, contenuto.getTesto());
-			st.setString(6, contenuto.getTitolo());
-			st.setString(7, contenuto.getImg());
-			st.setString(8, contenuto.getAnteprima());
+			st.setDate(1, contenuto.getData());
+			st.setInt(2, contenuto.getTipo());
+			st.setInt(3, contenuto.getDevice());
+			st.setString(4, contenuto.getTesto());
+			st.setString(5, contenuto.getTitolo());
+			st.setString(6, contenuto.getImg());
+			st.setString(7, contenuto.getAnteprima());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -54,7 +53,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -80,7 +79,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();						
 				contenuto.setIdContenuto(rs.getInt("id"));		
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -103,7 +102,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			connection = this.dbSource.getConnection();
 			String update = "update contenuto SET data=?, tipologia=?, device=?, testo=?, titolo=?, img=?, anteprima=? WHERE email=?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setString(1, c.getData());
+			statement.setDate(1, c.getData());
 			statement.setInt(2, c.getTipo());
 			statement.setInt(3, c.getDevice());
 			statement.setString(4, c.getTesto());
@@ -158,7 +157,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -185,7 +184,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -213,7 +212,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -243,7 +242,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -271,7 +270,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -299,7 +298,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -329,7 +328,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -360,7 +359,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));
@@ -389,7 +388,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			while (rs.next()) {				
 				Contenuto contenuto= new Contenuto();	
 				contenuto.setIdContenuto(rs.getInt("id"));
-				contenuto.setData(rs.getString("data"));
+				contenuto.setData(rs.getDate("data"));
 				contenuto.setTipo(rs.getInt("tipologia"));
 				contenuto.setDevice(rs.getInt("device"));
 				contenuto.setTesto(rs.getString("testo"));

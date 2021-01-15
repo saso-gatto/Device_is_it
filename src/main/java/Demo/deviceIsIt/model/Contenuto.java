@@ -1,9 +1,11 @@
 package Demo.deviceIsIt.model;
 
+import java.sql.Date;
+
 public class Contenuto {
 	
 	private int id;
-	private String data;
+	private Date data;
 	private int device;
 	private String testo;
 	private String titolo;
@@ -18,10 +20,10 @@ public class Contenuto {
 	public void setIdContenuto(int id) {
 		this.id = id;
 	}
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	public int getDevice() {

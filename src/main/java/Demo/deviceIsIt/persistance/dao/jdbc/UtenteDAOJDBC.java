@@ -27,7 +27,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public void save(Utente utente) {
+	public boolean save(Utente utente) {
 		Connection conn;
 
 		try {
@@ -45,8 +45,10 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			  return false;
 		}
+		
+		return true;
 	}
 
 	@Override

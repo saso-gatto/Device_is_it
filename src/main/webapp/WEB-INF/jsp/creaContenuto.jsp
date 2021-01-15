@@ -41,25 +41,45 @@
 	      <div class="col-20">
 	        <label for="country">Device</label>
 	      </div>
-	      <div class="col-80">
-	      
+	     
+	      <div class="col-80">	      
 	       <c:if test="${contenuto == 'Nuova Recensione Smartphone'}">  
 		   	   	<input type="text" id="tipoDevice" name="tipoDevice" value="Smartphone"  disabled="disabled">
+	  	   		
 	  	   </c:if>
 	  	   
 	  	   <c:if test="${contenuto == 'Nuova Recensione Computer'}">  
 	  	   		 <input type="text" id="tipoDevice" name="tipoDevice" value="Computer"  disabled="disabled">	   	   	     
 	  	   </c:if>
 	  	   <c:if test="${contenuto == 'Nuovo Articolo' }">  
-	  	   		<select id="device" name="device">
-		          <option value="0">Non specificato</option>
-		          <option value="1">Smartphone</option>
-		          <option value="2">Computer</option>		          
-		        </select>
+<!-- 	  	   		<select id="device" name="device"> -->
+<!-- 		          <option value="0">Non specificato</option> -->
+<!-- 		          <option value="1">Smartphone</option> -->
+<!-- 		          <option value="2">Computer</option>		           -->
+<!-- 		        </select> -->
+				<input type="text" id="deviceDaAggiungere" name="deviceDaAggiungere">
+				
 	  	   </c:if>
 	  	   
 	      </div>
 	    </div>
+	    
+	   	<div class="row">
+		      <div class="col-20">
+		       		<label for="lname">Tipologia Contenuto</label>
+		      </div>
+		      <div class="col-80">
+		    		<c:if test="${contenuto == 'Nuova Recensione Smartphone' || contenuto == 'Nuova Recensione Computer'}">  
+		  	   			 <input type="number" id="tipoContenuto" name="tipoContenuto" value="2"  disabled="disabled">	   	   	     
+		    		</c:if>
+		    	
+		    		<c:if test="${contenuto == 'Nuovo Articolo'}">  
+		  	   		 	<input type="number" id="tipoContenuto" name="tipoContenuto" value="1"  disabled="disabled">	   	   	     
+		    		</c:if>
+		    </div>
+	    </div>
+	   
+	    
 	    <div class="row">
 	      <div class="col-20">
 	        <label for="subject">Anteprima</label>
@@ -79,7 +99,9 @@
 	    <div class="row" >
 	       <br>
 		   <div class="col-12">
-		      <input id="btnPubblicaContenuto" type="submit" value="Pubblica">
+<!-- 		      <input id="btnPubblicaContenuto" type="submit" value="Pubblica" href="AggiungiContenuto"> -->
+					<button type="button" id="btnPubblicaContenuto" class="btn btn btn-outline-warning">Aggiungi contenuto</button>
+					
 		   </div>
 	    </div>
 	  </form>
@@ -112,11 +134,15 @@
 	      <div class="col-80">
 	      
 	       <c:if test="${contenuto == 'Nuova Scheda Tecnica Smartphone'}">  
-		   	   	<input type="text" id="tipoDevice" name="tipoDevice" value="Smartphone"  disabled="disabled">
+<!-- 		   	   	<input type="text" id="tipoDevice" name="tipoDevice" value="Smartphone"  disabled="disabled"> -->
+				<input type="numeric" id="deviceDaAggiungere" name="deviceDaAggiungere">
+					
 	  	   </c:if>
 	  	   
 	  	   <c:if test="${contenuto == 'Nuova Scheda Tecnica Computer'}">  
-	  	   		 <input type="text" id="tipoDevice" name="tipoDevice" value="Computer"  disabled="disabled">	   	   	     
+<!-- 	  	   		 <input type="text" id="tipoDevice" name="tipoDevice" value="Computer"  disabled="disabled">	   	   	      -->
+				<input type="numeric" id="deviceDaAggiungere" name="deviceDaAggiungere">
+				
 	  	   </c:if>	  	  	  	
 	      </div>
 	    </div>
