@@ -195,7 +195,7 @@
 	    <div class="row" >
 	       <br>
 		   <div class="col-12">
-		      <input id="btnPubblicaSchedaTecnica" type="submit" value="Pubblica">
+		      <input id="btnPubblicaSchedaTecnica" type="submit" value="Pubblica" href="AggiungiContenuto">
 		   </div>
 	    </div>
 	  </form>

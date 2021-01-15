@@ -2,7 +2,7 @@ package Demo.deviceIsIt.model;
 
 public class Device {
 	
-	private int id_Device;
+	private int idDevice;
 	private String modello;
 	private String marca;
 	private int tipoDevice;
@@ -18,10 +18,10 @@ public class Device {
 	
 	
 	public int getIdDevice() {
-		return id_Device;
+		return idDevice;
 	}
 	public void setIdDevice(int idDevice) {
-		this.id_Device = idDevice;
+		this.idDevice = idDevice;
 	}
 	public String getModello() {
 		return modello;

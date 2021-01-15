@@ -34,7 +34,7 @@
 	                	<ul>
 	                            <h5>Un team fantastico!</h5>
 	                            <li>Ci puoi trovare nelle sedi: </li>
-	                            <li><a href="#"> - Reggio </a></li>
+	                            <li><a href="#"> - Reggio Calabria</a></li>
 	                            <li><a href="#"> - Locri </a></li>
 	                            <li><a href="#"> - Cosenza </a></li>
 	                            <li><a href="#"> - Cittanova </a></li>
