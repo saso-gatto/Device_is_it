@@ -9,7 +9,7 @@
     <title>Device Is It</title>
   	
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
-  	<link rel="stylesheet" href="css/creazioneContenuto.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/creaContenuto.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
   		
 </head>
@@ -65,7 +65,7 @@
 	        <label for="subject">Anteprima</label>
 	      </div>
 	      <div class="col-80">
-	        <textarea id="anteprima" name="anteprima" placeholder="Write something.." style="height:100px" required></textarea>
+	        <textarea id="anteprima" name="anteprima" placeholder="inserisci anteprima" style="height:100px" required></textarea>
 	      </div>
 	    </div>
 	    <div class="row">
@@ -73,13 +73,13 @@
 	        <label for="subject">Testo</label>
 	      </div>
 	      <div class="col-80">
-	        <textarea id="testo" name="testo" placeholder="Write something.." style="height:400px" required></textarea>
+	        <textarea id="testo" name="testo" placeholder="inserisci testo" style="height:400px" required></textarea>
 	      </div>
 	    </div>
 	    <div class="row" >
 	       <br>
 		   <div class="col-12">
-		      <input id="btnPubblica" type="submit" value="Pubblica">
+		      <input id="btnPubblicaContenuto" type="submit" value="Pubblica">
 		   </div>
 	    </div>
 	  </form>
@@ -157,7 +157,7 @@
 	        <label for="subject">Fotocamera</label>
 	      </div>
 	      <div class="col-80">
-	        <textarea id="fotocamera" name="fotocamera" placeholder="fotocamera" style="height:50px" required></textarea>
+	        <textarea id="fotocamera" name="fotocamera" placeholder="inserisci fotocamera" style="height:50px" required></textarea>
 	      </div>
 	    </div>
         <div class="row">
@@ -165,7 +165,7 @@
 	        <label for="subject">CPU</label>
 	      </div>
 	      <div class="col-80">
-	        <textarea id="cpu" name="cpu" placeholder="cpu" style="height:50px" required></textarea>
+	        <textarea id="cpu" name="cpu" placeholder="inserisci cpu" style="height:50px" required></textarea>
 	      </div>
 	    </div>
         <div class="row">
@@ -173,7 +173,7 @@
 	        <label for="fname">Peso</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="peso" name="peso" placeholder="peso" required>
+	        <input type="text" id="peso" name="peso" placeholder="inserisci peso" required>
 	      </div>
 	    </div>
         <div class="row">
@@ -181,7 +181,7 @@
 	        <label for="fname">OS</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="os" name="os" placeholder="os" required>
+	        <input type="text" id="os" name="os" placeholder="inserisci os" required>
 	      </div>
 	    </div>
         <div class="row">
@@ -189,13 +189,13 @@
 	        <label for="fname">Immagine</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="img" name="img" placeholder="url immagine" required>
+	        <input type="text" id="img" name="img" placeholder="inserisci url immagine" required>
 	      </div>
 	    </div>
 	    <div class="row" >
 	       <br>
 		   <div class="col-12">
-		      <input id="btnPubblica" type="submit" value="Pubblica">
+		      <input id="btnPubblicaSchedaTecnica" type="submit" value="Pubblica">
 		   </div>
 	    </div>
 	  </form>
@@ -206,4 +206,5 @@
 
 </body>
 	 <jsp:include page="./footer.jsp" />
+	 <script src="./js/creaContenuto.js"></script>
 </html>
