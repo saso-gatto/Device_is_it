@@ -134,7 +134,7 @@
 	                           <div class="col-md-12 ">
 	                              <div class="login-or">
 	                                 <hr class="hr-or">
-	                                 <span class="span-or">or</span>
+	                                 <span class="span-or">oppure</span>
 	                              </div>
 	                           </div>
 	                           <div class="col-md-12 mb-3">
@@ -184,7 +184,7 @@
 						  <div class="form-group">
 	                        <div class="form-check form-check-inline"> 
 	                        	<label class="form-check-label" for="newsletter">Iscriviti alla newsletter</label>   						           
-	        				    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+	        				    <input style="margin-left: 15px" type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
 	   						 </div>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
