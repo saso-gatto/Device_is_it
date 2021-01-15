@@ -6,8 +6,6 @@
 <html>
 	<head>
 	
-	<link rel="shortcut icon" href="images/icona.ico" type="image/x-icon" />
-	
 	    <meta charset="utf-8">
 	    <title>Device Is It</title>
 	  	
@@ -15,8 +13,7 @@
 	  	<link rel="stylesheet" href="css/home.css" type="text/css"/>
 		<jsp:include page="./navbar.jsp" />
 	  		
-	  	
-	  	
+	  		
 	</head>
 
 	<body>
