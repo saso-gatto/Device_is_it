@@ -10,6 +10,8 @@
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
 	<link rel="stylesheet" href="css/blog.css" type="text/css"/>
 	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	
 	<jsp:include page="./navbar.jsp" />
   
     
@@ -36,9 +38,28 @@
 
         <div class="col-sm-3 offset-sm-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>Video Correlato</h4>
+            <h4>Video Correlati</h4>
 	            <section id="video">
-					<iframe width="350" height="200" src="https://www.youtube.com/embed/6n1If16xzXo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- 					<iframe width="350" height="200" src="https://www.youtube.com/embed/6n1If16xzXo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+				
+						<form id="form">
+				          <div class="form-group">
+				            <input type="text" class="form-control" id="search" value="${contenuto.titolo}">
+				          </div>
+				           <div class="form-group">
+				             <input type="submit" class="btn btn-danger" value="search">
+
+				        </form>
+				        
+				        <div class="row">
+				          <div class="col-md-12">
+				             <div id="videos">
+				              
+				             </div>  
+				          </div>
+				        </div>
+								
+				
 				</section>
           </div>
           <div class="sidebar-module">
@@ -125,4 +146,5 @@
 </body>
 
 <script src="/js/commento.js"></script>  
+<script src="/js/api.js"></script>  
 </html>
