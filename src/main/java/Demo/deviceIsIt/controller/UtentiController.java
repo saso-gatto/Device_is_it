@@ -1,6 +1,8 @@
 package Demo.deviceIsIt.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.text.View;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,10 +27,12 @@ public class UtentiController {
 		u.setBloccato(false);
 		
 		System.out.println(nome+" "+cognome+" "+username+" "+email+" "+password+" "+newsletter);
-		DBManager.getInstance().utenteDAO().save(u); // salviamo l'utente sul db
+		if(DBManager.getInstance().utenteDAO().save(u)) {// salviamo l'utente sul db
+			session.setAttribute("usernameLogged", email);
+			return "index";
+		}
+		return "errore da implementare tramite un messaggio --> probabilmete si deve usare ajax";
 		
-		session.setAttribute("usernameLogged", email);
-		return "index";
 	}
 	
 	@PostMapping("home/Aggiornamento")

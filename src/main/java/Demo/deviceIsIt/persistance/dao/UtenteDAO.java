@@ -6,7 +6,7 @@ import Demo.deviceIsIt.model.Utente;
 
 public interface UtenteDAO {
 
-	public void save(Utente utente);  // Create  == insert/store
+	public boolean save(Utente utente);  // Create  == insert/store
 	public Utente findByPrimaryKey(String email);     // Retrieve  == select stud
 	public List<Utente> findAll();     //  select*
 	public void update(Utente old, Utente newu); //Update

@@ -184,7 +184,7 @@
 						  <div class="form-group">
 	                        <div class="form-check form-check-inline"> 
 	                        	<label class="form-check-label" for="newsletter">Iscriviti alla newsletter</label>   						           
-	        				    <input style="margin-left: 15px" type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+	        				    <input style="margin-left: 15px" type="checkbox" class="form-check-input" id="newsletter" name="newsletter" checked>
 	   						 </div>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
