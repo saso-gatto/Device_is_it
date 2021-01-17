@@ -131,11 +131,18 @@
 					 	<div class="card">
 			           
 			           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-		    			  <div id="icons" style="padding: 10px 10px 10px">				          
-			                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
-						     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
-			              </div>			        
-		    		   </c:if>
+	    			     <div class="row" style="padding: 10px 10px 10px">
+			                  <div class="col" >
+				                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+							   </div>
+							   <div class="col">
+							     <form id="formSetContenuto" method="post" action="setContenuto">
+				                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+				                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+				                 </form>
+				               </div>	
+						   </div>  			        
+		    		   </c:if>	
 			           
 			           <img class="card-img-top" src="${contenuto.img}" >
 			              <div class="card-body">				              
@@ -172,12 +179,19 @@
 		         <c:forEach var="contenuto" items="${listaRecensioni}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
 					 <div class="col-md-6 col-lg-6" >
 					 	<div class="card">			           
-				           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-			    			  <div id="icons" style="padding: 10px 10px 10px">				          
-				                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
-							     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
-				              </div>			        
-			    		   </c:if>
+				            <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		    			       <div class="row" style="padding: 10px 10px 10px">
+				                  <div class="col" >
+					                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+								   </div>
+								   <div class="col">
+								     <form id="formSetContenuto" method="post" action="setContenuto">
+					                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+					                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+					                 </form>
+					               </div>	
+							   </div>  			        
+		    		        </c:if>
 			           
 				           <img class="card-img-top" src="${contenuto.img}" >
 				              <div class="card-body">				              
@@ -197,7 +211,38 @@
     </section>
    
       
- 
+ 		<div class="modal fade" id="confermaEliminazione">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">vuoi davvero eliminare il contenuto?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazione" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formDeleteContenuto" method="post" action="deleteContenuto">
+			                     <input type="hidden" name="idContenuto" value=""/>			                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				  </div>
+			   </div>
+			</div>
+	     </div>
+	 </div>  
    
 </body>
 	<jsp:include page="./footer.jsp" />

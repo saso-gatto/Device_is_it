@@ -15,7 +15,7 @@ public interface ContenutoDAO {
 	public List<Contenuto> findLastThreeRecensioni();
 	public void update(Contenuto c); //Update
 	public void updateWithoutDevice(Contenuto c); //Update
-	public void delete(Contenuto c); //Delete	
+	public void delete(int idContenuto); //Delete	
 	public List<Contenuto> findByTipology(Integer tipologia);
 	public List<Contenuto> findRecensioniPc();
 	public List<Contenuto> findRecensioniSmartphone();

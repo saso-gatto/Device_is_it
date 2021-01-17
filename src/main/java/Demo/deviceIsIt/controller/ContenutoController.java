@@ -83,6 +83,14 @@ public class ContenutoController {
 		
 		return "modificaContenuto";
 	}
+	 
+	 @PostMapping("deleteContenuto")
+		public String deleteContenuto(HttpSession session, Model model, @RequestParam Integer idContenuto ) {
+		
+		 DBManager.getInstance().ContenutoDAO().delete(idContenuto);
+		 
+			return "redirect:/";
+		}
 	
 	
 }

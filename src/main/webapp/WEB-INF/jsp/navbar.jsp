@@ -25,7 +25,10 @@
   	
   	<link rel="stylesheet" href="css/navbar.css" type="text/css"/>
 
-  	<script src="/js/login.js"></script>  	
+  	<script src="/js/login.js"></script>  
+  	<script src="./js/tornaSu.js"></script>
+  	<script src="./js/cancellaContenuto.js"></script>
+  	 
 
 </head>
 <body>
@@ -202,6 +205,8 @@
          </div>
       </div>
     </div>
+
+	<button  id="myBtn" title="Go to top">Top</button>
 
 </body>
 </html>

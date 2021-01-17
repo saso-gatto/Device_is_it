@@ -177,14 +177,14 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 	}
 
 	@Override
-	public void delete(Contenuto c) {
+	public void delete(int  idContenuto) {
 		Connection connection = null;
 		
 		try {
 			connection = this.dbSource.getConnection();
 			String delete = "delete FROM contenuto WHERE id=? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, c.getid());
+			statement.setInt(1, idContenuto);
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
