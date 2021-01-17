@@ -9,12 +9,12 @@
     <title>Device Is It</title>
   	
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
-  	<link rel="stylesheet" href="css/creaContenuto.css" type="text/css"/>
+  	<link rel="stylesheet" href="css/Contenuto&Device.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
   		
 </head>
 <body>
-  <p id="titolo" style="align:center"> ${contenuto} </p>
+  <p id="titolo" style="align:center"> ${titoloContenuto} </p>
   
   	 <div class="container">
 	  <form action="/action_page.php" id="formDevice">
@@ -68,7 +68,7 @@
 	        <label for="fname">Display</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="display" name="display" placeholder="inserici display" >
+	        <input type="text" id="display" name="display" placeholder="inserici display" required>
 	      </div>
 	    </div>
         <div class="row">

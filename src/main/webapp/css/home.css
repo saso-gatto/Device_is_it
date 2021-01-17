@@ -218,7 +218,7 @@ DA controllare e da canellare tutto il superfluo
   top: 0;
   height: 100%;
   width: 100%;
-  background: url(/images/jumbotron.jpg);
+/*   background: url(/images/jumbotron.jpg); */
   content: "";
   z-index: -1;
 }

@@ -123,7 +123,7 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update contenuto SET data=?, tipologia=?, device=?, testo=?, titolo=?, img=?, anteprima=? WHERE email=?";
+			String update = "update contenuto SET data=?, tipologia=?, device=?, testo=?, titolo=?, img=?, anteprima=? WHERE id=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setDate(1, c.getData());
 			statement.setInt(2, c.getTipo());
@@ -131,8 +131,8 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 			statement.setString(4, c.getTesto());
 			statement.setString(5, c.getTitolo());
 			statement.setString(6, c.getImg());
-			statement.setInt(7, c.getid());
-			statement.setString(8, c.getAnteprima());
+			statement.setString(7, c.getAnteprima());
+			statement.setInt(8, c.getid());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -144,6 +144,36 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
+	}
+	
+
+	@Override
+	public void updateWithoutDevice(Contenuto c) {
+	Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String update = "update contenuto SET data=?, tipologia=?, testo=?, titolo=?, img=?, anteprima=? WHERE id=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setDate(1, c.getData());
+			statement.setInt(2, c.getTipo());
+			statement.setString(3, c.getTesto());
+			statement.setString(4, c.getTitolo());
+			statement.setString(5, c.getImg());
+			statement.setString(6, c.getAnteprima());
+			statement.setInt(7,c.getid());
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		
 	}
 
 	@Override

@@ -37,34 +37,51 @@ public class ContenutoController {
 	public String newRecensioneSmartphone(HttpSession session, Model model) {
 		
 		int tipoContenuto= 2;
-		String contenuto= "Nuova Recensione";
+		String titoloContenuto= "Nuova Recensione";
 		
-		model.addAttribute("contenuto", contenuto );
+		model.addAttribute("titoloContenuto", titoloContenuto );
 		model.addAttribute("tipoContenuto", tipoContenuto);
 		
 		return "creaContenuto";
 	}
-	
-	@GetMapping("newDevice")
-	public String newSchedaTecnicaSmartphone(HttpSession session, Model model) {
-		
-		String contenuto= "Nuovo Device";
-		
-		model.addAttribute("contenuto", contenuto );
-		
-		return "creaDevice";
-	}
-		
 	
 	@GetMapping("newArticolo")
 	public String newArticolo(HttpSession session, Model model) {
 		
 		int tipoContenuto= 1;
-		String contenuto= "Nuovo Articolo";
-		model.addAttribute("contenuto", contenuto );
+		String titoloContenuto= "Nuovo Articolo";
+		model.addAttribute("titoloContenuto", titoloContenuto );
 		model.addAttribute("tipoContenuto", tipoContenuto);
 	
 		return "creaContenuto";
+	}
+	
+		
+	@GetMapping("newDevice")
+	public String newSchedaTecnicaSmartphone(HttpSession session, Model model) {
+		
+		String titoloContenuto= "Nuovo Device";
+		model.addAttribute("titoloContenuto", titoloContenuto );
+		
+		return "creaDevice";
+	}
+		
+	
+	 @PostMapping("setContenuto")
+	public String setContenuto(HttpSession session, Model model, @RequestParam Integer idContenuto ) {
+		
+		String titoloContenuto="";
+		Contenuto contenuto = DBManager.getInstance().ContenutoDAO().findByPrimaryKey(idContenuto);
+		if(contenuto.getTipo()==1)
+			titoloContenuto= "Modifica Articolo";
+		else
+			titoloContenuto= "Modifica Recensione";
+		
+		model.addAttribute("contenuto", contenuto );
+		model.addAttribute("titoloContenuto", titoloContenuto);
+		model.addAttribute("tipoContenuto", contenuto.getTipo());
+		
+		return "modificaContenuto";
 	}
 	
 	

@@ -37,6 +37,17 @@ public class ServiziController {
 		return contenuto;
 	}
 	
+	@PostMapping("ModificaContenuto")
+	public Contenuto setContenuto(@RequestBody Contenuto contenuto) {
+	
+		if(contenuto.getDevice()==0)
+			DBManager.getInstance().ContenutoDAO().updateWithoutDevice(contenuto);
+		else
+			DBManager.getInstance().ContenutoDAO().update(contenuto);				
+		return contenuto;
+	}
+	
+	
 	@PostMapping("AggiungiDevice")
 	public Device aggiungiDevice(@RequestBody Device device) {
 		

@@ -46,11 +46,18 @@
 			         <c:forEach var="contenuto" items="${ultimeTreRecensioni}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->			  
 						 <div class="card">
 				           
-				           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-			    			  <div id="icons" style="padding: 10px 10px 10px">				          
-				                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
-							     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
-				              </div>			        
+				           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->	    			 				          
+			                  <div class="row" style="padding: 10px 10px 10px">
+				                  <div class="col" >
+					                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>							 							     
+								   </div>
+								   <div class="col">
+								     <form id="formsetContenuto" method="post" action="setContenuto">
+					                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+					                     <button type="submit" value="${contenuto.id}" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+					                 </form>
+					               </div>	
+							   </div>   			        
 			    		   </c:if>
 				           
 				           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">
@@ -81,10 +88,17 @@
 						 <div class="card">
 				           
 				           <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-			    			  <div id="icons" style="padding: 10px 10px 10px">				          
-				                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>
-							     <button type="button" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 				 
-				              </div>			        
+			    			  <div class="row" style="padding: 10px 10px 10px">
+					                  <div class="col" >
+						                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="icon-trash"></i> Cancella</button>							 							     
+									   </div>
+									   <div class="col">
+									     <form id="formsetContenuto" method="post" action="setContenuto">
+						                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+						                     <button type="submit" value="${contenuto.id}" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+						                 </form>
+						               </div>	
+								   </div>  			        
 			    		   </c:if>
 				           
 				           <img class="card-img-top" src="${contenuto.img}" alt="Card image cap">

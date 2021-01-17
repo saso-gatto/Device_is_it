@@ -30,43 +30,24 @@ function Device (idDevice, modello, marca, tipoDevice, memoria, ram, display, ba
 
 $(document).ready(function(){ 
 	
-	var cercaModelli= document.getElementById ("btnCercaModello").addEventListener ("click", function(){
-	
-		var modello = document.getElementById("modello").value;
-		
-		var device = new Device (null, modello, null, null, null, null, null, null, null, null, null, null, null);
-		
-		$.ajax({
-				  url: "findModello",  
-		          method: "post",	         
-		          data: JSON.stringify(device),	       
-		          contentType: "application/json",	         
-		          success: function(risposta){
-				  jQuery.each(risposta, function(index, item) {			            
-						$('<option>').val(item.idDevice).text(item.modello).appendTo('#device');
-			       });			  
-		          },	          
-		          fail: function( jqXHR, textStatus ) {
-		  			alert( "Request failed: " + textStatus );
-		          }        
-		    });	
-	 });	
-	
-	
-	$("#formAddContenuto").on("submit", function(e){
+
+	$("#formSetContenuto").on("submit", function(e){
 	
 	e.preventDefault();
 	
 	var data = new Date();
-	var device =  document.getElementById("device").value;
+	var idContenuto =  document.getElementById("idContenuto").value;
+	var device =  document.getElementById("idDevice").value;
 	var testo = document.getElementById("testo").value;
 	var titolo = document.getElementById("titoloRec").value;
 	var tipo = document.getElementById("tipoContenuto").value;
 	var img= document.getElementById("img").value;
 	var anteprima=document.getElementById("anteprima").value;
-	var contenuto = new Contenuto (null,data,device,testo,titolo,tipo,img,anteprima);
+
+	var contenuto = new Contenuto (idContenuto,data,device,testo,titolo,tipo,img,anteprima);
+	
 	$.ajax({
-			  url: "AggiungiContenuto",  
+			  url: "ModificaContenuto",  
 	          method: "POST",	         
 	          data: JSON.stringify(contenuto),	       
 	          contentType: "application/json",	         
@@ -81,12 +62,5 @@ $(document).ready(function(){
 	
 	});
 
-
 });
-
-
-
-
-
-
 
