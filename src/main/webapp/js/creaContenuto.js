@@ -41,10 +41,12 @@ $(document).ready(function(){
 		          method: "post",	         
 		          data: JSON.stringify(device),	       
 		          contentType: "application/json",	         
-		          success: function(risposta){
-				  jQuery.each(risposta, function(index, item) {			            
-						$('<option>').val(item.idDevice).text(item.modello).appendTo('#device');
-			       });			  
+		          success: function(risposta){				  
+					$('#device').empty();					
+					jQuery.each(risposta, function(index, item) {						
+						$('<option>').val(item.idDevice).text(item.modello).appendTo('#device');																	          			
+			       });
+			  
 		          },	          
 		          fail: function( jqXHR, textStatus ) {
 		  			alert( "Request failed: " + textStatus );
