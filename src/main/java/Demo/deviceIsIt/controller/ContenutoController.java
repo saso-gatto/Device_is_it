@@ -33,67 +33,39 @@ public class ContenutoController {
 		return "ContenutoRichiesto";
 	}
 	
-	@GetMapping("newRecensioneSmartphone")
+	@GetMapping("newRecensione")
 	public String newRecensioneSmartphone(HttpSession session, Model model) {
 		
 		int tipoContenuto= 2;
-		int tipoDevice= 1;
-		String contenuto= "Nuova Recensione Smartphone";
+		String contenuto= "Nuova Recensione";
 		
 		model.addAttribute("contenuto", contenuto );
 		model.addAttribute("tipoContenuto", tipoContenuto);
-		model.addAttribute("tipoDevice", tipoDevice);
 		
 		return "creaContenuto";
 	}
 	
-	
-	@GetMapping("newRecensioneComputer")
-	public String newRecensioneComputer(HttpSession session, Model model) {
-		
-		int tipoContenuto= 2;
-		int tipoDevice= 2;
-		String contenuto= "Nuova Recensione Computer";
-		
-		model.addAttribute("contenuto", contenuto );
-		model.addAttribute("tipoContenuto", tipoContenuto);
-		model.addAttribute("tipoDevice", tipoDevice);
-		
-		return "creaContenuto";
-	}
-	
-	@GetMapping("newSchedaTecnicaSmartphone")
+	@GetMapping("newDevice")
 	public String newSchedaTecnicaSmartphone(HttpSession session, Model model) {
 		
-		int tipoDevice= 1;
-		String contenuto= "Nuova Scheda Tecnica Smartphone";
+		String contenuto= "Nuovo Device";
 		
 		model.addAttribute("contenuto", contenuto );
-		model.addAttribute("tipoDevice", tipoDevice);
-
 		
-		return "creaContenuto";
+		return "creaDevice";
 	}
-	
-	@GetMapping("newSchedaTecnicaComputer")
-	public String newSchedaTecnicaComputer(HttpSession session, Model model) {
 		
-		int tipoDevice= 2;
-		String contenuto= "Nuova Scheda Tecnica Computer";
-		
-		model.addAttribute("contenuto", contenuto );
-		model.addAttribute("tipoDevice", tipoDevice);
-		
-		return "creaContenuto";
-	}
-	
 	
 	@GetMapping("newArticolo")
 	public String newArticolo(HttpSession session, Model model) {
 		
+		int tipoContenuto= 1;
 		String contenuto= "Nuovo Articolo";
 		model.addAttribute("contenuto", contenuto );
+		model.addAttribute("tipoContenuto", tipoContenuto);
 	
 		return "creaContenuto";
 	}
+	
+	
 }

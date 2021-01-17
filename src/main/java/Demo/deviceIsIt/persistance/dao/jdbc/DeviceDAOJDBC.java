@@ -24,21 +24,20 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Connection conn;
 		try {
 			conn = dbSource.getConnection();
-			String query = "insert into device values(?,?,?,?,?,?,?,?,?,?,?,?,?);"; // prendiamo la query
+			String query = "insert into device values(default,?,?,?,?,?,?,?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setInt(1, device.getIdDevice());
-			st.setString(2, device.getModello());
-			st.setString(3, device.getMarca());
-			st.setInt(4, device.getTipoDevice());
-			st.setString(5, device.getMemoria());
-			st.setString(6, device.getRam());
-			st.setString(7, device.getDisplay());
-			st.setString(8, device.getBatteria());
-			st.setString(9, device.getFotocamera());
-			st.setString(10, device.getCPU());
-			st.setString(11, device.getPeso());
-			st.setString(12, device.getOs());
-			st.setString(13, device.getImg());
+			st.setString(1, device.getModello());
+			st.setString(2, device.getMarca());
+			st.setInt(3, device.getTipoDevice());
+			st.setString(4, device.getMemoria());
+			st.setString(5, device.getRam());
+			st.setString(6, device.getDisplay());
+			st.setString(7, device.getBatteria());
+			st.setString(8, device.getFotocamera());
+			st.setString(9, device.getCPU());
+			st.setString(10, device.getPeso());
+			st.setString(11, device.getOs());
+			st.setString(12, device.getImg());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -195,6 +194,44 @@ public class DeviceDAOJDBC implements DeviceDAO {
 			e.printStackTrace();
 		}
 		return devices;
+	}
+	
+	
+	
+
+	@Override
+	public List<Device> findByModello(String modello) {	
+		
+			String cerca="%"+modello+"%";
+			List<Device> devices = new ArrayList <Device>();
+			
+			try {
+				Connection con = dbSource.getConnection();
+				String query = "select * from device where modello Ilike ?;";
+				PreparedStatement st = con.prepareStatement(query);
+				st.setString(1, cerca);
+				ResultSet rs = st.executeQuery();
+				while (rs.next()) {
+					Device device = new Device();
+					device.setIdDevice(rs.getInt("id"));				
+					device.setModello(rs.getString("modello"));
+					device.setMarca(rs.getString("marca"));
+					device.setTipoDevice(rs.getInt("tipodevice"));
+					device.setMemoria(rs.getString("memoria"));
+					device.setRam(rs.getString("ram"));
+					device.setDisplay(rs.getString("display"));
+					device.setBatteria(rs.getString("batteria"));
+					device.setFotocamera(rs.getString("fotocamera"));
+					device.setCPU(rs.getString("cpu"));
+					device.setPeso(rs.getString("peso"));
+					device.setOs(rs.getString("os"));
+					device.setImg(rs.getString("img"));
+					devices.add(device);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return devices;		
 	}
 
 	@Override

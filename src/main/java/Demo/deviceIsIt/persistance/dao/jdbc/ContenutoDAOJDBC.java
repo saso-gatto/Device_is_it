@@ -20,10 +20,9 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 
 	@Override
 	public void save(Contenuto contenuto) {
-		Connection conn;
-
+		
 		try {
-			conn = dbSource.getConnection();
+			Connection conn = dbSource.getConnection();
 
 			String query = "insert into contenuto values(DEFAULT,?,?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
@@ -39,6 +38,30 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	
+
+	@Override
+	public void saveWithoutDevice(Contenuto contenuto) {
+		
+		try {
+			Connection conn = dbSource.getConnection();
+
+			String query = "insert into contenuto values(DEFAULT,?,?,null,?,?,?,?);"; // prendiamo la query
+			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
+			st.setDate(1, contenuto.getData());
+			st.setInt(2, contenuto.getTipo());
+			st.setString(3, contenuto.getTesto());
+			st.setString(4, contenuto.getTitolo());
+			st.setString(5, contenuto.getImg());
+			st.setString(6, contenuto.getAnteprima());
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override

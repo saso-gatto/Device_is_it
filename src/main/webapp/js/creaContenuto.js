@@ -9,18 +9,56 @@ function Contenuto(id, data, device, testo, titolo,tipo,img, anteprima){
 	this.anteprima=anteprima;
 }
 
+function Device (idDevice, modello, marca, tipoDevice, memoria, ram, display, batteria, fotocamera, cpu, peso, os, img){
 
-$(document ).ready(function() {
-    console.log( "ready!" );
-	var pubblicaContenuto=document.getElementById("btnPubblicaContenuto").addEventListener("click",function(){
-		creazioneContenuto();
-		});
-});
+	this.idDevice=idDevice;
+	this.modello=modello;
+	this.marca=marca;
+	this.tipoDevice=tipoDevice;
+	this.memoria=memoria;
+	this.ram=ram;
+	this.display=display;
+	this.batteria=batteria;
+	this.fotocamera=fotocamera;
+	this.cpu=cpu;
+	this.peso=peso;
+	this.os=os;
+	this.img=img;
+	
+}
 
-function creazioneContenuto(){
-	alert("sono in creazione contenuto");
+
+$(document).ready(function(){ 
+	
+	var cercaModelli= document.getElementById ("btnCercaModello").addEventListener ("click", function(){
+	
+		var modello = document.getElementById("modello").value;
+		
+		var device = new Device (null, modello, null, null, null, null, null, null, null, null, null, null, null);
+		
+		$.ajax({
+				  url: "findModello",  
+		          method: "post",	         
+		          data: JSON.stringify(device),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){
+				  jQuery.each(risposta, function(index, item) {			            
+						$('<option>').val(item.idDevice).text(item.modello).appendTo('#device');
+			       });			  
+		          },	          
+		          fail: function( jqXHR, textStatus ) {
+		  			alert( "Request failed: " + textStatus );
+		          }        
+		    });	
+	 });	
+	
+	
+	$("#formContenuto").on("submit", function(e){
+	
+	e.preventDefault();
+	
 	var data = new Date();
-	var device =  document.getElementById("deviceDaAggiungere").value;
+	var device =  document.getElementById("device").value;
 	var testo = document.getElementById("testo").value;
 	var titolo = document.getElementById("titoloRec").value;
 	var tipo = document.getElementById("tipoContenuto").value;
@@ -29,22 +67,25 @@ function creazioneContenuto(){
 	var contenuto = new Contenuto (null,data,device,testo,titolo,tipo,img,anteprima);
 	$.ajax({
 			  url: "AggiungiContenuto",  
-	          method: "POST",
-	          // specifico la URL della risorsa da contattare
-	          data: JSON.stringify(contenuto),
-	          // imposto l'azione in caso di successo
-	          contentType: "application/json",
-	          
+	          method: "POST",	         
+	          data: JSON.stringify(contenuto),	       
+	          contentType: "application/json",	         
 	          success: function(risposta){
-	          console.log(JSON.stringify(risposta));
-			  //visualizzo il contenuto del file nel div htmlm
-			  window.location.href="/index";
-	          alert("funziona");
-	          },
-	          //imposto l'azione in caso di insuccesso
+	          console.log(JSON.stringify(risposta));			  
+			  window.location.href="/index";	          
+	          },	          
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
 	          }        
 	    });	
 	
-}
+	});
+
+});
+
+
+
+
+
+
+

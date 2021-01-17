@@ -221,13 +221,9 @@
 						 </div>
 					</div>
                     
-                    <a class="btn" href="newRecensioneSmartphone"> <button type="button" class="btn btn-outline-primary btn-block">Recensione Smartphone</button> </a>                      
-				      <br>
-					<a class="btn" href="newRecensioneComputer"> <button type="button" class="btn btn-outline-primary btn-block">Recensione Computer</button> </a>  					
-				      <br>
-					<a class="btn" href="newSchedaTecnicaSmartphone"> <button type="button" class="btn btn-outline-success btn-block">Scheda Tecnica Smartphone</button> </a>  					
-				      <br>
-				    <a class="btn" href="newSchedaTecnicaComputer"> <button type="button" class="btn btn-outline-success btn-block">Scheda Tecnica Computer</button> </a>  				
+                    <a class="btn" href="newDevice"> <button type="button" class="btn btn-outline-success btn-block">Device</button> </a>
+                       <br>
+                    <a class="btn" href="newRecensione"> <button type="button" class="btn btn-outline-primary btn-block">Recensione</button> </a>                      									   					  					
 				      <br>
 					<a class="btn" href="newArticolo"> <button type="button" class="btn btn-outline-info btn-block">News</button> </a>  					 
 					 <br>

@@ -5,7 +5,8 @@ import Demo.deviceIsIt.model.Contenuto;
 
 public interface ContenutoDAO {
 
-	public void save(Contenuto c);  // Create  == insert/store
+	public void save(Contenuto contenuto);  // Create  == insert/store
+	public void saveWithoutDevice(Contenuto contenuto);
 	public Contenuto findByPrimaryKey(int idContenuto);     // Retrieve  == select stud
 	public List<Contenuto> findAll();     //  select*
 	public List<Contenuto> findArticoli();

@@ -39,7 +39,7 @@
 			   
 			   		<c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
 					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
-					    <p>  Codice device: ${device.idDevice}</p>                     
+<%-- 					    <p>  Codice device: ${device.idDevice}</p>                      --%>
 					    
 	                    <div class="dropdown-menu">
 	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
@@ -86,7 +86,7 @@
 			   
 			 	  <c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
 					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
-					    <p>  Codice device: ${device.idDevice}</p>                     
+<%-- 					    <p>  Codice device: ${device.idDevice}</p>                      --%>
 					    <div class="dropdown-menu">
 	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
 	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-trash"></i> Cancella</a>                      
