@@ -39,6 +39,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 			st.setString(11, device.getOs());
 			st.setString(12, device.getImg());
 			st.executeUpdate();
+			st.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,15 +51,12 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Device device = new Device();
 		try {
 			
-			System.out.println("id query: "+idDevice);
-			
 			Connection con = dbSource.getConnection();
 			String query = "select * from device where id=?;";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setInt(1, idDevice);
 			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
-				
+			if (rs.next()) {				
 				device.setIdDevice(rs.getInt("id"));				
 				device.setModello(rs.getString("modello"));
 				device.setMarca(rs.getString("marca"));
@@ -71,9 +69,10 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setCPU(rs.getString("cpu"));
 				device.setPeso(rs.getString("peso"));
 				device.setOs(rs.getString("os"));
-				device.setImg(rs.getString("img"));
-				
+				device.setImg(rs.getString("img"));				
 			}
+			st.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -103,8 +102,9 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setPeso(rs.getString("peso"));
 				device.setOs(rs.getString("os"));
 				device.setImg(rs.getString("img"));
-				devices.add(device);
+				devices.add(device);				
 			}
+			st.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -116,30 +116,26 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update device SET modello = ?, marca = ?, tipoDevice = ?, memoria = ?, ram=?, display = ?, batteria = ?, fotocamera = ?, cpu = ?, peso = ?, os = ?, img = ?, WHERE id=?";
-			PreparedStatement st = connection.prepareStatement(update);
-			st.setInt(1, device.getIdDevice());
-			st.setString(2, device.getModello());
-			st.setString(3, device.getMarca());
-			st.setInt(4, device.getTipoDevice());
-			st.setString(5, device.getMemoria());
-			st.setString(6, device.getRam());
-			st.setString(7, device.getDisplay());
-			st.setString(8, device.getBatteria());
-			st.setString(9, device.getFotocamera());
-			st.setString(10, device.getCPU());
-			st.setString(11, device.getPeso());
-			st.setString(12, device.getOs());
-			st.setString(13, device.getImg());
+			String update = "update device SET modello = ?, marca = ?, tipoDevice = ?, memoria = ?, ram=?, display = ?, batteria = ?, fotocamera = ?, cpu = ?, peso = ?, os = ?, img = ? WHERE id=?;";
+			PreparedStatement st = connection.prepareStatement(update);			
+			st.setString(1, device.getModello());
+			st.setString(2, device.getMarca());
+			st.setInt(3, device.getTipoDevice());
+			st.setString(4, device.getMemoria());
+			st.setString(5, device.getRam());
+			st.setString(6, device.getDisplay());
+			st.setString(7, device.getBatteria());
+			st.setString(8, device.getFotocamera());
+			st.setString(9, device.getCPU());
+			st.setString(10, device.getPeso());
+			st.setString(11, device.getOs());
+			st.setString(12, device.getImg());
+			st.setInt(13, device.getIdDevice());
 			st.executeUpdate();
+			st.close();
+		
 		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-			}
+			e.printStackTrace();			
 		}
 	}
 
@@ -148,11 +144,11 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM device WHERE id = ? ";
+			String delete = "delete FROM device WHERE id = ?;";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setInt(1, idDevice);
 			statement.executeUpdate();
-			
+			statement.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
@@ -190,6 +186,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setImg(rs.getString("img"));
 				devices.add(device);
 			}
+			st.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -228,6 +225,8 @@ public class DeviceDAOJDBC implements DeviceDAO {
 					device.setImg(rs.getString("img"));
 					devices.add(device);
 				}
+				st.close();
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -272,6 +271,8 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setImg(rs.getString("img"));
 				devices.add(device);
 			}
+			st.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -316,6 +317,8 @@ public class DeviceDAOJDBC implements DeviceDAO {
 				device.setImg(rs.getString("img"));
 				devices.add(device);
 			}
+			st.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

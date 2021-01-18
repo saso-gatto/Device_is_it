@@ -145,15 +145,11 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			connection = this.dbSource.getConnection();
 			String update = "update utente SET nome = ?, cognome = ?, password = ?, username = ? WHERE email=?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			if(!newu.getNome().equals("")) // !!!!!!! nb: ricorda di controllare utentiController
-				statement.setString(1, newu.getNome());
-			if(!newu.getCognome().equals(""))
-				statement.setString(2, newu.getCognome());
-			if(!newu.getPassword().equals(""))
-				statement.setString(3, newu.getPassword());
-			if(!newu.getUsername().equals(""))
-				statement.setString(4, newu.getUsername());
 			
+			statement.setString(1, newu.getNome());			
+			statement.setString(2, newu.getCognome());			
+			statement.setString(3, newu.getPassword());		
+			statement.setString(4, newu.getUsername());			
 			statement.setString(5, old.getEmail());
 			statement.executeUpdate();
 			

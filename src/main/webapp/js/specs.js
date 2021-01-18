@@ -4,5 +4,5 @@ $(document).ready(function(){
 	    var Id = $(e.relatedTarget).data('id-device');
 	    $(e.currentTarget).find('input[name="idDevice"]').val(Id);
 	});
-		
+	
 });

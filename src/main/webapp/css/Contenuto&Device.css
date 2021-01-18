@@ -59,7 +59,12 @@ input[type=submit] {
 
 #btnModificaContenuto{
 	float: right;
-	 margin-top: 40px;
+	margin-top: 40px;
+}
+
+#btnModificaDevice{
+	float: right;
+    margin-top: 40px;
 }
 
 input[type=submit]:hover {

@@ -94,10 +94,10 @@ public class ContenutoController {
 		}
 	
 	 @PostMapping("setDevice")
-		public String setDevice(HttpSession session, Model model, Integer idDevice ) {
+		public String setDevice(HttpSession session, Model model, @RequestParam Integer idDevice ) {
 			
-		 	String titoloContenuto="Modifica Device";
-			Device device = DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);
+		 	String titoloContenuto="Modifica Device";		
+		 	Device device = DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);
 					
 			model.addAttribute("device", device );
 			model.addAttribute("titoloContenuto", titoloContenuto);
@@ -109,8 +109,7 @@ public class ContenutoController {
 	 @PostMapping("deleteDevice")
 		public String deleteDevice(HttpSession session, Model model, @RequestParam Integer idDevice ) {
 		
-		 System.out.println(idDevice);
-//		 DBManager.getInstance().deviceDAO().delete(idDevice);
+		 DBManager.getInstance().deviceDAO().delete(idDevice);
 		 
 			return "redirect:/";
 		}

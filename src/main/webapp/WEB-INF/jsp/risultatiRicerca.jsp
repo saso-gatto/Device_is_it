@@ -41,11 +41,11 @@
 			   		<c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
 					  <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
 	                     <div class="dropdown-menu">	                        
-	                        <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazioneDevice" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    
-						    <form action="setDevice" method="post" id="formSetDevice">
-								<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">
-								<a class="dropdown-item" onclick="document.getElementById('formSetDevice').submit()"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
-							 </form>						    						    
+	                       <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazioneDevice" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    						    	                    	
+	                       <form id="formSchedaTecnica" method="post" action="setDevice">
+				          		<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+								<button class="dropdown-item" type="submit" class="btn"> <i class="icon-fixed-width icon-pencil"></i> modifica</button>
+	                       </form>						    						    
 	                     </div>
                     </c:if>
                     
@@ -89,11 +89,11 @@
 			 	  <c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
 					 <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
 	                    <div class="dropdown-menu">	                        
-	                        <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazioneDevice" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    
-						    <form action="setDevice" method="post" id="formSetDevice">
-								<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">
-								<a class="dropdown-item" onclick="document.getElementById('formSetDevice').submit()"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
-							 </form>						    						    
+	                        <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazioneDevice" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    						    	                    	
+	                       <form id="formSchedaTecnica" method="post" action="setDevice">
+				          		<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+								<button class="dropdown-item" type="submit" class="btn"> <i class="icon-fixed-width icon-pencil"></i> modifica</button>
+	                       </form>						    						    
 	                    </div>
                     </c:if>
 			   

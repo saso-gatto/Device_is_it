@@ -42,13 +42,13 @@
 	      </div>	    
 	      <div class="col-80">
 	       <c:if test="${tipoDevice==1}">     	    
-	  	   		<select id="tipologiaDevice" name="device">
+	  	   		<select id="tipoDevice" name="device">
 		          <option value="1">Smartphone</option>
 		          <option value="2">Computer</option>		          
 		        </select>
 		   </c:if>	
 		   <c:if test="${tipoDevice==2}">     	    
-	  	   		<select id="tipologiaDevice" name="device">
+	  	   		<select id="tipoDevice" name="device">
 		          <option value="2">Computer</option>
 		          <option value="1">Smartphone</option>		          		         
 		        </select>
@@ -131,7 +131,7 @@
 	    <div class="row" >
 	       <br>
 		   <div class="col-12">
-		   	  <button  type="submit" id="btnPubblicaDevice" class="btn btn btn-success">Modifica</button>		   	  
+		   	  <button  type="submit" id="btnModificaDevice" class="btn btn btn-success">Modifica</button>		   	  
 		   </div>
 	    </div>
 	  </form>

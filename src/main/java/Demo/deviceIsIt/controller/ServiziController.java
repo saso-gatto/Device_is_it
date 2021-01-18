@@ -55,6 +55,13 @@ public class ServiziController {
 		return device;
 	}
 	
+	@PostMapping("ModificaDevice")
+	public Device setDevice(@RequestBody Device device) {
+	
+		DBManager.getInstance().deviceDAO().update(device);					
+		return device;
+	}
+	
 	@PostMapping("findModello")
 	public List<Device> findModelli(@RequestBody Device device) {
 		

@@ -40,7 +40,7 @@ $(document).ready(function(){ $("#formDevice").on("submit", function(e){
 	
 	
 	$.ajax({
-			  url: "modificaDevice",  
+			  url: "ModificaDevice",  
 	          method: "POST",	          
 	          data: JSON.stringify(device),	          
 	          contentType: "application/json",	          
