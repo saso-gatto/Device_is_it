@@ -22,7 +22,7 @@ public class ServiziController {
 	@PostMapping("AggiungiCommento")
 	public Commento aggiungiCommento(@RequestBody Commento commento  ) {
 		
-		DBManager.getInstance().CommentoDAO().save(commento);				
+//		DBManager.getInstance().CommentoDAO().save(commento);				
 		return commento;
 	}
 	

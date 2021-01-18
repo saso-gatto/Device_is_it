@@ -85,7 +85,8 @@
 			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> <br>
 			                    <p>${commento.testo}</p>
 			                </div>
-			  		</c:forEach>			     
+			  		</c:forEach>
+			  		<div id="nuoviCommenti"></div>			     
 	         </div>
             
             
@@ -102,13 +103,13 @@
 	             <c:if test="${usernameLogged != null}">
 	             	<form id="formCommento">
 						<div class="form-group">
-							<label for="username" id="username">${username}</label>
+							<input type="text" name="username" id="username" value="${username}" disabled>
 						</div>
 						<input type="hidden" id="idContenuto" value="${contenuto.id}">	
 						<input type="hidden" id="emailUtente" value="${usernameLogged}">	
 						
 						<div class="form-group">
-							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30">Scrivi qui il tuo commento...</textarea>										
+							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30" placeholder="Scrivi qui il tuo commento..."></textarea>										
 							<button type="button" id="submitCommento" class="btn btn btn-outline-warning">Invia commento</button>
 						</div>
 						

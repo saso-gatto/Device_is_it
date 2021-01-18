@@ -7,12 +7,19 @@ function Commento(idcommento,contenuto, testo, data, utente){
 	
 }		
 $(document ).ready(function() {
-    console.log( "ready!" );
+    
 	
 
 	var btnCommento = document.getElementById ("submitCommento").addEventListener ("click", function(){
-		var email = document.getElementById("emailUtente").value;
-		alert(email);
+		
+		const o_date = new Intl.DateTimeFormat;
+		const f_date = (m_ca, m_it) => Object({...m_ca, [m_it.type]: m_it.value});
+		const m_date = o_date.formatToParts().reduce(f_date, {});		
+		
+		var user = document.getElementById("username").value;
+		console.log( user);
+		
+		var email = document.getElementById("emailUtente").value;		
 		var data= new Date();
 		var idcontenuto = document.getElementById("idContenuto").value;
 		var testo = $("#testoCommento").val();
@@ -26,9 +33,11 @@ $(document ).ready(function() {
 	          contentType: "application/json",
 	          
 	          success: function(risposta){
-	          console.log(JSON.stringify(risposta));
+	          console.log(JSON.stringify(commento));
 			  //visualizzo il contenuto del file nel div htmlm
-	          alert("funziona");
+				document.getElementById("nuoviCommenti").innerHTML +=
+				"<div class=\"comment col-12 mt-4 text-justify float-left\">"+"<h4>"
+				+user+"</h4> <span>"+ m_date.year+ '-' + m_date.month + '-' +m_date.day+"</span> <br><p>"+commento.testo+"</p></div>";
 	          },
 	          //imposto l'azione in caso di insuccesso
 	          fail: function( jqXHR, textStatus ) {
