@@ -88,7 +88,10 @@
 							<i class='loginIcon fas fa-house-user' style='font-size:30px'></i>
 						</a>
 	                    <div class="dropdown-menu">
-	                        <a href="profilo" class="dropdown-item">Profilo</a>
+	                        <form method="get" action="/profilo">
+				          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
+								<button class="dropdown-item" type="submit" class="btn"> Profilo</button>
+	                        </form>
 	                        <a href="doLogout" class="dropdown-item"> Logout </a>	        
 	                    </div>		
 	                  </div>

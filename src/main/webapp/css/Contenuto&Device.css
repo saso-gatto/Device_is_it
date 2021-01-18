@@ -23,6 +23,14 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
 label {
   padding: 15px 15px 15px 0;
   display: inline-block;
@@ -64,6 +72,12 @@ input[type=submit] {
 
 #btnModificaDevice{
 	float: right;
+    margin-top: 40px;
+}
+
+#btnModificaProfilo{
+	padding-left: 50px;
+	padding-right: 50px;
     margin-top: 40px;
 }
 

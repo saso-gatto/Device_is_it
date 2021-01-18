@@ -53,7 +53,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 	@Override
 	public Utente findByPrimaryKey(String email) {
-		Utente utente = null;
+		Utente utente = new Utente();
 			
 			try {
 				Connection conn = dbSource.getConnection();
@@ -61,7 +61,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				PreparedStatement st = conn.prepareStatement(query);
 				st.setString(1, email);
 				ResultSet rs = st.executeQuery();
-				if (rs.next()) {
+				while (rs.next()) {
 					utente.setEmail(rs.getString("email"));
 					utente.setNome(rs.getString("nome"));
 					utente.setCognome(rs.getString("cognome"));

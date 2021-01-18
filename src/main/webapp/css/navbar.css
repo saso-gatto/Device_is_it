@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(127deg,  #fff5d7, rgb(249, 198, 85));
+}
+
 #logo{
 	font-family: 'Kaushan Script', cursive; 
 	color:#fec503;

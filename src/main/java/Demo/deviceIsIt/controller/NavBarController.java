@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
+import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @Controller
@@ -106,6 +107,17 @@ public class NavBarController {
 
 		return "risultatiRicerca";			
 	}
+	
+	@GetMapping("/profilo")	
+	public String dammiprofilo(HttpSession session, Model model,  @RequestParam String email) {
+		
+		Utente utente = DBManager.getInstance().utenteDAO().findByPrimaryKey(email);
+		model.addAttribute("utente",utente);	
+		
+		return "profilo";
+	}
+	
+	
 	
 
 }
