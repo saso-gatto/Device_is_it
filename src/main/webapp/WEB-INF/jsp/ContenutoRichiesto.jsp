@@ -103,13 +103,13 @@
 	             <c:if test="${usernameLogged != null}">
 	             	<form id="formCommento">
 						<div class="form-group">
-							<input type="text" name="username" id="username" value="${username}" disabled>
+							<input type="hidden" name="user" id="user" value="${username}" disabled>
 						</div>
 						<input type="hidden" id="idContenuto" value="${contenuto.id}">	
 						<input type="hidden" id="emailUtente" value="${usernameLogged}">	
 						
 						<div class="form-group">
-							<textarea id="testoCommento" name="areaDiTesto" rows="5" cols="30" placeholder="Scrivi qui il tuo commento..."></textarea>										
+							<textarea id="testoCommento" name="testoCommento" rows="5" cols="30" placeholder="Scrivi qui il tuo commento..."></textarea>										
 							<button type="button" id="submitCommento" class="btn btn btn-outline-warning">Invia commento</button>
 						</div>
 						
