@@ -20,46 +20,39 @@
 <body>
 
 
-
-<div id="contenuto" class="container">
-    
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
+      <div class="container">
+       <div class="row" style="padding-top: 50px">
+        <div class="col-9 " style="background-color: white; border-radius:30px;">
 
           <div class="blog-post">
-            <h2 class="blog-post-title"> ${contenuto.titolo} </h2>
+            <h2 class="blog-post-title" style="padding-top: 40px"> ${contenuto.titolo} </h2>
             <p class="blog-post-meta"> ${contenuto.data} </p>
             <p> ${contenuto.testo} </p>
             </div><!-- /.blog-post -->
         </div><!-- /.blog-main -->
         
 
-        <div class="col-sm-3 offset-sm-1 blog-sidebar">
+        <div class="col-1" style="padding-left: 50px">
           <div class="sidebar-module sidebar-module-inset">
             <h4>Video Correlati</h4>
 	            <section id="video">
 <!-- 					<iframe width="350" height="200" src="https://www.youtube.com/embed/6n1If16xzXo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 				
-						<form id="form">
-				          <div class="form-group">
-				            <input type="text" class="form-control" id="search" value="${contenuto.titolo}">
-				          </div>
-				           <div class="form-group">
-				             <input type="submit" class="btn btn-danger" value="search">
-
+						<form class="input-group mb-3" id="form">
+				          <div class="input-group mb-3" >
+						   <input type="text" class="form-control" id="search" value="${contenuto.titolo}">
+						    <div class="input-group-append">
+						      <button class="btn btn-success" type="submit">cerca</button>  
+						     </div>
+						  </div>
 				        </form>
-				        
+				                 
 				        <div class="row">
-				          <div class="col-md-12">
-				             <div id="videos">
-				              
+				          <div class="col-12">
+				             <div id="videos">				              
 				             </div>  
 				          </div>
-				        </div>
-								
-				
+				        </div>			
 				</section>
           </div>
           <div class="sidebar-module">
@@ -72,6 +65,7 @@
           </div>
         </div>
       </div>
+	</div>
 
    
 
@@ -142,7 +136,6 @@
 
 
 
-</div> 
 </body>
 
 <script src="/js/commento.js"></script>  
