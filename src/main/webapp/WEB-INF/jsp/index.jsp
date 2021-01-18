@@ -12,6 +12,7 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
   	<link rel="stylesheet" href="css/home.css" type="text/css"/>
 	<jsp:include page="./navbar.jsp" />
+	<script src="./js/home.js"></script>
   	
   		
 </head>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Contenuto;
+import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @Controller
@@ -92,5 +93,26 @@ public class ContenutoController {
 			return "redirect:/";
 		}
 	
+	 @PostMapping("setDevice")
+		public String setDevice(HttpSession session, Model model, Integer idDevice ) {
+			
+		 	String titoloContenuto="Modifica Device";
+			Device device = DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);
+					
+			model.addAttribute("device", device );
+			model.addAttribute("titoloContenuto", titoloContenuto);
+			model.addAttribute("tipoDevice", device.getTipoDevice());
+			
+			return "modificaDevice";
+		}
+	 
+	 @PostMapping("deleteDevice")
+		public String deleteDevice(HttpSession session, Model model, @RequestParam Integer idDevice ) {
+		
+		 System.out.println(idDevice);
+//		 DBManager.getInstance().deviceDAO().delete(idDevice);
+		 
+			return "redirect:/";
+		}
 	
 }

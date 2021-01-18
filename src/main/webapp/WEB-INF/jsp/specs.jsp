@@ -11,6 +11,7 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
   	<link rel="stylesheet" href="css/specs.css" type="text/css"/>
   	<jsp:include page="./navbar.jsp" /> 
+  	<script src="./js/specs.js"></script>
   	
 </head>
 <body>
@@ -26,12 +27,13 @@
 			   <div class="col-md-4 col-lg-3">
 				    
 				    <c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
-					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>
-<%-- 					    <p>  Codice device: ${device.idDevice}</p>                      --%>
-					    
-	                    <div class="dropdown-menu">
-	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
-	                        <a href="#" class="dropdown-item"> <i class="icon-fixed-width icon-trash"></i> Cancella</a>                      
+					    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
+	                    <div class="dropdown-menu">	                        
+	                        <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    
+						    <form action="setDevice" method="post" id="formSetDevice">
+								<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">
+								<a class="dropdown-item" onclick="document.getElementById('formSetDevice').submit()"> <i class="icon-fixed-width icon-pencil"></i> Modifica</a>
+							 </form>						    						    
 	                    </div>
                     </c:if>
 	                    
@@ -53,6 +55,39 @@
 		</div>
 	  </div>
     </section>
+    
+   	    <div class="modal fade" id="confermaEliminazione">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">vuoi davvero eliminare il device?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazione" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formDeleteDevice" method="post" action="deleteDevice">
+			                     <input type="hidden" name="idDevice" value=""/>			                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				</div>
+			</div>
+			 </div>
+	     </div>
+	 </div>  
 
 </body>
 	<jsp:include page="./footer.jsp" />

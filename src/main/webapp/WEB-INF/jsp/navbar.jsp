@@ -27,7 +27,6 @@
 
   	<script src="/js/login.js"></script>  
   	<script src="./js/tornaSu.js"></script>
-  	<script src="./js/cancellaContenuto.js"></script>
   	 
 
 </head>

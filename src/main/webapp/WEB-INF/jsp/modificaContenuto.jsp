@@ -18,8 +18,8 @@
 
   	  <p id="titolo" style="align:center"> ${titoloContenuto} </p>
   	  <input type="hidden" id="tipoContenuto" name="tipoContenuto" value="${tipoContenuto}">	
-  	  	
-	 <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">
+  	  <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">
+	 
 	 <div class="container">
 	  <form action="/action_page.php" id="formSetContenuto">
 	    <div class="row">

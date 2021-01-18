@@ -116,7 +116,7 @@ public class DeviceDAOJDBC implements DeviceDAO {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update device SET modello = ?, marca = ?, tipoDevice = ?, memoria = ?, ram=?, display = ?, batteria = ?, fotocamera = ?, cpu = ?, peso = ?, os = ?, img = ?, WHERE id_Device=?";
+			String update = "update device SET modello = ?, marca = ?, tipoDevice = ?, memoria = ?, ram=?, display = ?, batteria = ?, fotocamera = ?, cpu = ?, peso = ?, os = ?, img = ?, WHERE id=?";
 			PreparedStatement st = connection.prepareStatement(update);
 			st.setInt(1, device.getIdDevice());
 			st.setString(2, device.getModello());
@@ -144,13 +144,13 @@ public class DeviceDAOJDBC implements DeviceDAO {
 	}
 
 	@Override
-	public void delete(Device device) {
+	public void delete(int idDevice) {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM device WHERE id_Device = ? ";
+			String delete = "delete FROM device WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, device.getIdDevice());
+			statement.setInt(1, idDevice);
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
