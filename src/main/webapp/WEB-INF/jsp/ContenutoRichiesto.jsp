@@ -9,7 +9,6 @@
     <title>Device Is It</title>	
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
 	<link rel="stylesheet" href="css/blog.css" type="text/css"/>
-	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 	
 	<jsp:include page="./navbar.jsp" />
@@ -19,21 +18,21 @@
 </head>
 <body>
 
-
       <div class="container">
        <div class="row" style="padding-top: 50px">
         <div class="col-9 " style="background-color: white; border-radius:30px;">
 
           <div class="blog-post">
-            <h2 class="blog-post-title" style="padding-top: 40px"> ${contenuto.titolo} </h2>
+          <p id="titolo" style="text-align: left; margin-bottom: 0px; padding-top: 10px "> ${contenuto.titolo}</p>           
             <p class="blog-post-meta"> ${contenuto.data} </p>
             <p> ${contenuto.testo} </p>
             </div><!-- /.blog-post -->
         </div><!-- /.blog-main -->
         
 
-        <div class="col-1" style="padding-left: 50px">
-          <div class="sidebar-module sidebar-module-inset">
+        <div class="col-3" style="padding-left: 50px">
+			
+          <div class="sidebar-module sidebar-module-inset">        
             <h4>Video Correlati</h4>
 	            <section id="video">
 <!-- 					<iframe width="350" height="200" src="https://www.youtube.com/embed/6n1If16xzXo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
@@ -137,7 +136,7 @@
 
 
 </body>
-
+<jsp:include page="./footer.jsp" />
 <script src="/js/commento.js"></script>  
 <script src="/js/api.js"></script>  
 </html>
