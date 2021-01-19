@@ -154,7 +154,7 @@
 									<div class="g-signin2" data-onsuccess="accessoGoogle" align="center"></div>
 	                                 </i> Accedi usando Google
 	                                 </a>
-	                                 <div id="contenuto"></div>
+	                                 <div id="contenuto">Se ti esce il tuo nome qui sotto hai fatto l'accesso :)</div>
 	                                 <button onclick="logoutGoogle()">Logout</button>
 	                              </p>
 	                           </div>
