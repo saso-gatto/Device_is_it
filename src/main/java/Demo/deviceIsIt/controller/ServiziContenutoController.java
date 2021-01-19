@@ -11,7 +11,7 @@ import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @RestController
-public class ServiziController {
+public class ServiziContenutoController {
 	
 
 	@PostMapping("AggiungiCommento")
