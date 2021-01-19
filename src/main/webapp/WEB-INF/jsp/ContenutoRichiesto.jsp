@@ -81,12 +81,15 @@
         	<div class="col-sm-5 col-md-6 col-12 pb-4">
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
-			                <div class="comment col-12 mt-4 text-justify float-left"> 
-			                    
+			                <div class="comment col-12 mt-4 text-justify float-left"> 			                 
+			                    <input type="hidden" name="idCommento" id="idCommento" value="${commento.idcommento}" disabled>
 			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 
-			                    <button id="btnlike" onclick="like()" class="btn btn-outline-danger btn-sm" style="float:right">
-			                    <i class="far fa-heart"> ${commento.mipiace}</i></button> <br>
-			                    
+			                    <button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   
+				                    <div class="row">
+					                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
+					                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
+				                    </div>		                   
+			                    </button> <br>			                    
 			                    <p>${commento.testo}</p>
 			                </div>
 			  		</c:forEach>

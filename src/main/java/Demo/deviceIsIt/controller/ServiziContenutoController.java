@@ -21,6 +21,14 @@ public class ServiziContenutoController {
 		return commento;
 	}
 	
+	@PostMapping("AggiungiMiPiace")
+	public Commento aggiungiMiPice(@RequestBody Commento commento  ) {
+		
+		System.out.println(commento.getidcommento());
+		
+		DBManager.getInstance().CommentoDAO().addmipiace(commento.getidcommento());			
+		return commento;
+	}
 	
 	@PostMapping("AggiungiContenuto")
 	public Contenuto aggiungiContenuto(@RequestBody Contenuto contenuto) {
