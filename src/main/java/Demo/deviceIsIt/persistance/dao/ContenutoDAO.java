@@ -21,5 +21,6 @@ public interface ContenutoDAO {
 	public List<Contenuto> findRecensioniSmartphone();
 	public List<Contenuto> researchResultArticoli(String string);
 	public List<Contenuto> researchResultRecensioni(String string);
+	public int getNumCommenti(int idContenuto); 
 	
 }

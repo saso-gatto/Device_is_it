@@ -23,13 +23,19 @@ public class NavBarController {
 	public String getHome(HttpSession session, Model model) {
 		
 		List<Contenuto> recensioni= new ArrayList<Contenuto>();		
-		recensioni=DBManager.getInstance().ContenutoDAO().findLastThreeRecensioni();			
+		recensioni=DBManager.getInstance().ContenutoDAO().findLastThreeRecensioni();					
+		for(Contenuto r: recensioni) {
+			r.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(r.getid()));
+		}
 		model.addAttribute("ultimeTreRecensioni",recensioni);	
 		
 		List<Contenuto> articoli= new ArrayList<Contenuto>();		
 		articoli=DBManager.getInstance().ContenutoDAO().findLastThreeArticoli();			
+		for(Contenuto c: articoli) {
+			c.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(c.getid()));
+		}
 		model.addAttribute("ultimiTreArticoli",articoli);	
-		
+
 		return "index";
 	}
 	
@@ -56,6 +62,10 @@ public class NavBarController {
 		
 		List<Contenuto> contenuti= new ArrayList<Contenuto>();		
 		contenuti=DBManager.getInstance().ContenutoDAO().findArticoli();		
+		for(Contenuto c: contenuti) {
+			c.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(c.getid()));
+		}
+		
 		model.addAttribute("listaContenuto",contenuti);	
 				
 		return "news";

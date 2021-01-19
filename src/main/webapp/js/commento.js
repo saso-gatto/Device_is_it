@@ -34,9 +34,11 @@ $(document ).ready(function() {
 					document.getElementById("nuoviCommenti").innerHTML +=
 					"<div class=\"comment col-12 mt-4 text-justify float-left\">"+"<h4>"
 					+user+"</h4> <span>"+ m_date.year+ '-' + m_date.month + '-' +m_date.day+
-					"</span> <button onclick=\"like()\" class=\"btn btn-outline-danger btn-sm\" style=\"float:right\">"+
-					"<i class=\"far fa-heart\"> 0</i></button> <br><p>"
-					+commento.testo+"</p></div>";			        
+					"</span> <button onclick=\"addLike(${commento.idcommento})\" class=\"btn btn-outline-danger btn-sm\""+
+					" style=\"float:right; width:50px; padding:0px; \">	<div class=\"row\"> <i class=\"far fa-heart\""+
+					" style=\"padding:6px 8px 6px 20px ; \"></i><p style=\"margin:0px; padding-top:2px;"+
+					" padding-bottom: 0px; \" id=\"${commento.idcommento}\"> 0 </p></div></button> <br><p>"+
+					commento.testo+"</p></div>";			        
 				},
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
