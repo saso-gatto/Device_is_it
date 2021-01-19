@@ -152,7 +152,15 @@
 			              <div class="card-body">				              
 				              <h5 class="card-title">${contenuto.titolo}</h5>
 				              <p class="card-text"> ${contenuto.anteprima} </p>
-				              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+				              <div class="row">
+					              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+					              <c:if test="${contenuto.numCommenti==1}">
+					              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
+					              </c:if>
+					              <c:if test="${contenuto.numCommenti!=1}"> 
+					              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commenti</p>
+					              </c:if>
+				              </div>
 				              <form id="formArticolo" method="post" action="Contenuto" align="right">
 				                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
 				                 <button  class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
@@ -201,7 +209,15 @@
 				              <div class="card-body">				              
 					              <h5 class="card-title">${contenuto.titolo}</h5>
 					              <p class="card-text"> ${contenuto.anteprima} </p>
-					              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+					              <div class="row">
+					                <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+					                <c:if test="${contenuto.numCommenti==1}">
+					              	  <p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
+					                </c:if>
+					                <c:if test="${contenuto.numCommenti!=1}"> 
+					                  <p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commenti</p>
+					                </c:if>
+					              </div>
 					              <form id="formArticolo" method="post" action="Contenuto" align="right">
 					                 <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
 					                 <button  class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>

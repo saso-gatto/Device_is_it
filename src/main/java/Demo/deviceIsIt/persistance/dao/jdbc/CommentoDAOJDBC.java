@@ -135,13 +135,13 @@ public class CommentoDAOJDBC implements CommentoDAO {
 	}
 
 	@Override
-	public void delete(Commento commento) {
+	public void delete(int idcommento) {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM commento WHERE email = ? ";
+			String delete = "delete FROM commento WHERE idcommento = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, commento.getidcommento());
+			statement.setInt(1, idcommento);
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
