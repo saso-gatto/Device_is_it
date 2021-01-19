@@ -98,7 +98,7 @@
 				          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 								<button class="dropdown-item" type="submit" class="btn"> Profilo</button>
 	                        </form>
-	                        <a href="doLogout" class="dropdown-item"> Logout </a>	        
+	                        <a href="doLogout" class="dropdown-item" onclick="logoutGoogle()"> Logout </a>	        
 	                    </div>		
 	                  </div>
 	               </div>
