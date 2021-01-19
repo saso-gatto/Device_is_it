@@ -100,7 +100,16 @@
         	<div class="col-sm-5 col-md-6 col-12 pb-4">
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
-			                <div class="comment col-12 mt-4 text-justify float-left"> 			                 
+			                <div class="comment col-12 mt-4 text-justify float-left"> 
+			                	  <c:if test="${usernameLogged == 'admin@admin.it' || username == commento.utente}">   <!--  se è loggato l'admin -->
+									    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
+					                    <div class="dropdown-menu">	                        
+					                    	<form id="formDeleteCommento" method="post" action="deleteCommento">
+							                     <input type="hidden" name="idCommento" value="${commento.idcommento}"/>			                       
+							                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Elimina commento</button> 
+							                 </form>
+					                    </div>
+				                    </c:if>	                 
 			                    <input type="hidden" name="idCommento" id="idCommento" value="${commento.idcommento}" disabled>
 			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 
 			                    <button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   

@@ -11,7 +11,7 @@ public interface CommentoDAO {
 	public List<Commento> findAll();    
 	public List<Commento> findByContenuto(int idcontenuto);   
 	public void update(Commento c); //Update
-	public void delete(Commento c); //Delete	
+	public void delete(int idcommento); //Delete	
 	public void addmipiace(int idcommento);
 	
 }

@@ -20,8 +20,7 @@ public class ServiziLoginController {
 		}
 	
 		session.setAttribute("usernameLogged", utente.getEmail());
-		session.setAttribute("username",utente.getEmail());
-		
+		session.setAttribute("username",utente.getUsername());		
 		return utente;		
 	}
 
