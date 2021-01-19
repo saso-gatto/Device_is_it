@@ -25,6 +25,12 @@
   	
   	<link rel="stylesheet" href="css/navbar.css" type="text/css"/>
 
+	<!-- accesso tramite Google -->
+	<meta name="google-signin-client_id" content="476439448281-f76bpg87f8c04c6vjh9c3bdauokvrf8v.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="./js/apiGoogle.js"></script>
+  	
+  	
   	<script src="/js/login.js"></script>  
   	<script src="./js/tornaSu.js"></script>
   	 
@@ -144,9 +150,12 @@
 	                           </div>
 	                           <div class="col-md-12 mb-3">
 	                              <p class="text-center">
-	                                 <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-	                                 </i> Registrati usando Google
+<!-- 	                                 <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus"> -->
+									<div class="g-signin2" data-onsuccess="accessoGoogle" align="center"></div>
+	                                 </i> Accedi usando Google
 	                                 </a>
+	                                 <div id="contenuto"></div>
+	                                 <button onclick="logoutGoogle()">Logout</button>
 	                              </p>
 	                           </div>
 	                           <div class="form-group">
