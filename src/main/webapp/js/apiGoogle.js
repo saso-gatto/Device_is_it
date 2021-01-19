@@ -1,4 +1,5 @@
 var profile;
+var 
 
 function accessoGoogle(googleUser){
    
@@ -9,8 +10,7 @@ function accessoGoogle(googleUser){
 //        console.log('Family Name: ' + profile.getFamilyName());
 //        console.log("Image URL: " + profile.getImageUrl());
 //        console.log("Email: " + profile.getEmail());
-    
-	
+    //		var btn=document.getElementById("logginGoogle").click();	
 }
 
  

@@ -150,7 +150,7 @@
 	                           </div>
 	                           <div class="col-md-12 mb-3">								
 <!-- 	                             <button class="loginBtn loginBtn--facebook" align="center"> Login con Facebook </button> -->
-	                                 <div class="g-signin2" data-onsuccess="accessoGoogle" onclick="ricarica()" align="center"></div>
+	                                 <div class="g-signin2" id="logginGoogle" data-onsuccess="accessoGoogle" onclick="ricarica()" align="center"></div>
 	                           </div>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>

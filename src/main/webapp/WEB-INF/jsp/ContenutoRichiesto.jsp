@@ -12,23 +12,42 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 	
 	<jsp:include page="./navbar.jsp" />
-  
+  	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     
 	
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v9.0" nonce="snul0jmt"></script>
 
       <div class="container">
        <div class="row" style="padding-top: 50px">
         <div class="col-9 " style="background-color: white; border-radius:30px;">
 
           <div class="blog-post">
-          <p id="titolo" style="text-align: left; margin-bottom: 0px; padding-top: 10px "> ${contenuto.titolo}</p>           
-            <p class="blog-post-meta"> ${contenuto.data} </p>
+          <p id="titolo" style="text-align: left; margin-bottom: 0px; padding-top: 10px "> ${contenuto.titolo}</p> 
+          	<div class="row">
+          		<div class="col">
+            		<p class="blog-post-meta"> ${contenuto.data} </p>          
+          		</div>
+          		
+          		<div class="col">
+          		
+					<div style="float:right; padding-left:5px">
+						<a class="twitter-share-button"  href="https://twitter.com/intent/tweet?text=${contenuto.titolo}" data-size="large">	Tweet</a>
+					</div>
+	          		
+	          		<div class="fb-share-button" style="float:right" data-href="https://localhost:8080" data-layout="button" data-size="large">
+						<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Condividi</a>
+					</div> 
+					
+					
+          		</div>
+          	</div>          
             <p> ${contenuto.testo} </p>
             </div><!-- /.blog-post -->
         </div><!-- /.blog-main -->
-        
+       	
 
         <div class="col-3" style="padding-left: 50px">
 			
@@ -66,8 +85,8 @@
       </div>
 	</div>
 
-   
-
+   	
+	
 
 
 
