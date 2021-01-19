@@ -151,12 +151,13 @@
 	                           <div class="col-md-12 mb-3">
 	                              <p class="text-center">
 <!-- 	                                 <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus"> -->
-									<div class="g-signin2" data-onsuccess="accessoGoogle" align="center"></div>
-	                                 </i> Accedi usando Google
-	                                 </a>
-	                                 <div id="contenuto">Se ti esce il tuo nome qui sotto hai fatto l'accesso :)</div>
-	                                 <button onclick="logoutGoogle()">Logout</button>
-	                              </p>
+									
+<!-- 	                                 <button class="loginBtn loginBtn--facebook" align="center"> Login con Facebook </button> -->
+	                                 <div class="g-signin2" data-onsuccess="accessoGoogle" align="center"></div>
+	                                 
+<!-- 	                                 <div id="contenuto">Se ti esce il tuo nome qui sotto hai fatto l'accesso :)</div> -->
+
+	                                </p>
 	                           </div>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
