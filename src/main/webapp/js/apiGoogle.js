@@ -56,4 +56,20 @@ function ricarica(){
 	    });	
 
 }
+
+
+
+ var person = { userID: "", name: "", accessToken: "", picture: "", email: ""};
+
+function accessofacebook(){
+		FB.login(function (response) {
+                if (response.status == "connected") {
+                    person.userID = response.authResponse.userID;
+                    person.accessToken = response.authResponse.accessToken;
+
+                    
+                }
+				alert("accesso facebook");
+            });
+}
 	
