@@ -111,14 +111,15 @@
 					                    </div>
 				                    </c:if>	                 
 			                    <input type="hidden" name="idCommento" id="idCommento" value="${commento.idcommento}" disabled>
-			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 
-			                    <button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   
-				                    <div class="row">
-					                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
-					                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
-				                    </div>		                   
-			                    </button> <br>			                    
-			                    <p>${commento.testo}</p>
+			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 			                  			                     
+				                 	<button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   
+					                    <div class="row">
+						                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
+						                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
+					                    </div>		                   
+				                    </button> 				                 			                   
+				                 <br>			                    
+			                     <p>${commento.testo}</p>
 			                </div>
 			  		</c:forEach>
 			  		<div id="nuoviCommenti"></div>			     

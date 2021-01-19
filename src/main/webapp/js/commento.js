@@ -38,7 +38,10 @@ $(document ).ready(function() {
 					" style=\"float:right; width:50px; padding:0px; \">	<div class=\"row\"> <i class=\"far fa-heart\""+
 					" style=\"padding:6px 8px 6px 20px ; \"></i><p style=\"margin:0px; padding-top:2px;"+
 					" padding-bottom: 0px; \" id=\"${commento.idcommento}\"> 0 </p></div></button> <br><p>"+
-					commento.testo+"</p></div>";			        
+					commento.testo+"</p></div>";
+										
+					document.getElementById(testoCommento).innerText("");					
+								        
 				},
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
@@ -46,27 +49,15 @@ $(document ).ready(function() {
 	    });	
 	});
 
-
-
-
-	
-		var mipiace = document.getElementById ("btnmipiace").addEventListener ("click", function(){
-	
-		alert("like");
-		var id = document.getElementById("idCommento").value;
-		
-		
-	});
-
-
-
 });
 
 
 function addLike(idBottone){
 	
-	var commento = new Commento(idBottone,null,null ,null,null,null);
-		
+    var commento = new Commento(idBottone,null,null,null,null,null);	
+	var user = document.getElementById("user").value;
+	
+	if(user!=null) {		
 		$.ajax({
 			  url: "AggiungiMiPiace",  
 	          method: "POST",
@@ -80,7 +71,8 @@ function addLike(idBottone){
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
 	          }        
-	    });	
+	    });				
+	}				
 	
 }
 
