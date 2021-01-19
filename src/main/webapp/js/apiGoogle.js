@@ -11,8 +11,6 @@
         console.log("Email: " + profile.getEmail());
 
 
-	document.querySelector("#contenuto").innerText = googleUser.getBasicProfile().getGivenName();
-
   }
 
  
