@@ -1,5 +1,4 @@
 var profile;
-var 
 
 function accessoGoogle(googleUser){
    
