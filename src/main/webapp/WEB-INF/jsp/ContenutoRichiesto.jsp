@@ -82,7 +82,11 @@
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
 			                <div class="comment col-12 mt-4 text-justify float-left"> 
-			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> <br>
+			                    
+			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 
+			                    <button id="btnlike" onclick="like()" class="btn btn-outline-danger btn-sm" style="float:right">
+			                    <i class="far fa-heart"> ${commento.mipiace}</i></button> <br>
+			                    
 			                    <p>${commento.testo}</p>
 			                </div>
 			  		</c:forEach>

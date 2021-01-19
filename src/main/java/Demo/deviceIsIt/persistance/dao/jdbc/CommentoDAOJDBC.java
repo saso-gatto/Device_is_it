@@ -26,7 +26,7 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		Connection conn;
 		try {
 			conn = dbSource.getConnection();
-			String query = "insert into commento values(DEFAULT,?,?,?,?);"; // prendiamo la query
+			String query = "insert into commento values(DEFAULT,?,?,?,?,0);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
 			st.setInt(1, commento.getcontenuto());
 			st.setString(2, commento.getutente());
@@ -55,12 +55,14 @@ public class CommentoDAOJDBC implements CommentoDAO {
 				String utente = rs.getString("utente");
 				Date data = rs.getDate("data");
 				String testo = rs.getString("testo");
+				int mipiace = rs.getInt("mipiace");
 				commento = new Commento();
 				commento.setidcommento(id);
 				commento.setcontenuto(contenuto);
 				commento.setutente(utente);
 				commento.setData(data);
 				commento.setTesto(testo);
+				commento.setmipiace(mipiace);
 				
 			}
 			
@@ -87,6 +89,7 @@ public class CommentoDAOJDBC implements CommentoDAO {
 					String utente = rs.getString("utente");
 					Date data = rs.getDate("data");
 					String testo = rs.getString("testo");
+					int mipiace = rs.getInt("mipiace");
 					
 					System.out.println(idcommento + contenuto + utente + data+testo);
 					Commento commento = new Commento();
@@ -95,6 +98,7 @@ public class CommentoDAOJDBC implements CommentoDAO {
 					commento.setutente(utente);
 					commento.setData(data);
 					commento.setTesto(testo);
+					commento.setmipiace(mipiace);
 					
 					commenti.add(commento);
 					System.out.println("creato");
@@ -110,13 +114,14 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update commento SET contenuto = ?, utente = ?, data = ?, testo = ? WHERE idCommento=?";
+			String update = "update commento SET contenuto = ?, utente = ?, data = ?, testo = ?, mipiace = ? WHERE idCommento=?";
 			PreparedStatement st = connection.prepareStatement(update);
 			st.setInt(1, commento.getidcommento());
 			st.setInt(2, commento.getcontenuto());
 			st.setString(3, commento.getutente());
 			st.setDate(4, commento.getData());
 			st.setString(5, commento.getTesto());
+			st.setInt(6, commento.getmipiace());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
@@ -166,13 +171,14 @@ public class CommentoDAOJDBC implements CommentoDAO {
 				String utente = rs.getString("utente");
 				Date data = rs.getDate("data");
 				String testo = rs.getString("testo");
-				
+				int mipiace = rs.getInt("mipiace");
 				Commento commento = new Commento();
 				commento.setidcommento(idcommento);
 				commento.setcontenuto(contenuto);
 				commento.setutente(utente);
 				commento.setData(data);
 				commento.setTesto(testo);
+				commento.setmipiace(mipiace);
 				
 				commenti.add(commento);
 			}
@@ -181,5 +187,24 @@ public class CommentoDAOJDBC implements CommentoDAO {
 		}
 	return commenti;
 	}
+
+
+	@Override
+	public void addmipiace(int idcommento) {
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "update commento SET mipiace = mipiace+1 WHERE idcommento=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setInt(1, idcommento);
+			st.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+		
+
 
 }

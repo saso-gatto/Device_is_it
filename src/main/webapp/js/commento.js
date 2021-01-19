@@ -32,7 +32,9 @@ $(document ).ready(function() {
 					document.getElementById("testoCommento").innerHTML="";
 					document.getElementById("nuoviCommenti").innerHTML +=
 					"<div class=\"comment col-12 mt-4 text-justify float-left\">"+"<h4>"
-					+user+"</h4> <span>"+ m_date.year+ '-' + m_date.month + '-' +m_date.day+"</span> <br><p>"+commento.testo+"</p></div>";			        
+					+user+"</h4> <span>"+ m_date.year+ '-' + m_date.month + '-' +m_date.day+
+					"</span> <button onclick=\"like()\" class=\"btn btn-outline-danger btn-sm\" style=\"float:right\"><i class=\"far fa-heart\"> 0</i></button> <br><p>"
+					+commento.testo+"</p></div>";			        
 				},
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
@@ -41,3 +43,38 @@ $(document ).ready(function() {
 	});
 
 });
+
+
+function like(){
+	alert("like");
+	
+		var btnmipiace = document.getElementById ("btnlike").addEventListener ("click", function(){
+		
+		var user = document.getElementById("user").value;
+		var email = document.getElementById("emailUtente").value;		
+		var data= new Date();
+		var idcontenuto = document.getElementById("idContenuto").value;
+		var testo = $("#testoCommento").val();
+		var commento = new Commento(null,idcontenuto,testo,data,email);
+		
+		$.ajax({
+			  url: "AggiungiCommento",  
+	          method: "POST",
+	          data: JSON.stringify(commento),
+	          contentType: "application/json",	          
+	          success: function(risposta){
+//	          console.log(JSON.stringify(commento));									
+					document.getElementById("testoCommento").innerHTML="";
+					document.getElementById("nuoviCommenti").innerHTML +=
+					"<div class=\"comment col-12 mt-4 text-justify float-left\">"+"<h4>"
+					+user+"</h4> <span>"+ m_date.year+ '-' + m_date.month + '-' +m_date.day+
+					"</span> <button onclick=\"like()\" class=\"btn btn-outline-danger btn-sm\" style=\"float:right\"><i class=\"far fa-heart\"> 0</i></button> <br><p>"
+					+commento.testo+"</p></div>";			        
+				},
+	          fail: function( jqXHR, textStatus ) {
+	  			alert( "Request failed: " + textStatus );
+	          }        
+	    });	
+	});
+
+}
