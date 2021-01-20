@@ -217,7 +217,7 @@
       </div>
     </div>
 
-	<button id="myBtn" title="Go to top">Top</button>
+	<button onclick="sendEmail()" id="myBtn" title="Go to top">Top</button>
 
 
 
