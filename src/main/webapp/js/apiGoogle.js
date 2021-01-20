@@ -13,10 +13,16 @@ function accessoGoogle(googleUser){
 }
 
  
-function logoutGoogle(){
+function logoutSocial(){
+	// logout google
 	gapi.auth2.getAuthInstance().signOut().then(function(){
 		console.log('user logout')
 	})
+	
+	// logout FB
+	FB.logout(function(response) {
+	  // user is now logged out
+	});
 }
 
 function Utente (email, nome, cognome,username, password, newsletter, bloccato){
@@ -39,7 +45,7 @@ function ricarica(){
 	var utente= new Utente(email,nome,cognome,email,false,false);
 	
 	$.ajax({
-			  url: "loginGoogle",  
+			  url: "loginSocial",  
 	          method: "POST",	          
 	          data: JSON.stringify(utente),	          
 	          contentType: "application/json",	          
@@ -59,17 +65,42 @@ function ricarica(){
 
 
 
- var person = { userID: "", name: "", accessToken: "", picture: "", email: ""};
+//  --------->   API FACEBOOK
 
+var person = { id: "", first_name: "", last_name: "", email: ""};
+var utente;
 function accessofacebook(){
 		FB.login(function (response) {
                 if (response.status == "connected") {
-                    person.userID = response.authResponse.userID;
-                    person.accessToken = response.authResponse.accessToken;
+					
+					FB.api('/me?fields=id,first_name,last_name,email', function (userData) {
+                        person.id = userData.id;
+						person.first_name = userData.first_name;
+						person.last_name = userData.last_name;
+                        person.email = userData.email;
 
                     
+					utente= new Utente(person.email, person.first_name, person.last_name, person.email,false,false);
+					
+					});
+					
+					$.ajax({
+							  url: "loginSocial",  
+					          method: "POST",	          
+					          data: JSON.stringify(utente),	          
+					          contentType: "application/json",	          
+					          success: function(risposta){
+					          
+								  console.log(JSON.stringify(risposta));										 
+								 
+								  window.location.href="/index";	         	          
+							  },	          
+					          fail: function( jqXHR, textStatus ) {
+					  			alert( "Request failed: " + textStatus );
+					          }        
+				    });	
+                    
                 }
-				alert("accesso facebook");
+				
             });
 }
-	
