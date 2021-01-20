@@ -54,12 +54,12 @@
 				<c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
 	    			  <div class="row" style="padding: 10px 10px 10px">
 		                  <div class="col" >
-			                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+			                 <button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
 						   </div>
 						   <div class="col">
 						     <form id="formSetContenuto" method="post" action="setContenuto">
 			                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
-			                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+			                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:left"><i class="icon-cog"></i> Modifica</button> 
 			                 </form>
 			               </div>	
 					   </div>  			        
