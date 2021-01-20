@@ -98,6 +98,9 @@
 				          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 								<button class="dropdown-item" type="submit" class="btn"> Profilo</button>
 	                        </form>
+	                        <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->	
+	                        	<a href="listaUtenti" class="dropdown-item" > Lista Utenti </a>
+		    				</c:if>
 	                        <a href="doLogout" class="dropdown-item" onclick="logoutGoogle()"> Logout </a>	        
 	                    </div>		
 	                  </div>
