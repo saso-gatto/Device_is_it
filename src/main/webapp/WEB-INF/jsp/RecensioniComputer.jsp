@@ -34,13 +34,18 @@
 			      
 			      <div class="user-card">
 			        <div class="level center">
-			          13 commenti
+			          <c:if test="${contenuto.numCommenti==1}">
+					    <p class="card-text"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
+					   </c:if>
+					   <c:if test="${contenuto.numCommenti!=1}"> 
+					    	<p class="card-text"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commenti</p>
+					   </c:if>
 			        </div>
 			        
-			        <img width="160" height="110" src="${contenuto.img}" class="center">
+			        <img width="100" height="130" src="${contenuto.img}" class="center">
 			        
 			        <div class="points center">
-			          Data: ${contenuto.data}
+			          <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}
 			        </div>
 			      </div>
 			
