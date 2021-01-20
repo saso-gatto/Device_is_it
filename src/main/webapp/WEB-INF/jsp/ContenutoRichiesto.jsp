@@ -144,9 +144,9 @@
 						<input type="hidden" id="idContenuto" value="${contenuto.id}">	
 						<input type="hidden" id="emailUtente" value="${usernameLogged}">	
 						
-						<div class="form-group">
+						<div class="form-group" id="formAggiungiCommento">
 							<textarea id="testoCommento" name="testoCommento" rows="5" cols="30" placeholder="Scrivi qui il tuo commento..."></textarea>										
-							<button type="button" id="submitCommento" class="btn btn btn-outline-warning">Invia commento</button>
+							<button type="button" id="submitCommento" class="btn btn btn-success">Invia commento</button>
 						</div>
 						
 <!-- 						<div class="form-group"> -->

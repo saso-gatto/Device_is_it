@@ -73,14 +73,16 @@ label {
 
 .form-group input,
 .form-group textarea {
-    background-color: rgb(255, 249, 221); /* area testo nome e commento */
+    background-color: rgb(238, 239, 237); /* area testo nome e commento */
     border: 1px solid #ecb21f;  /* bordo area testo commento*/
     border-radius: 12px
 }
 
-#algin-form {
-    border: 2px solid #eab425; /* bordo form commento*/
-    background-color: rgb(242, 169, 58);
+#formAggiungiCommento {
+    border: 1px solid rgb(255, 147, 0); /* bordo form commento*/
+    background-color: rgb(231, 163, 91);
     border-radius: 5px;
-    padding: 20px
+    padding: 20px;
 }
+
+
