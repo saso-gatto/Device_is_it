@@ -12,8 +12,8 @@ import Demo.deviceIsIt.persistance.DBManager;
 public class ServiziLoginController {
 
 
-	@PostMapping("loginGoogle")
-	public Utente findModelli(HttpSession session, @RequestBody Utente utente) {
+	@PostMapping("loginSocial")
+	public Utente loginSocial(HttpSession session, @RequestBody Utente utente) {
 		
 		if(!DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
 			DBManager.getInstance().utenteDAO().save(utente);
