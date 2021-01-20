@@ -51,7 +51,20 @@
 			      </div>
 			
 			      <div class="more-info">
-			       <h1>${contenuto.titolo}</h1> <br><br>
+				<c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
+	    			  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formSetContenuto" method="post" action="setContenuto">
+			                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+			                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Modifica</button> 
+			                 </form>
+			               </div>	
+					   </div>  			        
+	    		</c:if>			      
+			       <h1>${contenuto.titolo}</h1> <br>
 			      	<form id="formArticolo" method="post" action="Contenuto" align="center">
 		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">               
 		                    <button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Continua a leggere</button>
