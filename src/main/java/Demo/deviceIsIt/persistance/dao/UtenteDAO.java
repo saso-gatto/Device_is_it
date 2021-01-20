@@ -15,5 +15,7 @@ public interface UtenteDAO {
 	public boolean checkPassword(String email, String password);
 	public String getUsername(String email);
 	public boolean existsUser(String email);
+	public List<Utente> getIsctittiNewsletter();
+	
 	
 }

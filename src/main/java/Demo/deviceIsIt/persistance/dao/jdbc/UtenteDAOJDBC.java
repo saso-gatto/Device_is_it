@@ -259,10 +259,39 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		return username;
 	}
 	
-	@GetMapping("Contenuto")
-	public String creaContenuto(HttpSession session, Model model, int tipologiaContenuto) {
+	public List<Utente> getIsctittiNewsletter(){
+		List<Utente> utenti = new ArrayList<Utente>();
 		
-		return "redirect:";
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from utente where newsletter=true";
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+				String email = rs.getString("email");
+				String nome = rs.getString("nome");
+				String cognome = rs.getString("cognome");
+				String password = rs.getString("password");
+				String username = rs.getString("username");
+				boolean newsletter = rs.getBoolean("newsletter");
+				boolean bloccato = rs.getBoolean("bloccato");
+								
+				Utente utente = new Utente();				
+				utente.setEmail(email);
+				utente.setNome(nome);
+				utente.setCognome(cognome);
+				utente.setPassword(password);
+				utente.setUsername(username);
+				utente.setNewsletter(newsletter);
+				utente.setBloccato(bloccato);
+				
+				utenti.add(utente);				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return utenti;
+		
 	}
 
 }

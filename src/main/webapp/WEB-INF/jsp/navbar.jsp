@@ -219,13 +219,12 @@
 
 	<button id="myBtn" title="Go to top">Top</button>
 	 
-	 
+	
 	 <div class="modal fade" id="showError">
 	    <div class="modal-dialog">
 	      <div class="modal-content">	            
 	        <!-- Modal body -->
-	        <div class="modal-body">
-	
+	        <div class="modal-body">	
 				<div class="myform form ">
 					<div class="logo mb-3">
 						 <div class="col-md-12 text-center">

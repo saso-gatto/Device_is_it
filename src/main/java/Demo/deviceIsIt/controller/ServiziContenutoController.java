@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
+import Demo.deviceIsIt.model.Mail;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @RestController
@@ -35,7 +36,13 @@ public class ServiziContenutoController {
 			DBManager.getInstance().ContenutoDAO().saveWithoutDevice(contenuto);
 		else
 			DBManager.getInstance().ContenutoDAO().save(contenuto);				
-		return contenuto;
+		
+		try {
+			Mail.getInstance().inviaNewsletter(DBManager.getInstance().utenteDAO().getIsctittiNewsletter());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return contenuto;	
 	}
 	
 	@PostMapping("ModificaContenuto")
