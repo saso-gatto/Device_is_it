@@ -38,6 +38,8 @@ public class ServiziContenutoController {
 			DBManager.getInstance().ContenutoDAO().save(contenuto);				
 		
 		try {
+			Mail.getInstance().setTitolo(contenuto.getTitolo());
+			Mail.getInstance().setAnteprima(contenuto.getAnteprima());			
 			Mail.getInstance().inviaNewsletter(DBManager.getInstance().utenteDAO().getIsctittiNewsletter());
 		} catch (Exception e) {
 			e.printStackTrace();

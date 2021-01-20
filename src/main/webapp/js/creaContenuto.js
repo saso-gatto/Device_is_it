@@ -57,29 +57,32 @@ $(document).ready(function(){
 	
 	$("#formAddContenuto").on("submit", function(e){
 	
-	e.preventDefault();
-	
-	var data = new Date();
-	var device =  document.getElementById("device").value;
-	var testo = document.getElementById("testo").value;
-	var titolo = document.getElementById("titoloRec").value;
-	var tipo = document.getElementById("tipoContenuto").value;
-	var img= document.getElementById("img").value;
-	var anteprima=document.getElementById("anteprima").value;
-	var contenuto = new Contenuto (null,data,device,testo,titolo,tipo,img,anteprima);
-	$.ajax({
-			  url: "AggiungiContenuto",  
-	          method: "POST",	         
-	          data: JSON.stringify(contenuto),	       
-	          contentType: "application/json",	         
-	          success: function(risposta){
-	          console.log(JSON.stringify(risposta));			  
-			  window.location.href="/index";	          
-	          },	          
-	          fail: function( jqXHR, textStatus ) {
-	  			alert( "Request failed: " + textStatus );
-	          }        
-	    });	
+		e.preventDefault();
+		
+		$("#btnPubblicaContenuto").prop("disabled", true);
+	    $("#btnPubblicaContenuto").html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`);        
+		
+		var data = new Date();
+		var device =  document.getElementById("device").value;
+		var testo = document.getElementById("testo").value;
+		var titolo = document.getElementById("titoloRec").value;
+		var tipo = document.getElementById("tipoContenuto").value;
+		var img= document.getElementById("img").value;
+		var anteprima=document.getElementById("anteprima").value;
+		var contenuto = new Contenuto (null,data,device,testo,titolo,tipo,img,anteprima);
+		$.ajax({
+				  url: "AggiungiContenuto",  
+		          method: "POST",	         
+		          data: JSON.stringify(contenuto),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){
+		          console.log(JSON.stringify(risposta));			  
+				  window.location.href="/index";	          
+		          },	          
+		          fail: function( jqXHR, textStatus ) {
+		  			alert( "Request failed: " + textStatus );
+		          }        
+		    });	
 	
 	});
 
