@@ -217,11 +217,40 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			
 			statement.setString(1, newu.getNome());			
 			statement.setString(2, newu.getCognome());			
-			statement.setString(3, old.getPassword());		
-			statement.setString(4, newu.getUsername());			
-			statement.setString(5, old.getEmail());
-			statement.setBoolean(6, newu.isNewsletter());
-			statement.setBoolean(7, newu.isBloccato());
+			statement.setString(3, BCrypt.hashpw(newu.getPassword(), BCrypt.gensalt(12)));		
+			statement.setString(4, newu.getUsername());				
+			statement.setBoolean(5, newu.isNewsletter());
+			statement.setBoolean(6, newu.isBloccato());			
+			statement.setString(7, old.getEmail());
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+	}
+	
+	@Override
+	public void updateWithoutPsw(Utente old, Utente newu) {////////////to check
+		
+		Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String update = "update utente SET nome = ?, cognome = ?, username = ?, newsletter=?, bloccato=? WHERE email=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			
+			statement.setString(1, newu.getNome());			
+			statement.setString(2, newu.getCognome());			
+			statement.setString(3, newu.getUsername());				
+			statement.setBoolean(4, newu.isNewsletter());
+			statement.setBoolean(5, newu.isBloccato());			
+			statement.setString(6, old.getEmail());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {

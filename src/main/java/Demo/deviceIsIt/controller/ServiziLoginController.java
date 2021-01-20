@@ -26,14 +26,21 @@ public class ServiziLoginController {
 	}
 	
 	@PostMapping("ModificaProfilo")
-	public Utente setProfilo(@RequestBody Utente utente) {
-		System.out.println("sono in set profilo");
-		if(DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
-			Utente old = DBManager.getInstance().utenteDAO().findByPrimaryKey(utente.getEmail());
-			DBManager.getInstance().utenteDAO().update(old, utente);
+	public String setProfilo(@RequestBody Utente utente) {
+	
+		try {
+			if(DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
+				Utente old = DBManager.getInstance().utenteDAO().findByPrimaryKey(utente.getEmail());
+				
+				if(utente.getPassword()!=null)
+					DBManager.getInstance().utenteDAO().update(old, utente);
+				else
+					DBManager.getInstance().utenteDAO().updateWithoutPsw(old, utente);			
+			}
+		} catch (Exception e) {
+			return "error";
 		}
-
-		return utente;		
+		return "success";		
 	}
 	
 	
