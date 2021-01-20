@@ -54,7 +54,7 @@ function ricarica(){
 	          success: function(risposta){
 	          
 			  console.log(JSON.stringify(risposta));
-			  alert("ho fatto l'accesso'")										 
+									 
 			 
 			  window.location.href="/index";	         	          
 			  },	          
@@ -77,6 +77,7 @@ function accessofacebook(){
 //		e.preventDefault();
 		FB.login(function (response) {
                 if (response.status == "connected") {
+					$('#showError').modal('show');	
 					
 					FB.api('/me?fields=id,first_name,last_name,email', function (userData) {
                         person.id = userData.id;

@@ -19,6 +19,14 @@
 
    	<p id="titolo" style="text-align:center"> Schede Tecniche</p>
    		
+   	
+   	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+	   	<div class="container text-center" >
+	   		 <a class="btn" href="newDevice"> <button type="button" class="btn btn-success btn-block">Aggiungi nuovo Device</button> </a>                      									   					  					
+		</div>    	
+	</c:if> 	
+   		
+   		
 	<section id="schede"> 	
 	 <div class="container">
 	 	<div class="row justify-content-center">   

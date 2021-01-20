@@ -19,43 +19,12 @@
   
   	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
 	   	<div class="container text-center" >
-	   		 <button type="button" class="btn btn-primary " id="addContenuto"  data-toggle="modal" data-target="#scegliContenuto">Aggiungi un nuovo Contenuto</button>		   	
+	   		 <a class="btn" href="newArticolo"> <button type="button" class="btn btn-info btn-block">Aggiungi News</button> </a>  					 
 		</div>    	
 	</c:if> 
 	
 	
-	<div class="modal fade" id="scegliContenuto">
-	    <div class="modal-dialog">
-	      <div class="modal-content">
-	             
-	        <!-- Modal body -->
-	        <div class="modal-body">
-	
-				<div class="myform form ">
-					<div class="logo mb-3">
-						 <div class="col-md-12 text-center">
-							<button type="button" class="close" data-dismiss="modal">×</button>
-							 <br> <br>
-							<h3 class="titolo-loginForm">Schegli il contenuto da aggiungere</h3>
-							 <br>
-						 </div>
-					</div>
-	                   
-	                   <a class="btn" href="newDevice"> <button type="button" class="btn btn-outline-success btn-block">Device</button> </a>
-	                      <br>
-	                   <a class="btn" href="newRecensione"> <button type="button" class="btn btn-outline-primary btn-block">Recensione</button> </a>                      									   					  					
-				      <br>
-					<a class="btn" href="newArticolo"> <button type="button" class="btn btn-outline-info btn-block">News</button> </a>  					 
-					 <br>
-	                                    
-				</div>
-			</div>
-			 </div>
-	     </div>
-	 </div>
-	
-	
-  
+
   
   <section id="schede" style="margin-bottom: 50px; margin-top: 40px">   
         
