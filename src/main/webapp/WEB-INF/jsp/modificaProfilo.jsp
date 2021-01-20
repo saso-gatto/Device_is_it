@@ -105,8 +105,8 @@
 						 <div class="col-md-12 text-center">
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
-							<h3>L'email inserita è già in uso da un altro account</h3><br>
-							<h5>Inserire un'email differente</h5>
+							<h3>Oh no! C'è stato un imprevisto :(</h3><br>				
+							 <h6>riprova più tardi</h6>			
 							 <br>
 						 </div>
 					</div>	                   	               
