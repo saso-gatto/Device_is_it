@@ -37,10 +37,7 @@ $(document).ready(function(){ $("#formSetProfilo").on("submit", function(e){
 				  if(risposta=="error"){
 					  $('#showError').modal('show');	
 				  }							  			           
-	          },	          
-	          fail: function( jqXHR, textStatus ) {
-	  			alert( "Request failed: " + textStatus );
-	          }        
+	          },	          	           
 	    });	
 
 	});
