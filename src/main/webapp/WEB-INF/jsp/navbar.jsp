@@ -28,7 +28,7 @@
 	<!-- accesso tramite Google -->
 	<meta name="google-signin-client_id" content="965884587568-u3v5r8gclmanbfnvuua7rbd2hsmu9tbn.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-	<script src="./js/apiGoogle.js"></script>
+	<script src="./js/apiSocial.js"></script>
   	
   	
   	<script src="/js/login.js"></script>  
@@ -151,14 +151,17 @@
 	                                 <span class="span-or">oppure</span>
 	                              </div>
 	                           </div>
-	                           <div class="row col-md-12 mb-3">								
-	                                 <div class="g-signin2" id="logginGoogle" data-onsuccess="accessoGoogle" onclick="ricarica()" align="center"></div>
-	                           		<button onclick="accessofacebook()" class="loginBtn loginBtn--facebook" > Login con Facebook </button>
+	                           </form>	 
+	                            <div class="row" >								
+	                                 <div style="padding-left:15%" class="g-signin2" id="logginGoogle" data-onsuccess="accessoGoogle" onclick="ricarica()" ></div>
+	                           		<button style="margin-left:5%" onclick="accessofacebook()" class="loginBtn loginBtn--facebook" > Login con Facebook </button>
 	                           </div>
+	                           <br>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
+	                              <p class="text-center"><a href="#" id="registrati">Password dimenticata</a></p>
 	                           </div>
-	                        </form>	                 
+           
 					</div>
 				</div>
 				
@@ -214,16 +217,14 @@
       </div>
     </div>
 
-	<button  id="myBtn" title="Go to top">Top</button>
+	<button id="myBtn" title="Go to top">Top</button>
 
 
 
-
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
 
 <script>
-	
-
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '230165788590398',

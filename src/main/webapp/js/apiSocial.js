@@ -70,6 +70,8 @@ function ricarica(){
 var person = { id: "", first_name: "", last_name: "", email: ""};
 var utente;
 function accessofacebook(){
+		
+//		e.preventDefault();
 		FB.login(function (response) {
                 if (response.status == "connected") {
 					
@@ -104,3 +106,24 @@ function accessofacebook(){
 				
             });
 }
+
+
+
+// send email
+
+function sendEmail(){
+	alert("email inviata");
+	Email.send({
+		Host: "smtp.gmail.com",
+		Username: "davyde8@gmail.com",
+		Password: "",
+		To: "davideragona@libero.it",
+		From: "davyde8@gmail.com",
+		Subject: 'Ti hanno inviato un email con js',
+		Body: 'testo email',
+		
+		}).then(("messaggio"));
+	
+	
+}
+
