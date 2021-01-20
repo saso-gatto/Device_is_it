@@ -10,6 +10,8 @@ function accessoGoogle(googleUser){
 //        console.log("Image URL: " + profile.getImageUrl());
 //        console.log("Email: " + profile.getEmail());
     //		var btn=document.getElementById("logginGoogle").click();	
+		
+		
 }
 
  
@@ -70,6 +72,7 @@ function ricarica(){
 var person = { id: "", first_name: "", last_name: "", email: ""};
 var utente;
 function accessofacebook(){
+	
 		
 //		e.preventDefault();
 		FB.login(function (response) {
@@ -84,7 +87,7 @@ function accessofacebook(){
                     
 					utente= new Utente(person.email, person.first_name, person.last_name, person.email,false,false);
 					
-					});
+				
 					
 					$.ajax({
 							  url: "loginSocial",  
@@ -93,7 +96,7 @@ function accessofacebook(){
 					          contentType: "application/json",	          
 					          success: function(risposta){
 					          
-								  console.log(JSON.stringify(risposta));										 
+								  console.log(JSON.stringify(risposta));											 
 								 
 								  window.location.href="/index";	         	          
 							  },	          
@@ -101,7 +104,7 @@ function accessofacebook(){
 					  			alert( "Request failed: " + textStatus );
 					          }        
 				    });	
-                    
+                   });
                 }
 				
             });
