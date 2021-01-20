@@ -18,3 +18,41 @@ function  checklogin(){
 		});
 	});
 }
+
+
+function Utente (email, nome, cognome,username, password, newsletter, bloccato){
+	this.email=email;
+	this.nome=nome;
+	this.cognome=cognome;
+	this.username=username;
+	this.password=password;
+	this.newsletter=newsletter;
+	this.bloccato=bloccato;	
+}
+
+$(document).ready(function(){ 
+	
+	$("#loginForm").on("submit", function(e){
+		e.preventDefault();		
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+		
+		var utente= new Utente(email,null,null,null,password,null,null);
+	
+		$.ajax({
+				  url: "Serviziologin",  
+		          method: "post",	         
+		          data: JSON.stringify(utente),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){				  									
+					if(risposta=="success"){
+						window.location.href="/index";
+					}					
+					if(risposta=="error"){
+						$('#showError').modal('show');						
+					}									
+		          },	            	  
+		    });	
+	});
+	
+});

@@ -130,7 +130,7 @@
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
-	                   <form method="post" action="login">            
+	                   <form method="post" action="# id="loginForm">           
 	                           <div class="form-group ">
 	                              <label for="exampleInputEmail1">Email</label>
 	                              <input type="email" name="email"  class="form-control"  id="email" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
@@ -217,8 +217,29 @@
       </div>
     </div>
 
-	<button onclick="sendEmail()" id="myBtn" title="Go to top">Top</button>
-
+	<button id="myBtn" title="Go to top">Top</button>
+	 
+	 
+	 <div class="modal fade" id="showError">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3>Password o Email errati</h3>
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>  
 
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
