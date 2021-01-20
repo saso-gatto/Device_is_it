@@ -73,13 +73,12 @@
         <div class="row" >
 	      <br>
 		   <div class="col-12 text-center" >			   		  			  
-		      <form method="get" action="#">
+		      <form id="formSetProfilo" method="post" action="setProfilo">
            		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 	    		<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
        		  </form>
 		  </div>
 	   </div>
-        
         
 	 
 	 </div>

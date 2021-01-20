@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
+import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @Controller
@@ -105,6 +106,17 @@ public class ContenutoController {
 			
 			return "modificaDevice";
 		}
+	 
+	 @PostMapping("setProfilo")
+		public String setProfilo(HttpSession session, Model model, @RequestParam String email ) {
+			
+		 	Utente u = DBManager.getInstance().utenteDAO().findByPrimaryKey(email);
+			model.addAttribute("utente", u );
+
+			
+			return "modificaProfilo";
+		}
+	 
 	 
 	 @PostMapping("deleteDevice")
 		public String deleteDevice(HttpSession session, Model model, @RequestParam Integer idDevice ) {
