@@ -12,7 +12,15 @@ public class Contenuto {
 	private int tipo;
 	private String img;
 	private String anteprima;
+	private int numCommenti;
 	
+	
+	public int getNumCommenti() {
+		return numCommenti;
+	}
+	public void setNumCommenti(int numCommenti) {
+		this.numCommenti = numCommenti;
+	}
 	
 	public int getid() {
 		return id;

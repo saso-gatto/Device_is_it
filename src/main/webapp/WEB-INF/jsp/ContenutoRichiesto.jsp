@@ -12,23 +12,42 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 	
 	<jsp:include page="./navbar.jsp" />
-  
+  	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     
 	
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v9.0" nonce="snul0jmt"></script>
 
       <div class="container">
        <div class="row" style="padding-top: 50px">
         <div class="col-9 " style="background-color: white; border-radius:30px;">
 
           <div class="blog-post">
-          <p id="titolo" style="text-align: left; margin-bottom: 0px; padding-top: 10px "> ${contenuto.titolo}</p>           
-            <p class="blog-post-meta"> ${contenuto.data} </p>
+          <p id="titolo" style="text-align: left; margin-bottom: 0px; padding-top: 10px "> ${contenuto.titolo}</p> 
+          	<div class="row">
+          		<div class="col">
+            		<p class="blog-post-meta"> ${contenuto.data} </p>          
+          		</div>
+          		
+          		<div class="col">
+          		
+					<div style="float:right; padding-left:5px">
+						<a class="twitter-share-button"  href="https://twitter.com/intent/tweet?text=${contenuto.titolo}" data-size="large">	Tweet</a>
+					</div>
+	          		
+	          		<div class="fb-share-button" style="float:right" data-href="https://localhost:8080" data-layout="button" data-size="large">
+						<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Condividi</a>
+					</div> 
+					
+					
+          		</div>
+          	</div>          
             <p> ${contenuto.testo} </p>
             </div><!-- /.blog-post -->
         </div><!-- /.blog-main -->
-        
+       	
 
         <div class="col-3" style="padding-left: 50px">
 			
@@ -66,8 +85,8 @@
       </div>
 	</div>
 
-   
-
+   	
+	
 
 
 
@@ -82,8 +101,25 @@
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
 			                <div class="comment col-12 mt-4 text-justify float-left"> 
-			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> <br>
-			                    <p>${commento.testo}</p>
+			                	  <c:if test="${usernameLogged == 'admin@admin.it' || username == commento.utente}">   <!--  se è loggato l'admin -->
+									    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
+					                    <div class="dropdown-menu">	                        
+					                    	<form id="formDeleteCommento" method="post" action="deleteCommento">
+							                     <input type="hidden" name="idCommento" value="${commento.idcommento}"/>			                       
+							                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Elimina commento</button> 
+							                 </form>
+					                    </div>
+				                    </c:if>	                 
+			                    <input type="hidden" name="idCommento" id="idCommento" value="${commento.idcommento}" disabled>
+			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 			                  			                     
+				                 	<button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   
+					                    <div class="row">
+						                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
+						                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
+					                    </div>		                   
+				                    </button> 				                 			                   
+				                 <br>			                    
+			                     <p>${commento.testo}</p>
 			                </div>
 			  		</c:forEach>
 			  		<div id="nuoviCommenti"></div>			     

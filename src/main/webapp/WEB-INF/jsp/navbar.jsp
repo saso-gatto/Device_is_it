@@ -151,9 +151,9 @@
 	                                 <span class="span-or">oppure</span>
 	                              </div>
 	                           </div>
-	                           <div class="col-md-12 mb-3">								
-<!-- 	                             <button class="loginBtn loginBtn--facebook" align="center"> Login con Facebook </button> -->
-	                                 <div class="g-signin2" data-onsuccess="accessoGoogle" onclick="ricarica()" align="center"></div>
+	                           <div class="row col-md-12 mb-3">								
+	                                 <div class="g-signin2" id="logginGoogle" data-onsuccess="accessoGoogle" onclick="ricarica()" align="center"></div>
+	                           		<button onclick="accessofacebook()" class="loginBtn loginBtn--facebook" > Login con Facebook </button>
 	                           </div>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
@@ -215,6 +215,26 @@
     </div>
 
 	<button  id="myBtn" title="Go to top">Top</button>
+
+
+
+
+
+
+<script>
+	
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '230165788590398',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v9.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
 
 </body>
 </html>

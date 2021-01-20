@@ -457,6 +457,28 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		return contenuti;
 	}
 
+	@Override
+	public int getNumCommenti(int idContenuto) {
+		
+		int numCommenti=0;
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select count(commento.*) from commento, contenuto where contenuto.id=commento.contenuto and contenuto.id=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setInt(1, idContenuto);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				numCommenti=(rs.getInt("count"));				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return numCommenti;
+		
+	}
+
+	
 	
 
 

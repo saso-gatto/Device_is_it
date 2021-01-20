@@ -9,8 +9,15 @@ public class Commento {
 	private String utente; //Equivale all'username/email
 	private Date data;
 	private String testo;
+	private int mipiace;
 	
 	
+	public int getmipiace() {
+		return mipiace;
+	}
+	public void setmipiace(int mipiace) {
+		this.mipiace = mipiace;
+	}
 	public int getidcommento() {
 		return idcommento;
 	}

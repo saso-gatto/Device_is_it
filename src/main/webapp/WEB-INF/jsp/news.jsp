@@ -23,7 +23,7 @@
         <div class="card-columns">      
           <c:forEach var="contenuto" items="${listaContenuto}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
             <div class="card">
-	  			  <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->	    			  
+ 			  <c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
 	    			  <div class="row" style="padding: 10px 10px 10px">
 		                  <div class="col" >
 			                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
@@ -40,11 +40,19 @@
                   <div class="card-body">
                     <h5 class="card-title">${contenuto.titolo}</h5>
                     <p class="card-text">${contenuto.anteprima}</p>
-                    <p class="card-text"><i class="fas fa-calendar-alt"></i> ${contenuto.data}</p>
-                  		<form id="formArticolo" method="post" action="Contenuto" align="right">
-		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
-		                    <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
-				        </form>
+                    <div class="row">
+		              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+		              <c:if test="${contenuto.numCommenti==1}">
+		              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
+		              </c:if>
+		              <c:if test="${contenuto.numCommenti!=1}"> 
+		              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commenti</p>
+		              </c:if>
+	                 </div>
+                 	 <form id="formArticolo" method="post" action="Contenuto" align="right">
+	                    <input type="hidden" id="id" name="id" value="${contenuto.id}">                 
+	                    <button class="btn btn-outline-success btn-sm" type="submit">Continua a leggere</button>
+			         </form>
 		        </div>
     
             </div>  

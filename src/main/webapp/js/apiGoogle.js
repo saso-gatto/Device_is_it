@@ -9,8 +9,7 @@ function accessoGoogle(googleUser){
 //        console.log('Family Name: ' + profile.getFamilyName());
 //        console.log("Image URL: " + profile.getImageUrl());
 //        console.log("Email: " + profile.getEmail());
-    
-	
+    //		var btn=document.getElementById("logginGoogle").click();	
 }
 
  
@@ -56,5 +55,21 @@ function ricarica(){
 	          }        
 	    });	
 
+}
+
+
+
+ var person = { userID: "", name: "", accessToken: "", picture: "", email: ""};
+
+function accessofacebook(){
+		FB.login(function (response) {
+                if (response.status == "connected") {
+                    person.userID = response.authResponse.userID;
+                    person.accessToken = response.authResponse.accessToken;
+
+                    
+                }
+				alert("accesso facebook");
+            });
 }
 	
