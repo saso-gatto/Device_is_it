@@ -7,6 +7,19 @@
  <meta charset="ISO-8859-1">
  <link rel="stylesheet" href="css/footer.css" type="text/css"/>
  
+
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		  <style>
+		    #map{
+		      height:220px;
+		      width: 100 px;
+		    }
+		  </style>
+ 
+ <script src="./js/api.js"></script>
+ 
 </head>
 <body>
 
@@ -27,6 +40,73 @@
 	                   </div>
                     </div>
                 </div>
+                
+
+               <div id="map"class="col-lg-2">
+  <script>
+  function initMap(){
+      // Map options
+      var options = {
+        zoom:12,
+        center:{lat:39.35800,lng:16.22714}
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        addMarker({coords:event.latLng});
+      });
+
+
+      // Array of markers
+      var markers = [
+        {
+          coords:{lat:39.35800,lng:16.22714},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h2>UNICAL</h2>'
+        },
+
+      ];
+
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+                </div>
+                
+                
                 
                 <div class="col-lg-3">
                 	<div align="left" class="footer-widget">
@@ -75,8 +155,18 @@
             </div>
         </div>
         
-    </footer>
-    <!-- Footer fine -->
+        
+    
+			<!--  script con key per api google maps -->
+	
+  <script async defer
+   		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHD0wO75h9HhQoRCihEeDASlc6tw1Vp_o&callback=initMap">
+	</script>
+  
+
+
+</footer>      <!-- Footer fine -->
+
 
 
 </body>
