@@ -17,6 +17,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
+		<!--  <script>
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+		</script>-->
+		
 	</head>
 	
 	<body>
@@ -63,8 +69,12 @@
 					    			<td>${utente.newsletter}</td>
 					    			<td>${utente.bloccato}</td>
 		                            <td>
-		                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-		                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+		                            	<form id="formSetProfilo" method="post" action="setProfilo">
+							           		<input type="hidden" id="email" name="email" value="${utente.email}">
+							           		<button type="submit" id="btnModificaProfilo" title="Modifica" class="btn btn-link"><i class="material-icons">&#xE254;</i></button>
+							   			          	
+							       		</form>
+		                                <button type="submit" id="btnEliminaProfilo" title="Elimina" class="btn btn-link" data-id-utente="${utente.email}" data-toggle="modal" data-target="#confermaEliminazione"><i class="material-icons">&#xE872;</i></button>
 		                            </td>
 		                        </tr>
 							   	
@@ -74,7 +84,40 @@
                 </table>
                 
             </div>
-        </div>        
+        </div> 
+        
+        <div class="modal fade" id="confermaEliminazione">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Desideri eliminare l'utente selezionato?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazione" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formDeleteUser" method="post" action="deleteUser">
+			                     <input type="hidden" name="email" value=""/>			                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				   </div>
+			   </div>
+		   </div>
+	     </div>
+	 </div>       
 	
 	</body>
 	

@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 import javax.swing.text.View;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import Demo.deviceIsIt.model.Utente;
@@ -54,6 +55,16 @@ public class UtentiController {
 		System.out.println("works");
 		
 		return "index";
+	}
+	
+	@PostMapping("deleteUser")
+	public String deleteContenuto(HttpSession session, Model model, @RequestParam String email) {
+	
+		System.out.println("Email da eliminare: " + email);
+		DBManager.getInstance().utenteDAO().delete(email);;
+		System.out.println("fattoooooooooooooo");
+		
+		return "redirect:/";
 	}
 	
 	
