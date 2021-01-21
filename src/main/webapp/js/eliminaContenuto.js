@@ -7,7 +7,9 @@ $(document).ready(function(){
 	
 	$('#confermaEliminazioneProfilo').on('show.bs.modal', function(e) {
 	    var email = $(e.relatedTarget).data('email-utente');
-	    $(e.currentTarget).find('input[name="emailUtente"]').val(email);
+	    console.log("sono qui");
+	    console.log(email);
+	    $(e.currentTarget).find('input[name="email"]').val(email);
 	});
 		
 });

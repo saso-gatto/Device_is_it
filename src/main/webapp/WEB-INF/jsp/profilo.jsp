@@ -79,7 +79,7 @@
            				<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 	    				<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
        				 </form>
-					<button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-email-utente="${utente.email}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
+					<button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
 				</div> 
 	   		</div>	 
 	   </div>
@@ -106,8 +106,9 @@
 						   </div>
 						   <div class="col">
 						     <form id="formDeleteProfilo" method="post" action="deleteUser">
-			                     <input type="hidden" name="emailUtente" value=""/>			                       
+			                     <input type="hidden" name="email" value=""/>			                       
 			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                     <a href="doLogout" class="dropdown-item" onclick="logoutSocial()">  </a>
 			                 </form>
 			               </div>	
 					   </div>   	               

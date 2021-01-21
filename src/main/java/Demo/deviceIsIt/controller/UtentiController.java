@@ -59,11 +59,11 @@ public class UtentiController {
 	
 	@PostMapping("deleteUser")
 	public String deleteContenuto(HttpSession session, Model model, @RequestParam String email) {
-	
+
 		System.out.println("Email da eliminare: " + email);
+		session.invalidate();
 		DBManager.getInstance().utenteDAO().delete(email);;
-		System.out.println("fattoooooooooooooo");
-		
+		//System.out.println("fattoooooooooooooo");
 		return "redirect:/";
 	}
 	
