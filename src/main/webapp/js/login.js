@@ -3,18 +3,21 @@ window.addEventListener("load", function(){ //"load"-->al caricamento della pagi
 	checklogin();
 });
 
+var modalLogin=true;
 
 function  checklogin(){
 	 
 	$("#registrati").click(function() {	
 		$("#first").fadeOut("fast", function() {
 			$("#second").fadeIn("fast");
+			modalLogin=false;
 		});
 	});
 	
 	$("#accedi").click(function() {
 		$("#second").fadeOut("fast", function() {
 			$("#first").fadeIn("fast");
+			modalLogin=true;
 		});
 	});
 }
@@ -32,39 +35,49 @@ function Utente (email, nome, cognome,username, password, newsletter, bloccato){
 
 $(document).ready(function(){ 
 	
-	registrazioneUtente();
-	loginUtente();	
-});
-
-function loginUtente(){
-		var login = document.getElementById("btnLogin").addEventListener ("submit", function(e){
-		e.preventDefault();		
-		var email = document.getElementById("emailLogin").value;
-		var password = document.getElementById("passwordLogin").value;
-		
-		var utente= new Utente(email,null,null,null,password,null,null);
+	var Login = document.getElementById("loginForm");
+		document.getElementById("btnLogin").addEventListener("submit", function () {
+ 	 	Login.submit();
+	});
 	
-		$.ajax({
-				  url: "Serviziologin",  
-		          method: "POST",	         
-		          data: JSON.stringify(utente),	       
-		          contentType: "application/json",	         
-		          success: function(risposta){				  									
-					if(risposta=="success"){
-						window.location.href="/index";
-					}					
-					if(risposta=="error"){
-						$('#showError').modal('show');						
-					}									
-		          },	            	  
-		    });	
+	var Registrazione = document.getElementById("formRegistrazione");
+		document.getElementById("btnIscriviti").addEventListener("submit", function () {
+ 	 	Registrazione.submit();
+	});
+	
+	
+	$("#loginForm").on("submit", function(e){
+		
+		if(modalLogin){
+			
+			alert("login");
+			e.preventDefault();
+			var email = document.getElementById("emailLogin").value;
+			var password = document.getElementById("passwordLogin").value;
+			
+			var utente= new Utente(email,null,null,null,password,null,null);
+		
+			$.ajax({
+					  url: "Serviziologin",  
+			          method: "POST",	         
+			          data: JSON.stringify(utente),	       
+			          contentType: "application/json",	         
+			          success: function(risposta){				  									
+						if(risposta=="success"){
+							window.location.href="/index";
+						}					
+						if(risposta=="error"){
+							$('#showErrorLogin').modal('show');						
+						}									
+			          },	            	  
+			    });	
+		}
 	});
 
-}
 
+	$("#formRegistrazione").on("submit", function(e){
 
-function registrazioneUtente(){
-		var registrazione = document.getElementById("btnIscriviti").addEventListener ("submit", function(e){
+		alert("registrazione");
 		e.preventDefault();		
 		var nome = document.getElementById("nome").value;
 		var cognome = document.getElementById("cognome").value;
@@ -91,10 +104,15 @@ function registrazioneUtente(){
 						window.location.href="/index";
 					}					
 					if(risposta=="error"){
-						$('#showError').modal('show');						
+						$('#showErrorRegistrazione').modal('show');						
 					}									
 		          },	            	  
 		    });	
-	});	
+	});
+	
+	
+});
 
-}
+		
+
+

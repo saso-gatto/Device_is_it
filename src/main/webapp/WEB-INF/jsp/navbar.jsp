@@ -130,7 +130,7 @@
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
-	                   <form method="post" action="# id="loginForm">           
+	                   <form method="post" action="#" id="loginForm">           
 	                           <div class="form-group ">
 	                              <label for="exampleInputEmail1">Email</label>
 	                              <input type="email" name="emailLogin"  class="form-control"  id="emailLogin" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
@@ -220,7 +220,7 @@
 	<button id="myBtn" title="Go to top">Top</button>
 	 
 	
-	 <div class="modal fade" id="showError">
+	 <div class="modal fade" id="showErrorLogin">
 	    <div class="modal-dialog">
 	      <div class="modal-content">	            
 	        <!-- Modal body -->
@@ -231,6 +231,27 @@
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
 							<h3>Password o Email errati</h3>
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>  
+	 
+	 
+	 <div class="modal fade" id="showErrorRegistrazione">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3>email o username già in uso da un altro account</h3>
 							 <br>
 						 </div>
 					</div>	                   	               
