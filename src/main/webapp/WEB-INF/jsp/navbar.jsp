@@ -173,7 +173,7 @@
                            <h1 class="titolo-loginForm">Registrati</h1>
                         </div>
                      </div>                        
-                     <form method="post" action="Iscrizione" >
+                     <form method="post" action="#" id="formRegistrazione" >
                         <div class="form-group">
                            <label for="exampleInputEmail1">Nome</label>
                            <input type="text"  name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Inserisci Nome" required>

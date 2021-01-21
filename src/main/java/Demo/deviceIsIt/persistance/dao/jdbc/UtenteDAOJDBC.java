@@ -326,7 +326,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		return username;
 	}
 	
-	public List<Utente> getIsctittiNewsletter(){
+	public List<Utente> getIscrittiNewsletter(){
 		List<Utente> utenti = new ArrayList<Utente>();
 		
 		try {
@@ -359,6 +359,27 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		}
 		return utenti;
 		
+	}
+
+	@Override
+	public boolean existsUsername(String username) {
+		String check = null;
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select utente.username from utente where username=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, username);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				check = rs.getString("username");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if (check==null)
+			return false;
+		else
+			return true;
 	}
 
 }

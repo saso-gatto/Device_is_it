@@ -55,4 +55,34 @@ $(document).ready(function(){
 		    });	
 	});
 	
+	
+	
+	$("#formRegistrazione").on("submit", function(e){
+		e.preventDefault();		
+		var nome = document.getElementById("nome").value;
+		var cognome = document.getElementById("cognome").value;
+		var username = document.getElementById("username").value;
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+		var newsletter = document.getElementById(newsletter).value;
+		
+		var utente= new Utente(email,nome,cognome,username,password,newsletter,false);
+	
+		$.ajax({
+				  url: "ServizioRegistrazione",  
+		          method: "post",	         
+		          data: JSON.stringify(utente),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){				  									
+					if(risposta=="success"){
+						window.location.href="/index";
+					}					
+					if(risposta=="error"){
+						$('#showError').modal('show');						
+					}									
+		          },	            	  
+		    });	
+	});
+	
+	
 });
