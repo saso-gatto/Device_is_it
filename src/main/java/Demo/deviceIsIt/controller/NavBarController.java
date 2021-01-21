@@ -79,8 +79,6 @@ public class NavBarController {
 		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniPc();
 		model.addAttribute("listaComputer",contenuti);	
 		
-		System.out.println("numero recensioni computer: "+contenuti.size());
-		
 		for(Contenuto c: contenuti) {
 			c.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(c.getid()));
 		}
