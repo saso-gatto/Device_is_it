@@ -37,7 +37,7 @@ $(document).ready(function(){
 });
 
 function loginUtente(){
-		var login = document.getElementById("btnLogin").addEventListener ("click", function(e){
+		var login = document.getElementById("btnLogin").addEventListener ("submit", function(e){
 		e.preventDefault();		
 		var email = document.getElementById("emailLogin").value;
 		var password = document.getElementById("passwordLogin").value;
@@ -64,7 +64,7 @@ function loginUtente(){
 
 
 function registrazioneUtente(){
-		var registrazione = document.getElementById("btnIscriviti").addEventListener ("click", function(e){
+		var registrazione = document.getElementById("btnIscriviti").addEventListener ("submit", function(e){
 		e.preventDefault();		
 		var nome = document.getElementById("nome").value;
 		var cognome = document.getElementById("cognome").value;
