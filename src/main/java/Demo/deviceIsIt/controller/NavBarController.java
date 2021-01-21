@@ -80,6 +80,11 @@ public class NavBarController {
 		model.addAttribute("listaComputer",contenuti);	
 		
 		System.out.println("numero recensioni computer: "+contenuti.size());
+		
+		for(Contenuto c: contenuti) {
+			c.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(c.getid()));
+		}
+		
 		return "RecensioniComputer";
 	}
 	
@@ -91,7 +96,10 @@ public class NavBarController {
 		contenuti=DBManager.getInstance().ContenutoDAO().findRecensioniSmartphone();
 		model.addAttribute("listaSmartphone",contenuti);	
 		
-		System.out.println("numero recensioni smartphone: "+contenuti.size());
+		for(Contenuto c: contenuti) {
+			c.setNumCommenti(DBManager.getInstance().ContenutoDAO().getNumCommenti(c.getid()));
+		}
+		
 		return "RecensioniSmartphone";
 	}
 	
