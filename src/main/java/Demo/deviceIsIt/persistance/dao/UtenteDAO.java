@@ -19,6 +19,7 @@ public interface UtenteDAO {
 	public boolean existsUser(String email);
 	public List<Utente> getIscrittiNewsletter();
 	public boolean existsUsername (String username);
+	public void setPassword(String email, String password); //Update
 	
 	
 }

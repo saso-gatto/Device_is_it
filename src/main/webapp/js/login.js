@@ -45,21 +45,26 @@ $(document).ready(function(){
  	 	Registrazione.submit();
 	});
 	
+	var recupPassword = document.getElementById("recuperoPassword");
+		document.getElementById("btnRecuperoPassword").addEventListener("submit", function () {
+ 	 	recupPassword.submit();
+	});
+	
+
 	
 	$("#loginForm").on("submit", function(e){
 		
 		if(modalLogin){
-			
 			e.preventDefault();
-			var email = document.getElementById("emailLogin").value;
-			var password = document.getElementById("passwordLogin").value;
+			var email1 = document.getElementById("emailLogin").value;
+			var password1 = document.getElementById("passwordLogin").value;
 			
-			var utente= new Utente(email,null,null,null,password,null,null);
+			var utente1= new Utente(email1,null,null,null,password1,null,null);
 		
 			$.ajax({
 					  url: "Serviziologin",  
 			          method: "POST",	         
-			          data: JSON.stringify(utente),	       
+			          data: JSON.stringify(utente1),	       
 			          contentType: "application/json",	         
 			          success: function(risposta){				  									
 						if(risposta=="success"){
@@ -80,8 +85,8 @@ $(document).ready(function(){
 		var nome = document.getElementById("nome").value;
 		var cognome = document.getElementById("cognome").value;
 		var username = document.getElementById("username").value;
-		var email = document.getElementById("email").value;
-		var password = document.getElementById("password").value;
+		var email2 = document.getElementById("email").value;
+		var password2 = document.getElementById("password").value;
 		var newsletter;
 		if (document. getElementById("newsletter").checked) {
 			newsletter=true;
@@ -90,12 +95,12 @@ $(document).ready(function(){
 			newsletter=false;
 		}
 		
-		var utente= new Utente(email,nome,cognome,username,password,newsletter,null);
+		var utente2= new Utente(email2,nome,cognome,username,password2,newsletter,null);
 	
 		$.ajax({
 				  url: "ServizioRegistrazione",  
 		          method: "POST",	         
-		          data: JSON.stringify(utente),	       
+		          data: JSON.stringify(utente2),	       
 		          contentType: "application/json",	         
 		          success: function(risposta){				  									
 					if(risposta=="success"){
@@ -106,6 +111,32 @@ $(document).ready(function(){
 					}									
 		          },	            	  
 		    });	
+	});
+	
+	
+	$("#recuperoPassword").on("submit", function(e){
+		
+		$("#btnRecuperoPassword").prop("disabled", true);
+	    $("#btnRecuperoPassword").html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`);
+
+		e.preventDefault();			
+		var email3 = document.getElementById("emailRecupero").value;
+		var utente3= new Utente(email3,null,null,null,null,null,null);
+		$.ajax({
+				  url: "RecuperoPassword",  
+		          method: "POST",	         
+		          data: JSON.stringify(utente3),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){				  									
+					if(risposta=="success"){
+						$('#invioNuovaPassword').modal('show');	
+					}														
+		          },	            	  
+		    });	
+	});	
+	
+	$("#chiudi").on("click", function(e){
+		$('#recuperaPassword').modal('hide');	
 	});
 	
 	

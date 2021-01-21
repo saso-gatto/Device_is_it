@@ -159,7 +159,7 @@
 	                           <br>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>
-	                              <p class="text-center"><a href="#" id="registrati">Password dimenticata</a></p>
+	                              <p class="text-center"> <button type="button" class="btn btn-sm btn-outline-success"  data-toggle="modal" data-target="#recuperaPassword" > Ho dimenticato la password  </button></p>
 	                           </div>
            
 					</div>
@@ -252,6 +252,51 @@
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
 							<h3>email o username già in uso da un altro account</h3>
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>  
+	 
+	 
+	  <div class="modal fade" id="recuperaPassword">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+								<form id="recuperoPassword" action="#">
+				                     <h4>inserisci la tua email per recuperare la password</h4> <br>
+				                     <input style="font-size: 20px;" type="email" id="emailRecupero" name="emailrecupero" required><br><br>           
+				                     <button type="submit" id="btnRecuperoPassword" class="btn btn-sm btn-outline-info" style="float:right"> recupera</button> 
+				                 </form>
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>  
+	 
+	 <div class="modal fade" id="invioNuovaPassword">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button id="chiudi" type="button" class="close" data-dismiss="modal">×</button>
+							 <br>							
+				               <p>se la tua email è presente sul sistema ti è stata inviata una nuova password, controlla tra la posta in arrivo :)<p> 					              		                 
 							 <br>
 						 </div>
 					</div>	                   	               

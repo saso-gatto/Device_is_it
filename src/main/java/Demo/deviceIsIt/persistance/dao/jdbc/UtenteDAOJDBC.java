@@ -233,7 +233,28 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
+	}	
+	
+	
+	@Override
+	public void setPassword(String email, String password) {
+		
+		Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String update = "update utente SET password = ? WHERE email=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			
+			statement.setString(1, BCrypt.hashpw(password, BCrypt.gensalt(12)));			
+			statement.setString(2, email);			
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} 
 	}
+	
 	
 	@Override
 	public void updateWithoutPsw(Utente old, Utente newu) {////////////to check
@@ -254,14 +275,9 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-			}
-		}
+			e.printStackTrace();
+		} 
+		
 	}
 
 	@Override
