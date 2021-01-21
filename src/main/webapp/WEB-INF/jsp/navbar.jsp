@@ -130,20 +130,20 @@
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
-	                   <form method="post" action="#" id="loginForm">           
+	                   <form method="post" action="# id="loginForm">           
 	                           <div class="form-group ">
 	                              <label for="exampleInputEmail1">Email</label>
-	                              <input type="email" name="email"  class="form-control"  id="email" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
+	                              <input type="email" name="emailLogin"  class="form-control"  id="emailLogin" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
 	                           </div>
 	                           <div class="form-group">
 	                              <label for="exampleInputEmail1">Password</label>
-	                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
+	                              <input type="password" name="passwordLogin" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
 	                           </div>
 	                           <div class="form-group">
 	                              <p class="text-center">Registrandoti accetti i nostri <a href="#">Termini d'uso</a></p>
 	                           </div>
 	                           <div class="col-md-12 text-center ">
-	                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+	                              <button type="submit" id="btnLogin" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
 	                           </div>
 	                           <div class="col-md-12 ">
 	                              <div class="login-or">
@@ -192,7 +192,7 @@
                         </div>
                         <div class="form-group">
                            <label for="exampleInputEmail1">Password</label>                         
-                        	<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                        	<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" >
                         	<p id="parametriPSW">Minimo otto caratteri, almeno una lettera e un numero</p> 
                         </div>
 						  <div class="form-group">
@@ -202,7 +202,7 @@
 	   						 </div>
    						 </div>
                         <div class="col-md-12 text-center mb-3">
-                           <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
+                           <button type="submit" id="btnIscriviti" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
                         </div>                        
                         <div class="col-md-12 ">
                            <div class="form-group">
