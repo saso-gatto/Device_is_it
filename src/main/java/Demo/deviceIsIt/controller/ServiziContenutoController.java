@@ -40,7 +40,7 @@ public class ServiziContenutoController {
 		try {
 			Mail.getInstance().setTitolo(contenuto.getTitolo());
 			Mail.getInstance().setAnteprima(contenuto.getAnteprima());			
-			Mail.getInstance().inviaNewsletter(DBManager.getInstance().utenteDAO().getIsctittiNewsletter());
+			Mail.getInstance().inviaNewsletter(DBManager.getInstance().utenteDAO().getIscrittiNewsletter());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
