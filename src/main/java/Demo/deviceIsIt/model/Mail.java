@@ -14,10 +14,12 @@ public class Mail {
 
 	private static Mail instance = null; 
 	private static String Server="smtp.gmail.com";
-	 private static String Porta="587";
-	 private static String myEmail="deviceisit@gmail.com";
-	 private static String myPass="Password1";
-	 private String testoMessaggio="";
+	private static String Porta="587";
+	private static String myEmail="deviceisit@gmail.com";
+	private static String myPass="Password.1";
+	private String anteprima="";
+	private String titolo="";
+	 
 	 
 	 
 	public static Mail getInstance() {
@@ -29,14 +31,23 @@ public class Mail {
 	 
 	private Mail() {}
 	 
-	public String getTestoMessaggio() {
-		return testoMessaggio;
+	public String getTitolo() {
+		return titolo;
 	}
 
-	public void setTestoMessaggio(String testoMessaggio) {
-		this.testoMessaggio = testoMessaggio;
+	public void setTitolo(String titolo) {
+		String tag1="<h1>";
+		String tag2="</h1><br>";
+		this.titolo = tag1+titolo+tag2;
 	}
 
+	public String getAnteprima() {
+		return anteprima;
+	}
+
+	public void setAnteprima(String anteprima) {
+		this.anteprima = anteprima;
+	}
 
 	public void inviaNewsletter(List<Utente> iscritti) throws Exception {
     	 				
@@ -64,7 +75,7 @@ public class Mail {
             message.setFrom(new InternetAddress(myEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(u.getEmail()));
             message.setSubject("Device Is It: un nuovo contenuto ti aspetta!");
-            message.setContent("provaaaaaaaaa", "text/html");
+            message.setContent(titolo+anteprima, "text/html");
             Transport.send(message);
 		}
 

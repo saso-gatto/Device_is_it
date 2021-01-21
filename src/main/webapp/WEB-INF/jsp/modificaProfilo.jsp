@@ -27,7 +27,7 @@
 	        <label for="fname">Email</label>
 	      </div>
 	      <div class="col-80">	   
-			  <input type="text" id="emailUtente" name="email " value="${utente.email}" required>
+			  <input type="text" id="emailUtente" name="email " value="${utente.email}" disabled>			 
 	      </div>
 	    </div>
 	    <div class="row">
@@ -53,7 +53,7 @@
 	        <label for="fname">Username</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="username" name="username" value="${utente.username}" required>	       
+	        <input type="text" id="user" name="user" value="${utente.username}" required>	       
 	      </div>
 	    </div>
 
@@ -62,7 +62,7 @@
 	        <label for="fname">Password</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="password" id="password" name="password" value="${utente.password}" required>	       
+	        <input type="text" id="passw" name="passw" placeholder="modifica password">	             
 	      </div>
 	    </div>
 	    
@@ -72,15 +72,19 @@
 	      </div>
 	      <div class="col-80">
 	        <c:if test="${utente.newsletter == true}">
-			     <input type="text" id="newsletterUtente" name="newsletter" value="attivata" required>
+			     <select id="newsletterUtente" name="newsletterUtente">
+		          	<option value="true">attivata</option>
+		          	<option value="false">disattivata</option>		          
+		        </select>			     			   
 			</c:if>
 	        <c:if test="${utente.newsletter != true}">
-			     <input type="text" id="newsletterUtente" name="newsletter" value="disattivata" required>
+			    <select id="newsletterUtente" name="newsletterUtente">
+		          	<option value="false">disattivata</option>	
+		          	<option value="true">attivata</option>		          	         
+		        </select>
 			</c:if>	       
 	      </div>
-	    </div>
-	    
-    
+	    </div>	       
 	    <div class="row" >
 	      <br>
 		   <div class="col-12 text-center" >			   		  			  
@@ -90,6 +94,27 @@
        
 	  </form>
 	 </div>
+	 
+	 	 <div class="modal fade" id="showError">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3>Oh no! C'è stato un imprevisto :(</h3><br>				
+							 <h6>riprova più tardi</h6>			
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div> 
 
 
 </body>

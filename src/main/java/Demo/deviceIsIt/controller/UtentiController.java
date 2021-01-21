@@ -61,7 +61,7 @@ public class UtentiController {
 	public String deleteContenuto(HttpSession session, Model model, @RequestParam String email) {
 	
 		System.out.println("Email da eliminare: " + email);
-		DBManager.getInstance().utenteDAO().delete(email);;
+		//DBManager.getInstance().utenteDAO().delete(email);;
 		System.out.println("fattoooooooooooooo");
 		
 		return "redirect:/";

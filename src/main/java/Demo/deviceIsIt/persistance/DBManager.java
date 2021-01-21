@@ -17,7 +17,6 @@ public class DBManager {
 	static {
 		try {
 			Class.forName("org.postgresql.Driver");
-			//questi vanno messi in file di configurazione!!!	
 			dataSource=new DBSource("jdbc:postgresql://localhost:5432/deviceIsIt","postgres","postgres");
 		} 
 		catch (Exception e) {

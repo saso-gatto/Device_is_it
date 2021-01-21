@@ -18,11 +18,12 @@ $(document).ready(function(){ $("#formSetProfilo").on("submit", function(e){
 	var email=document.getElementById("emailUtente").value;
 	var nome=document.getElementById("nomeUtente").value;
 	var cognome= document.getElementById("cognomeUtente").value;
-	var password= document.getElementById("password").value;
+	var usernameUtente= document.getElementById("user").value;
+	var password= document.getElementById("passw").value;
 	var newsletter=document.getElementById("newsletterUtente").value;
 	var bloccato = false;
-
-	var utente = new Utente(email,nome,cognome,password,newsletter,bloccato);
+	
+	var utente = new Utente(email,nome,cognome,password,usernameUtente,newsletter,bloccato);
 
 	$.ajax({
 			  url: "ModificaProfilo",  
@@ -30,12 +31,13 @@ $(document).ready(function(){ $("#formSetProfilo").on("submit", function(e){
 	          data: JSON.stringify(utente),	          
 	          contentType: "application/json",	          
 	          success: function(risposta){
-	          console.log(JSON.stringify(risposta));							  
-			  window.location.href="/index";	         
-	          },	          
-	          fail: function( jqXHR, textStatus ) {
-	  			alert( "Request failed: " + textStatus );
-	          }        
+		          if(risposta=="success"){
+					  window.location.href="/index";	
+				  }
+				  if(risposta=="error"){
+					  $('#showError').modal('show');	
+				  }							  			           
+	          },	          	           
 	    });	
 
 	});
