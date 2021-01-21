@@ -113,10 +113,10 @@
 	                	<ul>
 	                            <h5>Un team fantastico!</h5>
 	                            <li>Ci puoi trovare nelle sedi: </li>
-	                            <li><a href="#"> - Reggio Calabria</a></li>
-	                            <li><a href="#"> - Locri </a></li>
-	                            <li><a href="#"> - Cosenza </a></li>
-	                            <li><a href="#"> - Cittanova </a></li>
+	                            <li><a href="https://it.wikipedia.org/wiki/Reggio_Calabria"> - Reggio Calabria</a></li>
+	                            <li><a href="https://it.wikipedia.org/wiki/Locri"> - Locri </a></li>
+	                            <li><a href="https://it.wikipedia.org/wiki/Cosenza"> - Cosenza </a></li>
+	                            <li><a href="https://it.wikipedia.org/wiki/Cittanova_(Italia)"> - Cittanova </a></li>
 	                            
 	                        </ul>
 	                 </div>
