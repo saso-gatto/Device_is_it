@@ -10,7 +10,9 @@
   	<title>Device is it</title>
   	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
     <link rel="stylesheet" href="css/news.css" type="text/css"/>
-    <jsp:include page="./navbar.jsp" /> 
+    <jsp:include page="./navbar.jsp" />
+    <script src="/js/eliminaContenuto.js"></script>  
+    
 
 </head>
 <body>
@@ -34,9 +36,9 @@
             <div class="card">
  			  <c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
 	    			  <div class="row" style="padding: 10px 10px 10px">
-		                  <div class="col" >
-				                 <button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
-							   </div>
+		                 	<div class="col" >
+				            	<button type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+							</div>
 						   <div class="col">
 						     <form id="formSetContenuto" method="post" action="setContenuto">
 			                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 

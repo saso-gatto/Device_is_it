@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/recensioni.css" type="text/css"/>
     
     <title>Device Is It</title> 
-	<jsp:include page="./navbar.jsp" /> 	
+	<jsp:include page="./navbar.jsp" />
+	<script src="/js/eliminaContenuto.js"></script>  
+	 	
 	
 </head>
 <body>
@@ -82,6 +84,39 @@
 			  </div>
 			</div>
   		 </c:forEach>
+  		 
+  	<div class="modal fade" id="confermaEliminazione">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">vuoi davvero eliminare il contenuto?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazione" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formDeleteContenuto" method="post" action="deleteContenuto">
+			                     <input type="hidden" name="idContenuto" value=""/>			                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				</div>
+			</div>
+			 </div>
+	     </div>
+	 </div>
 
   
 </body>
