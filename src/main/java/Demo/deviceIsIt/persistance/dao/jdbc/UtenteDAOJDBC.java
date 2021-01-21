@@ -265,14 +265,14 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public void delete(Utente u) { 
+	public void delete(String email) { 
 		Connection connection = null;
 		
 		try {
 			connection = this.dbSource.getConnection();
 			String delete = "delete FROM utente WHERE email=? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setString(1, u.getEmail());
+			statement.setString(1, email);
 			statement.executeUpdate();		
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
