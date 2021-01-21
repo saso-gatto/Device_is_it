@@ -76,8 +76,12 @@
 		      <form id="formSetProfilo" method="post" action="setProfilo">
            		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 	    		<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
+
        		  </form>
-		  </div>
+			
+			<button type="submit" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger">Elimina profilo</button>
+			
+		  </div> 
 	   </div>
         
 	 

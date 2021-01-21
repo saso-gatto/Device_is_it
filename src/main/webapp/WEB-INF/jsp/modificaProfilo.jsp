@@ -88,11 +88,13 @@
 	    <div class="row" >
 	      <br>
 		   <div class="col-12 text-center" >			   		  			  
-	    		<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success">Modifica</button>
+	    		<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success">Conferma Modifica</button>
+			
+		  		<button type="submit" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger">Elimina profilo</button>
+		 
 		  </div>
 	   </div>
        
-	  </form>
 	 </div>
 	 
 	 	 <div class="modal fade" id="showError">
