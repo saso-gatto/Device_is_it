@@ -17,13 +17,16 @@
 </head>
 <body>
   
-   <p id="titolo" style="text-align:center"> News </p>
-  
-  	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-	   	<div class="container text-center" >
-	   		 <a class="btn" href="newArticolo"> <button type="button" class="btn btn-info btn-block">Aggiungi News</button> </a>  					 
-		</div>    	
-	</c:if> 
+    <div class="row" style="margin-top:16px;">
+	   <div class="col"> 
+	      <p id="titolo" style="text-align:center"> News </p>
+	   </div>
+  	   <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+  	      <div class="col"> 		   
+		   	  <a class="btn" href="newArticolo"> <button style="float:left; margin-top:30%;" type="button" class="btn btn-info btn-block">Aggiungi News</button> </a>  					 			
+		  </div>	
+	   </c:if> 
+    </div>
 	
 	
 

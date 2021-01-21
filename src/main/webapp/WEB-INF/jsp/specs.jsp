@@ -17,14 +17,17 @@
 <body>
   
 
-   	<p id="titolo" style="text-align:center"> Schede Tecniche</p>
+   	 <div class="row"  style="margin-top:1%; margin-bottom:1%"> 
+  	 	<div class="col"> 
+   			<p id="titolo" style="text-align:center"> Schede Tecniche</p>
+   		</div>
+   		<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
+		   	<div class="col"> 			   
+			   	<a class="btn" href="newDevice"> <button style="float:left; margin-top:20%;" type="button" class="btn btn-success btn-block">Aggiungi nuovo Device</button> </a>                      									   					  									   	
+			</div>
+		</c:if>    		
+   	</div>
    		
-   	
-   	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-	   	<div class="container text-center" >
-	   		 <a class="btn" href="newDevice"> <button type="button" class="btn btn-success btn-block">Aggiungi nuovo Device</button> </a>                      									   					  					
-		</div>    	
-	</c:if> 	
    		
    		
 	<section id="schede"> 	

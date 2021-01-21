@@ -15,22 +15,35 @@
 	
 </head>
 <body>
-  <p id="titolo" style="text-align:center"> Recensioni Computer</p>
-
-
+  
+  <div class="row"  style="margin-top: 20px"> 
+  	 <div class="col"> 
+  		<p id="titolo" style="text-align:center"> Recensioni Computer</p>
+	 </div>
 	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
-	   	<div class="container text-center" >
-	   		 <a class="btn" href="newRecensione"> <button type="button" class="btn btn-primary btn-block">Aggiungi nuova Recensione</button> </a>                      									   					  					
-		</div>    	
+	   <div class="col text-center">		  
+		    <a class="btn" href="newRecensione"> <button style="margin-top:20%" type="button" class="btn btn-primary btn-block">Aggiungi nuova Recensione</button> </a>                      									   					  							 
+		</div> 	
 	</c:if> 
-	
-	
+ </div>
 	
 	
 
 	<c:forEach var="contenuto" items="${listaComputer}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
  			
- 			
+		<c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
+    			  <div class="row" style="margin-bottom: -20px; margin-top: 20px;">
+	                  <div class="col" >
+		                 <button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
+					   </div>
+					   <div class="col">
+					     <form id="formSetContenuto" method="post" action="setContenuto">
+		                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
+		                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:left"><i class="icon-cog"></i> Modifica</button> 
+		                 </form>
+		               </div>	
+				   </div>  			        
+    		</c:if>	
 			<div class="row justify-content-center">
 			  <div class="card">
 
@@ -55,19 +68,7 @@
 			      </div>
 			
 			      <div class="more-info">
-					<c:if test="${usernameLogged == 'admin@admin.it'}" >  <!--  se è loggato l'admin -->	    			  
-		    			  <div class="row" style="padding: 10px 10px 10px">
-			                  <div class="col" >
-				                 <button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-id-contenuto="${contenuto.id}" data-toggle="modal" data-target="#confermaEliminazione" ><i class="icon-trash"></i> Cancella</button>							 							     
-							   </div>
-							   <div class="col">
-							     <form id="formSetContenuto" method="post" action="setContenuto">
-				                     <input type="hidden" id="idContenuto" name="idContenuto" value="${contenuto.id}">                 
-				                     <button type="submit" class="btn btn-sm btn-outline-info" style="float:left"><i class="icon-cog"></i> Modifica</button> 
-				                 </form>
-				               </div>	
-						   </div>  			        
-		    		</c:if>	
+					
 			      <h1>${contenuto.titolo}</h1> <br>
 			        <form id="formArticolo" method="post" action="Contenuto" align="center">
 		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">               

@@ -60,7 +60,7 @@
                     <tbody>
 					<c:forEach var="utente" items="${tuttiUtenti}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 					                    
-						<tr>
+						<tr style="padding: 0px">
 		                            <td>*</td>
 		                            <td>${utente.email}</td>
 		                            <td>${utente.nome}</td>
@@ -70,16 +70,18 @@
 					    			<td>${utente.newsletter}</td>
 					    			<td>${utente.bloccato}</td>
 		                            <td>
-		                            	<form id="formSetProfilo" method="post" action="setProfilo">
-							           		<input type="hidden" id="email" name="email" value="${utente.email}">
-							           		<button type="submit" id="btnModificaProfilo" title="Modifica" class="btn btn-link"><i class="material-icons" style="color:green">&#xE254;</i></button>
-							       		</form>
-							       		<form id="formBlockUser" method="post" action="blockUser">
-							       			<input type="hidden" id="email" name="email" value="${utente.email}">
-							       			<button type="submit" id="btnBloccaProfilo" title="Blocca" class="btn btn-link"><i class="material-icons" style="color:orange">block</i></button>
-							       		</form>
-							       		<button type="submit" id="btnEliminaProfilo" title="Elimina" class="btn btn-link" data-email-utente="${utente.email}" data-toggle="modal" data-target="#confermaEliminazioneProfilo"><i class="material-icons" style="color:red">&#xE872;</i></button>
-		                            </td>
+			                            <div class="row" style="margin: 0px;">
+			                            	<form id="formSetProfilo" method="post" action="setProfilo">
+								           		<input type="hidden" id="email" name="email" value="${utente.email}">
+								           		<button style="padding: 6px" type="submit" id="btnModificaProfilo" title="Modifica" class="btn btn-link"><i class="material-icons" style="color:green">&#xE254;</i></button>
+								       		</form>
+								       		<form id="formBlockUser" method="post" action="blockUser">
+								       			<input type="hidden" id="email" name="email" value="${utente.email}">
+								       			<button style="padding: 6px" type="submit" id="btnBloccaProfilo" title="Blocca" class="btn btn-link"><i class="material-icons" style="color:orange">block</i></button>
+								       		</form>
+								       		<button style="padding: 6px" type="submit" id="btnEliminaProfilo" title="Elimina" class="btn btn-link" data-email-utente="${utente.email}" data-toggle="modal" data-target="#confermaEliminazioneProfilo"><i class="material-icons" style="color:red">&#xE872;</i></button>
+			                            </div>
+		                          </td>
 		                        </tr>
 							   	
 					  </c:forEach>
