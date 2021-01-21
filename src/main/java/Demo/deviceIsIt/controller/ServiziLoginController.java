@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
+
 @RestController
 public class ServiziLoginController {
 
@@ -46,7 +47,6 @@ public class ServiziLoginController {
 	
 	@PostMapping("Serviziologin")
 	public String login(HttpSession session, @RequestBody Utente utente) throws Exception {
-		System.out.println("In servizio login: password-->"+utente.getPassword());
 		if(DBManager.getInstance().utenteDAO().checkPassword(utente.getEmail(), utente.getPassword())) {		
 			String username = DBManager.getInstance().utenteDAO().getUsername(utente.getEmail());
 			    session.setAttribute("usernameLogged", utente.getEmail());
@@ -62,11 +62,11 @@ public class ServiziLoginController {
 	public String registrazione(HttpSession session, @RequestBody Utente utente) throws Exception {
 		
 		if (DBManager.getInstance().utenteDAO().existsUsername(utente.getUsername())) {
-			System.out.println("Username già presente");
+			System.out.println("Username giÃ  presente");
 			return "error";
 		}
 		else if (DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
-			System.out.println("email già presente");
+			System.out.println("email giÃ  presente");
 			return "error";
 		}
 		else {
