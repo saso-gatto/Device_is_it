@@ -1,5 +1,6 @@
 package Demo.deviceIsIt.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -89,6 +90,10 @@ public class ContenutoController {
 	 @PostMapping("deleteContenuto")
 		public String deleteContenuto(HttpSession session, Model model, @RequestParam Integer idContenuto ) {
 		
+		 List<Commento> commenti= DBManager.getInstance().CommentoDAO().findByContenuto(idContenuto);
+		 for (int i = 0; i<commenti.size(); i++)
+			 DBManager.getInstance().CommentoDAO().delete(commenti.get(i).getidcommento());
+		 
 		 DBManager.getInstance().ContenutoDAO().delete(idContenuto);
 		 
 			return "redirect:/";
