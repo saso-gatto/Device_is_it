@@ -28,7 +28,7 @@
     <footer class="footer-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="footer-left">
                         <div align="center" class="footer-logo">
                             <a href=""><img src="images/logo_deviceIsIt.png" alt=""></a>
@@ -42,70 +42,6 @@
                     </div>
                 </div>
                 
-
-               <div id="map"class="col-lg-2">
-  <script>
-  function initMap(){
-      // Map options
-      var options = {
-        zoom:12,
-        center:{lat:39.35800,lng:16.22714}
-      }
-
-      // New map
-      var map = new google.maps.Map(document.getElementById('map'), options);
-
-      // Listen for click on map
-      google.maps.event.addListener(map, 'click', function(event){
-        // Add marker
-        addMarker({coords:event.latLng});
-      });
-
-
-      // Array of markers
-      var markers = [
-        {
-          coords:{lat:39.35800,lng:16.22714},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h2>UNICAL</h2>'
-        },
-
-      ];
-
-      // Loop through markers
-      for(var i = 0;i < markers.length;i++){
-        // Add marker
-        addMarker(markers[i]);
-      }
-
-      // Add Marker Function
-      function addMarker(props){
-        var marker = new google.maps.Marker({
-          position:props.coords,
-          map:map,
-          //icon:props.iconImage
-        });
-
-        // Check for customicon
-        if(props.iconImage){
-          // Set icon image
-          marker.setIcon(props.iconImage);
-        }
-
-        // Check content
-        if(props.content){
-          var infoWindow = new google.maps.InfoWindow({
-            content:props.content
-          });
-
-          marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-          });
-        }
-      }
-    }
-  </script>
-                </div>
                 
                 
                 
@@ -168,18 +104,91 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Per la possibilità di iscriversi alla newsletter -->
-                <!--  
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Iscriviti alla nostra Newsletter</h5>
-                        <p> Ricevi notifiche vie E-mail riguardo le ultime news e recensioni del mondo TECH </p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Inserisci la tua e-mail">
-                            <button type="button">Iscriviti</button>
-                        </form>
-                    </div>
-                </div>-->
+                
+                
+                               <div id="map"class="col-lg-3">
+			 <!-- <script>
+			  function initMap(){
+			      // Map options
+			      var options = {
+			        zoom:12,
+			        center:{lat:39.35800,lng:16.22714}
+			      }
+			
+			      // New map
+			      var map = new google.maps.Map(document.getElementById('map'), options);
+			
+			      // Listen for click on map
+			      google.maps.event.addListener(map, 'click', function(event){
+			        // Add marker
+			        addMarker({coords:event.latLng});
+			      });
+			
+			
+			      // Array of markers
+			      var markers = [
+			        {
+			          coords:{lat:39.35800,lng:16.22714},
+			          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+			          content:'<h2>UNICAL</h2>'
+			        },
+			
+			      ];
+			
+			      // Loop through markers
+			      for(var i = 0;i < markers.length;i++){
+			        // Add marker
+			        addMarker(markers[i]);
+			      }
+			
+			      // Add Marker Function
+			      function addMarker(props){
+			        var marker = new google.maps.Marker({
+			          position:props.coords,
+			          map:map,
+			          //icon:props.iconImage
+			        });
+			
+			        // Check for customicon
+			        if(props.iconImage){
+			          // Set icon image
+			          marker.setIcon(props.iconImage);
+			        }
+			
+			        // Check content
+			        if(props.content){
+			          var infoWindow = new google.maps.InfoWindow({
+			            content:props.content
+			          });
+			
+			          marker.addListener('click', function(){
+			            infoWindow.open(map, marker);
+			          });
+			        }
+			      }
+			    }
+			  </script> -->
+			  
+			  
+			  <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+					<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+			        var setting = {"height":180,"width":280,"zoom":15,"queryString":"Unical, Arcavacata, CS, Italia","place_id":"ChIJm6Q5y6KZPxMRJWQOVGCdUho","satellite":false,"centerCoord":[39.35624291302391,16.226949100000017],"cid":"0x1a529d60540e6425","lang":"it","cityUrl":"/italy/cosenza-9762","cityAnchorText":"Mappa di Cosenza, Italy South, Italia","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"359339"};
+			        var d = document;
+			        var s = d.createElement('script');
+			        s.src = 'https://1map.com/js/script-for-user.js?embed_id=359339';
+			        s.async = true;
+			        s.onload = function (e) {
+			          window.OneMap.initMap(setting)
+			        };
+			        var to = d.getElementsByTagName('script')[0];
+			        to.parentNode.insertBefore(s, to);
+			      })();</script><a href="https://1map.com/it/map-embed">1 Map</a>
+			 </div>
+			           
+           
+           </div>
+                
+               
                 
             </div>
         </div>
@@ -189,7 +198,7 @@
 			<!--  script con key per api google maps -->
 	
   <script async defer
-   		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd9NeSsVmtkVSK0fLme7xGriZObJOGhmc&callback=initMap">
+   		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXCycDoQhkrPR2ESJ8NkUcnvekAWR26V8&callback=initMap">
 	</script>
   
 
