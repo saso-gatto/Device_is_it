@@ -32,16 +32,21 @@ function Utente (email, nome, cognome,username, password, newsletter, bloccato){
 
 $(document).ready(function(){ 
 	
-	$("#loginForm").on("submit", function(e){
+	registrazioneUtente();
+	loginUtente();	
+});
+
+function loginUtente(){
+		var login = document.getElementById("btnLogin").addEventListener ("click", function(e){
 		e.preventDefault();		
-		var email = document.getElementById("email").value;
-		var password = document.getElementById("password").value;
+		var email = document.getElementById("emailLogin").value;
+		var password = document.getElementById("passwordLogin").value;
 		
 		var utente= new Utente(email,null,null,null,password,null,null);
 	
 		$.ajax({
 				  url: "Serviziologin",  
-		          method: "post",	         
+		          method: "POST",	         
 		          data: JSON.stringify(utente),	       
 		          contentType: "application/json",	         
 		          success: function(risposta){				  									
@@ -54,23 +59,31 @@ $(document).ready(function(){
 		          },	            	  
 		    });	
 	});
-	
-	
-	
-	$("#formRegistrazione").on("submit", function(e){
+
+}
+
+
+function registrazioneUtente(){
+		var registrazione = document.getElementById("btnIscriviti").addEventListener ("click", function(e){
 		e.preventDefault();		
 		var nome = document.getElementById("nome").value;
 		var cognome = document.getElementById("cognome").value;
 		var username = document.getElementById("username").value;
 		var email = document.getElementById("email").value;
 		var password = document.getElementById("password").value;
-		var newsletter = document.getElementById(newsletter).value;
+		var newsletter;
+		if (document. getElementById("newsletter").checked) {
+			newsletter=true;
+		}
+		else {
+			newsletter=false;
+		}
 		
-		var utente= new Utente(email,nome,cognome,username,password,newsletter,false);
+		var utente= new Utente(email,nome,cognome,username,password,newsletter,null);
 	
 		$.ajax({
 				  url: "ServizioRegistrazione",  
-		          method: "post",	         
+		          method: "POST",	         
 		          data: JSON.stringify(utente),	       
 		          contentType: "application/json",	         
 		          success: function(risposta){				  									
@@ -82,7 +95,6 @@ $(document).ready(function(){
 					}									
 		          },	            	  
 		    });	
-	});
-	
-	
-});
+	});	
+
+}
