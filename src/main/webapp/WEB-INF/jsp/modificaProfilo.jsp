@@ -62,7 +62,8 @@
 	        <label for="fname">Password</label>
 	      </div>
 	      <div class="col-80">
-	        <input type="text" id="passw" name="passw" placeholder="modifica password">	             
+	      	 <input type="text" name="passw" id="passw"  class="form-control" aria-describedby="emailHelp" placeholder="modifica password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" >
+             <p id="parametriPSW">Minimo otto caratteri, almeno una lettera e un numero</p> 	        	            
 	      </div>
 	    </div>
 	    
