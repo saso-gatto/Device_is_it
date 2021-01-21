@@ -130,7 +130,7 @@
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
-	                   <form method="post" action="# id="loginForm">           
+	                   <form method="post" action="#" id="loginForm">           
 	                           <div class="form-group ">
 	                              <label for="exampleInputEmail1">Email</label>
 	                              <input type="email" name="email"  class="form-control"  id="email" aria-describedby="emailHelp" placeholder="Inserisci email"  required>
