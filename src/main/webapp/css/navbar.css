@@ -34,10 +34,6 @@ body {
 	color: #ffffff;
 	cursor: pointer;
 }
-#loginForm{
-	padding-top:4.2rem;
-	padding-bottom:4.2rem;
-}
 
 .titolo-loginForm{
 	font-family: 'Kaushan Script', cursive; 

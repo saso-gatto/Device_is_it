@@ -50,7 +50,6 @@ $(document).ready(function(){
 		
 		if(modalLogin){
 			
-			alert("login");
 			e.preventDefault();
 			var email = document.getElementById("emailLogin").value;
 			var password = document.getElementById("passwordLogin").value;
@@ -77,7 +76,6 @@ $(document).ready(function(){
 
 	$("#formRegistrazione").on("submit", function(e){
 
-		alert("registrazione");
 		e.preventDefault();		
 		var nome = document.getElementById("nome").value;
 		var cognome = document.getElementById("cognome").value;
