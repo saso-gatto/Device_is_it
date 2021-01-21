@@ -8,6 +8,8 @@
 	<meta charset="ISO-8859-1">
 	<jsp:include page="./navbar.jsp" />
 	<link rel="stylesheet" href="css/Contenuto&Device.css" type="text/css"/>
+	<script src="/js/eliminaContenuto.js"></script>  
+	
 </head>
 <body>
 
@@ -71,22 +73,50 @@
 	    </div>
 	    
         <div class="row" >
-	      <br>
-		   <div class="col-12 text-center" >			   		  			  
-		      <form id="formSetProfilo" method="post" action="setProfilo">
-           		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
-	    		<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
-
-       		  </form>
-			
-			<button type="submit" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger">Elimina profilo</button>
-			
-		  </div> 
+	     	 <br>
+		   		<div class="col-12 text-center" >			   		  			  
+		      		<form id="formSetProfilo" method="post" action="setProfilo">
+           				<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
+	    				<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
+       				 </form>
+					<button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
+				</div> 
+	   		</div>	 
 	   </div>
-        
-	 
-	 </div>
 
+	<div class="modal fade" id="confermaEliminazioneProfilo">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Vuoi davvero eliminare il tuo profilo utente?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazioneProfilo" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formDeleteProfilo" method="post" action="deleteUser">
+			                     <input type="hidden" name="email" value=""/>			                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                     <a href="doLogout" class="dropdown-item" onclick="logoutSocial()">  </a>
+			                 </form>
+			               </div>	
+					   </div>   	               
+				</div>
+			</div>
+			 </div>
+	     </div>
+	 </div>
 
 
 </body>

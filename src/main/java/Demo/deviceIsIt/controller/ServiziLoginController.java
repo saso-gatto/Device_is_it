@@ -59,6 +59,7 @@ public class ServiziLoginController {
 			return "success";	
 	}
 
+	
 	@PostMapping("ServizioRegistrazione")
 	public String registrazione(HttpSession session, @RequestBody Utente utente) {
 		
