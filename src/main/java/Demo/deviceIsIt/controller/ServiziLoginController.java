@@ -71,6 +71,8 @@ public class ServiziLoginController {
 		}
 		else {
 			DBManager.getInstance().utenteDAO().save(utente);
+			session.setAttribute("usernameLogged", utente.getEmail());
+			session.setAttribute("username",utente.getUsername());
 			return "success";
 		}
 	}
