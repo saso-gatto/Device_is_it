@@ -47,7 +47,7 @@
   function initMap(){
       // Map options
       var options = {
-        zoom:10,
+        zoom:12,
         center:{lat:39.35800,lng:16.22714}
       }
 
@@ -66,7 +66,7 @@
         {
           coords:{lat:39.35800,lng:16.22714},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h1>UNICAL</h1>'
+          content:'<h2>UNICAL</h2>'
         },
 
       ];
