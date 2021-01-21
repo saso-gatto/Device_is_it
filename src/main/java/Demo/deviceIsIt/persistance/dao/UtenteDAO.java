@@ -20,6 +20,7 @@ public interface UtenteDAO {
 	public List<Utente> getIscrittiNewsletter();
 	public boolean existsUsername (String username);
 	public void setPassword(String email, String password); //Update
+	public boolean checkBloccato(String email);
 	
 	
 }

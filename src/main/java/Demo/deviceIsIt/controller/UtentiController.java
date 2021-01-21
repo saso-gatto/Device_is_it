@@ -1,5 +1,7 @@
 package Demo.deviceIsIt.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.swing.text.View;
 
@@ -7,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
@@ -59,11 +63,20 @@ public class UtentiController {
 	
 	@PostMapping("deleteUser")
 	public String deleteContenuto(HttpSession session, Model model, @RequestParam String email) {
+		
+		List<Commento> commenti= DBManager.getInstance().CommentoDAO().findByUser(email);
+		 for (int i = 0; i<commenti.size(); i++)
+			 DBManager.getInstance().CommentoDAO().delete(commenti.get(i).getidcommento());
+		
+		 System.out.println("commenti eliminati");
 
 		System.out.println("Email da eliminare: " + email);
-		session.invalidate();
+		
+		if(!email.equals("admin@admin.it"))
+			session.invalidate();
+		
 		DBManager.getInstance().utenteDAO().delete(email);;
-		//System.out.println("fattoooooooooooooo");
+		
 		return "redirect:/";
 	}
 	

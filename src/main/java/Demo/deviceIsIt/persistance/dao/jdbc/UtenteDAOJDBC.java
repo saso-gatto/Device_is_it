@@ -322,6 +322,25 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		return BCrypt.checkpw(password, password_hash);
 	}
 	
+	@Override
+	public boolean checkBloccato(String email) {
+		boolean isBlocked = true;
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select bloccato from utente where email=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, email);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				isBlocked = rs.getBoolean("bloccato");
+			}
+			st.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return isBlocked;
+	}
+	
 
 	@Override
 	public String getUsername(String email) {
