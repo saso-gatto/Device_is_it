@@ -75,12 +75,12 @@
 				</section>
           </div>
           <div class="sidebar-module">
-            <h4>Collegamenti</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">Recensioni</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Schede Tecniche</a></li>
-            </ol>
+			<c:if test="${contenuto.device != 0}">	
+				<form id="formSchedaTecnica" method="post" action="/schedaTecnica">
+					<input type="hidden" id="idDevice" name="idDevice" value="${contenuto.device}">			          	
+					<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
+	            </form>		            
+			</c:if>
           </div>
         </div>
       </div>
