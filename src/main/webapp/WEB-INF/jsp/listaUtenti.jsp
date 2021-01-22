@@ -31,8 +31,8 @@
                     	<div class="col-sm-8"><h2 id="titolo">        </h2></div>
                         <div class="col-sm-4">
                             <div class="search-box">
-                                <i class="material-icons">&#xE8B6;</i>
-                                <input type="text" class="form-control" placeholder="Search&hellip;">
+                                <button type="button" id="btnCercaUtente" class="btn btn-link"><i class="material-icons">&#xE8B6;</i></button>
+                                <input type="text" id="toFind" class="form-control" placeholder="Cerca" aria-label="Cerca" required>
                             </div>
                         </div>
                     </div>
