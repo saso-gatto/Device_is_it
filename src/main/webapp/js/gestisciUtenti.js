@@ -16,4 +16,15 @@ $(document).ready(function(){
 	});
 		
 		
+	
+	
+	$("#cercaUtenti").on("submit", function(e){
+
+		e.preventDefault();	
+		var find = document.getElementById("daCercare").value;
+		alert(find);			
+		
+	});	
+		
+		
 });
