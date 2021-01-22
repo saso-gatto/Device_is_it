@@ -16,15 +16,18 @@ public class ServiziLoginController {
 
 
 	@PostMapping("loginSocial")
-	public Utente loginSocial(HttpSession session, @RequestBody Utente utente) {
+	public String loginSocial(HttpSession session, @RequestBody Utente utente) {
 		
 		if(!DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
 			DBManager.getInstance().utenteDAO().save(utente);
 		}
-	
+		
+		if(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail())) {
+			return "bloccato";
+		}
 		session.setAttribute("usernameLogged", utente.getEmail());
 		session.setAttribute("username",utente.getUsername());		
-		return utente;		
+		return "success";		
 	}
 	
 	@PostMapping("ModificaProfilo")
@@ -51,8 +54,11 @@ public class ServiziLoginController {
 		if (!DBManager.getInstance().utenteDAO().existsUser(utente.getEmail()))
 			return "nonRegistrato";
 		
-		if(DBManager.getInstance().utenteDAO().checkPassword(utente.getEmail(), utente.getPassword()) && 
-				!(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail()))) {	
+		if(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail())) {
+			return "bloccato";
+		}
+		
+		if(DBManager.getInstance().utenteDAO().checkPassword(utente.getEmail(), utente.getPassword())){	
 			
 			String username = DBManager.getInstance().utenteDAO().getUsername(utente.getEmail());
 			    session.setAttribute("usernameLogged", utente.getEmail());

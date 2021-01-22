@@ -52,11 +52,12 @@ function ricarica(){
 	          data: JSON.stringify(utente),	          
 	          contentType: "application/json",	          
 	          success: function(risposta){
-	          
-			  console.log(JSON.stringify(risposta));
-									 
-			 
-			  window.location.href="/index";	         	          
+	         	if(risposta=="success"){
+					location.reload();
+				}					
+				if(risposta=="bloccato"){
+						$('#showBlockedLogin').modal('show');						
+				} 					        	          
 			  },	          
 	          fail: function( jqXHR, textStatus ) {
 	  			alert( "Request failed: " + textStatus );
@@ -96,10 +97,12 @@ function accessofacebook(){
 					          data: JSON.stringify(utente),	          
 					          contentType: "application/json",	          
 					          success: function(risposta){
-					          
-								  console.log(JSON.stringify(risposta));											 
-								 
-								  window.location.href="/index";	         	          
+					          	if(risposta=="success"){
+									location.reload();
+								}					
+								if(risposta=="bloccato"){
+									$('#showBlockedLogin').modal('show');						
+								}     	          
 							  },	          
 					          fail: function( jqXHR, textStatus ) {
 					  			alert( "Request failed: " + textStatus );
@@ -111,23 +114,4 @@ function accessofacebook(){
             });
 }
 
-
-
-// send email
-
-//function sendEmail(){
-//	alert("email inviata");
-//	Email.send({
-//		Host: "smtp.gmail.com",
-//		Username: "davyde8@gmail.com",
-//		Password: "",
-//		To: "davideragona@libero.it",
-//		From: "davyde8@gmail.com",
-//		Subject: 'Ti hanno inviato un email con js',
-//		Body: 'testo email',
-//		
-//		}).then(("messaggio"));
-//	
-//	
-//}
 

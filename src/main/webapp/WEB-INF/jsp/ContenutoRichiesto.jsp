@@ -78,7 +78,7 @@
 			<c:if test="${contenuto.device != 0}">	
 				<form id="formSchedaTecnica" method="post" action="/schedaTecnica">
 					<input type="hidden" id="idDevice" name="idDevice" value="${contenuto.device}">			          	
-					<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
+					<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Vai alla scheda tecnica</button>
 	            </form>		            
 			</c:if>
           </div>

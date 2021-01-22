@@ -281,6 +281,28 @@
 	     </div>
 	 </div>
 	 
+	 
+	 	 <div class="modal fade" id="showBlockedLogin">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3>Accesso negato, utente bloccato.</h3>
+							 <br>
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>
+	 
+	 
 	  <div class="modal fade" id="recuperaPassword">
 	    <div class="modal-dialog">
 	      <div class="modal-content">	            
