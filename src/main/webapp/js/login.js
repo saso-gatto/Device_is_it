@@ -68,7 +68,7 @@ $(document).ready(function(){
 			          contentType: "application/json",	         
 			          success: function(risposta){				  									
 						if(risposta=="success"){
-							window.location.href="/index";
+							location.reload();
 						}					
 						if(risposta=="error"){
 							$('#showErrorLogin').modal('show');						
@@ -104,7 +104,7 @@ $(document).ready(function(){
 		          contentType: "application/json",	         
 		          success: function(risposta){				  									
 					if(risposta=="success"){
-						window.location.href="/index";
+						location.reload();
 					}					
 					if(risposta=="error"){
 						$('#showErrorRegistrazione').modal('show');						

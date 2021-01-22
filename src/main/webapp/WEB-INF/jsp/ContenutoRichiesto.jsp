@@ -10,6 +10,7 @@
   	<link rel="stylesheet" href="css/commento.css" type="text/css"/>
 	<link rel="stylesheet" href="css/blog.css" type="text/css"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
 	
 	<jsp:include page="./navbar.jsp" />
   	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -86,13 +87,7 @@
 	</div>
 
    	
-	
 
-
-
-
-
-	  
 <!-- Main Body -->
 <section>
     <div class="container" id="commenti">
@@ -101,25 +96,39 @@
 		    	<h3>Commenti</h3>
 					<c:forEach var="commento" items="${listaCommenti}">
 			                <div class="comment col-12 mt-4 text-justify float-left"> 
-			                	  <c:if test="${usernameLogged == 'admin@admin.it' || username == commento.utente}">   <!--  se è loggato l'admin -->
-									    <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
-					                    <div class="dropdown-menu">	                        
-					                    	<form id="formDeleteCommento" method="post" action="deleteCommento">
-							                     <input type="hidden" name="idCommento" value="${commento.idcommento}"/>			                       
-							                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Elimina commento</button> 
-							                 </form>
-					                    </div>
-				                    </c:if>	                 
+			                	 	                 
 			                    <input type="hidden" name="idCommento" id="idCommento" value="${commento.idcommento}" disabled>
-			                    <h4>${commento.utente} </h4> <span>${commento.data}</span> 			                  			                     
-				                 	<button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px; ">			                    			                   
-					                    <div class="row">
-						                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
-						                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
-					                    </div>		                   
-				                    </button> 				                 			                   
+			                    <div class="row">
+				                    <div class="col"> 
+				                    	<h4 style="padding-left: 10px; padding-right: 20px">${commento.utente} </h4> <span>${commento.data}</span> 
+				                    </div>			                  			                     
+				                 	<div class="row" style="padding-right: 10px"> 
+					                 	<c:if test="${usernameLogged == 'admin@admin.it' || username == commento.utente}">   <!--  se è loggato l'admin -->
+											    <div class="col" style="margin: 0px; padding: 0px"> 
+												    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
+								                    <div class="dropdown-menu">	                        
+								                    	<form id="formDeleteCommento" method="post" action="deleteCommento">
+										                     <input type="hidden" name="idCommento" value="${commento.idcommento}"/>			                       
+										                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Elimina commento</button> 
+										                 </form>
+								                    </div>
+							                    </div>
+						                    </c:if>	
+						                    <div>
+						                    <div class="col" > 
+							                    <button onclick="addLike(${commento.idcommento})" class="btn btn-outline-danger btn-sm" style="float:right; width:50px; padding:0px">			                    			                   					                     				                   
+							                    <div class="row">
+								                    <i class="far fa-heart" style="padding:6px 8px 6px 20px ; "></i> 
+								                    <p style="margin:0px; padding-top:2px; padding-bottom: 0px; " id="${commento.idcommento}"> ${commento.mipiace} </p>	
+							                    </div>		                   
+						                    </button>
+						                    </div>
+					                    	</div> 	
+					                    </div>
+				                    </div>			                 			                   
 				                 <br>			                    
 			                     <p>${commento.testo}</p>
+			                     
 			                </div>
 			  		</c:forEach>
 			  		<div id="nuoviCommenti"></div>			     

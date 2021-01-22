@@ -60,7 +60,7 @@
 					   </c:if>
 			        </div>
 			        
-			        <img width="100" height="130" src="${contenuto.img}" class="center">
+			        <img width="130" height="auto" src="${contenuto.img}" class="center">
 			        
 			        <div class="points center">
 			          <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}
