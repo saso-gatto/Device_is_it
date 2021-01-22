@@ -60,7 +60,7 @@
 					   </c:if>
 			        </div>
 			        
-			        <img width="205" height="110" src="${contenuto.img}" class="center">
+			        <img width="150" height="80" src="${contenuto.img}" class="center">
 			        
 			        <div class="points center">
 			          <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}
@@ -68,7 +68,7 @@
 			      </div>
 			
 			      <div class="more-info">		      
-			       <h1>${contenuto.titolo}</h1> <br>
+			       <h1>${contenuto.titolo}</h1>
 			      	<form id="formArticolo" method="post" action="Contenuto" align="center">
 		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">               
 		                    <button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Continua a leggere</button>
