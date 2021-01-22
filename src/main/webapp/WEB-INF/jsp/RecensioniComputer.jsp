@@ -72,7 +72,7 @@
 			      <h1>${contenuto.titolo}</h1> <br>
 			        <form id="formArticolo" method="post" action="Contenuto" align="center">
 		                    <input type="hidden" id="id" name="id" value="${contenuto.id}">               
-		                    <button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Continua a leggere</button>
+		                    <button type="submit" style="border-radius:15px; margin-left:35%; margin-right:35%;  margin-top:15px; height:45px;" class="btn btn-primary">Continua a leggere</button>
 				    </form>
 			      </div>
 			    </div>
