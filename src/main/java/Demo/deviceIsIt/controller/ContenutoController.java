@@ -131,12 +131,6 @@ public class ContenutoController {
 			return "redirect:/";
 		}
 	 
-	 @PostMapping("deleteCommento")
-		public String deleteCommento(HttpSession session, Model model, @RequestParam Integer idCommento ) {
-		
-		 DBManager.getInstance().CommentoDAO().delete(idCommento);
-		 
-			return "redirect:/";
-		}
+	 
 	
 }
