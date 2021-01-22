@@ -18,13 +18,26 @@ $(document).ready(function(){
 		
 	
 	
-	$("#cercaUtenti").on("submit", function(e){
+	$("#cercaUtenti").on("", function(e){
 
 		e.preventDefault();	
-		var find = document.getElementById("daCercare").value;
+		var find = document.getElementById('toFind').value;
 		alert(find);			
 		
 	});	
+	
+//	document.getElementById("myBtn").onclick = function() {myFunction()
+//		e.preventDefault();	
+//	var find = document.getElementById('toFind').value;
+//	alert(find);
+//		};
+	
+	    var btn= document.getElementById ("btnCercaUtente").addEventListener("click", function(){
+	    	
+		var find = document.getElementById('toFind').value;
+		
+		alert(find);
+	});
 		
 		
 });
