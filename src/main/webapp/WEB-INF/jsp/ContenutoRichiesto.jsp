@@ -107,8 +107,8 @@
 											    <div class="col" style="margin: 0px; padding: 0px"> 
 												    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
 								                    <div class="dropdown-menu">	                        
-								                    	<form id="formDeleteCommento" method="post" action="deleteCommento">
-										                     <input type="hidden" name="idCommento" value="${commento.idcommento}"/>			                       
+								                    	<form id="formDeleteCommento" action="#">
+										                     <input type="hidden" id="idComm" name="idComm" value="${commento.idcommento}"/>			                       
 										                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Elimina commento</button> 
 										                 </form>
 								                    </div>
@@ -156,19 +156,7 @@
 						<div class="form-group" id="formAggiungiCommento">
 							<textarea id="testoCommento" name="testoCommento" rows="5" cols="30" placeholder="Scrivi qui il tuo commento..."></textarea>										
 							<button type="button" id="submitCommento" class="btn btn btn-success">Invia commento</button>
-						</div>
-						
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="nome">Nome:</label>  -->
-<!-- 							<input type="text" class="form-control" placeholder="Insert name" id="nome" /> -->
-<!-- 						</div> -->
-						
-						
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="school">Id Scuola:</label> <input type="text" -->
-<!-- 								class="form-control" placeholder="Enter School id" id="school"> -->
-<!-- 						</div> -->
-			
+						</div>	
 	             	</form>
 	             </c:if>
 	             

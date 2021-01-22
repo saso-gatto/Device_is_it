@@ -1,8 +1,13 @@
 package Demo.deviceIsIt.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Demo.deviceIsIt.model.Commento;
@@ -77,6 +82,14 @@ public class ServiziContenutoController {
 		
 		List<Device> modelli= DBManager.getInstance().deviceDAO().findByModello(device.getModello());
 		return modelli;
+	}
+	
+	@PostMapping("deleteCommento")
+	public String deleteCommento(@RequestBody Commento commento ) {		
+		
+		DBManager.getInstance().CommentoDAO().delete(commento.getidcommento());
+	 
+		return "success";
 	}
 	
 	

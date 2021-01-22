@@ -417,4 +417,36 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			return true;
 	}
 
+	@Override
+	public void setBloccato(String email) {
+		Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String update = "update utente SET bloccato = 'true' WHERE email=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setString(1,email);						
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+	@Override
+	public void setSbloccato(String email) {
+		Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String update = "update utente SET bloccato = 'false' WHERE email=?";
+			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setString(1,email);						
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
 }
