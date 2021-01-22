@@ -93,7 +93,26 @@ public class UtentiController {
 		return "redirect:/listaUtenti";
 	}
 	
-	
+	@PostMapping("blockUser")
+	public String bloccaUser(HttpSession session, Model model,  @RequestParam String email) {
 
+		System.out.println("Email da bloccare: " + email);
+		
+		DBManager.getInstance().utenteDAO().setBloccato(email);
+		
+		System.out.println("Fattooooooooo");
+		
+		return "redirect:/listaUtenti";
+	}
+	
+	@PostMapping("unblockUser")
+	public String sbloccaUser(HttpSession session, Model model,  @RequestParam String email) {
+
+		System.out.println("Email da sbloccare: " + email);
+		
+		DBManager.getInstance().utenteDAO().setSbloccato(email);
+		
+		return "redirect:/listaUtenti";
+	}
 	
 }
