@@ -136,14 +136,11 @@ public class NavBarController {
 	@GetMapping("/listaUtenti")	//Metodo che intercetta un href su index e carica la pagina contenente tutti i profili user
 	public String dammiListaUtenti(HttpSession session, Model model) {
 		
-		String emailAdmin = "admin@admin.it";
-		
+		String emailAdmin = "admin@admin.it";		
 		List<Utente> utenti = new ArrayList<Utente>();		
 		utenti = DBManager.getInstance().utenteDAO().findAllOtherUsers(emailAdmin);		
 		
-		model.addAttribute("tuttiUtenti",utenti);
-		
-		System.out.println("utenti size: " + utenti.size());
+		model.addAttribute("tuttiUtenti",utenti);		
 				
 		return "listaUtenti";
 		

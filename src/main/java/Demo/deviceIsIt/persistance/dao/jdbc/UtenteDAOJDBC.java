@@ -94,9 +94,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 					String password = rs.getString("password");
 					String username = rs.getString("username");
 					boolean newsletter = rs.getBoolean("newsletter");
-					boolean bloccato = rs.getBoolean("bloccato");
-					
-					System.out.println(email + nome + cognome + password);
+					boolean bloccato = rs.getBoolean("bloccato");										
 					Utente utente = new Utente();
 					
 					utente.setEmail(email1);
@@ -107,8 +105,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 					utente.setNewsletter(newsletter);
 					utente.setBloccato(bloccato);
 					
-					utenti.add(utente);
-					System.out.println("creato");
+					utenti.add(utente);					
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
