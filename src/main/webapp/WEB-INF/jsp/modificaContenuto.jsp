@@ -55,10 +55,18 @@
 			      </div>
 			      <div class="col-6">
 			        <c:if test="${titoloContenuto == 'Modifica Recensione'}">
-			      	  <select id="device" name="device" required></select>	
+			      	  <select id="device" name="device" required>
+				      	  <c:if test="${contenuto.device != 0}">
+				      	 	 <option value="${contenuto.device}">${contenuto.device}</option>
+				      	  </c:if>
+			      	  </select>
 			        </c:if>
 			        <c:if test="${titoloContenuto == 'Modifica Articolo'}">
-			      	  <select id="device" name="device"></select>	
+			      	   <select id="device" name="device">	
+			              <c:if test="${contenuto.device != 0}">
+				      	 	 <option value="${contenuto.device}">${contenuto.device}</option>
+				      	  </c:if>
+			      	   </select>			        
 			        </c:if>			      			      			     
 			      </div>
 				</div>
