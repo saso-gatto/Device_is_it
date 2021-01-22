@@ -117,7 +117,7 @@ $(document).ready(function(){
 	$("#recuperoPassword").on("submit", function(e){
 		
 		$("#btnRecuperoPassword").prop("disabled", true);
-	    $("#btnRecuperoPassword").html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`);
+		$("#btnRecuperoPassword").html(`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`);  
 
 		e.preventDefault();			
 		var email3 = document.getElementById("emailRecupero").value;
@@ -129,6 +129,10 @@ $(document).ready(function(){
 		          contentType: "application/json",	         
 		          success: function(risposta){				  									
 					if(risposta=="success"){
+						$("#btnRecuperoPassword").prop("disabled", false);
+						$("#btnStartUploads i").removeAttr('class');						
+						$("#btnStartUploads i").addClass('class="btn btn-sm btn-outline-info"');
+						 $("#btnRecuperoPassword").html(`recupera`);
 						$('#invioNuovaPassword').modal('show');	
 					}														
 		          },	            	  
