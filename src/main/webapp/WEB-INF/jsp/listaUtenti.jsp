@@ -39,14 +39,13 @@
                 </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
-                        <tr >
-                            <th>#</th>
-                            <th>Email <i class="fa fa-sort"></i></th>
+                        <tr >                            
+                            <th>Email</th>
                             <th>Nome</th>
-                            <th>Cognome <i class="fa fa-sort"></i></th>
-			    			<th>Username <i class="fa fa-sort"></i></th>
+                            <th>Cognome </th>
+			    			<th>Username</th>
                             <th>Password</th>
-                            <th>Newsletter <i class="fa fa-sort"></i></th>
+                            <th>Newsletter</th>
                             <th>Bloccato</th>
 			    			<th>Actions</th>
                         </tr>
@@ -54,8 +53,7 @@
                     <tbody>
 					<c:forEach var="utente" items="${tuttiUtenti}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
 					                    
-						<tr style="padding: 0px">
-		                            <td>*</td>
+						<tr style="padding: 0px">	
 		                            <td>${utente.email}</td>
 		                            <td>${utente.nome}</td>
 		                            <td>${utente.cognome}</td>
