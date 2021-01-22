@@ -21,6 +21,7 @@ public interface UtenteDAO {
 	public boolean existsUsername (String username);
 	public void setPassword(String email, String password); //Update
 	public boolean checkBloccato(String email);
-	
+	public void setBloccato(String email); //Update
+	public void setSbloccato(String email); //Update
 	
 }

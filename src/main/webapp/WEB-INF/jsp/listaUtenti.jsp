@@ -73,11 +73,17 @@
 			                            <div class="row" style="margin: 0px;">
 			                            	<form id="formSetProfilo" method="post" action="setProfilo">
 								           		<input type="hidden" id="email" name="email" value="${utente.email}">
-								           		<button style="padding: 6px" type="submit" id="btnModificaProfilo" title="Modifica" class="btn btn-link"><i class="material-icons" style="color:green">&#xE254;</i></button>
+								           		<button style="padding: 6px" type="submit" id="btnModificaProfilo" title="Modifica" class="btn btn-link"><i class="material-icons" style="color:blue">&#xE254;</i></button>
 								       		</form>
 								       		<form id="formBlockUser" method="post" action="blockUser">
-								       			<input type="hidden" id="email" name="email" value="${utente.email}">
-								       			<button style="padding: 6px" type="submit" id="btnBloccaProfilo" title="Blocca" class="btn btn-link"><i class="material-icons" style="color:orange">block</i></button>
+								       			<c:if test="${utente.bloccato == 'false'}">  <!--  se non è bloccato l'utente -->
+								       				<input type="hidden" id="email" name="email" value="${utente.email}">
+								       				<button style="padding: 6px" type="submit" id="btnBloccaProfilo" title="Blocca" class="btn btn-link" data-email-utente="${utente.email}" data-toggle="modal" data-target="#confermaBloccoProfilo"><i class="material-icons" style="color:orange">block</i></button>
+		    									</c:if>
+		    									<c:if test="${utente.bloccato == 'true'}">  <!--  se è bloccato l'utente -->
+								       				<input type="hidden" id="email" name="email" value="${utente.email}">
+								       				<button style="padding: 6px" type="submit" id="btnSbloccaProfilo" title="Sblocca" class="btn btn-link" data-email-utente="${utente.email}" data-toggle="modal" data-target="#SbloccoProfilo"><i class="material-icons" style="color:green">block</i></button>
+		    									</c:if>	
 								       		</form>
 								       		<button style="padding: 6px" type="submit" id="btnEliminaProfilo" title="Elimina" class="btn btn-link" data-email-utente="${utente.email}" data-toggle="modal" data-target="#confermaEliminazioneProfilo"><i class="material-icons" style="color:red">&#xE872;</i></button>
 			                            </div>
@@ -91,6 +97,8 @@
                 
             </div>
         </div> 
+        
+        <!-- ELIMINAZIONE UTENTE -->
         
         <div class="modal fade" id="confermaEliminazioneProfilo">
 	    <div class="modal-dialog">
@@ -123,7 +131,75 @@
 			   </div>
 		   </div>
 	     </div>
-	 </div>       
+	 </div>
+	 
+<!---------------------------- BLOCCO UTENTE ----------------------------------->
+	 <div class="modal fade" id="confermaBloccoProfilo">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Desideri bloccare l'utente selezionato?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaBloccoProfilo" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formBlockUser" method="post" action="blockUser">
+			                     <input type="hidden" name="email" value=""/>		                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				   </div>
+			   </div>
+		   </div>
+	     </div>
+	 </div>
+	 
+	 <!---------------------------- SBLOCCO UTENTE ----------------------------------->
+	 <div class="modal fade" id="SbloccoProfilo">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Desideri sbloccare l'utente selezionato?</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <div class="col" >
+			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#SbloccoProfilo" > No</button>							 							     
+						   </div>
+						   <div class="col">
+						     <form id="formUnblockUser" method="post" action="unblockUser">
+			                     <input type="hidden" name="email" value=""/>		                       
+			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
+			                 </form>
+			               </div>	
+					   </div>   	               
+				   </div>
+			   </div>
+		   </div>
+	     </div>
+	 </div>     
 	
 	</body>
 	
