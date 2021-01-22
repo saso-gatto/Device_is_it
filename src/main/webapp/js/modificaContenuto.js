@@ -29,6 +29,31 @@ function Device (idDevice, modello, marca, tipoDevice, memoria, ram, display, ba
 
 
 $(document).ready(function(){ 
+
+		var cercaModelli= document.getElementById ("btnCercaModello").addEventListener ("click", function(){
+	
+		var modello = document.getElementById("modello").value;
+		
+		var device = new Device (null, modello, null, null, null, null, null, null, null, null, null, null, null);
+		
+		$.ajax({
+				  url: "findModello",  
+		          method: "post",	         
+		          data: JSON.stringify(device),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){				  
+					$('#device').empty();					
+					jQuery.each(risposta, function(index, item) {						
+						$('<option>').val(item.idDevice).text(item.modello).appendTo('#device');																	          			
+			       });
+			  
+		          },	          
+		          fail: function( jqXHR, textStatus ) {
+		  			alert( "Request failed: " + textStatus );
+		          }        
+		    });	
+	 });	
+
 	
 
 	$("#formSetContenuto").on("submit", function(e){
@@ -37,7 +62,7 @@ $(document).ready(function(){
 	
 	var data = new Date();
 	var idContenuto =  document.getElementById("idContenuto").value;
-	var device =  document.getElementById("idDevice").value;
+	var device =  document.getElementById("device").value;
 	var testo = document.getElementById("testo").value;
 	var titolo = document.getElementById("titoloRec").value;
 	var tipo = document.getElementById("tipoContenuto").value;

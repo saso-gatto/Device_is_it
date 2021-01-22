@@ -39,19 +39,31 @@
 	      </div>
 	    </div>
 
-	   	<div class="row">
-	      <div class="col-20">			      
-	         <label for="lname">Codice Device</label>
-	      </div>		  	 	
-	      <div class="col-80">
-	      	<c:if test="${contenuto.device == 0}">
-	      		<input type="text" id="idDevice" name="idDevice" placeholder="nessun device associato">
-	      	</c:if>		 
-	      	<c:if test="${contenuto.device != 0}">
-	      		<input type="text" id="idDevice" name="idDevice" value="${contenuto.device}" required>
-	      	</c:if>	   
-	      </div>
-	      </div>				    
+		 <div class="row">
+		    <div class="col-20">			      
+		      <label for="lname">Device</label>
+		    </div>
+			 <div class="col-80">
+				<div class="row">
+			      <div class="col-6 " >		
+			        <div class="input-group mb-3" style="padding-top: 4px;">
+			          <input   type="text" class="form-control" id="modello" placeholder="cerca Modello">
+			          <div class="input-group-append">
+			            <button id="btnCercaModello" class="btn btn-success" type="button">cerca</button>  
+			          </div>
+			        </div> 			    
+			      </div>
+			      <div class="col-6">
+			        <c:if test="${titoloContenuto == 'Modifica Recensione'}">
+			      	  <select id="device" name="device" required></select>	
+			        </c:if>
+			        <c:if test="${titoloContenuto == 'Modifica Articolo'}">
+			      	  <select id="device" name="device"></select>	
+			        </c:if>			      			      			     
+			      </div>
+				</div>
+			  </div>
+			</div>						    
 	    	    		    	      	           	 
 	    <div class="row">
 	      <div class="col-20">
