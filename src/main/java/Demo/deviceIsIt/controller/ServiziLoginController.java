@@ -48,7 +48,9 @@ public class ServiziLoginController {
 	
 	@PostMapping("Serviziologin")
 	public String login(HttpSession session, @RequestBody Utente utente) {
-		if(DBManager.getInstance().utenteDAO().checkPassword(utente.getEmail(), utente.getPassword()) && !(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail()))) {		
+		if(DBManager.getInstance().utenteDAO().checkPassword(utente.getEmail(), utente.getPassword()) && 
+				!(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail()))) {	
+			
 			String username = DBManager.getInstance().utenteDAO().getUsername(utente.getEmail());
 			    session.setAttribute("usernameLogged", utente.getEmail());
 				session.setAttribute("username",username);

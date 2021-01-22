@@ -62,7 +62,7 @@ public class UtentiController {
 	}
 	
 	@PostMapping("deleteUser")
-	public String deleteContenuto(HttpSession session, Model model, @RequestParam String email) {
+	public String deleteUtente(HttpSession session, Model model,  @RequestParam String email) {
 		
 		List<Commento> commenti= DBManager.getInstance().CommentoDAO().findByUser(email);
 		 for (int i = 0; i<commenti.size(); i++)
@@ -72,12 +72,25 @@ public class UtentiController {
 
 		System.out.println("Email da eliminare: " + email);
 		
-		if(!email.equals("admin@admin.it"))
-			session.invalidate();
+		DBManager.getInstance().utenteDAO().delete(email);;
+		
+		return "redirect:/doLogout";
+	}
+	
+	@PostMapping("deleteUserByAdmin")
+	public String deleteUser(HttpSession session, Model model,  @RequestParam String email) {
+		
+		List<Commento> commenti= DBManager.getInstance().CommentoDAO().findByUser(email);
+		 for (int i = 0; i<commenti.size(); i++)
+			 DBManager.getInstance().CommentoDAO().delete(commenti.get(i).getidcommento());
+		
+		 System.out.println("commenti eliminati");
+
+		System.out.println("Email da eliminare: " + email);
 		
 		DBManager.getInstance().utenteDAO().delete(email);;
 		
-		return "redirect:/";
+		return "redirect:/listaUtenti";
 	}
 	
 	

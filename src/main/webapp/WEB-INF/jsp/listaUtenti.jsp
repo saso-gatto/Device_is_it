@@ -113,9 +113,8 @@
 			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" data-target="#confermaEliminazioneProfilo" > No</button>							 							     
 						   </div>
 						   <div class="col">
-						     <form id="formDeleteUser" method="post" action="deleteUser">
-			                     <input type="hidden" name="email" value=""/>
-			                     <input type="hidden" id="emailLogged" name="emailLogged" value="${usernameLogged}">	<!-- POTREBBE FUNZIONARE??? -->		                       
+						     <form id="formDeleteUser" method="post" action="deleteUserByAdmin">
+			                     <input type="hidden" name="email" value=""/>		                       
 			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
 			                 </form>
 			               </div>	
