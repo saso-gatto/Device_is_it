@@ -108,7 +108,6 @@
 						     <form id="formDeleteProfilo" method="post" action="deleteUser">
 			                     <input type="hidden" name="email" value=""/>			                       
 			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
-			                     <a href="doLogout" class="dropdown-item" onclick="logoutSocial()">  </a>
 			                 </form>
 			               </div>	
 					   </div>   	               
