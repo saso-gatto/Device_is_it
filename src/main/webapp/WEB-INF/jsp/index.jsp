@@ -158,9 +158,9 @@
                             <h4>Davide Ragona</h4>
                             <p></p>
                             <div class="team__item__social" align="center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/davide.ragona.7/"><i class="fa fa-facebook"></i></a>
+<!--                                 <a href="#"><i class="fa fa-twitter"></i></a> -->
+                                <a href="https://www.instagram.com/davyde8/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -172,9 +172,8 @@
                             <h4>Salvatore Gatto</h4>
                             <p></p>
                             <div class="team__item__social" align="center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/salvatoregatto12"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/salvatoregatto__/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -186,9 +185,8 @@
                             <h4>Debora Ippolito</h4>
                             <p></p>
                             <div class="team__item__social" align="center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/debora.ippolito.3"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/debora_ippolito/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -200,9 +198,8 @@
                             <h4>Caterina Gerace</h4>
                             <p></p>
                             <div class="team__item__social" align="center">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/caterina.gerace1"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/caterina_gerace/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
