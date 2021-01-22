@@ -72,6 +72,9 @@ $(document).ready(function(){
 						}					
 						if(risposta=="error"){
 							$('#showErrorLogin').modal('show');						
+						}
+						if (risposta=="nonRegistrato"){
+							$('#showNonRegistrato').modal('show');						
 						}									
 			          },	            	  
 			    });	
