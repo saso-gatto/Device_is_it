@@ -64,8 +64,7 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 				device.setOs(rs.getString("os"));
 				device.setImg(rs.getString("img"));
 				
-				preferiti.add(device);
-				System.out.println("creato");
+				preferiti.add(device);				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

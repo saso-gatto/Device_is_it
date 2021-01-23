@@ -14,12 +14,12 @@
 </head>
 <body>
     
-	<c:if test="${listaDevice.size()!=0 }"> 
+	<c:if test="${preferiti.size()!=0 }"> 
    		<p id="titolo" style="text-align:center"> Preferiti</p>
 	</c:if>
-	<c:if test="${listaDevice.size()==0 }"> 
+	<c:if test="${preferiti.size()==0 }"> 
    		<p id="titolo" style="text-align:center"> Preferiti</p>
-   		<p style="margin-bottom: 50%; align:center" > lista preferiti vuota </p>
+   		<p style="margin-bottom: 50%; text-align:center" > lista preferiti vuota </p>
 	</c:if>
 	
 	<section id="schede"> 	
@@ -42,7 +42,7 @@
 				       <div class="card-body text-center">
 				          <h5 class="card-title">${device.modello}</h5> 
 				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
-				          	<input type="text" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+				          	<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
 							<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
 	                       </form>			      	
 				      </div>      
