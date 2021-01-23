@@ -8,33 +8,32 @@
     <title>Device Is It</title>	
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> <!--  icone cancella e modifica contenuto -->
   	<link rel="stylesheet" href="css/ricerca.css" type="text/css"/>
-	<jsp:include page="./navbar.jsp" />
-	<script src="./js/risultatiRicerca.js"></script>
+	<jsp:include page="./navbar.jsp" />	
+	<script src="./js/preferiti.js"></script> 
   		
 </head>
 <body>
-
- 
-   	<p id="titolo" style="text-align:center"> Preferiti</p>
-	
+    
+	<c:if test="${listaDevice.size()!=0 }"> 
+   		<p id="titolo" style="text-align:center"> Preferiti</p>
+	</c:if>
+	<c:if test="${listaDevice.size()==0 }"> 
+   		<p id="titolo" style="text-align:center"> Preferiti</p>
+   		<p style="margin-bottom: 50%; align:center" > lista preferiti vuota </p>
+	</c:if>
 	
 	<section id="schede"> 	
 	 <div class="container">
 	 	<div class="row justify-content-center">   
 			 	
-		   <c:forEach var="device" items="${listaDevice}">
+		   <c:forEach var="device" items="${preferiti}">
 			   <div class="col-md-4 col-lg-3">
-			   
-			   		<c:if test="${usernameLogged == 'admin@admin.it'}">   <!--  se è loggato l'admin -->
-					  <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
-	                     <div class="dropdown-menu">	                        
-	                       <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazionePreferito" ><i class="icon-fixed-width icon-trash"></i> Cancella</a>							 							     						    						    	                    	
-	                       <form id="formSchedaTecnica" method="post" action="setDevice">
-				          		<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
-								<button class="dropdown-item" type="submit" class="btn"> <i class="icon-fixed-width icon-pencil"></i> modifica</button>
-	                       </form>						    						    
-	                     </div>
-                    </c:if>
+			   			   		
+				  <a href="#" class="nav-link dropdown-toggle" style="padding: 0px" data-toggle="dropdown"><i class="icon-cog"></i></a>					                       					  
+                     <div class="dropdown-menu">	                        
+                       <a class="dropdown-item" data-id-device="${device.idDevice}" data-toggle="modal" data-target="#confermaEliminazionePreferito" ><i class="icon-fixed-width icon-trash"></i> Cancella dai preferiti</a>							 							     						    						    	                    	                       						    						   
+                     </div>
+                    
                     
 				    <div class="cardDevice" style="border-radius:30px">    
 				       <div class="img-hover-zoom img-hover-zoom--basic">
@@ -43,7 +42,7 @@
 				       <div class="card-body text-center">
 				          <h5 class="card-title">${device.modello}</h5> 
 				          <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
-				          	<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
+				          	<input type="text" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
 							<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-primary">Vai alla scheda tecnica</button>
 	                       </form>			      	
 				      </div>      
@@ -77,8 +76,8 @@
 			                 <button type="button" class="btn btn-block btn-outline-info" data-dismiss="modal" > No</button>							 							     
 						   </div>
 						   <div class="col">
-						     <form id="formDeleteContenuto" method="post" action="deleteContenuto">
-			                     <input type="hidden" name="idContenuto" value=""/>			                       
+						     <form id="formDeletePrefrito" method="post" action="deletePreferito">
+			                     <input type="hidden" name="idDevice" value=""/>			                       
 			                     <button type="submit" class=" btn btn-block btn-outline-danger" style="float:right"> Si</button> 
 			                 </form>
 			               </div>	
