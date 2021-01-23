@@ -77,6 +77,50 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		return utente;
 	}
 	
+	
+	
+	@Override
+	public List<Utente> findByName(String cercaNome) {
+		
+		List<Utente> utenti = new ArrayList<Utente>();
+		String cerca="%"+cercaNome+"%";
+		
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select * from utente where nome ILIKE ? or cognome ILIKE ? or email ILIKE ? or username ILIKE ?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, cerca);
+			st.setString(2, cerca);
+			st.setString(3, cerca);
+			st.setString(3, cerca);
+			st.setString(4, cerca);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				String email = rs.getString("email");
+				String nome = rs.getString("nome");
+				String cognome = rs.getString("cognome");
+				String password = rs.getString("password");
+				String username = rs.getString("username");
+				boolean newsletter = rs.getBoolean("newsletter");
+				boolean bloccato = rs.getBoolean("bloccato");										
+				Utente utente = new Utente();
+				
+				utente.setEmail(email);
+				utente.setNome(nome);
+				utente.setCognome(cognome);
+				utente.setPassword(password);
+				utente.setUsername(username);
+				utente.setNewsletter(newsletter);
+				utente.setBloccato(bloccato);
+				
+				utenti.add(utente);					
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return utenti;
+	}
+
 	@Override
 	public List<Utente> findAllOtherUsers(String email) {
 		List<Utente> utenti = new ArrayList<Utente>();

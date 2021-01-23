@@ -132,5 +132,11 @@ public class ContenutoController {
 		}
 	 
 	 
+	 @GetMapping("ricercaUtenti")
+		public String risultato() {					
+			return "ricercaUtenti";
+		}
+	 
+	 
 	
 }

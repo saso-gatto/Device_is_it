@@ -23,5 +23,6 @@ public interface UtenteDAO {
 	public boolean checkBloccato(String email);
 	public void setBloccato(String email); //Update
 	public void setSbloccato(String email); //Update
+	public List<Utente> findByName(String cercaNome);     // Retrieve  == select stud
 	
 }

@@ -1,3 +1,15 @@
+function Utente (email, nome, cognome, password, username, newsletter, bloccato){
+
+	this.email=email;
+	this.nome=nome;
+	this.cognome=cognome;
+	this.password=password;
+	this.username=username;
+	this.newsletter=newsletter;
+	this.bloccato=bloccato;
+	
+}
+
 $(document).ready(function(){ 
 
  	$('#confermaBloccoProfilo').on('show.bs.modal', function(e) {
@@ -15,29 +27,28 @@ $(document).ready(function(){
 	    $(e.currentTarget).find('input[name="email"]').val(email);
 	});
 		
-		
 	
-	
-	$("#cercaUtenti").on("", function(e){
-
-		e.preventDefault();	
-		var find = document.getElementById('toFind').value;
-		alert(find);			
-		
-	});	
-	
-//	document.getElementById("myBtn").onclick = function() {myFunction()
-//		e.preventDefault();	
-//	var find = document.getElementById('toFind').value;
-//	alert(find);
-//		};
-	
-	    var btn= document.getElementById ("btnCercaUtente").addEventListener("click", function(){
-	    	
-		var find = document.getElementById('toFind').value;
-		
-		alert(find);
+	var btn= document.getElementById ("btnCercaUtente").addEventListener("click", function(){	    		
+			
+			var find = document.getElementById('toFind').value;					
+			var utente = new Utente(null,find,null,null,null,null,null);
+				
+			$.ajax({
+				  url: "findUtenti",  
+		          method: "post",	         
+		          data: JSON.stringify(utente),	       
+		          contentType: "application/json",	         
+		          success: function(risposta){	
+					if(risposta == "fail"){
+						alert("la ricerca non ha prodotto nessun risultato");						
+					}
+					if(risposta =="success"){
+						window.location.href="ricercaUtenti";
+					}				  
+		          },	          		             
+		    });	
 	});
 		
 		
 });
+

@@ -51,7 +51,7 @@
                         </tr>
                     </thead>
                     <tbody>
-					<c:forEach var="utente" items="${tuttiUtenti}"> <!-- stesso nome che abbiamo passato al model nella classe DeviceController rigo  23 -->
+					<c:forEach var="utente" items="${utentiTrovati}"> 
 					                    
 						<tr style="padding: 0px">	
 		                            <td>${utente.email}</td>
@@ -188,7 +188,7 @@
 			   </div>
 		   </div>
 	     </div>
-	 </div>      
+	 </div>    
 	
 </body>
 
