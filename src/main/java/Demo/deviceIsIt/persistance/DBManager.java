@@ -8,6 +8,7 @@ import Demo.deviceIsIt.persistance.dao.UtenteDAO;
 import Demo.deviceIsIt.persistance.dao.jdbc.CommentoDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.ContenutoDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.DeviceDAOJDBC;
+import Demo.deviceIsIt.persistance.dao.jdbc.ListaPreferitiDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.UtenteDAOJDBC;
 
 public class DBManager {

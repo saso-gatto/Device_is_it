@@ -1,8 +1,10 @@
-package Demo.deviceIsIt.persistance;
+package Demo.deviceIsIt.persistance.dao.jdbc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Demo.deviceIsIt.model.Device;
+import Demo.deviceIsIt.persistance.DBSource;
 import Demo.deviceIsIt.persistance.dao.ListaPreferitiDAO;
 
 public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
@@ -11,36 +13,25 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 	public ListaPreferitiDAOJDBC(DBSource dbSource) {
 		this.dbSource = dbSource;
 	}
+
+	@Override
+	public void savePreferito(Integer idDevice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Device> getPreferiti(String email) {
+		List<Device> preferiti= new ArrayList<Device>();
+		return preferiti;
+	}
+
+	@Override
+	public void deletePreferito(String email, Integer idDevice) {
+		// TODO Auto-generated method stub
+		
+	}
 	
-
-	@Override
-	public void save(Device device) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Device findByPrimaryKey(Integer idDevice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Device> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void update(Device device) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(int idDevice) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }

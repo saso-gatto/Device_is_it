@@ -6,9 +6,7 @@ import Demo.deviceIsIt.model.Device;
 
 public interface ListaPreferitiDAO {
 
-	public void save(Device device);  // Create
-	public Device findByPrimaryKey(Integer idDevice);     // Retrieve
-	public List<Device> findAll();       
-	public void update(Device device); //Update
-	public void delete(int  idDevice);
+	public void savePreferito(Integer idDevice);  
+	public List<Device> getPreferiti(String email);  
+	public void deletePreferito(String email, Integer idDevice);
 }

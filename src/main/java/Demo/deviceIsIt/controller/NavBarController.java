@@ -133,7 +133,7 @@ public class NavBarController {
 		return "profilo";
 	}
 	
-	@GetMapping("/listaUtenti")	//Metodo che intercetta un href su index e carica la pagina contenente tutti i profili user
+	@GetMapping("/listaUtenti")	
 	public String dammiListaUtenti(HttpSession session, Model model) {
 		
 		String emailAdmin = "admin@admin.it";		
@@ -146,13 +146,12 @@ public class NavBarController {
 		
 	}
 	
-	@GetMapping("/listaPreferiti")	//Metodo che intercetta un href su index e carica la pagina contenente tutti i profili user
+	@GetMapping("/listaPreferiti")	
 	public String ottieniListaPreferiti(HttpSession session, Model model) {
 		
-		List<Device> preferiti = DBManager.getInstance().ListaPreferitiDAO().findAll();		
-		//utenti = DBManager.getInstance().utenteDAO().findAllOtherUsers(emailAdmin);		
-		
-		//model.addAttribute("tuttiUtenti",utenti);		
+		String utente=session.getAttribute("usernameLogged").toString();	
+		List<Device> preferiti = DBManager.getInstance().ListaPreferitiDAO().getPreferiti(utente);
+		session.setAttribute("preferiti", preferiti);	
 				
 		return "listaUtenti";
 		
