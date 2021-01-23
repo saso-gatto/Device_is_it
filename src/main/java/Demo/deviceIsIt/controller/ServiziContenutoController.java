@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import Demo.deviceIsIt.model.Commento;
 import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.model.Mail;
+import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBManager;
 
 @RestController
@@ -89,6 +91,16 @@ public class ServiziContenutoController {
 		
 		DBManager.getInstance().CommentoDAO().delete(commento.getidcommento());
 	 
+		return "success";
+	}
+	
+	@PostMapping("addPreferiti")
+	public String preferiti(@RequestBody Device device, @RequestBody Utente utente) {
+				
+		System.out.println("sono in add Preferito");
+		System.out.println(device.getIdDevice());
+		System.out.println(utente.getEmail());
+		
 		return "success";
 	}
 	
