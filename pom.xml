@@ -57,14 +57,14 @@
 		<dependency>
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
-		    <version>42.2.18</version>
+		    <version>42.2.18</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>5.3.2.RELEASE</version>
+			<version>5.3.2.RELEASE</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
@@ -79,6 +79,11 @@
 		    <version>1.1.1</version>
 		</dependency>
 		
+		<dependency>
+		<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+		</dependency>
 		
 		
 		

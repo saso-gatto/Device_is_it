@@ -152,8 +152,27 @@
 	     </div>
 	 </div>
 
-
+	<div class="container">
+		<br> <br>
+		<h1 style="text-align: center;">Galleria dispositivo</h1>
+			<form id="myForm" autocomplete="off">
+				<div class="form-group">
+					<input type="text" class="form-control" id="search" value="${device.modello}" required>	 
+				</div>
+				<div class="form-group">
+					<button class="btn btn-danger btn-block">
+						Ricerca qui la foto desiderata
+					</button>
+				</div>
+			</form>
+		 	<div id="result"></div>
+			
+	</div>
+	
+	
+		
 </body>
 	<jsp:include page="./footer.jsp" />
-	 <script src="./js/schedaTecnicaSingola.js"></script> 
+	 <script src="./js/schedaTecnicaSingola.js"></script>
+	 <script src="./js/photos.js"></script> 
 </html>
