@@ -153,7 +153,7 @@ public class NavBarController {
 		List<Device> preferiti = DBManager.getInstance().ListaPreferitiDAO().getPreferiti(utente);
 		session.setAttribute("preferiti", preferiti);	
 				
-		return "listaUtenti";
+		return "listaPreferiti";
 		
 	}
 	

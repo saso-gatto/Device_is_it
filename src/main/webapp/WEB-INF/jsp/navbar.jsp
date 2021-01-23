@@ -101,6 +101,9 @@
 	                        <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->	
 	                        	<a href="listaUtenti" class="dropdown-item" > Lista Utenti </a>
 		    				</c:if>
+		    				<c:if test="${usernameLogged != null}">  <!--  se è loggato l'admin -->	
+	                        	<a href="listaPreferiti" class="dropdown-item" > Lista preferiti </a>
+		    				</c:if>
 	                        <a href="doLogout" class="dropdown-item" onclick="logoutSocial()"> Logout </a>	        
 	                    </div>		
 	                  </div>
