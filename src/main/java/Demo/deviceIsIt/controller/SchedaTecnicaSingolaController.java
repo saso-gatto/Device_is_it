@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Demo.deviceIsIt.model.Contenuto;
 import Demo.deviceIsIt.model.Device;
 import Demo.deviceIsIt.persistance.DBManager;
 
@@ -19,8 +20,14 @@ public class SchedaTecnicaSingolaController {
 		
 		Device device=DBManager.getInstance().deviceDAO().findByPrimaryKey(idDevice);		
 		model.addAttribute(device);
-		System.out.println(idDevice);
 		
+		Contenuto recensione = null;
+		
+		if(DBManager.getInstance().ContenutoDAO().existRecensione(idDevice)) {
+			recensione=DBManager.getInstance().ContenutoDAO().getRecensioneByDevice(idDevice);			
+		}
+		
+		session.setAttribute("recensione",recensione );
 		return "SchedaTecnicaSingola";
 		
 	}

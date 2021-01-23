@@ -4,14 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.security.crypto.bcrypt.BCrypt;
-
 import Demo.deviceIsIt.model.Device;
-import Demo.deviceIsIt.model.Utente;
 import Demo.deviceIsIt.persistance.DBSource;
 import Demo.deviceIsIt.persistance.dao.ListaPreferitiDAO;
 
@@ -32,10 +27,47 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
 			st.setString(1, utente);
 			st.setInt(2, idDevice);
+			st.executeUpdate();
+			st.close();						
 		} catch (SQLException e) {
 			  return false;
 		}
 		return true;
+	}
+	
+	
+
+	@Override
+	public boolean existPreferito(String email, Integer idDevice) {
+			Device device = new Device();		
+		try {
+			Connection conn = dbSource.getConnection();
+			String query = "select device.* from listapreferiti,device where listapreferiti.utente=? and listapreferiti.device=? and listapreferiti.device=device.id;";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, email);
+			st.setInt(2, idDevice);			
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {				
+				device.setIdDevice(rs.getInt("id"));				
+				device.setModello(rs.getString("modello"));
+				device.setMarca(rs.getString("marca"));
+				device.setTipoDevice(rs.getInt("tipodevice"));
+				device.setMemoria(rs.getString("memoria"));
+				device.setRam(rs.getString("ram"));
+				device.setDisplay(rs.getString("display"));
+				device.setBatteria(rs.getString("batteria"));
+				device.setFotocamera(rs.getString("fotocamera"));
+				device.setCPU(rs.getString("cpu"));
+				device.setPeso(rs.getString("peso"));
+				device.setOs(rs.getString("os"));
+				device.setImg(rs.getString("img"));	
+				return true;							
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}			
+				return false;			
+				
 	}
 
 	@Override

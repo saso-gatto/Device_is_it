@@ -40,8 +40,64 @@ public class ContenutoDAOJDBC implements ContenutoDAO {
 		}
 	}
 	
-	
 
+	@Override
+	public boolean existRecensione(Integer idDevice) {
+			Contenuto contenuto = new Contenuto();			
+			try {
+				Connection conn = dbSource.getConnection();
+				String query = "select * from contenuto where device=? and tipologia=2;";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setInt(1, idDevice);
+				ResultSet rs = st.executeQuery();
+				if (rs.next()) {
+					contenuto.setIdContenuto(rs.getInt("id"));
+					contenuto.setData(rs.getDate("data"));
+					contenuto.setTipo(rs.getInt("tipologia"));
+					contenuto.setDevice(rs.getInt("device"));
+					contenuto.setTesto(rs.getString("testo"));
+					contenuto.setTitolo(rs.getString("titolo"));
+					contenuto.setImg(rs.getString("img"));	
+					contenuto.setAnteprima(rs.getString("anteprima"));
+					return true;
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+			return false;		
+	}
+
+	
+	
+	@Override
+	public Contenuto getRecensioneByDevice(Integer idDevice) {
+			Contenuto contenuto = new Contenuto();			
+			try {
+				Connection conn = dbSource.getConnection();
+				String query = "select * from contenuto where device=? and tipologia=2;";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setInt(1, idDevice);
+				ResultSet rs = st.executeQuery();
+				if (rs.next()) {
+					contenuto.setIdContenuto(rs.getInt("id"));
+					contenuto.setData(rs.getDate("data"));
+					contenuto.setTipo(rs.getInt("tipologia"));
+					contenuto.setDevice(rs.getInt("device"));
+					contenuto.setTesto(rs.getString("testo"));
+					contenuto.setTitolo(rs.getString("titolo"));
+					contenuto.setImg(rs.getString("img"));	
+					contenuto.setAnteprima(rs.getString("anteprima"));					
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+			return contenuto;		
+	}
+	
+	
+	
 	@Override
 	public void saveWithoutDevice(Contenuto contenuto) {
 		

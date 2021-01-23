@@ -97,7 +97,11 @@ public class ServiziContenutoController {
 	@PostMapping("addPreferiti")
 	public String preferiti(HttpSession session, @RequestBody Device device) {
 		
-		String utente= session.getAttribute("usernameLogged").toString();			
+		String utente= session.getAttribute("usernameLogged").toString();
+		if(DBManager.getInstance().ListaPreferitiDAO().existPreferito(utente, device.getIdDevice())) {			
+			return "presente";
+		}
+		DBManager.getInstance().ListaPreferitiDAO().savePreferito(utente, device.getIdDevice());			
 		return "success";
 	}
 	

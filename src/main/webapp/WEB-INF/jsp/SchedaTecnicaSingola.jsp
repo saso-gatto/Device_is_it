@@ -40,11 +40,13 @@
 			    	<h5 style="margin-top: 15%"  class="card-title">${device.modello}</h5>
 			      </c:if> 		           		       			         
 			    </div>
-			    				    
-			    <form id="formSchedaTecnica" method="post" action="/schedaTecnica">
-		          	<input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
-					<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Vai alla recensione</button>
-               </form>	
+			    	
+			    <c:if test="${recensione != null }">		    
+				    <form id="formSchedaTecnica" method="post" action="/Contenuto">
+			          	<input type="hidden" id="id" name="id" value="${recensione.id}">			          	
+						<button type="submit" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-primary">Vai alla recensione</button>
+	               </form>	
+               </c:if>	
 			    	    		  			  
 		  	</div>
 	  	<div class="col-8">
@@ -123,9 +125,7 @@
 					<div class="logo mb-3">
 						 <div class="col-md-12 text-center">
 							<button id="chiudi" type="button" class="close" data-dismiss="modal">×</button>
-							 <br>							
-				               <p>Devise aggiunto correttamente alla lista dei preferiti<p> 					              		                 
-							 <br>
+							 <br><br><p>Devise aggiunto correttamente alla lista dei preferiti<p> 					              		                 					
 						 </div>
 					</div>	                   	               
 				</div>
@@ -133,6 +133,24 @@
 			</div>
 	     </div>
 	 </div>  
+	 
+	  <div class="modal fade" id="esiste">
+	    <div class="modal-dialog">
+	      <div class="modal-content">	            
+	        <!-- Modal body -->
+	        <div class="modal-body">	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button id="chiudi" type="button" class="close" data-dismiss="modal">×</button>
+							 <br><br><p>Devise già presente nella lista dei preferiti<p> 					              		                 					
+						 </div>
+					</div>	                   	               
+				</div>
+			  </div>
+			</div>
+	     </div>
+	 </div>
 
 
 </body>

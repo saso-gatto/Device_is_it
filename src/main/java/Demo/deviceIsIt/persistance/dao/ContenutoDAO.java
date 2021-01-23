@@ -22,5 +22,7 @@ public interface ContenutoDAO {
 	public List<Contenuto> researchResultArticoli(String string);
 	public List<Contenuto> researchResultRecensioni(String string);
 	public int getNumCommenti(int idContenuto); 
+	public boolean existRecensione(Integer idDevice);
+	public Contenuto getRecensioneByDevice(Integer idDevice);
 	
 }

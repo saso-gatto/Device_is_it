@@ -30,6 +30,9 @@ $(document).ready(function(){
 		          success: function(risposta){				  				
 			  		if(risposta=="success"){
 						$('#conferma').modal('show');					
+					}
+					if(risposta=="presente"){				
+						$('#esiste').modal('show');					
 					}				
 		          },	          		                
 		    });	
