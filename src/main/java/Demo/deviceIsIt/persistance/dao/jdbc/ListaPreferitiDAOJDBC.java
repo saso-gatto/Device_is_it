@@ -45,8 +45,9 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 		try {
 			Connection conn = dbSource.getConnection();
 			String query = "select device.* from listapreferiti,device where listapreferiti.utente=? and listapreferiti.device=device.id;";
-			Statement st = conn.createStatement();
-			ResultSet rs = st.executeQuery(query);
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, email);
+			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Device device = new Device();
 				device.setIdDevice(rs.getInt("id"));				
