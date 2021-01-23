@@ -172,5 +172,5 @@
 </body>
 <jsp:include page="./footer.jsp" />
 <script src="/js/commento.js"></script>  
-<script src="/js/api.js"></script>  
+<!-- <script src="/js/api.js"></script>   -->
 </html>

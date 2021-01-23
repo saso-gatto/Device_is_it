@@ -4,14 +4,12 @@ $(document).ready(function(){
 
 	window.addEventListener("load", function(){ 
 		
-	    
-	
 	    var search = $("#search").val()
 	    
 	    videoSearch(API_KEY,search,3)
 	});
 		
-
+	
   
   $("#form").submit(function(event){
     event.preventDefault()
