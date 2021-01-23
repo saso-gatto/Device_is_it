@@ -71,18 +71,20 @@
 			</c:if>	       
 	      </div>
 	    </div>
-	    
-        <div class="row">
-	     	 <br>
-	     	 	<div class="col-12 text-center" >	<!-- togliendo questo, vengono messi di fianco ma allineati a sinistra -->		   		  			  
+	    <br>
+       
+        <div class="row">	     	
+	     	 	<div class="col text-center" >		   		  			  
 		      		<form id="formSetProfilo" method="post" action="setProfilo">
            				<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 	    				<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
        				 </form>
-       				 <c:if test="${usernameLogged != 'admin@admin.it'}">
-       				 	<button type="button" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
-					 </c:if> 
-				</div>
+       			</div>
+       			 <c:if test="${usernameLogged != 'admin@admin.it'}">
+       			 	<div class="col text-center" >        				
+       				 	<button type="button" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>				 
+					</div>
+				</c:if>
 	   	</div>	 
 	</div>
 
@@ -95,7 +97,7 @@
 	
 				<div class="myform form ">
 					<div class="logo mb-3">
-						 <div class="col-md-12 text-center">
+						 <div class="col col-md-12 text-center">
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
 							<h3 class="titolo-loginForm">Vuoi davvero eliminare il tuo profilo utente?</h3>

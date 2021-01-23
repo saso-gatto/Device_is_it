@@ -1,12 +1,11 @@
 body {
-  background: linear-gradient(110deg, rgb(190, 245, 224), rgb(255, 240, 192) 
-  
-  );
+
+  background: linear-gradient(130deg, #e9fde8,  #e7f7fe);
 }
 
-/* background: linear-gradient(10deg, rgb(174, 247, 167), rgb(163, 223, 252) */
-/* background: linear-gradient(110deg, rgb(190, 245, 224), rgb(255, 240, 192) */
-/*   background: linear-gradient(100deg,  rgb(208, 251, 235), rgb(254, 248, 227)  */
+/* background: linear-gradient(110deg, rgb(190, 245, 224), rgb(255, 240, 192)); */
+/*  background: linear-gradient(100deg,  rgb(208, 251, 235), rgb(254, 248, 227) ); */
+/* background: linear-gradient(110deg, rgb(190, 245, 224), rgb(255, 240, 192)  */
 
 #logo{
 	font-family: 'Kaushan Script', cursive; 

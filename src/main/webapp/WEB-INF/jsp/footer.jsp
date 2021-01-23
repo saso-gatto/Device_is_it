@@ -78,7 +78,7 @@
 			               			
 				                        <form method="get" action="/profilo">
 							          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
-											<button type="submit" class="btn btn-link"> Il mio Profilo</button>
+											<button style="margin: 0px; padding: 0px" type="submit" class="btn btn-link"> Il mio Profilo</button>
 				                        </form>
 				                 
 				                </div>               
