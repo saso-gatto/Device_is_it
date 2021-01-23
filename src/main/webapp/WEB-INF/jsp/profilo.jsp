@@ -72,17 +72,19 @@
 	      </div>
 	    </div>
 	    
-        <div class="row" >
+        <div class="row">
 	     	 <br>
-		   		<div class="col-12 text-center" >			   		  			  
+	     	 	<div class="col-12 text-center" >	<!-- togliendo questo, vengono messi di fianco ma allineati a sinistra -->		   		  			  
 		      		<form id="formSetProfilo" method="post" action="setProfilo">
            				<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
 	    				<button type="submit" id="btnModificaProfilo" class="btn btn-outline-btn btn btn-success"> Modifica Dati</button>
        				 </form>
-					<button style="float:right" type="button" class="btn btn-sm btn-outline-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
-				</div> 
-	   		</div>	 
-	   </div>
+       				 <c:if test="${usernameLogged != 'admin@admin.it'}">
+       				 	<button type="button" id="btnEliminaProfilo" class="btn btn-outline-btn btn btn-danger" data-email-utente="${usernameLogged}" data-toggle="modal" data-target="#confermaEliminazioneProfilo" >Elimina profilo</button>
+					 </c:if> 
+				</div>
+	   	</div>	 
+	</div>
 
 	<div class="modal fade" id="confermaEliminazioneProfilo">
 	    <div class="modal-dialog">

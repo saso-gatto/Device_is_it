@@ -68,32 +68,24 @@
                         <h5>Account</h5>
                         <ul style="padding-left: 0px">
                             
-                <c:if test="${usernameLogged == null}">  <!--  se non c'è un username loggato mostrami il login -->
-	    			<li><a href="#" data-toggle="modal" data-target="#loginForm" >Il mio Account </a></li>  
-	    		</c:if>
-	    		
-	    		<c:if test="${usernameLogged != null}"> <!-- se c'è un username loggato -->
-
-	    			<div class="navbar-nav">             
-               			<div class="nav-item dropdown">
-		    			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Il mio Account </a>
-				
-	                    <div class="dropdown-menu dropdown-menu-right text-right">
-	                        <form method="get" action="/profilo">
-				          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
-								<button class="dropdown-item" type="submit" class="btn"> Profilo</button>
-	                        </form>
-	                        <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->	
-	                        	<a href="listaUtenti" class="dropdown-item" > Lista Utenti </a>
-		    				</c:if>
-	                        <a href="doLogout" class="dropdown-item" onclick="logoutSocial()"> Logout </a>	        
-	                    </div>		
-	                  </div>
-	               </div>               
-	    		  </c:if> 
-                </ul>
-             </div>
-           </div>
+			                <c:if test="${usernameLogged == null}">  <!--  se non c'è un username loggato mostrami il login -->
+				    			<li><a href="#" data-toggle="modal" data-target="#loginForm" >Il mio Profilo </a></li>  
+				    		</c:if>
+				    		
+				    		<c:if test="${usernameLogged != null}"> <!-- se c'è un username loggato -->
+			
+				    			<div class="navbar-nav">             
+			               			
+				                        <form method="get" action="/profilo">
+							          		<input type="hidden" id="email" name="email" value="${usernameLogged}">			          	
+											<button type="submit" class="btn btn-link"> Il mio Profilo</button>
+				                        </form>
+				                 
+				                </div>               
+				    	    </c:if> 
+                		</ul>
+             		</div>
+           		</div>
                 
                 
          <div id="map"class="col-lg-3" style="padding: 0px" >
