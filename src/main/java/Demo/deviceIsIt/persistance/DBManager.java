@@ -3,6 +3,7 @@ package Demo.deviceIsIt.persistance;
 import Demo.deviceIsIt.persistance.dao.CommentoDAO;
 import Demo.deviceIsIt.persistance.dao.ContenutoDAO;
 import Demo.deviceIsIt.persistance.dao.DeviceDAO;
+import Demo.deviceIsIt.persistance.dao.ListaPreferitiDAO;
 import Demo.deviceIsIt.persistance.dao.UtenteDAO;
 import Demo.deviceIsIt.persistance.dao.jdbc.CommentoDAOJDBC;
 import Demo.deviceIsIt.persistance.dao.jdbc.ContenutoDAOJDBC;
@@ -52,6 +53,10 @@ public class DBManager {
 	
 	public CommentoDAO CommentoDAO() {
 		return new CommentoDAOJDBC(dataSource);
+	}
+	
+	public ListaPreferitiDAO ListaPreferitiDAO() {
+		return new ListaPreferitiDAOJDBC(dataSource);
 	}
 
 }

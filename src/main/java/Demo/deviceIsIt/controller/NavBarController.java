@@ -146,7 +146,17 @@ public class NavBarController {
 		
 	}
 	
-	
+	@GetMapping("/listaPreferiti")	//Metodo che intercetta un href su index e carica la pagina contenente tutti i profili user
+	public String ottieniListaPreferiti(HttpSession session, Model model) {
+		
+		List<Device> preferiti = DBManager.getInstance().ListaPreferitiDAO().findAll();		
+		//utenti = DBManager.getInstance().utenteDAO().findAllOtherUsers(emailAdmin);		
+		
+		//model.addAttribute("tuttiUtenti",utenti);		
+				
+		return "listaUtenti";
+		
+	}
 	
 
 }

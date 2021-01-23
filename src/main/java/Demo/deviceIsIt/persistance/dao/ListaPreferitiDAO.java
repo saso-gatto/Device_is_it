@@ -3,7 +3,6 @@ package Demo.deviceIsIt.persistance.dao;
 import java.util.List;
 
 import Demo.deviceIsIt.model.Device;
-import Demo.deviceIsIt.model.ListaPreferiti;
 
 public interface ListaPreferitiDAO {
 
