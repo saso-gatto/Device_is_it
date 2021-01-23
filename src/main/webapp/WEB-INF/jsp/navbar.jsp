@@ -33,7 +33,6 @@
   	
   	<script src="/js/login.js"></script>  
   	<script src="./js/tornaSu.js"></script>
-  	 
 
 </head>
 <body>
@@ -73,6 +72,7 @@
    			 	</div>	   			 
    			 </div>    		
    			 </form>	 	 		       		
+   			
    			
             <div id="modeAdmin" style="align:center; color:white">
 	            <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->

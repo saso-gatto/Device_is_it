@@ -15,9 +15,9 @@
 
 img {
 	
-	max-height: 200px;
-	margin-top:50px;
-	margin-left: 20%;
+	height: 200px;
+	margin-top: 2%; 
+ 	margin-left: 2%; 
  }
  
 .img-hover-zoom {
