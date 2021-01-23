@@ -27,8 +27,7 @@
 			       	  </div>
 		       		  <div class="card-body text-centert">
 		          	    <h5 class="card-title">${device.modello}</h5> 			           
-			            <form action="#">
-			              <input type="hidden" id="utente" name="utente" value="${usernameLogged}">
+			            <form action="#">			             
 			              <input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
 						  <button id="btnPreferiti" type="button" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-warning"> <i class="far fa-star"> </i> aggiungi ai preferiti</button>
 	           		   </form>

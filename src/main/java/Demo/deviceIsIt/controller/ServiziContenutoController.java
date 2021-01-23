@@ -95,12 +95,9 @@ public class ServiziContenutoController {
 	}
 	
 	@PostMapping("addPreferiti")
-	public String preferiti(@RequestBody Device device, @RequestBody Utente utente) {
-				
-		System.out.println("sono in add Preferito");
-		System.out.println(device.getIdDevice());
-		System.out.println(utente.getEmail());
+	public String preferiti(HttpSession session, @RequestBody Device device) {
 		
+		session.getAttribute("usernameLogged");			
 		return "success";
 	}
 	
