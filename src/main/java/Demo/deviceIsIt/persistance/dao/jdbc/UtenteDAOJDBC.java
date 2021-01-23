@@ -113,7 +113,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				utente.setNewsletter(newsletter);
 				utente.setBloccato(bloccato);
 				
-				utenti.add(utente);					
+				if(!utente.getEmail().equals("admin@admin.it")) 
+					utenti.add(utente);					
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
