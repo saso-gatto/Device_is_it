@@ -11,7 +11,7 @@ $(document).ready(function(){
 						console.log(data);
 						data.results.forEach(photo =>{
 							$("#result").append(`
-							<img src="${photo.urls.regular}"/>		
+							<img id="fotoTrovate" src="${photo.urls.regular}"/>		
 							
 							`);
 	

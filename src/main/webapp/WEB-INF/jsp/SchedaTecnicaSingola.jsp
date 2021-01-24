@@ -20,16 +20,16 @@
 	  	<div class="container"></div>
 		  	<div class="col-4 text-center" style="margin-top: 20px; justify-content: center;">
 		  		
-		  		<div class="card" style="border-radius:30px; max-width: 300px; min-width: 250px; height: 500px; margin-bottom:10px; margin-left: 5%  ">    			       
+		  		<div class="card" style="border-radius:30px">    			       
 			       <c:if test="${usernameLogged != null}"> 
 		       		  <div class="img-hover-zoom img-hover-zoom--basic">
-			               <img style="margin-left:0px; max-height: 300px;" src="${device.img}"> 
+			               <img style="margin-left:0px; max-height: 300px; margin-top: 16%" src="${device.img}"> 
 			       	  </div>
 		       		  <div class="card-body text-centert">
 		          	    <h5 class="card-title">${device.modello}</h5> 			           
 			            <form action="#">			             
 			              <input type="hidden" id="idDevice" name="idDevice" value="${device.idDevice}">			          	
-						  <button id="btnPreferiti" type="button" style="border-radius:15px; margin-top:15px; height:45px;" class="btn btn-outline-warning"> <i class="far fa-star"> </i> aggiungi ai preferiti</button>
+						  <button id="btnPreferiti" type="button" style="border-radius:15px; margin-top:15px;" class="btn btn-outline-warning"> <i class="far fa-star"> </i> aggiungi ai preferiti</button>
 	           		   </form>
 	           		  </div> 
 	           	  </c:if>	           	 

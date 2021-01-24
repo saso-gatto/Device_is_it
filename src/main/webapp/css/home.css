@@ -17,10 +17,6 @@
 	text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
 
-body {
-  background: linear-gradient(127deg,  #fff5d7, rgb(249, 198, 85));
-}
-
 #titolo{
 	margin-top: 30px;
 	font-size: 45px;
