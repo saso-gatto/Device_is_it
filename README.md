@@ -30,3 +30,6 @@ Fasi da seguire per importare il database:
 7) Il Database è stato importato correttamente.  
 
 In caso di problemi col  DB è possibile ripristinare il database su PGAdmin attraverso il file backup "db_device_is_it.backup".
+
+
+![alt text](https://i.ibb.co/m0BPDZx/Schermata-2021-01-25-alle-22-59-26.png)
