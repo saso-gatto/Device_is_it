@@ -4,7 +4,7 @@ Fasi da seguire per importare il database:
 1) Crea una nuova cartella chiamata "postgresDB" sul progetto
 2) Apri Docker e lanciare un'immagine Postgres sulla porta 5432 caricando come volume la cartella creata al passo precedente
 
- esempio del codice da eseguire ( sostituire "pathTuaCartella" con il path della cartella creata al punto 1)
+ Esempio del codice da eseguire ( sostituire "pathTuaCartella" con il path della cartella creata al punto 1)
 
  docker run --rm --name pg-docker_device_is_it  -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -v "pathTuaCartella":/var/lib/postgresql/data postgres
 
