@@ -80,7 +80,7 @@
 						 <div class="col-md-12 text-center">
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
-							<h3 class="titolo-loginForm">vuoi davvero eliminare il device?</h3>
+							<h3 class="titolo-loginForm">Vuoi davvero eliminare il device?</h3>
 							 <br>
 						 </div>
 					</div>
