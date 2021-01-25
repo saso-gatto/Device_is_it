@@ -66,7 +66,7 @@
 				              <h5 class="card-title">${contenuto.titolo}</h5>
 				              <p class="card-text"> ${contenuto.anteprima} </p>
 				              <div class="row">
-					              <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+					              <p class="card-text"><i class="fas fa-calendar-alt" style="padding-left:16px"></i>  ${contenuto.data}</p>
 					              <c:if test="${contenuto.numCommenti==1}">
 					              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
 					              </c:if>
@@ -116,7 +116,7 @@
 				              <h5 class="card-title">${contenuto.titolo}</h5>
 				              <p class="card-text"> ${contenuto.anteprima} </p>
 				              <div class="row">
-					           	  <p class="card-text"><i class="fas fa-calendar-alt"></i>  ${contenuto.data}</p>
+					           	  <p class="card-text"><i class="fas fa-calendar-alt" style="padding-left:16px"></i>  ${contenuto.data}</p>
 					           	  <c:if test="${contenuto.numCommenti==1}">
 					              	<p class="card-text" style="padding-left: 20px;"><i class="fas fa-comment-alt"></i> ${contenuto.numCommenti} commento</p>
 					              </c:if>
