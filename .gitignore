@@ -31,6 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-/postgresDB/
-/PostgresDB/
+/postgresDB/pg_stat_tmp/
+/PostgresDB/pg_stat_tmp/
 
