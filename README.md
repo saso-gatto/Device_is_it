@@ -28,3 +28,5 @@ Fasi da seguire per importare il database:
 5) Clicca con il tasto destro sul Database appena creato e selezionare "Restore"
 6) Clicca su Filename e seleziona il file "DB_device_is_it.backup" che si trova nella cartella "Backup Database" e poi su Restore
 7) Il Database è stato importato correttamente.  
+
+In caso di problemi col  DB è possibile ripristinare il database su PGAdmin attraverso il file backup "db_device_is_it.backup".
