@@ -233,8 +233,8 @@
 					<input type="text" class="form-control" id="search" value="${device.modello}" required>	 
 				</div>
 				<div class="form-group">
-					<button class="btn btn-danger btn-block">
-						Ricerca qui la foto desiderata
+					<button class="btn btn-info btn-block">
+						Ricerca foto correlate al disposivo
 					</button>
 				</div>
 			</form>
