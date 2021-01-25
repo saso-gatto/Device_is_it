@@ -3,11 +3,11 @@
 	transition: 0.3s; 
 	height: 500px;
 	border-radius:30px; 
-	max-width: 300px; 
+	max-width: 350px; 
 	min-width: 250px; 
 	height: 500px; 
 	margin-bottom:10px; 
-	margin-left: 5% 
+	margin-left: 5%;
 }
 
 .card:hover {

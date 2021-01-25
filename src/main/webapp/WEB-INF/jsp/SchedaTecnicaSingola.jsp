@@ -13,12 +13,12 @@
 <body>
 
   
-  <div class="container" style="margin-top: 50px;">
- 	 <div class="container">
-  
-	  <div class="row">
-	  	<div class="container"></div>
-		  	<div class="col-4 text-center" style="margin-top: 20px; justify-content: center;">
+   <p id="titolo" style="text-align:center"> ${device.marca}  ${device.modello} </i> </p>
+ 	 
+ 	 <div class="container" style="margin-top: 50px;">  
+	  <div class="row">	  
+		  	
+		  	<div class="col mx-auto text-center" style="margin-top: 20px; ">
 		  		
 		  		<div class="card" style="border-radius:30px">    			       
 			       <c:if test="${usernameLogged != null}"> 
@@ -49,7 +49,8 @@
                </c:if>	
 			    	    		  			  
 		  	</div>
-	  	<div class="col-8">
+		  	
+	  	<div class="col" style="max-width: 740px;">
 	  	
 		  	<div class="table-users">
 			  <div class="header">
@@ -58,7 +59,7 @@
 			  <table>
 		  
 			      <tr>
-			      	<th>Modello</th>
+			      	<th style="width: 35%" >Modello</th>
 			      	<th>${device.modello}</th>
 			      </tr>
 			      
@@ -67,43 +68,115 @@
 			      	<th>${device.marca}</th>
 			      </tr>
 			      
-			      <tr>
-			      	<th>Memoria</th>
+			      <tr>	
+			      	<th >
+			      		<div class="row">
+				      		<div class="col">
+				      			Memoria
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/sd.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>			      			      	
 			      	<th>${device.memoria}</th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>Ram</th>
-			      	<th>${device.ram}</th>
+			      	<th>
+			      		<div class="row">
+				      		<div class="col">
+				      			Ram
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/smartphone-ram.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>				      	
+			      	<th> ${device.ram} </th>
+			      </tr>	
+			      		      
+				  <tr>
+				     <th>
+			      		<div class="row">
+				      		<div class="col">
+				      			Display 
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/screen-resolution.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>				      	
+			      	<th>${device.display} </th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>Display</th>
-			      	<th>${device.display}</th>
-			      </tr>
-			      
-			      <tr>
-			      	<th>Batteria</th>
+			      	<th>
+			      		<div class="row">
+				      		<div class="col">
+				      			Batteria 
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/full-battery.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>				      	
 			      	<th>${device.batteria}</th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>Fotocamera</th>
+			      	<th>
+			      		<div class="row" >
+				      		<div class="col">
+				      			Fotocamera
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/camera.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>			      	
 			      	<th>${device.fotocamera}</th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>CPU</th>
+			      	<th>
+			      		<div class="row">
+				      		<div class="col">
+				      			CPU
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/electronics.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>			      	
 			      	<th>${device.CPU}</th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>Peso</th>
-			      	<th>${device.peso}</th>
+			      	<th>
+			      		<div class="row">
+				      		<div class="col">
+				      			Peso
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/weight.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>
+			      	<th>${device.peso} </th>
 			      </tr>
 			      
 			      <tr>
-			      	<th>OS</th>
+			      	<th>
+			      		<div class="row">
+				      		<div class="col">
+				      			OS
+				      		</div>
+				      		<div class="col" style="padding: 0px">
+				      			<img src="https://img.icons8.com/plumpy/24/000000/operating-system.png"/>
+				      		</div>			      		
+			      		</div> 
+			      	</th>				      
 			      	<th>${device.os}</th>
 			      </tr>
 			      
@@ -114,7 +187,7 @@
 	  	</div>
 	  </div>
 	</div>  
- </div>
+
  
  	 <div class="modal fade" id="conferma">
 	    <div class="modal-dialog">

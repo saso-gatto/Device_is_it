@@ -56,7 +56,7 @@
                         <a href="recensioniPc" class="dropdown-item">Computer  <i class="fas fa-laptop"></i> </a>                      
                     </div>
                 </div> 
-                <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche  <i class="fas fa-file-invoice"></i> </a>
+                <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche </a>
                 <a href="news" class="nav-item nav-link">News  <i class="far fa-newspaper"></i> </a>                             
             </div>
             
