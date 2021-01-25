@@ -34,11 +34,10 @@ public class ServiziLoginController {
 	public String setProfilo(@RequestBody Utente utente) {
 	
 		try {
-			if(DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
+			if(DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {			
 				Utente old = DBManager.getInstance().utenteDAO().findByPrimaryKey(utente.getEmail());
-				
-				if(utente.getPassword()!=null)
-					DBManager.getInstance().utenteDAO().update(old, utente);
+				if(!utente.getPassword().equals("")) 
+					DBManager.getInstance().utenteDAO().update(old, utente);				
 				else
 					DBManager.getInstance().utenteDAO().updateWithoutPsw(old, utente);			
 			}
