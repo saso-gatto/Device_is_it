@@ -145,7 +145,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title team__title">
-                        <!--  <span>Chi siamo</span>   -->
+
                         <h2>Il nostro Team</h2>
                     </div>
                 </div>

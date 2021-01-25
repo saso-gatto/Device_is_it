@@ -58,7 +58,9 @@
                     <div align="left" class="footer-widget">
                         <h5>Informazioni</h5>
                         <ul style="padding-left: 0px">
-                            <li><a href="#">Chi siamo</a></li>
+                            <form method="get" action="/index">			          	
+								  <li><button style="margin: 0px; padding: 0px" type="submit" class="btn btn-link"> Chi siamo</button></li>
+				            </form>
                             
                         </ul>
                     </div>
