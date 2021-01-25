@@ -198,7 +198,7 @@
 					<div class="logo mb-3">
 						 <div class="col-md-12 text-center">
 							<button id="chiudi" type="button" class="close" data-dismiss="modal">×</button>
-							 <br><br><p>Devise aggiunto correttamente alla lista dei preferiti<p> 					              		                 					
+							 <br><br><p>Device aggiunto correttamente alla lista dei preferiti<p> 					              		                 					
 						 </div>
 					</div>	                   	               
 				</div>
