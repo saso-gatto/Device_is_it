@@ -143,7 +143,7 @@
 	                              <input type="password" name="passwordLogin" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
 	                           </div>
 	                           <div class="form-group">
-	                              <p class="text-center">Registrandoti accetti i nostri <a href="#">Termini d'uso</a></p>
+	                              <p class="text-center">Registrandoti accetti i nostri<button id="btnMostraTermini" type="button" class="btn btn-link" data-toggle="modal" data-target="#apriTermini">Termini e Condizioni d'uso</button></p>
 	                           </div>
 	                           <div class="col-md-12 text-center ">
 	                              <button type="submit" id="btnLogin" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
@@ -349,6 +349,38 @@
 			</div>
 	     </div>
 	 </div>  
+	 
+	 <div class="modal fade" id="apriTermini">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	             
+			<!--  Modal body -->
+	        <div class="modal-body">
+	
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							 <br> <br>
+							<h3 class="titolo-loginForm">Termini e Condizioni di utilizzo</h3>
+							 <br>
+						 </div>
+					</div>
+	                  <div class="row" style="padding: 10px 10px 10px">
+		                  <p> Registrandoti al sito web Device Is It decidi di accettare i termini e le condizioni di utilizzo.</p><br>
+		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione) e potranno decidere 
+		                  		di disattivarlo nel caso si ritenesse che tu abbia violato le regole di utilizzo. 
+		                  		In particolare, è SEVERAMENTE VIETATO:</p>
+		                  		<ul> 
+		                  			<li> Ledere o danneggiare la sensibilità di altri utenti.</li>
+		                  			<li> Utilizzare e divulgare impropriamente il materiale presente sul sito web per scopi personali.</li>
+		                  		</ul>
+					   </div>   	               
+				   </div>
+			   </div>
+		   </div>
+	     </div>
+	 </div>
 
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>

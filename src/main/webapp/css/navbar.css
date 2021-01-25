@@ -124,10 +124,25 @@ body {
 	text-align: center;
 }
 
+.form-group button:hover{
+	box-shadow:none;
+	text-decoration: underline;
+}
 
+.form-group button:visited{
+	box-shadow:none;
+	text-decoration: underline;
+}
 
+.formo-group button:focused{
+	box-shadow:none;
+	text-decoration: underline; 
+}
 
-
+.formo-group button:clicked, button:active{
+	box-shadow:none;
+	text-decoration: underline; 
+}
 
 .loginBtn {
   box-sizing: border-box;
