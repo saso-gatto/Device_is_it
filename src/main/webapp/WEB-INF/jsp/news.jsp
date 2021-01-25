@@ -19,7 +19,7 @@
   
     <div class="row" style="margin-top:16px;">
 	   <div class="col"> 
-	      <p id="titolo" style="text-align:center"> News </p>
+	      <p id="titolo" style="text-align:center"> News  <i class="fas fa-newspaper"></i>   </p>
 	   </div>
   	   <c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
   	      <div class="col"> 		   

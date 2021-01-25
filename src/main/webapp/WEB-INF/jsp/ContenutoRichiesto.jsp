@@ -53,7 +53,7 @@
         <div class="col-3" style="padding-left: 50px">
 			
           <div class="sidebar-module sidebar-module-inset">        
-            <h4>Video Correlati</h4>
+            <h4>Video Correlati       <i class="fab fa-youtube"></i>     </h4>
 	            <section id="video">
 <!-- 					<iframe width="350" height="200" src="https://www.youtube.com/embed/6n1If16xzXo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 				

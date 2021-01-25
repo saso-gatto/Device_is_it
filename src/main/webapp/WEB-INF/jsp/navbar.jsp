@@ -52,12 +52,12 @@
                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Recensioni</a>
                     <div class="dropdown-menu">
-                        <a href="recensioniSmartphone" class="dropdown-item">Smartphone</a>
-                        <a href="recensioniPc" class="dropdown-item">Computer</a>                      
+                        <a href="recensioniSmartphone" class="dropdown-item">Smartphone  <i class="fas fa-mobile-alt"></i> </a>
+                        <a href="recensioniPc" class="dropdown-item">Computer  <i class="fas fa-laptop"></i> </a>                      
                     </div>
                 </div> 
-                <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche</a>
-                <a href="news" class="nav-item nav-link">News</a>                             
+                <a href="schedeTecniche" class="nav-item nav-link">Schede Tecniche  <i class="fas fa-file-invoice"></i> </a>
+                <a href="news" class="nav-item nav-link">News  <i class="far fa-newspaper"></i> </a>                             
             </div>
             
             <form method="post" action="cerca">

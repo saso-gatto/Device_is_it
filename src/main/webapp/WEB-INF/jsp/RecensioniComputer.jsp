@@ -18,7 +18,7 @@
   
   <div class="row"  style="margin-top: 20px"> 
   	 <div class="col"> 
-  		<p id="titolo" style="text-align:center"> Recensioni Computer</p>
+  		<p id="titolo" style="text-align:center"> Recensioni Computer  <i class="fas fa-laptop"></i>  </p>
 	 </div>
 	<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
 	   <div class="col text-center">		  

@@ -19,7 +19,7 @@
 
    	 <div class="row"  style="margin-top:1%; margin-bottom:1%"> 
   	 	<div class="col"> 
-   			<p id="titolo" style="text-align:center"> Schede Tecniche</p>
+   			<p id="titolo" style="text-align:center"> Schede Tecniche   <i class="fas fa-file-alt"></i>  </p>
    		</div>
    		<c:if test="${usernameLogged == 'admin@admin.it'}">  <!--  se è loggato l'admin -->
 		   	<div class="col"> 			   
