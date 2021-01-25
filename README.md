@@ -26,5 +26,5 @@ Fasi da seguire per importare il database:
 	Salva 
 
 5) Clicca con il tasto destro sul Database appena creato e selezionare "Restore"
-6) Clicca su Filename e seleziona il file "DB_device_is_it.backup" che si trova in questa stessa cartella e poi su Restore
+6) Clicca su Filename e seleziona il file "DB_device_is_it.backup" che si trova nella cartella "Backup Database" e poi su Restore
 7) Il Database è stato importato correttamente.  
