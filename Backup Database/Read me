@@ -7,7 +7,7 @@ Fasi da seguire per importare il database:
 
  docker run --rm --name pg-docker_device_is_it  -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -v "pathTuaCartella":/var/lib/postgresql/data postgres
 
-3) Apri PgAdmin e creare un nuovo Server (se necessario).
+3) Apri pgAdmin e creare un nuovo Server (se necessario).
 
 	Dati richiesti da inserire su General:
 		- Nome:  Device Is It
