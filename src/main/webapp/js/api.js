@@ -2,12 +2,12 @@ $(document).ready(function(){
 	var API_KEY = "AIzaSyDOU5nEmtoJpBNCaZn8qI6ChsZ4iizwbQU"
   	var video = ''
 
-	window.addEventListener("load", function(){ 
-		
-	    var search = $("#search").val()
-	    
-	    videoSearch(API_KEY,search,3)
-	});
+//	window.addEventListener("load", function(){ 
+//		
+//	    var search = $("#search").val()
+//	    
+//	    videoSearch(API_KEY,search,3)
+//	});
 		
 	
   
