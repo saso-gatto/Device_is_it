@@ -32,8 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 /postgresDB/
-<<<<<<< HEAD
 /PostgresDB/
-=======
-/PostgresDB/
->>>>>>> branch 'master' of https://github.com/Caterina5/Device_is_it.git
+
