@@ -196,7 +196,7 @@
                         <div class="form-group">
                            <label for="exampleInputEmail1">Password</label>                         
                         	<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" >
-                        	<p id="parametriPSW">Minimo otto caratteri, almeno una lettera e un numero</p> 
+                        	<p id="parametriPSW">Minimo otto caratteri, almeno una lettera maiuscola e un numero</p> 
                         </div>
 						  <div class="form-group">
 	                        <div class="form-check form-check-inline"> 
