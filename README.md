@@ -1,7 +1,7 @@
 # Device_is_it
 
-Account amministratore per gestire utenti e contenuti:
-email: admin@admin.it
+Account amministratore per gestire utenti e contenuti:	
+email: admin@admin.it	
 password: admin
 
 
