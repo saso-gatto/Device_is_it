@@ -1,4 +1,10 @@
 # Device_is_it
+
+Account amministratore per gestire utenti e contenuti:	
+email: admin@admin.it	
+password: admin
+
+
 Fasi da seguire per importare il database:
 
 1) Crea una nuova cartella chiamata "postgresDB" sul progetto
@@ -30,6 +36,7 @@ Fasi da seguire per importare il database:
 7) Il Database è stato importato correttamente.  
 
 In caso di problemi col  DB è possibile ripristinare il database su PGAdmin attraverso il file backup "db_device_is_it.backup".
+
 
 Ecco alcune immagini:
 ![alt text](https://i.ibb.co/7jH1kJW/Schermata-2021-01-25-alle-22-59-26.png)

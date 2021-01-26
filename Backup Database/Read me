@@ -1,3 +1,7 @@
+Account amministratore per gestire utenti e contenuti:
+email: admin@admin.it  
+password: admin
+
 Fasi da seguire per importare il database in caso di problemi durante l'esecuzione:
 
 1) Eliminare il database già presente sul progetto (verrà aggiunto nuovamente nei passaggi successivi)
