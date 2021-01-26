@@ -1,5 +1,5 @@
 Account amministratore per gestire utenti e contenuti:
-email: admin@admin.it  -  
+email: admin@admin.it  
 password: admin
 
 Fasi da seguire per importare il database in caso di problemi durante l'esecuzione:
