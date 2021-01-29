@@ -38,7 +38,7 @@
 						<a class="twitter-share-button"  href="https://twitter.com/intent/tweet?text=${contenuto.titolo}" data-size="large">	Tweet</a>
 					</div>
 	          		
-	          		<div class="fb-share-button" style="float:right" data-href="https://localhost:8080" data-layout="button" data-size="large">
+	          		<div class="fb-share-button" style="float:right" data-href="https://www.google.it" data-layout="button" data-size="large">
 						<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A8080%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Condividi</a>
 					</div> 
 					

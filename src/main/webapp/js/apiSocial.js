@@ -85,6 +85,7 @@ function accessofacebook(){
 						person.first_name = userData.first_name;
 						person.last_name = userData.last_name;
                         person.email = userData.email;
+						alert(person.email);
 
                     
 					utente= new Utente(person.email, person.first_name, person.last_name, person.email,false,false);

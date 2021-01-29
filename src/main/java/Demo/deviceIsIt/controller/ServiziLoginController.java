@@ -19,10 +19,16 @@ public class ServiziLoginController {
 	public String loginSocial(HttpSession session, @RequestBody Utente utente) {
 		
 		if(!DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())) {
+			System.out.println("nuovo utente");
+			System.out.println(utente.getNome());
+			System.out.println(utente.getCognome());
+			System.out.println(utente.getUsername());
+			System.out.println(utente.getEmail());
 			DBManager.getInstance().utenteDAO().save(utente);
 		}
 		
-		if(DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail())) {
+		if(!DBManager.getInstance().utenteDAO().checkBloccato(utente.getEmail())) {
+			System.out.println("sei stato bloccato, contatta l'amministratore");
 			return "bloccato";
 		}
 		session.setAttribute("usernameLogged", utente.getEmail());

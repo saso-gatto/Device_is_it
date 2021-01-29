@@ -67,9 +67,9 @@ label {
     margin-top: 20px
 }
 
-.form-group p a {
-    color: white
-}
+/* .form-group p a { */
+/*     color: white */
+/* } */
 
 .form-group input,
 .form-group textarea {
