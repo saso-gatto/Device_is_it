@@ -91,7 +91,7 @@
                 
                 
          <div id="map"class="col-lg-3" style="padding: 0px" >
-		 <!-- <script>
+		 <script>
 		  function initMap(){
 		      // Map options
 		      var options = {
@@ -151,10 +151,10 @@
 		        }
 		      }
 		    }
-		  </script> -->
+		  </script>
 		  
 		  
-		  <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+<!-- 		  <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3"> 
 				<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
 		        var setting = {"height":180,"width":280,"zoom":15,"queryString":"Unical, Arcavacata, CS, Italia","place_id":"ChIJm6Q5y6KZPxMRJWQOVGCdUho","satellite":false,"centerCoord":[39.35624291302391,16.226949100000017],"cid":"0x1a529d60540e6425","lang":"it","cityUrl":"/italy/cosenza-9762","cityAnchorText":"Mappa di Cosenza, Italy South, Italia","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"359339"};
 		        var d = document;
@@ -171,6 +171,7 @@
         </div>
       </div>
    </div>
+   -->
         
         
     
