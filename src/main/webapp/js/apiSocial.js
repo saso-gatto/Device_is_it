@@ -77,20 +77,15 @@ function accessofacebook(){
 		
 //		e.preventDefault();
 		FB.login(function (response) {
-                if (response.status == "connected") {
-					$('#showError').modal('show');	
+                if (response.status == "connected") {					
 					
 					FB.api('/me?fields=id,first_name,last_name,email', function (userData) {
                         person.id = userData.id;
 						person.first_name = userData.first_name;
 						person.last_name = userData.last_name;
-                        person.email = userData.email;
-						alert(person.email);
-
+                        person.email = userData.email;						
                     
-					utente= new Utente(person.email, person.first_name, person.last_name, person.email,false,false);
-					
-				
+					utente= new Utente(person.email, person.first_name, person.last_name, person.email,false,false);					
 					
 					$.ajax({
 							  url: "loginSocial",  
