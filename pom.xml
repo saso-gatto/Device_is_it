@@ -64,13 +64,13 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>5.3.2.RELEASE</version><!--$NO-MVN-MAN-VER$-->
+			<version>5.5.7</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>5.3.2.RELEASE</version>
+			<version>5.5.7</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
 		<dependency>
